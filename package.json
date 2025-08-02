@@ -1,0 +1,20 @@
+{
+  "name": "level2-project",
+  "version": "1.0.0",
+  "description": "Interactive Services Platform + Contact/Feedback System (Level 2 of my Web Development Learning Plan)",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/WebDev-Plan-1/Level2-Project.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/WebDev-Plan-1/Level2-Project/issues"
+  },
+  "homepage": "https://github.com/WebDev-Plan-1/Level2-Project#readme"
+}
