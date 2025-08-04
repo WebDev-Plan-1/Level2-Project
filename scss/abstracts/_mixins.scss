@@ -1,0 +1,11 @@
+// Flexbox Centering
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Smooth Transition
+@mixin transition($props...) {
+  transition: $props;
+}

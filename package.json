@@ -4,7 +4,7 @@
   "description": "Interactive Services Platform + Contact/Feedback System (Level 2 of my Web Development Learning Plan)",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "sass": "sass --watch scss/main.scss css/main.css"
   },
   "repository": {
     "type": "git",
@@ -16,5 +16,9 @@
   "bugs": {
     "url": "https://github.com/WebDev-Plan-1/Level2-Project/issues"
   },
-  "homepage": "https://github.com/WebDev-Plan-1/Level2-Project#readme"
+  "homepage": "https://github.com/WebDev-Plan-1/Level2-Project#readme",
+  "dependencies": {
+    "bootstrap": "^5.3.7",
+    "sass": "^1.89.2"
+  }
 }

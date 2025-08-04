@@ -1,0 +1,22 @@
+
+// ============================= Install Boostrap/SASS with npm ====================
+
+>> npm install bootstrap sass
+
+>> Add SCSS Watch script in the Scripts section in packages.json file >> "sass": "sass --watch scss/main.scss css/main.css"
+
+>> Create SASS Files as below:
+
+	scss/ >> abstracts/
+				>> _variables.scss
+				>> _mixins.scss
+				
+		  >> base/
+				>> _layout.scss
+				>> _components.scss
+				
+		  >> main.scss
+		  
+
+>> npm run sass   ## Running watch SASS
+
