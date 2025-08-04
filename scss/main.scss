@@ -7,14 +7,19 @@
 // @import 'mixins';
 // @import 'layout';
 // @import 'components';
-
+// ---------------------------------------------------------------------------------
+// Import abstracts (variables & mixins) for easy access
 // The @forward rule allows us to re-export styles for easier access.
 // Forward abstracts (variables & mixins) for easy access
 @forward 'abstracts/variables';
 @forward 'abstracts/mixins';
 
+// Use Bootstrap
+@use 'abstracts/bootstrap' as *;
+
 // The @use rule loads mixins, variables, and other stylesheets.
 // Use base styles
 @use 'base/layout';
 @use 'base/components';
+
 

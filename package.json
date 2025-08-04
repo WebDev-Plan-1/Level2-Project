@@ -1,7 +1,7 @@
 {
   "name": "level2-project",
   "version": "1.0.0",
-  "description": "Interactive Services Platform + Contact/Feedback System (Level 2 of my Web Development Learning Plan)",
+  "description": "A multi-page web app to manage and display blog posts with category filtering, article submission, and JSON data handling, styled using **SASS** and **Bootstrap**, with light PHP backend processing.",
   "main": "index.js",
   "scripts": {
     "sass": "sass --watch scss/main.scss css/main.css"
