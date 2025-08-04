@@ -1,145 +1,137 @@
-# 📍 Level2-Project — Interactive Services Platform + Contact/Feedback System
-
-## 📍Step 1: Idea & Project Overview
-
-### 💡 Idea
-**Interactive Services Platform + Contact/Feedback System**  
-A clean and modern website showcasing services or products interactively, with a contact form for visitors to get in touch. The form will be processed using basic PHP.
+# 📌 Level 2 – Personal Blog CMS
+A multi-page web app to manage and display blog posts with category filtering, article submission, and JSON data handling, styled using **SASS** and **Bootstrap**, with light PHP backend processing.
 
 ---
 
-### 📜 Overview
-- A single-page or multi-section website displaying **services** (or products) in an engaging, responsive layout.  
-- Includes **dynamic filtering** for services (e.g., All, Web, Mobile...).  
-- **Testimonials Slider** section to showcase client feedback.  
-- **About Us** section to introduce the business.  
-- **Contact Us** section with an embedded map and a contact form.  
-- **Basic PHP Back-End** to process form submissions and return a success/error message.
+## **🎯 Project Goals**
+- Learn and apply **SASS** for styling and CSS architecture.
+- Use **Bootstrap** for responsive and accessible UI components.
+- Apply **JavaScript ES6 basics** (let/const, arrow functions, template literals, destructuring, modules).
+- Handle **JSON data** for storing and loading blog posts.
+- Build a **category filter** system.
+- Create a **blog submission form** and process it with **PHP**.
+- Apply **Dark/Light mode** switching.
+- Ensure **fully responsive design** across all devices & browsers.
+- Write **clear code with comments for every line**.
+- Follow **OOP & SOLID principles** where applicable.
+- Enhance **SEO, Accessibility, and Performance**.
 
 ---
 
-### 🎯 Goals
-1. Improve UI/UX design skills for professional interfaces.  
-2. Implement **JavaScript ES6+** for DOM manipulation and event handling.  
-3. Practice **Basic PHP** for handling form data (Form Handling).  
-4. Organize files and folders using a professional structure.  
-5. Apply **Responsive Design** for all screen sizes.  
-6. Follow **Code Architecture & Standards** (OOP/SOLID/Design Patterns if applicable).
+## **🛠 Tools & Technologies**
+- **HTML5**
+- **SASS (SCSS syntax)**
+- **Bootstrap 5**
+- **JavaScript (ES6)**
+- **JSON**
+- **PHP (Basic)**
+- **Git & GitHub**
+- **VS Code Extensions:**
+  - Live Server
+  - Prettier
+  - SASS Compiler
+  - Auto Rename Tag
+  - JavaScript (ES6) snippets
 
 ---
 
-### 🛠 Tech Stack
-- **Front-End:** HTML5, CSS3/SASS, JavaScript ES6+  
-- **Back-End:** PHP (Basic)  
-- **Styling:** CSS Flexbox & Grid, Animations, Media Queries  
-- **Tools:** Git, GitHub, VS Code, Node.js (npm if needed)  
-- **Environment:** ✅ Chosen based on PHP requirement → **XAMPP** (since we have a Contact Form with PHP)  
-- **Deployment:** GitHub Pages for the Front-End + Localhost PHP Testing
+## **📂 Project Structure**
 
----
-
-### 📚 Knowledge Gain
-- Building interactive and dynamic web interfaces.  
-- Implementing filtering effects using JavaScript.  
-- Integrating Front-End with a simple Back-End.  
-- Handling form data and validation.  
-- Setting up the right development environment for PHP-based projects.  
-- Deploying projects with a Back-End while keeping Front-End on GitHub Pages.
-
----
----
-
-## 📍 Step 2: Planning & Pre-Development
-
-### 🎯 Features & Functionalities
-- **Responsive Navigation Bar** with active state and hamburger menu for mobile view.  
-- **Hero Section** with a clear call-to-action (CTA).  
-- **Services Section** with dynamic category filtering (All, Web, Mobile, etc.).  
-- **Testimonials Slider** with smooth transitions and navigation controls.  
-- **About Us Section** with image and descriptive text.  
-- **Contact Us Section** with:
-  - Embedded Google Map.
-  - Contact Form (Name, Email, Message).
-  - Form submission handling via **PHP**.
-- Scroll-triggered animations for sections.  
-- Dark/Light mode toggle (optional, if suitable).  
-
----
-
-### 🖌 UI Wireframe (Concept)
-*(This will be a conceptual layout before coding)*
-
-1. **Header / Navbar** (sticky at top).  
-2. **Hero Section** (full-width, background image or gradient).  
-3. **Services Section** (grid layout with filters).  
-4. **Testimonials** (slider).  
-5. **About Us** (split layout: image + text).  
-6. **Contact Us** (map + form).  
-7. **Footer** (links + social media icons).
-
----
-
-### 🗂 File/Folder Structure (Planned)
-
-```
 Level2-Project/
 │
+├── assets/
+│ ├── css/
+│ │ ├── main.css
+│ │ └── main.css.map
+│ ├── js/
+│ │ ├── main.js
+│ │ └── data.json
+│ ├── scss/
+│ │ ├── _variables.scss
+│ │ ├── _mixins.scss
+│ │ ├── _layout.scss
+│ │ ├── _components.scss
+│ │ └── main.scss
+│ ├── images/
+│ └── php/
+│ └── submit.php
+│
 ├── index.html
-├── about.html (optional)
-├── css/
-│ ├── style.css
-│ └── responsive.css (optional or media queries inside style.css)
-├── js/
-│ └── main.js
-├── php/
-│ └── contact.php
-├── images/
-│ └── (all image assets)
-├── README.md
-└── assets/
-└── (fonts, icons, extras)
+├── category.html
+├── single-post.html
+├── contact.html
+└── README.md
 
-```
----
-
-### 🧠 Code Architecture & Standards
-- Apply **OOP Principles** in JavaScript if needed (e.g., for slider management).  
-- Follow **SOLID Principles** where applicable.  
-- Use **Design Patterns** if relevant (e.g., Factory Pattern for service cards).  
-- Keep code **modular and reusable**.  
-- Ensure **easy maintainability** for future updates.  
 
 ---
 
-### 🌐 Environment Selection
-- **XAMPP** will be used for local development since PHP is required for the contact form.  
+## **📅 Work Phases**
+
+### **Phase 1 – Setup & Environment**
+1. Install Node.js, npm, and SASS Compiler.
+2. Create project folder & Git repository.
+3. Link GitHub remote repository.
+4. Install Bootstrap via CDN or npm.
+5. Setup SCSS file structure.
 
 ---
 
-### 📊 Performance & Accessibility Targets
-- **Performance Budget:** Keep load time < 2.5s on standard broadband.  
-- **Accessibility (A11y):** Ensure proper alt tags, ARIA roles, and keyboard navigation.  
-- **Responsive Testing:** Check across real devices (mobile, tablet, desktop).  
+### **Phase 2 – Design & Layout**
+1. Create Navbar (Bootstrap + custom SCSS).
+2. Create Hero Section for the homepage.
+3. Build Blog Grid Layout (Bootstrap cards).
+4. Style components using **SASS variables, mixins, nesting**.
+5. Implement Dark/Light mode toggle.
 
 ---
 
-### 📌 SEO Considerations
-- Semantic HTML structure.  
-- Meta tags for title, description, and keywords.  
-- Open Graph tags for social media previews.
+### **Phase 3 – Data Handling**
+1. Create a `data.json` file with dummy blog posts.
+2. Use **fetch API** to load posts dynamically.
+3. Implement **category filter** using ES6.
+4. Build single post page loading data dynamically.
 
 ---
 
-### 🗓 Development Phases
-1. **Setup & Environment Configuration**.  
-2. **HTML Structure & Basic CSS Layout**.  
-3. **Services Section with Filtering Logic**.  
-4. **Testimonials Slider Implementation**.  
-5. **About Us & Contact Sections**.  
-6. **PHP Form Handling**.  
-7. **Animations & Interactivity**.  
-8. **Testing & Bug Fixing**.  
-9. **SEO Optimization & Deployment**.
+### **Phase 4 – Form & PHP Integration**
+1. Create **"Submit New Post"** form (HTML + Bootstrap).
+2. Handle form submission with **PHP** (store in JSON for now).
+3. Validate inputs with JavaScript before sending.
+4. Show success/error messages dynamically.
 
 ---
 
+### **Phase 5 – Optimization**
+1. Ensure **accessibility** (ARIA labels, alt text, contrast).
+2. Optimize **SEO** (meta tags, structured data).
+3. Minify CSS & JS.
+4. Add responsive testing across devices.
+
+---
+
+### **Phase 6 – Deployment**
+1. Deploy on **GitHub Pages** (Frontend only).
+2. For PHP testing, deploy on **000webhost** or **InfinityFree**.
+3. Verify functionality & fix bugs.
+
+---
+
+## **💡 Extra Recommended Features**
+- Search bar for articles.
+- Pagination for posts.
+- "Featured Posts" carousel on homepage.
+- Save dark/light mode preference in `localStorage`.
+
+---
+
+## **✅ Common Criteria for All Projects**
+- Multi-page web app.
+- Dark/Light mode.
+- OOP & SOLID principles (if applicable).
+- Code maintainability & reusability.
+- Advanced SEO, Accessibility, and Performance.
+- Fully responsive on all devices & browsers.
+- Code readability with **comments above every line**.
+- Skills & tools distributed based on project needs.
+
+---
