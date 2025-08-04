@@ -10,6 +10,7 @@
 	scss/ >> abstracts/
 				>> _variables.scss
 				>> _mixins.scss
+				>> _bootstrap.scss
 				
 		  >> base/
 				>> _layout.scss
