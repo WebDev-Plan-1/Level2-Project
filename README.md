@@ -35,6 +35,62 @@ A multi-page web app to manage and display blog posts with category filtering, a
 
 ---
 
+## Main Features
+
+* Homepage
+
+* Display latest articles in a grid layout.
+
+* Featured posts section.
+
+* Category filter bar.
+
+* Pagination.
+
+* Category Page
+
+* Display articles under a selected category.
+
+* Same grid layout with filter options.
+
+* Single Post Page
+
+* Display article title, image, content, and publish date.
+
+* Related posts section at the bottom.
+
+* Contact Page
+
+* Contact form.
+
+* Submit data via PHP (no database, just processing).
+
+* Blog Submission Page
+
+* Form to add a new blog post.
+
+* Save data to JSON file (database simulation).
+
+* Search
+
+* Instant search bar for articles.
+
+* Dark/Light Mode
+
+* Toggle button to switch themes.
+
+* Save preference in localStorage.
+
+* SEO Optimization
+
+* Meta tags, OG tags, structured data.
+
+* Responsive Design
+
+* Fully responsive using Bootstrap + SASS.
+
+---
+
 ## **📂 Project Structure**
 
 Level2-Project/
