@@ -11890,6 +11890,68 @@ a:hover {
   background-color: rgb(255, 64.5189873418, 46);
 }
 
+.navbar {
+  position: sticky;
+  top: 0;
+  width: 100%;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  z-index: 1000;
+}
+.navbar .container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 16px;
+}
+.navbar .logo {
+  font-family: "Poppins", sans-serif;
+  font-size: 1.8rem;
+  font-weight: bold;
+  color: #ff6f61;
+  text-decoration: none;
+}
+.navbar .nav-links {
+  list-style: none;
+  display: flex;
+  gap: 32px;
+  margin: 0;
+  padding: 0;
+}
+.navbar .nav-links li a {
+  color: #4a4a4a;
+  text-decoration: none;
+  font-weight: 600;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+.navbar .nav-links li a:hover, .navbar .nav-links li a:focus {
+  color: #ff6f61;
+  outline: none;
+}
+.navbar #theme-toggle {
+  background: none;
+  border: 2px solid #ff6f61;
+  border-radius: 4px;
+  padding: 8px 16px;
+  font-family: "Poppins", sans-serif;
+  color: #ff6f61;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+.navbar #theme-toggle:hover, .navbar #theme-toggle:focus {
+  background-color: #ff6f61;
+  color: #fff;
+  outline: none;
+}
+
 .hero {
   display: flex;
   justify-content: center;
