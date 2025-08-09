@@ -1,0 +1,21 @@
+// scss/base/_footer.scss
+
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.footer {
+  background-color: v.$dark-bg;
+  color: #ccc;
+  text-align: center;
+  padding: v.$spacing-lg;
+
+  a {
+    color: v.$primary-color;
+    text-decoration: none;
+    @include m.transition(0.3s);
+
+    &:hover {
+      text-decoration: underline;
+    }
+  }
+}
