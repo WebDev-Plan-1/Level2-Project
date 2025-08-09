@@ -54,3 +54,39 @@
 .button-primary {
   @include button-primary;
 }
+
+// ==========================
+@mixin section-title {
+  // font-size: 2.5rem;
+  margin-bottom: v.$spacing-lg;
+  color: v.$primary-color;
+  font-family: v.$font-main;
+  @include m.responsive-font(1.5rem, 2.5rem);
+  @include m.transition(0.3s);
+  font-weight: bold;
+  text-align: center;
+  // Responsive adjustments
+  @media (max-width: v.$breakpoint-mobile) {
+    font-size: 1.5rem;
+    margin-bottom: v.$spacing-md;
+  }
+  @media (min-width: v.$breakpoint-mobile) and (max-width: v.$breakpoint-tablet) {
+    font-size: 1.8rem;
+    margin-bottom: v.$spacing-lg;
+  }
+  @media (min-width: v.$breakpoint-tablet) and (max-width: v.$breakpoint-desktop) {
+    font-size: 2rem;
+    margin-bottom: v.$spacing-xl;
+  }
+  @media (min-width: v.$breakpoint-desktop) {
+    font-size: 2.5rem;
+    margin-bottom: v.$spacing-xxl;
+  }
+}
+
+// If you want, keep the class for direct use
+.section-title {
+  @include section-title;
+}
+
+// ==========================

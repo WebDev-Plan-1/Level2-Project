@@ -11,15 +11,8 @@
   margin: auto;
   padding: v.$spacing-lg;
 
-  .section__title {
-    text-align: center;
-    // font-size: 2.5rem;
-    margin-bottom: v.$spacing-lg;
-    color: v.$primary-color;
-    font-family: v.$font-main;
-    @include m.responsive-font(1.5rem, 2.5rem);
-    @include m.transition(0.3s);
-    font-weight: bold;
+  .section-title {
+    @include c.section-title;
   }
   .posts {
     display: grid;

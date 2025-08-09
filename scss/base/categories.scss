@@ -1,0 +1,55 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+@use "./components" as c;
+// ==========================
+
+.categories-overview {
+    padding: v.$spacing-lg;
+    // background-color: v.$dark-bg;
+    color: white;
+    max-width: 1200px;
+    margin: v.$spacing-lg auto;
+    // background-color: v.$primary-color;
+    border-radius: v.$border-radius;
+    -webkit-border-radius: v.$border-radius;
+    -moz-border-radius: v.$border-radius;
+    -ms-border-radius: v.$border-radius;
+    -o-border-radius: v.$border-radius;
+    @include m.box-shadow(0, 2px, 4px, v.$box-shadow-light);
+
+    .section-title {
+        @include c.section-title;
+    }
+
+    .categories-list {
+        @include m.flex-center;
+        flex-wrap: wrap;
+        gap: 1.5rem;
+        list-style: none;
+        padding: 0;
+
+        li {
+            a {
+                color: #fff;
+                background-color: v.$primary-color;
+                padding: v.$spacing-sm v.$spacing-md;
+                text-decoration: none;
+                font-weight: 600;
+                transition: background-color 0.3s ease;
+                -webkit-transition: background-color 0.3s ease;
+                -moz-transition: background-color 0.3s ease;
+                -ms-transition: background-color 0.3s ease;
+                -o-transition: background-color 0.3s ease;
+                border-radius: v.$border-radius;
+                -webkit-border-radius: v.$border-radius;
+                -moz-border-radius: v.$border-radius;
+                -ms-border-radius: v.$border-radius;
+                -o-border-radius: v.$border-radius;
+
+                &:hover {
+                    background-color: darken(v.$primary-color, 15%);
+                }
+            }
+        }
+    }
+}

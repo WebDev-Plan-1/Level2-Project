@@ -11912,6 +11912,44 @@ a:hover {
   }
 }
 
+.section-title {
+  margin-bottom: 32px;
+  color: #15b5e6;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(1.5rem, 2.5rem, 2vw);
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  font-weight: bold;
+  text-align: center;
+}
+@media (max-width: 576px) {
+  .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 32px;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .section-title {
+    font-size: 2rem;
+    margin-bottom: 48px;
+  }
+}
+@media (min-width: 992px) {
+  .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 64px;
+  }
+}
+
 .navbar {
   position: sticky;
   top: 0;
@@ -12183,8 +12221,7 @@ a:hover {
   margin: auto;
   padding: 32px;
 }
-.latest-posts .section__title {
-  text-align: center;
+.latest-posts .section-title {
   margin-bottom: 32px;
   color: #15b5e6;
   font-family: "Poppins", sans-serif;
@@ -12195,6 +12232,31 @@ a:hover {
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
   font-weight: bold;
+  text-align: center;
+}
+@media (max-width: 576px) {
+  .latest-posts .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  .latest-posts .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 32px;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .latest-posts .section-title {
+    font-size: 2rem;
+    margin-bottom: 48px;
+  }
+}
+@media (min-width: 992px) {
+  .latest-posts .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 64px;
+  }
 }
 .latest-posts .posts {
   display: grid;
@@ -12330,6 +12392,89 @@ a:hover {
     padding: 8px 16px;
     font-size: 1.1rem;
   }
+}
+
+.categories-overview {
+  padding: 32px;
+  color: white;
+  max-width: 1200px;
+  margin: 32px auto;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+.categories-overview .section-title {
+  margin-bottom: 32px;
+  color: #15b5e6;
+  font-family: "Poppins", sans-serif;
+  font-size: clamp(1.5rem, 2.5rem, 2vw);
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  font-weight: bold;
+  text-align: center;
+}
+@media (max-width: 576px) {
+  .categories-overview .section-title {
+    font-size: 1.5rem;
+    margin-bottom: 16px;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  .categories-overview .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 32px;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .categories-overview .section-title {
+    font-size: 2rem;
+    margin-bottom: 48px;
+  }
+}
+@media (min-width: 992px) {
+  .categories-overview .section-title {
+    font-size: 2.5rem;
+    margin-bottom: 64px;
+  }
+}
+.categories-overview .categories-list {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  list-style: none;
+  padding: 0;
+}
+.categories-overview .categories-list li a {
+  color: #fff;
+  background-color: #15b5e6;
+  padding: 8px 16px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s ease;
+  -webkit-transition: background-color 0.3s ease;
+  -moz-transition: background-color 0.3s ease;
+  -ms-transition: background-color 0.3s ease;
+  -o-transition: background-color 0.3s ease;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+}
+.categories-overview .categories-list li a:hover {
+  background-color: rgb(14.5996015936, 125.8346613546, 159.9003984064);
 }
 
 .footer {
