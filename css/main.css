@@ -11961,18 +11961,75 @@ a:hover {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 80vh;
+  height: 85vh;
   background-color: #15b5e6;
   color: #fff;
   text-align: center;
+  padding: 32px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  background: #15b5e6 url("../../assets/images/hero-bg.jpeg") no-repeat center center;
+  background-size: cover;
+  position: relative;
+}
+.hero::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 0;
+}
+@media (max-width: 576px) {
+  .hero {
+    height: 75vh;
+    padding: 16px;
+    padding-top: 32px;
+    padding-bottom: 32px;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  .hero {
+    height: 80vh;
+    padding: 32px;
+    padding-top: 48px;
+    padding-bottom: 48px;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .hero {
+    height: 90vh;
+    padding: 48px;
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
+}
+@media (min-width: 992px) {
+  .hero {
+    height: 100vh;
+    padding: 64px;
+    padding-top: 64px;
+    padding-bottom: 64px;
+  }
 }
 .hero__title {
-  font-size: 3rem;
+  font-size: 2.5rem;
+  font-weight: bold;
   margin-bottom: 16px;
+  letter-spacing: 0.07em;
+  line-height: 1.2;
+  z-index: 1;
+}
+.hero__title_span {
+  font-size: 1.2rem;
+  font-weight: normal;
+  letter-spacing: normal;
 }
 .hero__subtitle {
-  font-size: 1.5rem;
+  font-size: 1.3rem;
   margin-bottom: 32px;
+  z-index: 1;
 }
 .hero__button {
   background-color: #15b5e6;
@@ -11987,6 +12044,7 @@ a:hover {
   color: #fff;
   padding: 8px 16px;
   padding: 16px 32px;
+  z-index: 1;
 }
 .hero__button:hover {
   background-color: rgb(16.7330677291, 144.2231075697, 183.2669322709);
