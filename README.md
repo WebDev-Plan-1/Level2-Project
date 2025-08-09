@@ -96,21 +96,26 @@ A multi-page web app to manage and display blog posts with category filtering, a
 Level2-Project/
 │
 ├── assets/
-│ ├── css/
-│ │ ├── main.css
-│ │ └── main.css.map
-│ ├── js/
-│ │ ├── main.js
-│ │ └── data.json
-│ ├── scss/
-│ │ ├── _variables.scss
+│ ├── images/
+│ └── icons/
+│ └── fonts/
+├── css/
+│ ├── main.css
+│ └── main.css.map
+├── js/
+│ ├── main.js
+│ └── data.json
+├── scss/
+│ |── abstracts/
+│ | ├── _variables.scss
 │ │ ├── _mixins.scss
+│ │ ├── _bootstrap.scss
+│ |── base/
 │ │ ├── _layout.scss
 │ │ ├── _components.scss
-│ │ └── main.scss
-│ ├── images/
-│ └── php/
-│ └── submit.php
+│ └── main.scss
+├── php/
+│ ├── submit.php
 │
 ├── index.html
 ├── category.html
