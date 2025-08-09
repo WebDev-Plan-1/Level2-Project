@@ -21,17 +21,35 @@
         <div class="container navbar-container">
             <!-- Website logo linking back to home -->
             <a href="index.html" class="logo navbar-logo">NileNotes</a>
+
             <!-- Navigation links list -->
-            <ul class="nav-links navbar-links">
-                <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
-                <li class="nav-item"><a href="category.html" class="nav-link">Categories</a></li>
-                <li class="nav-item"><a href="submit.html" class="nav-link">Submit Post</a></li>
-                <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-            </ul>
+            <div class="nav-links">
+                <ul class="nav-links-list navbar-links">
+                    <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
+                    <li class="nav-item"><a href="category.html" class="nav-link">Categories</a></li>
+                    <li class="nav-item"><a href="submit.html" class="nav-link">Submit Post</a></li>
+                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
+                </ul>
+                <!-- Hamburger menu for mobile view -->
+                <div class="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
             <!-- Button to toggle dark/light theme -->
-            <button id="theme-toggle" class="btn btn-theme-toggle" aria-label="Toggle dark/light theme">
-                Toggle Theme
-            </button>
+            <!-- <div class="theme-toggle" aria-label="Toggle dark/light theme">
+                <span class="toggle-icon dark-mode-off">
+                    <img src="./assets/icons/night-mode-off.png" class="dark-mode-off active" alt="Toggle light mode" />
+                    <img src="./assets/icons/night-mode-on.png" class="dark-mode-on" alt="Toggle dark mode" />
+                </span>
+            </div> -->
+            <!-- Search bar for quick access to articles -->
+            <!-- <form class="search-form navbar-search" action="search.html" method="GET" role="search">
+                <input type="text" name="query" class="search-input navbar-search-input"
+                    placeholder="Search articles..." aria-label="Search articles" required />
+                <button type="submit" class="search-button navbar-search-button">Search</button>
+            </form> -->
         </div>
     </nav>
 

@@ -2,15 +2,15 @@
 // Navbar Styles
 // ==========================
 
-@use '../abstracts/variables' as v;
-@use '../abstracts/mixins' as m;
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
 
 .navbar {
   position: sticky; // Make navbar sticky on top
   top: 0;
   width: 100%;
   background-color: v.$light-bg;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   z-index: 1000;
 
   .container {
@@ -32,43 +32,98 @@
   }
 
   .nav-links {
-    list-style: none;
     display: flex;
-    gap: v.$spacing-lg;
-    margin: 0;
-    padding: 0;
+    align-items: center;
+    gap: 1.5rem;
 
-    li {
-      a {
-        color: v.$secondary-color;
-        text-decoration: none;
-        font-weight: 600;
-        @include m.transition(0.3s);
+    .nav-links-list {
+      list-style: none;
+      display: flex;
+      gap: v.$spacing-lg;
+      margin: 0;
+      padding: 0;
 
-        &:hover,
-        &:focus {
-          color: v.$primary-color;
-          outline: none;
+      li {
+        a {
+          color: v.$secondary-color;
+          text-decoration: none;
+          font-weight: 600;
+          @include m.transition(0.3s);
+
+          &:hover,
+          &:focus {
+            color: v.$primary-color;
+            outline: none;
+          }
         }
       }
+
+      &.active {
+        display: flex; // Show nav links when hamburger is clicked
+        position: absolute;
+        top: 60px; // Adjust based on navbar height
+        left: 0;
+        width: 100%;
+        background-color: v.$light-bg;
+        flex-direction: column;
+        align-items: center;
+        padding: v.$spacing-md;
+        @include m.box-shadow(0, 2px, 4px, v.$box-shadow-light);
+        @include m.transition(0.3s);
+        z-index: 1000;
+
+        li {
+          margin-bottom: v.$spacing-sm;
+        }
+      }
+
+      // Responsive Styles
+      @media (max-width: v.$breakpoint-mobile) {
+        display: none; // Hide nav links on mobile by default
+      }
     }
-  }
 
-  #theme-toggle {
-    background: none;
-    border: 2px solid v.$primary-color;
-    border-radius: 4px;
-    padding: v.$spacing-sm v.$spacing-md;
-    font-family: v.$font-main;
-    color: v.$primary-color;
-    cursor: pointer;
-    @include m.transition(0.3s);
+    // hide hamburger icon by default
+    .hamburger {
+      display: none;
+      cursor: pointer;
+      flex-direction: column;
+      gap: 5px;
 
-    &:hover,
-    &:focus {
-      background-color: v.$primary-color;
-      color: #fff;
-      outline: none;
+      span {
+        width: 25px;
+        height: 3px;
+        background-color: v.$secondary-color;
+        border-radius: 2px;
+      }
+    }
+    // Responsive Styles
+    @media (max-width: v.$breakpoint-mobile) {
+      .nav-links-list {
+        display: none; // Hide nav links on mobile by default
+      }
+
+      .hamburger {
+        display: flex; // Show hamburger icon on mobile
+      }
+    }
+    @media (min-width: v.$breakpoint-mobile) and (max-width: v.$breakpoint-tablet) {
+      .nav-links-list {
+        display: none; // Show nav links on tablet
+      }
+
+      .hamburger {
+        display: flex; // Hide hamburger icon on tablet
+      }
+    }
+    @media (min-width: v.$breakpoint-tablet) and (max-width: v.$breakpoint-desktop) {
+      .nav-links-list {
+        display: none; // Show nav links on desktop
+      }
+
+      .hamburger {
+        display: flex; // Hide hamburger icon on desktop
+      }
     }
   }
 }
