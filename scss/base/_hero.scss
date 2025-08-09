@@ -2,6 +2,7 @@
 
 @use '../abstracts/variables' as v;
 @use '../abstracts/mixins' as m;
+@use 'components' as com; // Import components for mixins
 
 .hero {
   // center the hero content
@@ -23,7 +24,8 @@
   }
 
   &__button {
-    @extend .button-primary; // reuse button style from _components.scss
+    // Use button-primary mixin to apply button styles
+    @include com.button-primary;
     padding: v.$spacing-md v.$spacing-lg;
   }
 }
