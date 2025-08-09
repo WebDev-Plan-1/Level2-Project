@@ -1,0 +1,29 @@
+// scss/base/_hero.scss
+
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
+
+.hero {
+  // center the hero content
+  @include m.flex-center;
+  flex-direction: column;
+  height: 80vh;
+  background-color: v.$primary-color;
+  color: #fff;
+  text-align: center;
+
+  &__title {
+    font-size: 3rem;
+    margin-bottom: v.$spacing-md;
+  }
+
+  &__subtitle {
+    font-size: 1.5rem;
+    margin-bottom: v.$spacing-lg;
+  }
+
+  &__button {
+    @extend .button-primary; // reuse button style from _components.scss
+    padding: v.$spacing-md v.$spacing-lg;
+  }
+}
