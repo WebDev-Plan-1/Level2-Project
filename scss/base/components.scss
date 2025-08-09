@@ -1,17 +1,14 @@
-@use '../main' as *;
-
-// ==========================
-// Components Styles
-// ==========================
+@use '../abstracts/variables' as v;
+@use '../abstracts/mixins' as m;
 
 .button-primary {
-  background-color: $primary-color;
+  background-color: v.$primary-color;
   color: #fff;
-  padding: $spacing-md;
+  padding: v.$spacing-md;
   border-radius: 4px;
-  @include transition(0.3s);
+  @include m.transition(0.3s);
 
   &:hover {
-    background-color: darken($primary-color, 10%);
+    background-color: darken(v.$primary-color, 10%);
   }
 }

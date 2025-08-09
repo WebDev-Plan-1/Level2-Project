@@ -3,11 +3,11 @@
 // ==========================
 
 // Customize Bootstrap variables before loading it
-$primary: #007bff;
-$secondary: #6c757d;
+$primary: #ff6f61;
+$secondary: #4a4a4a;
 $body-bg: #f9f9f9;
-$body-color: #333;
-$font-family-base: 'Arial', sans-serif;
+$body-color: #1a1a1a;
+$font-family-base: 'Poppins', sans-serif;
 
 // Load Bootstrap SCSS from node_modules
 @use "../../node_modules/bootstrap/scss/bootstrap";

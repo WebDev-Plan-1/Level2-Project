@@ -14,11 +14,12 @@
 // The @forward rule allows us to re-export styles for easier access.
 // Forward abstracts (variables & mixins) for easy access, so they can be accessed globally
 
-@forward 'abstracts/variables';
-@forward 'abstracts/mixins';
+// Import Bootstrap first
+@use 'abstracts/bootstrap';
 
-// Use Bootstrap
-@use 'abstracts/bootstrap' as *;
+// Import variables & mixins
+@use 'abstracts/variables';
+@use 'abstracts/mixins';
 
 // The @use rule loads mixins, variables, and other stylesheets.
 // Use base styles
