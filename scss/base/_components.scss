@@ -35,6 +35,19 @@
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
     color: #fff;
   }
+  // Responsive Styles
+  @media (max-width: v.$breakpoint-mobile) {
+    padding: v.$spacing-sm;
+    font-size: 0.9rem;
+  }
+  @media (min-width: v.$breakpoint-mobile) and (max-width: v.$breakpoint-tablet) {
+    padding: v.$spacing-sm;
+    font-size: 1rem;
+  }
+  @media (min-width: v.$breakpoint-tablet) and (max-width: v.$breakpoint-desktop) {
+    padding: v.$spacing-sm v.$spacing-md;
+    font-size: 1.1rem;
+  }
 }
 
 // If you want, keep the class for direct use
