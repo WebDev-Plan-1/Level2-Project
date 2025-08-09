@@ -1,9 +1,23 @@
-@use '../abstracts/variables';
+@use '../main' as *;
+
+// ==========================
+// Layout Styles
+// ==========================
 
 body {
-  background-color: variables.$main-bg-color;
-  color: variables.$text-color;
-  font-family: variables.$base-font;
+  font-family: $font-main;
+  font-size: $font-size-base;
+  background-color: $light-bg;
+  color: $secondary-color;
   margin: 0;
   padding: 0;
+}
+
+a {
+  color: $primary-color;
+  @include transition(0.3s);
+
+  &:hover {
+    color: darken($primary-color, 10%);
+  }
 }

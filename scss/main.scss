@@ -1,4 +1,6 @@
-// ========= SCSS Main File ==========
+// ==========================
+// Main SCSS File
+// ==========================
 // This is the main SCSS file that imports all other SCSS files.
 // It is used to compile the final CSS for the project.
 
@@ -10,7 +12,8 @@
 // ---------------------------------------------------------------------------------
 // Import abstracts (variables & mixins) for easy access
 // The @forward rule allows us to re-export styles for easier access.
-// Forward abstracts (variables & mixins) for easy access
+// Forward abstracts (variables & mixins) for easy access, so they can be accessed globally
+
 @forward 'abstracts/variables';
 @forward 'abstracts/mixins';
 
@@ -21,5 +24,3 @@
 // Use base styles
 @use 'base/layout';
 @use 'base/components';
-
-

@@ -1,11 +1,18 @@
-// 🎨 Colors
-$main-bg-color: #f9f9f9;
-$text-color: #333;
-$primary-color: #007bff;
+// ==========================
+// Variables
+// ==========================
 
-// 🔠 Fonts
-$base-font: 'Arial', sans-serif;
+// Colors
+$primary-color: #ff6f61;
+$secondary-color: #4a4a4a;
+$light-bg: #f9f9f9;
+$dark-bg: #1a1a1a;
 
-// 📏 Spacing
-$base-padding: 1rem;
-$base-margin: 1rem;
+// Typography
+$font-main: 'Poppins', sans-serif;
+$font-size-base: 16px;
+
+// Spacing
+$spacing-sm: 8px;
+$spacing-md: 16px;
+$spacing-lg: 32px;

@@ -1,12 +1,13 @@
-// This file contains Bootstrap's SCSS variables and mixins.
-// It is used to customize Bootstrap's styles and components.
-// Import Bootstrap's core variables and mixins
-// ✅ تعديل متغيرات Bootstrap قبل تحميله
+// ==========================
+// Bootstrap Customization
+// ==========================
+
+// Customize Bootstrap variables before loading it
 $primary: #007bff;
 $secondary: #6c757d;
 $body-bg: #f9f9f9;
 $body-color: #333;
 $font-family-base: 'Arial', sans-serif;
 
-// تحميل Bootstrap SCSS من node_modules
+// Load Bootstrap SCSS from node_modules
 @use "../../node_modules/bootstrap/scss/bootstrap";

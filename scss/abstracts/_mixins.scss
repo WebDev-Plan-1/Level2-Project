@@ -1,11 +1,17 @@
-// Flexbox Centering
+// ==========================
+// Mixins
+// ==========================
+
 @mixin flex-center {
   display: flex;
-  align-items: center;
   justify-content: center;
+  align-items: center;
 }
 
-// Smooth Transition
-@mixin transition($props...) {
-  transition: $props;
+@mixin transition($time) {
+  transition: all $time ease-in-out;
+}
+
+@mixin responsive-font($min, $max) {
+  font-size: clamp($min, $max, 2vw);
 }
