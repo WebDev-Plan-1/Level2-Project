@@ -8,6 +8,29 @@
   align-items: center;
 }
 
+@mixin grid-layout($columns, $gap) {
+  display: grid;
+  grid-template-columns: repeat($columns, 1fr);
+  gap: $gap;
+}
+
+@mixin box-shadow($x, $y, $blur, $color) {
+  box-shadow: $x $y $blur $color;
+  -webkit-box-shadow: $x $y $blur $color;
+  -moz-box-shadow: $x $y $blur $color;
+  -ms-box-shadow: $x $y $blur $color;
+  -o-box-shadow: $x $y $blur $color;
+}
+
+@mixin responsive-font($min, $max) {
+  font-size: clamp($min, $max, 2vw);
+}
+@mixin responsive-image($width, $height) {
+  width: $width;
+  height: $height;
+  object-fit: cover;
+}
+
 @mixin transition($time) {
   transition: all $time ease-in-out;
   -webkit-transition: all $time ease-in-out;
@@ -15,7 +38,4 @@
   -ms-transition: all $time ease-in-out;
   -o-transition: all $time ease-in-out;
 }
-
-@mixin responsive-font($min, $max) {
-  font-size: clamp($min, $max, 2vw);
-}
+// ==========================
