@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<!-- Define document type as HTML5 -->
+<html lang="en">
+
+<head>
+    <!-- Set character encoding to UTF-8 -->
+    <meta charset="UTF-8" />
+    <!-- Set viewport for responsive design on all devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- Set the page title shown on browser tab -->
+    <title>Personal Blog CMS - Home</title>
+    <!-- Link to the main CSS stylesheet -->
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+    <!-- Navigation bar, sticky at the top -->
+    <nav class="navbar">
+        <div class="container">
+            <!-- Website logo linking back to home -->
+            <a href="index.html" class="logo">My Blog</a>
+            <!-- Navigation links list -->
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="category.html">Categories</a></li>
+                <li><a href="submit.html">Submit Post</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+            <!-- Button to toggle dark/light theme -->
+            <button id="theme-toggle" aria-label="Toggle dark/light theme">Toggle Theme</button>
+        </div>
+    </nav>
+
+    <!-- Main content area -->
+    <main class="main-content container">
+        <!-- Hero section with welcoming message and call-to-action -->
+        <section class="hero">
+            <h1>Welcome to My Personal Blog</h1>
+            <p>Discover articles on various topics, and share your own stories!</p>
+            <a href="submit.html" class="btn-primary">Submit Your Post</a>
+        </section>
+
+        <!-- Latest blog posts grid -->
+        <section class="latest-posts">
+            <h2>Latest Posts</h2>
+            <div class="posts-grid" aria-live="polite">
+                <!-- Example post card -->
+                <article class="post-card" tabindex="0">
+                    <img src="assets/images/post1.jpg" alt="Post 1 image" />
+                    <h3>Example Post Title 1</h3>
+                    <p>A short excerpt of the article to give a quick preview...</p>
+                    <a href="single-post.html" class="read-more">Read More</a>
+                </article>
+                <!-- Another example post card -->
+                <article class="post-card" tabindex="0">
+                    <img src="assets/images/post2.jpg" alt="Post 2 image" />
+                    <h3>Example Post Title 2</h3>
+                    <p>A short excerpt of the article to give a quick preview...</p>
+                    <a href="single-post.html" class="read-more">Read More</a>
+                </article>
+            </div>
+        </section>
+
+        <!-- Categories overview section -->
+        <section class="categories-overview">
+            <h2>Categories</h2>
+            <ul class="categories-list">
+                <li><a href="category.html?cat=technology">Technology</a></li>
+                <li><a href="category.html?cat=lifestyle">Lifestyle</a></li>
+                <li><a href="category.html?cat=travel">Travel</a></li>
+                <li><a href="category.html?cat=education">Education</a></li>
+            </ul>
+        </section>
+    </main>
+
+    <!-- Footer section -->
+    <footer>
+        <p>&copy; 2025 Personal Blog CMS. All rights reserved.</p>
+    </footer>
+
+    <!-- Link to main JavaScript file -->
+    <script src="js/main.js"></script>
+</body>
+
+</html>
