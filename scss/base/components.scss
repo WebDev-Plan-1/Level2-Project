@@ -21,6 +21,12 @@
   // Set background color to primary color variable
   background-color: v.$primary-color;
 
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+
+  text-decoration: none;
+
+  font-weight: bold;
+
   // Set text color to white
   color: #fff;
 
@@ -37,6 +43,8 @@
   &:hover {
     // Darken background color by 10%
     background-color: darken(v.$primary-color, 10%);
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   }
 }
 
