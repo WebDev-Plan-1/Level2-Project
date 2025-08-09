@@ -1,0 +1,43 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+
+// .button-primary {
+//   background-color: v.$primary-color;
+//   color: #fff;
+//   padding: v.$spacing-md;
+//   border-radius: 4px;
+//   @include m.transition(0.3s);
+
+//   &:hover {
+//     background-color: darken(v.$primary-color, 10%);
+//   }
+// }
+
+// ==========================
+// Button Primary Mixin
+// ==========================
+@mixin button-primary {
+  //Set backgroundcolor to primarycolor variable
+  background-color: v.$primary-color;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: v.$border-radius;
+  -webkit-border-radius: v.$border-radius;
+  -moz-border-radius: v.$border-radius;
+  -ms-border-radius: v.$border-radius;
+  -o-border-radius: v.$border-radius;
+  color: #fff;
+  padding: v.$spacing-sm v.$spacing-md;
+  &:hover {
+    // Darken background color by 10%
+    background-color: darken(v.$primary-color, 10%);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: #fff;
+  }
+}
+
+// If you want, keep the class for direct use
+.button-primary {
+  @include button-primary;
+}
