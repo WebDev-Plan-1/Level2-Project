@@ -1,7 +1,7 @@
 // scss/base/_footer.scss
 
-@use '../abstracts/variables' as v;
-@use '../abstracts/mixins' as m;
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
 
 .footer {
   background-color: v.$dark-bg;
@@ -9,13 +9,143 @@
   text-align: center;
   padding: v.$spacing-lg;
 
-  a {
-    color: v.$primary-color;
-    text-decoration: none;
-    @include m.transition(0.3s);
+  // Responsive adjustments
+  @media (max-width: v.$breakpoint-mobile) {
+    padding: v.$spacing-md v.$spacing-sm;
+  }
+  @media (min-width: v.$breakpoint-mobile) and (max-width: v.$breakpoint-tablet) {
+    padding: v.$spacing-md v.$spacing-sm;
+  }
+  @media (min-width: v.$breakpoint-tablet) and (max-width: v.$breakpoint-desktop) {
+    padding: v.$spacing-md;
+  }
 
-    &:hover {
-      text-decoration: underline;
+  .footer-title {
+    font-family: v.$font-main;
+    @include m.responsive-font(1.5rem, 2rem);
+    margin-bottom: v.$spacing-md;
+    color: v.$primary-color;
+
+    // Responsive adjustments
+    @media (max-width: v.$breakpoint-mobile) {
+      font-size: 1.5rem;
+      margin-bottom: v.$spacing-sm;
+    }
+    @media (min-width: v.$breakpoint-mobile) and (max-width: v.$breakpoint-tablet) {
+      font-size: 1.8rem;
+      margin-bottom: v.$spacing-md;
+    }
+    @media (min-width: v.$breakpoint-tablet) and (max-width: v.$breakpoint-desktop) {
+      font-size: 2rem;
+      margin-bottom: v.$spacing-lg;
+    }
+  }
+  .footer-links {
+    @include m.flex-center;
+    flex-wrap: nowrap;
+    gap: v.$spacing-md;
+    margin: v.$spacing-lg 0;
+
+    a {
+      color: #ccc;
+      text-decoration: none;
+      @include m.transition(0.3s);
+
+      &:hover {
+        color: v.$primary-color;
+        text-decoration: underline;
+      }
+    }
+    // Responsive adjustments
+    @media (max-width: v.$breakpoint-mobile) {
+      flex-direction: column;
+      align-items: center;
+      gap: v.$spacing-sm;
+    }
+  }
+  .footer-text {
+    margin: v.$spacing-sm 0;
+    font-size: 0.9rem;
+    color: #aaa;
+    line-height: 1.5;
+
+    a {
+      color: v.$primary-color;
+      text-decoration: none;
+      @include m.transition(0.3s);
+
+      &:hover {
+        text-decoration: underline;
+      }
+    }
+    // Responsive adjustments
+    @media (max-width: v.$breakpoint-mobile) {
+      font-size: 0.8rem;
+    }
+    @media (min-width: v.$breakpoint-mobile) and (max-width: v.$breakpoint-tablet) {
+      font-size: 0.85rem;
+    }
+    @media (min-width: v.$breakpoint-tablet) and (max-width: v.$breakpoint-desktop) {
+      font-size: 0.9rem;
+    }
+  }
+
+  .footer-bottom {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    margin-top: v.$spacing-lg;
+    padding-top: v.$spacing-md;
+    border-top: 1px solid #333;
+
+    .footer-left,
+    .footer-right {
+      // flex: 1;
+      display: flex;
+      flex-direction: column;
+      // align-items: center;
+      gap: v.$spacing-sm;
+      padding: v.$spacing-sm;
+      font-size: 0.9rem;
+      color: #aaa;
+      text-align: left;
+      p {
+        margin: 0;
+      }
+    }
+    // Responsive adjustments
+    @media (max-width: v.$breakpoint-mobile) {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+
+      .footer-left,
+      .footer-right {
+        width: 100%;
+        padding: v.$spacing-sm 0;
+      }
+    }
+    @media (min-width: v.$breakpoint-mobile) and (max-width: v.$breakpoint-tablet) {
+      flex-direction: column;
+      .footer-left,
+      .footer-right {
+        width: 100%;
+        padding: v.$spacing-sm 0;
+      }
+    }
+    @media (min-width: v.$breakpoint-tablet) and (max-width: v.$breakpoint-desktop) {
+      .footer-left,
+      .footer-right {
+        // width: 50%;
+        padding: v.$spacing-sm 0;
+      }
+    }
+    @media (min-width: v.$breakpoint-desktop) {
+      .footer-left,
+      .footer-right {
+        // width: 50%;
+        padding: v.$spacing-sm 0;
+      }
     }
   }
 }
