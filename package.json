@@ -4,7 +4,8 @@
   "description": "A multi-page web app to manage and display blog posts with category filtering, article submission, and JSON data handling, styled using **SASS** and **Bootstrap**, with light PHP backend processing.",
   "main": "index.js",
   "scripts": {
-    "sass": "sass --watch scss/main.scss css/main.css"
+  "sass:watch": "sass --watch scss/main.scss css/main.css --source-map",
+  "sass:build": "sass scss/main.scss css/main.css --style=compressed"
   },
   "repository": {
     "type": "git",
