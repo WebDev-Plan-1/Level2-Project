@@ -25,3 +25,8 @@
 // Use base styles
 @use 'base/layout';
 @use 'base/components';
+
+// Import base styles for different sections
+@use 'base/hero';        // for index.html hero section
+@use 'base/posts';       // for index.html posts section
+@use 'base/footer';      // for footer section (used site-wide)
