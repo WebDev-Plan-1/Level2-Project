@@ -9,10 +9,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <!-- Favicon -->
-    <link rel="icon" href="assets/images/LogoIco.ico" type="image/x-icon">
+    <link rel="icon" href="assets/images/logo-browser.png" type="image/x-icon">
     <!-- Page Title and Meta Tags -->
     <!-- Set the page title shown on browser tab -->
-    <title>NileNotes - Personal Blog CMS</title>
+    <title>Category - NileNotes</title>
     <meta name="description"
         content="NileNotes is a modern personal blog CMS inspired by Egyptian culture. Share your stories, explore diverse articles, and connect with a vibrant community. Discover technology, travel, health, education, and more on NileNotes." />
     <meta name="keywords"
@@ -21,8 +21,11 @@
     <!-- Swiper CSS -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" /> -->
     <!-- AOS Scroll Animation -->
-    <!-- <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"> -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <!-- Link to fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asimovian&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
     <!-- Main style -->
     <link rel="stylesheet" href="css/main.css" />
@@ -33,12 +36,17 @@
     <header class="navbar sticky">
         <div class="container navbar-container">
             <!-- Website logo linking back to home -->
-            <a href="index.html" class="logo navbar-logo"><span class="logoSpan">Nile</span>Notes</a>
+            <!-- <a href="index.html" class="logo navbar-logo"><span class="logoSpan">Nile</span>Notes</a> -->
+            <div class="logo-box">
+                <a href="index.html" class="logo-img navbar-logo"><img src="assets/images/logo-browser.png"
+                        alt="Logo"></a>
+                <a href="index.html" class="logo-text navbar-logo"><span class="logoSpan">Nile</span>Notes</a>
+            </div>
 
             <nav class="nav-links" id="navLinks" aria-expanded="false">
                 <a href="index.html" class="nav-link-item">Home</a>
                 <a href="about-us.html" class="nav-link-item">About</a>
-                <a href="category.html" class="nav-link-item">Articles</a>
+                <a href="category.html" class="nav-link-item">Categories</a>
                 <a href="single-post.html" class="nav-link-item">Create a Post</a>
                 <a href="contact.html" class="nav-link-item">Contact</a>
             </nav>
@@ -68,26 +76,30 @@
 
 
 
+
     <!-- Footer section -->
     <footer class="footer">
         <div class="container footer-container">
-            <h2 class="footer-title">NileNotes - Personal Blog CMS</h2>
+            <h2 class="footer-title" data-aos="fade-up" data-aos-duration="600">NileNotes - Personal Blog CMS</h2>
             <div class="footer-links">
-                <a href="index.html" class="footer-link">Home</a>
-                <a href="category.html" class="footer-link">Categories</a>
-                <a href="submit.html" class="footer-link">Submit Post</a>
-                <a href="contact.html" class="footer-link">Contact</a>
+                <a href="index.html" class="footer-link" data-aos="fade-down" data-aos-duration="1000">Home</a>
+                <a href="category.html" class="footer-link" data-aos="fade-down" data-aos-duration="1000">Categories</a>
+                <a href="submit.html" class="footer-link" data-aos="fade-down" data-aos-duration="1000">Create a
+                    Post</a>
+                <a href="contact.html" class="footer-link" data-aos="fade-down" data-aos-duration="1000">Contact</a>
             </div>
-            <p class="footer-text">NileNotes is a personal blog CMS designed to share stories and articles on various
+            <p class="footer-text" data-aos="fade-down" data-aos-duration="1000">NileNotes is a personal blog CMS
+                designed to share stories and articles on various
                 topics. <br>Join our community and start sharing your thoughts today!</p>
-            <p class="footer-text">For inquiries, please contact us at <a
+            <p class="footer-text" data-aos="fade-down" data-aos-duration="1000">For inquiries, please contact us at <a
                     href="mailto:ahmed.hafez101112131415@gmail.com" class="footer-link">NileNotes@GMAIL</a>
 
             </p>
             <div class="footer-bottom">
                 <div class="footer-left">
                     <p class="footer-credit">Designed by <a href="https://ahmedhafezoffic.netlify.app/" target="_blank"
-                            class="footer-link">Ahmed Hafez</a></p>
+                            class="footer-link">Ahmed
+                            Hafez</a></p>
                     <p class="footer-social">Follow us on:
                         <a href="" class="footer-link">Github</a> |
                         <a href="https://www.linkedin.com/in/ahmedhafez247/" class="footer-link">LinkedIn</a> |
