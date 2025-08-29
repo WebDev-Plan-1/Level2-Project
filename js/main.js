@@ -4,6 +4,7 @@
 const hamburger = document.querySelector('.hamburger');
 const navLinkItems = document.querySelectorAll('.nav-links .nav-link-item');
 const navLinks = document.querySelector('.nav-links');
+/* ============================================= */
 
 // Functions Start Here
 // Highlight the active link based on current URL
@@ -34,6 +35,9 @@ function toggleNavScroll() {
         navLinks.style.maxHeight = '';
     }
 }
+/* ============================================= */
+
+// Event Listeners Start Here
 // Ensure the DOM is fully loaded before running the script
 document.addEventListener('DOMContentLoaded', () => {
 
@@ -78,3 +82,14 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 });
+
+/* ============================================= */
+// Initialize AOS (Animate On Scroll)
+
+AOS.init({
+    duration: 1200, // Animation duration in milliseconds
+    //once: true, // Whether animation should happen only once
+    mirror: false, // Whether elements should animate when scrolled past
+});
+
+/* ============================================= */

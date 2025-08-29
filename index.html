@@ -21,7 +21,7 @@
     <!-- Swiper CSS -->
     <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" /> -->
     <!-- AOS Scroll Animation -->
-    <!-- <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet"> -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <!-- Link to fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -86,7 +86,7 @@
             <h2 class="section-title">Latest Posts</h2>
             <div class="posts" aria-live="polite">
                 <!-- Example post card -->
-                <article class="post-card post__card" tabindex="0">
+                <article class="post-card post__card" tabindex="0" data-aos="fade-up" data-aos-duration="1000">
                     <img src="assets/images/tech_trends.jpeg" alt="Post 1 image" class="post-image post__image" />
                     <h3 class="post-title post__title">Technology Trends in 2025</h3>
                     <p class="post-excerpt post__description">Technology in 2025 is set to be defined by rapid
@@ -97,7 +97,7 @@
                         industries and everyday life.</p>
                     <a href="single-post.html" class="read-more post__btn">Read More</a>
                 </article>
-                <article class="post-card post__card" tabindex="0">
+                <article class="post-card post__card" tabindex="0" data-aos="fade-up" data-aos-duration="1000">
                     <img src="assets/images/nature_exploring.jpeg" alt="Post 2 image" class="post- post__image" />
                     <h3 class="post-title post__title">Exploring the Wonders of Nature</h3>
                     <p class="post-excerpt post__description">Nature's beauty is unparalleled, from majestic mountains
@@ -107,7 +107,7 @@
                         our planet for future generations.</p>
                     <a href="single-post.html" class="read-more post__btn">Read More</a>
                 </article>
-                <article class="post-card post__card" tabindex="0">
+                <article class="post-card post__card" tabindex="0" data-aos="fade-up" data-aos-duration="1000">
                     <img src="assets/images/healthy_life.jpeg" alt="Post 3 image" class="post-image post__image" />
                     <h3 class="post-title post__title">Healthy Living: Tips for a Balanced Life</h3>
                     <p class="post-excerpt post__description">Living a healthy lifestyle is essential for overall
@@ -117,7 +117,7 @@
                         self-care.</p>
                     <a href="single-post.html" class="read-more post__btn">Read More</a>
                 </article>
-                <article class="post__card" tabindex="0">
+                <article class="post__card" tabindex="0" data-aos="fade-up" data-aos-duration="1000">
                     <img src="assets/images/travel_adventure.jpeg" alt="Post 4 image" class="post__image" />
                     <h3 class="post__title">Travel Adventures: Top Destinations to Explore</h3>
                     <p class="post__description">Travel opens up a world of adventure and discovery. From
@@ -127,7 +127,7 @@
                         globe.</p>
                     <a href="single-post.html" class="read-more post__btn">Read More</a>
                 </article>
-                <article class="post__card" tabindex="0">
+                <article class="post__card" tabindex="0" data-aos="fade-up" data-aos-duration="1000">
                     <img src="assets/images/education_future.jpeg" alt="Post 5 image" class="post__image" />
                     <h3 class="post__title">The Future of Education: Innovations and Trends</h3>
                     <p class="post__description">Education is evolving rapidly with technology. Discover how online
@@ -144,12 +144,17 @@
         <section class="categories-overview">
             <h2 class="section-title">Categories</h2>
             <ul class="categories-list">
-                <li class="category-item"><a href="category.html?cat=technology" class="category-link">Technology</a>
+                <li class="category-item" data-aos="fade-right" data-aos-duration="400"><a
+                        href="category.html?cat=technology" class="category-link">Technology</a>
                 </li>
-                <li class="category-item"><a href="category.html?cat=health" class="category-link">Health</a></li>
-                <li class="category-item"><a href="category.html?cat=lifestyle" class="category-link">Lifestyle</a></li>
-                <li class="category-item"><a href="category.html?cat=travel" class="category-link">Travel</a></li>
-                <li class="category-item"><a href="category.html?cat=education" class="category-link">Education</a></li>
+                <li class="category-item" data-aos="fade-right" data-aos-duration="600"><a
+                        href="category.html?cat=health" class="category-link">Health</a></li>
+                <li class="category-item" data-aos="fade-right" data-aos-duration="800"><a
+                        href="category.html?cat=lifestyle" class="category-link">Lifestyle</a></li>
+                <li class="category-item" data-aos="fade-right" data-aos-duration="1000"><a
+                        href="category.html?cat=travel" class="category-link">Travel</a></li>
+                <li class="category-item" data-aos="fade-right" data-aos-duration="1200"><a
+                        href="category.html?cat=education" class="category-link">Education</a></li>
             </ul>
         </section>
     </main>
@@ -191,6 +196,8 @@
         </div>
     </footer>
 
+    <!-- AOS Scroll Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <!-- Link to main JavaScript file -->
     <script src="js/main.js"></script>
 </body>
