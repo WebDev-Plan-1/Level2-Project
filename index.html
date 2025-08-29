@@ -29,27 +29,27 @@
 </head>
 
 <body>
-    <!-- Navigation bar, sticky at the top -->
-    <nav class="navbar sticky">
+    <!-- Header >> Nav -->
+    <header class="navbar sticky">
         <div class="container navbar-container">
             <!-- Website logo linking back to home -->
-            <a href="index.html" class="logo navbar-logo">NileNotes</a>
+            <a href="index.html" class="logo navbar-logo"><span class="logoSpan">Nile</span>Notes</a>
 
-            <!-- Navigation links list -->
-            <div class="nav-links">
-                <ul class="nav-links-list navbar-links">
-                    <li class="nav-item"><a href="index.html" class="nav-link active">Home</a></li>
-                    <li class="nav-item"><a href="category.html" class="nav-link">Categories</a></li>
-                    <li class="nav-item"><a href="submit.html" class="nav-link">Submit Post</a></li>
-                    <li class="nav-item"><a href="contact.html" class="nav-link">Contact</a></li>
-                </ul>
-                <!-- Hamburger menu for mobile view -->
-                <div class="hamburger" aria-label="Toggle navigation menu" role="button" tabindex="0">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </div>
-            </div>
+            <nav class="nav-links" id="navLinks" aria-expanded="false">
+                <a href="index.html" class="nav-link-item">Home</a>
+                <a href="about-us.html" class="nav-link-item">About</a>
+                <a href="category.html" class="nav-link-item">Articles</a>
+                <a href="single-post.html" class="nav-link-item">Create a Post</a>
+                <a href="contact.html" class="nav-link-item">Contact</a>
+            </nav>
+
+            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-controls="navLinks"
+                aria-expanded="false">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+
             <!-- Button to toggle dark/light theme -->
             <!-- <div class="theme-toggle" aria-label="Toggle dark/light theme">
                 <span class="toggle-icon dark-mode-off">
@@ -64,7 +64,7 @@
                 <button type="submit" class="search-button navbar-search-button">Search</button>
             </form> -->
         </div>
-    </nav>
+    </header>
 
     <!-- Main content area -->
     <main class="main-content container">

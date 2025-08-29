@@ -17,113 +17,149 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: v.$spacing-md;
-  }
+    padding: v.$spacing-sm v.$spacing-md;
 
-  .logo {
-    font-family: v.$font-main;
-    font-size: 1.8rem;
-    font-weight: bold;
-    color: v.$primary-color;
-    text-decoration: none;
-    // border: 1px solid v.$primary-color;
-    // padding: v.$spacing-sm v.$spacing-md;
-    // border-radius: 4px;
-  }
+    .logo {
+      font-family: v.$font-main;
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: v.$secondary-color;
+      text-decoration: none;
+      // border: 1px solid v.$primary-color;
+      // padding: v.$spacing-sm v.$spacing-md;
+      // border-radius: 4px;
 
-  .nav-links {
-    display: flex;
-    align-items: center;
-    gap: 1.5rem;
-
-    .nav-links-list {
-      list-style: none;
-      display: flex;
-      gap: v.$spacing-lg;
-      margin: 0;
-      padding: 0;
-
-      li {
-        a {
-          color: v.$secondary-color;
-          text-decoration: none;
-          font-weight: 600;
-          @include m.transition(0.3s);
-
-          &:hover,
-          &:focus {
-            color: v.$primary-color;
-            outline: none;
-          }
-        }
-      }
-
-      &.active {
-        display: flex; // Show nav links when hamburger is clicked
-        position: absolute;
-        top: 60px; // Adjust based on navbar height
-        left: 0;
-        width: 100%;
-        background-color: v.$light-bg;
-        flex-direction: column;
-        align-items: center;
-        padding: v.$spacing-md;
-        @include m.box-shadow(0, 2px, 4px, v.$box-shadow-light);
-        @include m.transition(0.3s);
-        z-index: 1000;
-
-        li {
-          margin-bottom: v.$spacing-sm;
-        }
-      }
-
-      // Responsive Styles
-      @media (max-width: v.$breakpoint-mobile) {
-        display: none; // Hide nav links on mobile by default
+      .logoSpan {
+        color: v.$primary-color;
       }
     }
 
-    // hide hamburger icon by default
+    .nav-links {
+      display: flex;
+      gap: 20px;
+
+      .nav-link-item {
+        color: v.$secondary-color;
+        text-decoration: none;
+        font-size: 1rem;
+        transition: color 0.3s ease;
+        -webkit-transition: color 0.3s ease;
+        -moz-transition: color 0.3s ease;
+        -ms-transition: color 0.3s ease;
+        -o-transition: color 0.3s ease;
+
+        &:hover,
+        &.active {
+          color: v.$primary-color;
+        }
+      }
+    }
+    /* Hamburger button */
     .hamburger {
       display: none;
-      cursor: pointer;
       flex-direction: column;
-      gap: 5px;
+      justify-content: center;
+      gap: 6px;
+      background: none;
+      border: none;
+      cursor: pointer;
 
       span {
-        width: 25px;
         height: 3px;
-        background-color: v.$secondary-color;
-        border-radius: 2px;
-      }
-    }
-    // Responsive Styles
-    @media (max-width: v.$breakpoint-mobile) {
-      .nav-links-list {
-        display: none; // Hide nav links on mobile by default
-      }
-
-      .hamburger {
-        display: flex; // Show hamburger icon on mobile
-      }
-    }
-    @media (min-width: v.$breakpoint-mobile) and (max-width: v.$breakpoint-tablet) {
-      .nav-links-list {
-        display: none; // Show nav links on tablet
-      }
-
-      .hamburger {
-        display: flex; // Hide hamburger icon on tablet
-      }
-    }
-    @media (min-width: v.$breakpoint-tablet) and (max-width: v.$breakpoint-desktop) {
-      .nav-links-list {
-        display: none; // Show nav links on desktop
-      }
-
-      .hamburger {
-        display: flex; // Hide hamburger icon on desktop
+        width: 25px;
+        background-color: v.$primary-color;
+        border-radius: 3px;
+        transition: transform 0.3s ease;
+        -webkit-transition: transform 0.3s ease;
+        -moz-transition: transform 0.3s ease;
+        -ms-transition: transform 0.3s ease;
+        -o-transition: transform 0.3s ease;
+        -webkit-border-radius: 3px;
+        -moz-border-radius: 3px;
+        -ms-border-radius: 3px;
+        -o-border-radius: 3px;
       }
     }
   }
 }
+
+//=========== Responsive Styles ================//
+@media (max-width: v.$breakpoint-tablet) {
+  .navbar {
+    .container {
+      justify-content: space-between;
+
+      .nav-links {
+        display: flex;
+        flex-direction: column;
+        background-color: v.$light-bg;
+        position: absolute;
+        top: 61px;
+        right: 0;
+        width: 100%;
+        padding: 20px 0;
+        text-align: center;
+        transform: translateY(-100%);
+        opacity: 0;
+        pointer-events: none;
+        transition: all 0.3s ease;
+        -webkit-transition: all 0.3s ease;
+        -moz-transition: all 0.3s ease;
+        -ms-transition: all 0.3s ease;
+        -o-transition: all 0.3s ease;
+        -webkit-transform: translateY(-100%);
+        -moz-transform: translateY(-100%);
+        -ms-transform: translateY(-100%);
+        -o-transform: translateY(-100%);
+
+        &.active {
+          transform: translateY(0);
+          opacity: 1;
+          pointer-events: auto;
+          -webkit-transform: translateY(0);
+          -moz-transform: translateY(0);
+          -ms-transform: translateY(0);
+          -o-transform: translateY(0);
+        }
+      }
+
+      .hamburger {
+        display: flex;
+      }
+    }
+  }
+}
+@media (max-width: v.$breakpoint-watch) {
+  .navbar {
+    .container {
+      padding: v.$spacing-sm v.$spacing-sm;
+      flex-direction: column;
+      gap: 10px;
+
+      .logo {
+        font-size: 1.5rem;
+      }
+
+      .nav-links {
+        gap: 10px;
+        padding: 10px 0;
+
+        &.active {
+          transform: translateY(20%);
+          opacity: 1;
+          pointer-events: auto;
+          -webkit-transform: translateY(20%);
+          -moz-transform: translateY(20%);
+          -ms-transform: translateY(20%);
+          -o-transform: translateY(20%);
+        }
+
+        .nav-link-item {
+          font-size: 0.9rem;
+        }
+      }
+    }
+  }
+}
+
+/* =================================== */
