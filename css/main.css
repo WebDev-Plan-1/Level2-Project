@@ -12570,11 +12570,17 @@ a:hover {
     padding: 16px;
   }
 }
+@media (max-width: 240px) {
+  .footer .container {
+    padding: 4px;
+  }
+}
 .footer .footer-title {
   font-family: "Poppins", sans-serif;
   font-size: clamp(1.5rem, 2rem, 2vw);
   margin-bottom: 16px;
   color: #15b5e6;
+  font-weight: bold;
 }
 @media (max-width: 576px) {
   .footer .footer-title {

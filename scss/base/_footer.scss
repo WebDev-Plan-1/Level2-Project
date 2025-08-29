@@ -20,11 +20,18 @@
     padding: v.$spacing-md;
   }
 
+  @media (max-width: v.$breakpoint-watch) {
+    .container {
+      padding: v.$spacing-xs;
+    }
+  }
+
   .footer-title {
     font-family: v.$font-main;
     @include m.responsive-font(1.5rem, 2rem);
     margin-bottom: v.$spacing-md;
     color: v.$primary-color;
+    font-weight: bold;
 
     // Responsive adjustments
     @media (max-width: v.$breakpoint-mobile) {
@@ -147,5 +154,11 @@
         padding: v.$spacing-sm 0;
       }
     }
+
+    // @media (max-width: v.$breakpoint-desktop) {
+    //   .footer-left {
+    //     order: 2;
+    //   }
+    // }
   }
 }
