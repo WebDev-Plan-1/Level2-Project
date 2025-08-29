@@ -1,3 +1,11 @@
+
+// Variables Start Here
+// Select DOM elements
+const hamburger = document.querySelector('.hamburger');
+const navLinkItems = document.querySelectorAll('.nav-links .nav-link-item');
+const navLinks = document.querySelector('.nav-links');
+
+// Functions Start Here
 // Highlight the active link based on current URL
 function setActiveNavLink() {
     const currentPath = window.location.pathname.split('/').pop();
@@ -12,15 +20,31 @@ function setActiveNavLink() {
     });
 }
 
-const hamburger = document.querySelector('.hamburger');
-const navLinkItems = document.querySelectorAll('.nav-links .nav-link-item');
+// Toggle body scroll based on nav state and screen width
+function toggleNavScroll() {
+    if (navLinks.classList.contains('active') && window.innerWidth <= 240) {
+        // document.body.scroll = 'no';
+        document.body.style.overflow = 'hidden';
+        navLinks.style.overflowY = 'scroll';
+        navLinks.style.maxHeight = '80vh';
+    } else {
+        // document.body.scroll = 'yes';
+        document.body.style.overflow = '';
+        navLinks.style.overflowY = '';
+        navLinks.style.maxHeight = '';
+    }
+}
 // Ensure the DOM is fully loaded before running the script
 document.addEventListener('DOMContentLoaded', () => {
 
     // Toggle navigation links on hamburger click
     hamburger.addEventListener('click', () => {
         navLinks.classList.toggle('active');
+        // toggleNavScroll();
     });
+
+    // Adjust scroll behavior on window resize
+    window.addEventListener('resize', toggleNavScroll);
 
     setActiveNavLink();
 
@@ -31,6 +55,7 @@ document.addEventListener('DOMContentLoaded', () => {
             navLinks.classList.remove('active');
             // Store the active link in localStorage
             localStorage.setItem('activeNav', item.getAttribute('href'));
+            toggleNavScroll();
         });
     });
 

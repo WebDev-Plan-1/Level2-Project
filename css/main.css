@@ -12063,29 +12063,39 @@ a:hover {
   }
 }
 @media (max-width: 240px) {
+  .navbar {
+    padding: 0;
+  }
   .navbar .container {
     padding: 8px 8px;
-    flex-direction: column;
-    gap: 10px;
   }
   .navbar .container .logo {
-    font-size: 1.5rem;
+    font-size: 1.1rem;
   }
   .navbar .container .nav-links {
     gap: 10px;
     padding: 10px 0;
   }
   .navbar .container .nav-links.active {
-    transform: translateY(20%);
+    transform: translateY(-22%);
     opacity: 1;
     pointer-events: auto;
-    -webkit-transform: translateY(20%);
-    -moz-transform: translateY(20%);
-    -ms-transform: translateY(20%);
-    -o-transform: translateY(20%);
+    -webkit-transform: translateY(-22%);
+    -moz-transform: translateY(-22%);
+    -ms-transform: translateY(-22%);
+    -o-transform: translateY(-22%);
+    height: 80vh;
+    overflow-y: scroll;
   }
   .navbar .container .nav-links .nav-link-item {
     font-size: 0.9rem;
+  }
+  .navbar .container .hamburger {
+    gap: 3px;
+  }
+  .navbar .container .hamburger span {
+    width: 20px;
+    height: 3px;
   }
 }
 /* =================================== */

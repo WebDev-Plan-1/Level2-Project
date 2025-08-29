@@ -131,13 +131,14 @@
 }
 @media (max-width: v.$breakpoint-watch) {
   .navbar {
+    padding: 0;
     .container {
       padding: v.$spacing-sm v.$spacing-sm;
-      flex-direction: column;
-      gap: 10px;
+      // flex-direction: column;
+      // gap: 10px;
 
       .logo {
-        font-size: 1.5rem;
+        font-size: 1.1rem;
       }
 
       .nav-links {
@@ -145,17 +146,27 @@
         padding: 10px 0;
 
         &.active {
-          transform: translateY(20%);
+          transform: translateY(-22%);
           opacity: 1;
           pointer-events: auto;
-          -webkit-transform: translateY(20%);
-          -moz-transform: translateY(20%);
-          -ms-transform: translateY(20%);
-          -o-transform: translateY(20%);
+          -webkit-transform: translateY(-22%);
+          -moz-transform: translateY(-22%);
+          -ms-transform: translateY(-22%);
+          -o-transform: translateY(-22%);
+          height: 80vh;
+          overflow-y: scroll;
         }
 
         .nav-link-item {
           font-size: 0.9rem;
+        }
+      }
+      .hamburger {
+        gap: 3px;
+
+        span {
+          width: 20px;
+          height: 3px;
         }
       }
     }
