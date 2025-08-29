@@ -1,5 +1,5 @@
-@use '../abstracts/variables' as v;
-@use '../abstracts/mixins' as m;
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
 
 body {
   font-family: v.$font-main;
@@ -8,6 +8,12 @@ body {
   color: v.$secondary-color;
   margin: 0;
   padding: 0;
+}
+
+@media (max-width: v.$breakpoint-mobile) {
+  .main-content.container {
+    padding: 0 v.$spacing-xs;
+  }
 }
 
 a {

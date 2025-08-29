@@ -11863,6 +11863,11 @@ body {
   padding: 0;
 }
 
+@media (max-width: 576px) {
+  .main-content.container {
+    padding: 0 4px;
+  }
+}
 a {
   color: #15b5e6;
   transition: all 0.3s ease-in-out;
@@ -12089,11 +12094,12 @@ a:hover {
   justify-content: center;
   align-items: center;
   flex-direction: column;
-  height: 85vh;
+  gap: 32px;
+  height: 95vh;
   background-color: #15b5e6;
   color: #fff;
   text-align: center;
-  padding: 32px;
+  padding: 0 48px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
   background: #15b5e6 url("../../assets/images/hero-bg.jpeg") no-repeat center center;
   background-size: cover;
@@ -12109,115 +12115,77 @@ a:hover {
   background: rgba(0, 0, 0, 0.5);
   z-index: 0;
 }
+@media (max-width: 768px) {
+  .hero {
+    padding: 0 32px;
+  }
+}
 @media (max-width: 576px) {
   .hero {
-    height: 75vh;
+    padding: 0 16px;
+  }
+}
+@media (max-width: 240px) {
+  .hero {
+    height: 100%;
     padding: 16px;
-    padding-top: 32px;
-    padding-bottom: 32px;
   }
 }
-@media (min-width: 576px) and (max-width: 768px) {
-  .hero {
-    height: 80vh;
-    padding: 32px;
-    padding-top: 48px;
-    padding-bottom: 48px;
-  }
-}
-@media (min-width: 768px) and (max-width: 992px) {
-  .hero {
-    height: 90vh;
-    padding: 48px;
-    padding-top: 64px;
-    padding-bottom: 64px;
-  }
-}
-@media (min-width: 992px) {
-  .hero {
-    height: 100vh;
-    padding: 64px;
-    padding-top: 64px;
-    padding-bottom: 64px;
-  }
-}
-.hero__title {
-  font-size: 2.5rem;
+.hero .hero-title {
+  font-size: 3rem;
   font-weight: bold;
-  margin-bottom: 16px;
   letter-spacing: 0.07em;
   line-height: 1.2;
   z-index: 1;
 }
 @media (max-width: 576px) {
-  .hero__title {
+  .hero .hero-title {
     font-size: 2rem;
-    line-height: 1.3;
-    margin-bottom: 8px;
-  }
-}
-@media (min-width: 576px) and (max-width: 768px) {
-  .hero__title {
-    font-size: 2.2rem;
-    line-height: 1.25;
-    margin-bottom: 16px;
-  }
-}
-@media (min-width: 768px) and (max-width: 992px) {
-  .hero__title {
-    font-size: 2.5rem;
     line-height: 1.2;
-    margin-bottom: 32px;
   }
 }
-@media (min-width: 992px) {
-  .hero__title {
-    font-size: 3rem;
-    line-height: 1.1;
+@media (max-width: 240px) {
+  .hero .hero-title {
+    font-size: 1.2rem;
   }
 }
-.hero__title_span {
-  font-size: 1.2rem;
+.hero .hero-title .hero-title-span {
+  font-size: 2rem;
   font-weight: normal;
   letter-spacing: normal;
   display: inline-block;
-  margin-top: 8px;
+  margin-top: 16px;
+}
+@media (max-width: 992px) {
+  .hero .hero-title .hero-title-span {
+    font-size: 1.8rem;
+    padding: 4px 8px;
+  }
+}
+@media (max-width: 768px) {
+  .hero .hero-title .hero-title-span {
+    font-size: 1.5rem;
+    margin-top: 8px;
+  }
 }
 @media (max-width: 576px) {
-  .hero__title_span {
-    font-size: 1rem;
-    margin-top: 4px;
-    padding: 4px 8px;
-  }
-}
-@media (min-width: 576px) and (max-width: 768px) {
-  .hero__title_span {
-    font-size: 1.1rem;
-    margin-top: 8px;
-    padding: 4px 8px;
-  }
-}
-@media (min-width: 768px) and (max-width: 992px) {
-  .hero__title_span {
-    font-size: 1.2rem;
-    margin-top: 16px;
-    padding: 4px 8px;
-  }
-}
-@media (min-width: 992px) {
-  .hero__title_span {
+  .hero .hero-title .hero-title-span {
     font-size: 1.3rem;
-    margin-top: 32px;
-    padding: 8px 16px;
+    margin-top: 4px;
   }
 }
-.hero__subtitle {
+@media (max-width: 240px) {
+  .hero .hero-title .hero-title-span {
+    font-size: 0.8rem;
+  }
+}
+.hero .hero-subtitle {
   font-size: 1.3rem;
   margin-bottom: 32px;
   z-index: 1;
 }
 @media (max-width: 576px) {
-  .hero__subtitle {
+  .hero .hero-subtitle {
     font-size: 1.1rem;
     margin-bottom: 16px;
     padding: 4px 8px;
@@ -12225,7 +12193,7 @@ a:hover {
   }
 }
 @media (min-width: 576px) and (max-width: 768px) {
-  .hero__subtitle {
+  .hero .hero-subtitle {
     font-size: 1.2rem;
     margin-bottom: 32px;
     padding: 8px 16px;
@@ -12233,7 +12201,7 @@ a:hover {
   }
 }
 @media (min-width: 768px) and (max-width: 992px) {
-  .hero__subtitle {
+  .hero .hero-subtitle {
     font-size: 1.3rem;
     margin-bottom: 48px;
     padding: 16px 32px;
@@ -12241,14 +12209,19 @@ a:hover {
   }
 }
 @media (min-width: 992px) {
-  .hero__subtitle {
+  .hero .hero-subtitle {
     font-size: 1.5rem;
     margin-bottom: 64px;
     padding: 32px 48px;
     line-height: 1.1;
   }
 }
-.hero__button {
+@media (max-width: 240px) {
+  .hero .hero-subtitle {
+    font-size: 0.7rem;
+  }
+}
+.hero .hero-button {
   background-color: #15b5e6;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   text-decoration: none;
@@ -12263,27 +12236,33 @@ a:hover {
   padding: 16px 32px;
   z-index: 1;
 }
-.hero__button:hover {
+.hero .hero-button:hover {
   background-color: rgb(16.7330677291, 144.2231075697, 183.2669322709);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   color: #fff;
 }
 @media (max-width: 576px) {
-  .hero__button {
+  .hero .hero-button {
     padding: 8px;
     font-size: 0.9rem;
   }
 }
 @media (min-width: 576px) and (max-width: 768px) {
-  .hero__button {
+  .hero .hero-button {
     padding: 8px;
     font-size: 1rem;
   }
 }
 @media (min-width: 768px) and (max-width: 992px) {
-  .hero__button {
+  .hero .hero-button {
     padding: 8px 16px;
     font-size: 1.1rem;
+  }
+}
+@media (max-width: 240px) {
+  .hero .hero-button {
+    font-size: 0.7rem;
+    padding: 4px 8px;
   }
 }
 
