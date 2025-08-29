@@ -12479,7 +12479,7 @@ a:hover {
   padding: 32px;
   color: white;
   max-width: 1200px;
-  margin: 16px auto;
+  margin: 16px auto 0;
   border-radius: 4px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -12541,8 +12541,6 @@ a:hover {
   }
 }
 .categories-overview .categories-list li a {
-  color: #fff;
-  background-color: #15b5e6;
   padding: 8px 16px;
   text-decoration: none;
   font-weight: 600;
@@ -12556,9 +12554,22 @@ a:hover {
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
+  color: #15b5e6;
+  background-color: #fff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  -ms-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  -o-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .categories-overview .categories-list li a:hover {
   background-color: rgb(14.5996015936, 125.8346613546, 159.9003984064);
+  color: #fff;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  -webkit-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  -moz-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  -ms-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  -o-box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
 @media (max-width: 240px) {
   .categories-overview .categories-list li a {

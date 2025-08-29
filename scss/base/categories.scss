@@ -8,7 +8,7 @@
     // background-color: v.$dark-bg;
     color: white;
     max-width: 1200px;
-    margin: v.$spacing-md auto;
+    margin: v.$spacing-md auto 0;
     // background-color: v.$primary-color;
     border-radius: v.$border-radius;
     -webkit-border-radius: v.$border-radius;
@@ -38,8 +38,6 @@
 
         li {
             a {
-                color: #fff;
-                background-color: v.$primary-color;
                 padding: v.$spacing-sm v.$spacing-md;
                 text-decoration: none;
                 font-weight: 600;
@@ -53,9 +51,14 @@
                 -moz-border-radius: v.$border-radius;
                 -ms-border-radius: v.$border-radius;
                 -o-border-radius: v.$border-radius;
+                color: v.$primary-color;
+                background-color: #fff;
+                @include m.box-shadow(0, 2px, 4px, v.$box-shadow-light);
 
                 &:hover {
                     background-color: darken(v.$primary-color, 15%);
+                    color: #fff;
+                    @include m.box-shadow(0, 4px, 8px, v.$box-shadow-dark);
                 }
 
                 @media (max-width: v.$breakpoint-watch) {
