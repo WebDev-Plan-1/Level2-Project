@@ -1,0 +1,47 @@
+[
+  {
+    "id": 1,
+    "title": "The Rise of AI",
+    "category": "Technology",
+    "content": "Artificial Intelligence is transforming industries at a rapid pace...",
+    "image": "/assets/images/tech_trends.jpeg",
+    "date": "2025-08-01",
+    "views": 120
+  },
+  {
+    "id": 2,
+    "title": "Healthy Living Tips",
+    "category": "Health",
+    "content": "Maintaining a healthy lifestyle requires balanced diet and exercise...",
+    "image": "/assets/images/healthy_life.jpeg",
+    "date": "2025-07-15",
+    "views": 85
+  },
+  {
+    "id": 3,
+    "title": "Traveling Smart",
+    "category": "Travel",
+    "content": "Explore the world with smart planning and budget-friendly strategies...",
+    "image": "assets/images/travel_adventure.jpeg",
+    "date": "2025-06-20",
+    "views": 200
+  },
+  {
+    "id": 4,
+    "title": "Exploring the Wonders of Nature",
+    "category": "Environment",
+    "content": "Nature's beauty is unparalleled, from majestic mountains to beaches. Join us as we explore breathtaking landscapes, discover hidden gems, and learn how to protect our planet for future generations.",
+    "image": "assets/images/nature_exploring.jpeg",
+    "date": "2025-05-30",
+    "views": 150
+  },
+  {
+    "id": 5,
+    "title": "The Future of Education",
+    "category": "Education",
+    "content": "Digital learning platforms are reshaping how we acquire knowledge...",
+    "image": "assets/images/education_future.jpeg",
+    "date": "2025-04-10",
+    "views": 95
+  }
+]

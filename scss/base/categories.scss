@@ -2,7 +2,7 @@
 @use "../abstracts/mixins" as m;
 @use "./components" as c;
 // ==========================
-
+// ===== Categories Overview Section -- Home Page =====
 .categories-overview {
     padding: v.$spacing-lg;
     // background-color: v.$dark-bg;
@@ -68,3 +68,5 @@
         }
     }
 }
+
+// ==========================

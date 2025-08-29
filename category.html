@@ -74,8 +74,37 @@
         </div>
     </header>
 
+    <!-- Category Header -->
+    <section class="category-header">
+        <h2 class="section-title">Technology</h2>
+        <p class="section-title-desc">Latest updates and articles about technology and innovations.</p>
+    </section>
 
+    <section class="category-controls">
+        <!-- Filter Categories -->
+        <select id="category-filter">
+            <option value="All">All</option>
+            <option value="Technology">Technology</option>
+            <option value="Health">Health</option>
+            <option value="Travel">Travel</option>
+            <option value="Environment">Environment</option>
+            <option value="Education">Education</option>
+        </select>
 
+        <!-- Sort Options -->
+        <select id="sort-filter">
+            <option value="Latest">Latest</option>
+            <option value="Oldest">Oldest</option>
+            <option value="Most Viewed">Most Viewed</option>
+        </select>
+    </section>
+
+    <!-- Articles will be loaded here -->
+    <section class="articles-list">
+        <div class="posts" aria-live="polite">
+            <!-- Articles will be dynamically inserted here -->
+        </div>
+    </section>
 
     <!-- Footer section -->
     <footer class="footer">
@@ -117,6 +146,8 @@
         </div>
     </footer>
 
+    <!-- AOS Scroll Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <!-- Link to main JavaScript file -->
     <script src="js/main.js"></script>
 </body>
