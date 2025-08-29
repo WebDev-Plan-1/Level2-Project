@@ -8,6 +8,7 @@
   color: #ccc;
   text-align: center;
   padding: v.$spacing-lg;
+  font-family: v.$font-second;
 
   // Responsive adjustments
   @media (max-width: v.$breakpoint-mobile) {
@@ -27,7 +28,6 @@
   }
 
   .footer-title {
-    font-family: v.$font-main;
     @include m.responsive-font(1.5rem, 2rem);
     margin-bottom: v.$spacing-md;
     color: v.$primary-color;

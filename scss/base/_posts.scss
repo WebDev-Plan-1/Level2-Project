@@ -53,55 +53,57 @@
           -o-transform: scale(1.05);
         }
       }
-    }
 
-    .post__image {
-      margin-bottom: v.$spacing-md;
-      @include m.responsive-image(100%, 180px);
-      @include m.transition(0.3s);
-      border-radius: v.$border-radius;
-      -webkit-border-radius: v.$border-radius;
-      -moz-border-radius: v.$border-radius;
-      -ms-border-radius: v.$border-radius;
-      -o-border-radius: v.$border-radius;
-    }
+      .post__image {
+        margin-bottom: v.$spacing-md;
+        @include m.responsive-image(100%, 180px);
+        @include m.transition(0.3s);
+        border-radius: v.$border-radius;
+        -webkit-border-radius: v.$border-radius;
+        -moz-border-radius: v.$border-radius;
+        -ms-border-radius: v.$border-radius;
+        -o-border-radius: v.$border-radius;
+      }
 
-    .post__title {
-      // font-size: 1.1rem;
-      margin: v.$spacing-md 0 v.$spacing-sm 0;
-      color: v.$primary-color;
-      font-weight: 600;
-      @include m.responsive-font(1.1rem, 1.5rem);
-      @include m.transition(0.3s);
-    }
+      .post__title {
+        // font-size: 1.1rem;
+        font-family: v.$font-second;
+        margin: v.$spacing-md 0 v.$spacing-sm 0;
+        color: v.$primary-color;
+        font-weight: 600;
+        @include m.responsive-font(1.1rem, 1.5rem);
+        @include m.transition(0.3s);
+      }
 
-    .post__description {
-      flex-grow: 1;
-      overflow: hidden;
-      text-overflow: ellipsis;
-      // Uncomment the following lines if you want to limit the description to 3 lines
-      display: -webkit-box;
-      line-clamp: 4;
-      -webkit-line-clamp: 4; // Limit to 3 lines
-      -webkit-box-orient: vertical;
-      font-size: 1rem;
-      color: v.$secondary-color;
-      margin-bottom: v.$spacing-md;
-      @include m.responsive-font(0.9rem, 1.2rem);
-      // line-height: 1.4;
-    }
-    .post__btn {
-      @include c.button-primary;
-      align-self: center;
-      padding: v.$spacing-sm v.$spacing-md;
-      text-align: center;
-      // display: inline-block;
-      margin-top: v.$spacing-md;
-      // width: 100%;
-      text-decoration: none;
-      font-size: 1rem;
-      @include m.responsive-font(0.9rem, 1.2rem);
-      @include m.transition(0.3s);
+      .post__description {
+        flex-grow: 1;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        // Uncomment the following lines if you want to limit the description to 3 lines
+        display: -webkit-box;
+        line-clamp: 4;
+        -webkit-line-clamp: 4; // Limit to 3 lines
+        -webkit-box-orient: vertical;
+        font-size: 1rem;
+        color: v.$secondary-color;
+        margin-bottom: v.$spacing-md;
+        @include m.responsive-font(0.9rem, 1.2rem);
+        // line-height: 1.4;
+      }
+      .post__btn {
+        @include c.button-primary;
+        align-self: center;
+        padding: v.$spacing-sm v.$spacing-md;
+        text-align: center;
+        // display: inline-block;
+        margin-top: v.$spacing-md;
+        // width: 100%;
+        text-decoration: none;
+        font-size: 1rem;
+        font-family: v.$font-second;
+        @include m.responsive-font(0.9rem, 1.2rem);
+        @include m.transition(0.3s);
+      }
     }
   }
 }

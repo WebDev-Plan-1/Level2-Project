@@ -20,7 +20,7 @@
     padding: v.$spacing-sm v.$spacing-md;
 
     .logo {
-      font-family: v.$font-main;
+      font-family: v.$font-second;
       font-size: 1.8rem;
       font-weight: bold;
       color: v.$secondary-color;
@@ -37,6 +37,7 @@
     .nav-links {
       display: flex;
       gap: 20px;
+      font-family: v.$font-second;
 
       .nav-link-item {
         color: v.$secondary-color;

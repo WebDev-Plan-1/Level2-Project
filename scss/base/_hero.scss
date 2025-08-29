@@ -49,9 +49,14 @@
     font-size: 3rem;
     // @include m.responsive-font(2rem, 3rem);
     font-weight: bold;
+    font-family: v.$font-second;
     letter-spacing: 0.07em;
     line-height: 1.2;
     z-index: 1; // Above the overlay
+
+    span:nth-of-type(1) {
+      color: v.$primary-color;
+    }
 
     // Responsive adjustments
     @media (max-width: v.$breakpoint-mobile) {
@@ -64,7 +69,7 @@
 
     // Span for additional styling
     .hero-title-span {
-      font-size: 2rem;
+      font-size: 1.4rem;
       font-weight: normal;
       letter-spacing: normal;
       // @include m.box-shadow(0, 2px, 4px, v.$primary-color);
@@ -74,11 +79,9 @@
 
       // Responsive adjustments
       @media (max-width: v.$breakpoint-desktop) {
-        font-size: 1.8rem;
         padding: v.$spacing-xs v.$spacing-sm;
       }
       @media (max-width: v.$breakpoint-tablet) {
-        font-size: 1.5rem;
         margin-top: v.$spacing-sm;
       }
       @media (max-width: v.$breakpoint-mobile) {
@@ -86,48 +89,42 @@
         margin-top: v.$spacing-xs;
       }
       @media (max-width: v.$breakpoint-watch) {
-        font-size: 0.8rem;
+        font-size: 0.9rem;
       }
     }
   }
 
   .hero-subtitle {
-    font-size: 1.3rem;
+    font-size: 1.5rem;
+    // font-family: v.$font-second;
     margin-bottom: v.$spacing-lg;
     z-index: 1; // Above the overlay
+
     // Responsive adjustments
-    @media (max-width: v.$breakpoint-mobile) {
-      font-size: 1.1rem;
-      margin-bottom: v.$spacing-md;
-      padding: v.$spacing-xs v.$spacing-sm;
-      line-height: 1.4;
+    @media (max-width: v.$breakpoint-desktop) {
+      margin-bottom: v.$spacing-xl;
+      padding: v.$spacing-md v.$spacing-lg;
     }
-    @media (min-width: v.$breakpoint-mobile) and (max-width: v.$breakpoint-tablet) {
-      font-size: 1.2rem;
+    @media (max-width: v.$breakpoint-tablet) {
       margin-bottom: v.$spacing-lg;
       padding: v.$spacing-sm v.$spacing-md;
       line-height: 1.3;
     }
-    @media (min-width: v.$breakpoint-tablet) and (max-width: v.$breakpoint-desktop) {
-      font-size: 1.3rem;
-      margin-bottom: v.$spacing-xl;
-      padding: v.$spacing-md v.$spacing-lg;
-      line-height: 1.2;
-    }
-    @media (min-width: v.$breakpoint-desktop) {
-      font-size: 1.5rem;
-      margin-bottom: v.$spacing-xxl;
-      padding: v.$spacing-lg v.$spacing-xl;
-      line-height: 1.1;
+    @media (max-width: v.$breakpoint-mobile) {
+      font-size: 1.4rem;
+      margin-bottom: v.$spacing-md;
+      padding: v.$spacing-xs v.$spacing-sm;
+      line-height: 1.4;
     }
     @media (max-width: v.$breakpoint-watch) {
-      font-size: 0.7rem;
+      font-size: 0.9rem;
     }
   }
 
   .hero-button {
     // Use button-primary mixin to apply button styles
     @include com.button-primary;
+    font-family: v.$font-second;
     padding: v.$spacing-md v.$spacing-lg;
     z-index: 1; // Above the overlay
 

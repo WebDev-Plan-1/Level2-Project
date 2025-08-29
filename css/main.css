@@ -11918,9 +11918,9 @@ a:hover {
 }
 
 .section-title {
+  font-family: "Asimovian", sans-serif;
   margin-bottom: 32px;
   color: #15b5e6;
-  font-family: "Poppins", sans-serif;
   font-size: clamp(1.5rem, 2.5rem, 2vw);
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
@@ -11971,7 +11971,7 @@ a:hover {
   /* Hamburger button */
 }
 .navbar .container .logo {
-  font-family: "Poppins", sans-serif;
+  font-family: "Asimovian", sans-serif;
   font-size: 1.8rem;
   font-weight: bold;
   color: #4a4a4a;
@@ -11983,6 +11983,7 @@ a:hover {
 .navbar .container .nav-links {
   display: flex;
   gap: 20px;
+  font-family: "Asimovian", sans-serif;
 }
 .navbar .container .nav-links .nav-link-item {
   color: #4a4a4a;
@@ -12144,9 +12145,13 @@ a:hover {
 .hero .hero-title {
   font-size: 3rem;
   font-weight: bold;
+  font-family: "Asimovian", sans-serif;
   letter-spacing: 0.07em;
   line-height: 1.2;
   z-index: 1;
+}
+.hero .hero-title span:nth-of-type(1) {
+  color: #15b5e6;
 }
 @media (max-width: 576px) {
   .hero .hero-title {
@@ -12160,7 +12165,7 @@ a:hover {
   }
 }
 .hero .hero-title .hero-title-span {
-  font-size: 2rem;
+  font-size: 1.4rem;
   font-weight: normal;
   letter-spacing: normal;
   display: inline-block;
@@ -12168,13 +12173,11 @@ a:hover {
 }
 @media (max-width: 992px) {
   .hero .hero-title .hero-title-span {
-    font-size: 1.8rem;
     padding: 4px 8px;
   }
 }
 @media (max-width: 768px) {
   .hero .hero-title .hero-title-span {
-    font-size: 1.5rem;
     margin-top: 8px;
   }
 }
@@ -12186,49 +12189,38 @@ a:hover {
 }
 @media (max-width: 240px) {
   .hero .hero-title .hero-title-span {
-    font-size: 0.8rem;
+    font-size: 0.9rem;
   }
 }
 .hero .hero-subtitle {
-  font-size: 1.3rem;
+  font-size: 1.5rem;
   margin-bottom: 32px;
   z-index: 1;
 }
-@media (max-width: 576px) {
+@media (max-width: 992px) {
   .hero .hero-subtitle {
-    font-size: 1.1rem;
-    margin-bottom: 16px;
-    padding: 4px 8px;
-    line-height: 1.4;
+    margin-bottom: 48px;
+    padding: 16px 32px;
   }
 }
-@media (min-width: 576px) and (max-width: 768px) {
+@media (max-width: 768px) {
   .hero .hero-subtitle {
-    font-size: 1.2rem;
     margin-bottom: 32px;
     padding: 8px 16px;
     line-height: 1.3;
   }
 }
-@media (min-width: 768px) and (max-width: 992px) {
+@media (max-width: 576px) {
   .hero .hero-subtitle {
-    font-size: 1.3rem;
-    margin-bottom: 48px;
-    padding: 16px 32px;
-    line-height: 1.2;
-  }
-}
-@media (min-width: 992px) {
-  .hero .hero-subtitle {
-    font-size: 1.5rem;
-    margin-bottom: 64px;
-    padding: 32px 48px;
-    line-height: 1.1;
+    font-size: 1.4rem;
+    margin-bottom: 16px;
+    padding: 4px 8px;
+    line-height: 1.4;
   }
 }
 @media (max-width: 240px) {
   .hero .hero-subtitle {
-    font-size: 0.7rem;
+    font-size: 0.9rem;
   }
 }
 .hero .hero-button {
@@ -12243,6 +12235,7 @@ a:hover {
   -o-border-radius: 4px;
   color: #fff;
   padding: 8px 16px;
+  font-family: "Asimovian", sans-serif;
   padding: 16px 32px;
   z-index: 1;
 }
@@ -12283,9 +12276,9 @@ a:hover {
   padding: 32px;
 }
 .latest-posts .section-title {
+  font-family: "Asimovian", sans-serif;
   margin-bottom: 32px;
   color: #15b5e6;
-  font-family: "Poppins", sans-serif;
   font-size: clamp(1.5rem, 2.5rem, 2vw);
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
@@ -12366,7 +12359,7 @@ a:hover {
   -ms-transform: scale(1.05);
   -o-transform: scale(1.05);
 }
-.latest-posts .posts .post__image {
+.latest-posts .posts .post__card .post__image {
   margin-bottom: 16px;
   width: 100%;
   height: 180px;
@@ -12382,7 +12375,8 @@ a:hover {
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
 }
-.latest-posts .posts .post__title {
+.latest-posts .posts .post__card .post__title {
+  font-family: "Asimovian", sans-serif;
   margin: 16px 0 8px 0;
   color: #15b5e6;
   font-weight: 600;
@@ -12393,7 +12387,7 @@ a:hover {
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
 }
-.latest-posts .posts .post__description {
+.latest-posts .posts .post__card .post__description {
   flex-grow: 1;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -12406,7 +12400,7 @@ a:hover {
   margin-bottom: 16px;
   font-size: clamp(0.9rem, 1.2rem, 2vw);
 }
-.latest-posts .posts .post__btn {
+.latest-posts .posts .post__card .post__btn {
   background-color: #15b5e6;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   text-decoration: none;
@@ -12424,6 +12418,7 @@ a:hover {
   margin-top: 16px;
   text-decoration: none;
   font-size: 1rem;
+  font-family: "Asimovian", sans-serif;
   font-size: clamp(0.9rem, 1.2rem, 2vw);
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
@@ -12431,25 +12426,25 @@ a:hover {
   -ms-transition: all 0.3s ease-in-out;
   -o-transition: all 0.3s ease-in-out;
 }
-.latest-posts .posts .post__btn:hover {
+.latest-posts .posts .post__card .post__btn:hover {
   background-color: rgb(16.7330677291, 144.2231075697, 183.2669322709);
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
   color: #fff;
 }
 @media (max-width: 576px) {
-  .latest-posts .posts .post__btn {
+  .latest-posts .posts .post__card .post__btn {
     padding: 8px;
     font-size: 0.9rem;
   }
 }
 @media (min-width: 576px) and (max-width: 768px) {
-  .latest-posts .posts .post__btn {
+  .latest-posts .posts .post__card .post__btn {
     padding: 8px;
     font-size: 1rem;
   }
 }
 @media (min-width: 768px) and (max-width: 992px) {
-  .latest-posts .posts .post__btn {
+  .latest-posts .posts .post__card .post__btn {
     padding: 8px 16px;
     font-size: 1.1rem;
   }
@@ -12472,9 +12467,9 @@ a:hover {
   -o-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 .categories-overview .section-title {
+  font-family: "Asimovian", sans-serif;
   margin-bottom: 32px;
   color: #15b5e6;
-  font-family: "Poppins", sans-serif;
   font-size: clamp(1.5rem, 2.5rem, 2vw);
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
@@ -12543,6 +12538,7 @@ a:hover {
   color: #ccc;
   text-align: center;
   padding: 32px;
+  font-family: "Asimovian", sans-serif;
 }
 @media (max-width: 576px) {
   .footer {
@@ -12565,7 +12561,6 @@ a:hover {
   }
 }
 .footer .footer-title {
-  font-family: "Poppins", sans-serif;
   font-size: clamp(1.5rem, 2rem, 2vw);
   margin-bottom: 16px;
   color: #15b5e6;
