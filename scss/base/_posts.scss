@@ -11,14 +11,22 @@
   margin: auto;
   padding: v.$spacing-lg;
 
+  @media (max-width: v.$breakpoint-mobile) {
+    padding: v.$spacing-md v.$spacing-xs;
+  }
+
   .section-title {
     @include c.section-title;
+
+    @media (max-width: v.$breakpoint-watch) {
+      font-size: 1.3rem;
+    }
   }
   .posts {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: v.$spacing-lg;
-    padding: v.$spacing-lg;
+    // padding: v.$spacing-lg;
     margin: v.$spacing-lg 0;
 
     .post__card {
@@ -54,6 +62,23 @@
         }
       }
 
+      @media (max-width: v.$breakpoint-watch) {
+        max-width: 150px;
+        padding: v.$spacing-sm v.$spacing-xs;
+
+        &:hover {
+          @include m.box-shadow(0, 2px, 4px, v.$box-shadow-dark);
+
+          .post__image {
+            transform: none;
+            -webkit-transform: none;
+            -moz-transform: none;
+            -ms-transform: none;
+            -o-transform: none;
+          }
+        }
+      }
+
       .post__image {
         margin-bottom: v.$spacing-md;
         @include m.responsive-image(100%, 180px);
@@ -63,6 +88,10 @@
         -moz-border-radius: v.$border-radius;
         -ms-border-radius: v.$border-radius;
         -o-border-radius: v.$border-radius;
+
+        @media (max-width: v.$breakpoint-watch) {
+          height: 100px;
+        }
       }
 
       .post__title {
@@ -103,6 +132,10 @@
         font-family: v.$font-second;
         @include m.responsive-font(0.9rem, 1.2rem);
         @include m.transition(0.3s);
+
+        @media (max-width: v.$breakpoint-watch) {
+          font-size: 0.7rem;
+        }
       }
     }
   }

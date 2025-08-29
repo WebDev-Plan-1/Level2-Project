@@ -61,26 +61,23 @@
   font-family: v.$font-second;
   margin-bottom: v.$spacing-lg;
   color: v.$primary-color;
-  @include m.responsive-font(1.5rem, 2.5rem);
+  @include m.responsive-font(1.3rem, 2.5rem);
   @include m.transition(0.3s);
   font-weight: bold;
   text-align: center;
   // Responsive adjustments
+
+  @media (max-width: v.$breakpoint-tablet) {
+    font-size: 1.8rem;
+    margin-bottom: v.$spacing-lg;
+  }
   @media (max-width: v.$breakpoint-mobile) {
     font-size: 1.5rem;
     margin-bottom: v.$spacing-md;
   }
-  @media (min-width: v.$breakpoint-mobile) and (max-width: v.$breakpoint-tablet) {
-    font-size: 1.8rem;
-    margin-bottom: v.$spacing-lg;
-  }
-  @media (min-width: v.$breakpoint-tablet) and (max-width: v.$breakpoint-desktop) {
-    font-size: 2rem;
-    margin-bottom: v.$spacing-xl;
-  }
-  @media (min-width: v.$breakpoint-desktop) {
-    font-size: 2.5rem;
-    margin-bottom: v.$spacing-xxl;
+  @media (max-width: v.$breakpoint-watch) {
+    font-size: 1.3rem;
+    // margin-bottom: v.$spacing-md;
   }
 }
 

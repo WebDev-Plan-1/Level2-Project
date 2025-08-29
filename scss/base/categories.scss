@@ -8,7 +8,7 @@
     // background-color: v.$dark-bg;
     color: white;
     max-width: 1200px;
-    margin: v.$spacing-lg auto;
+    margin: v.$spacing-md auto;
     // background-color: v.$primary-color;
     border-radius: v.$border-radius;
     -webkit-border-radius: v.$border-radius;
@@ -16,6 +16,10 @@
     -ms-border-radius: v.$border-radius;
     -o-border-radius: v.$border-radius;
     @include m.box-shadow(0, 2px, 4px, v.$box-shadow-light);
+
+    @media (max-width: v.$breakpoint-watch) {
+        padding: v.$spacing-sm v.$spacing-xs;
+    }
 
     .section-title {
         @include c.section-title;
@@ -27,6 +31,10 @@
         gap: 1.5rem;
         list-style: none;
         padding: 0;
+
+        @media (max-width: v.$breakpoint-watch) {
+            flex-direction: column;
+        }
 
         li {
             a {
@@ -48,6 +56,10 @@
 
                 &:hover {
                     background-color: darken(v.$primary-color, 15%);
+                }
+
+                @media (max-width: v.$breakpoint-watch) {
+                    padding: v.$spacing-sm;
                 }
             }
         }

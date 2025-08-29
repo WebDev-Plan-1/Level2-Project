@@ -11921,7 +11921,7 @@ a:hover {
   font-family: "Asimovian", sans-serif;
   margin-bottom: 32px;
   color: #15b5e6;
-  font-size: clamp(1.5rem, 2.5rem, 2vw);
+  font-size: clamp(1.3rem, 2.5rem, 2vw);
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -11930,28 +11930,21 @@ a:hover {
   font-weight: bold;
   text-align: center;
 }
+@media (max-width: 768px) {
+  .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 32px;
+  }
+}
 @media (max-width: 576px) {
   .section-title {
     font-size: 1.5rem;
     margin-bottom: 16px;
   }
 }
-@media (min-width: 576px) and (max-width: 768px) {
+@media (max-width: 240px) {
   .section-title {
-    font-size: 1.8rem;
-    margin-bottom: 32px;
-  }
-}
-@media (min-width: 768px) and (max-width: 992px) {
-  .section-title {
-    font-size: 2rem;
-    margin-bottom: 48px;
-  }
-}
-@media (min-width: 992px) {
-  .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 64px;
+    font-size: 1.3rem;
   }
 }
 
@@ -12275,11 +12268,16 @@ a:hover {
   margin: auto;
   padding: 32px;
 }
+@media (max-width: 576px) {
+  .latest-posts {
+    padding: 16px 4px;
+  }
+}
 .latest-posts .section-title {
   font-family: "Asimovian", sans-serif;
   margin-bottom: 32px;
   color: #15b5e6;
-  font-size: clamp(1.5rem, 2.5rem, 2vw);
+  font-size: clamp(1.3rem, 2.5rem, 2vw);
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -12288,35 +12286,32 @@ a:hover {
   font-weight: bold;
   text-align: center;
 }
+@media (max-width: 768px) {
+  .latest-posts .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 32px;
+  }
+}
 @media (max-width: 576px) {
   .latest-posts .section-title {
     font-size: 1.5rem;
     margin-bottom: 16px;
   }
 }
-@media (min-width: 576px) and (max-width: 768px) {
+@media (max-width: 240px) {
   .latest-posts .section-title {
-    font-size: 1.8rem;
-    margin-bottom: 32px;
+    font-size: 1.3rem;
   }
 }
-@media (min-width: 768px) and (max-width: 992px) {
+@media (max-width: 240px) {
   .latest-posts .section-title {
-    font-size: 2rem;
-    margin-bottom: 48px;
-  }
-}
-@media (min-width: 992px) {
-  .latest-posts .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 64px;
+    font-size: 1.3rem;
   }
 }
 .latest-posts .posts {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 32px;
-  padding: 32px;
   margin: 32px 0;
 }
 .latest-posts .posts .post__card {
@@ -12359,6 +12354,26 @@ a:hover {
   -ms-transform: scale(1.05);
   -o-transform: scale(1.05);
 }
+@media (max-width: 240px) {
+  .latest-posts .posts .post__card {
+    max-width: 150px;
+    padding: 8px 4px;
+  }
+  .latest-posts .posts .post__card:hover {
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    -webkit-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    -moz-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    -ms-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+    -o-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+  }
+  .latest-posts .posts .post__card:hover .post__image {
+    transform: none;
+    -webkit-transform: none;
+    -moz-transform: none;
+    -ms-transform: none;
+    -o-transform: none;
+  }
+}
 .latest-posts .posts .post__card .post__image {
   margin-bottom: 16px;
   width: 100%;
@@ -12374,6 +12389,11 @@ a:hover {
   -moz-border-radius: 4px;
   -ms-border-radius: 4px;
   -o-border-radius: 4px;
+}
+@media (max-width: 240px) {
+  .latest-posts .posts .post__card .post__image {
+    height: 100px;
+  }
 }
 .latest-posts .posts .post__card .post__title {
   font-family: "Asimovian", sans-serif;
@@ -12449,12 +12469,17 @@ a:hover {
     font-size: 1.1rem;
   }
 }
+@media (max-width: 240px) {
+  .latest-posts .posts .post__card .post__btn {
+    font-size: 0.7rem;
+  }
+}
 
 .categories-overview {
   padding: 32px;
   color: white;
   max-width: 1200px;
-  margin: 32px auto;
+  margin: 16px auto;
   border-radius: 4px;
   -webkit-border-radius: 4px;
   -moz-border-radius: 4px;
@@ -12466,11 +12491,16 @@ a:hover {
   -ms-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   -o-box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
+@media (max-width: 240px) {
+  .categories-overview {
+    padding: 8px 4px;
+  }
+}
 .categories-overview .section-title {
   font-family: "Asimovian", sans-serif;
   margin-bottom: 32px;
   color: #15b5e6;
-  font-size: clamp(1.5rem, 2.5rem, 2vw);
+  font-size: clamp(1.3rem, 2.5rem, 2vw);
   transition: all 0.3s ease-in-out;
   -webkit-transition: all 0.3s ease-in-out;
   -moz-transition: all 0.3s ease-in-out;
@@ -12479,28 +12509,21 @@ a:hover {
   font-weight: bold;
   text-align: center;
 }
+@media (max-width: 768px) {
+  .categories-overview .section-title {
+    font-size: 1.8rem;
+    margin-bottom: 32px;
+  }
+}
 @media (max-width: 576px) {
   .categories-overview .section-title {
     font-size: 1.5rem;
     margin-bottom: 16px;
   }
 }
-@media (min-width: 576px) and (max-width: 768px) {
+@media (max-width: 240px) {
   .categories-overview .section-title {
-    font-size: 1.8rem;
-    margin-bottom: 32px;
-  }
-}
-@media (min-width: 768px) and (max-width: 992px) {
-  .categories-overview .section-title {
-    font-size: 2rem;
-    margin-bottom: 48px;
-  }
-}
-@media (min-width: 992px) {
-  .categories-overview .section-title {
-    font-size: 2.5rem;
-    margin-bottom: 64px;
+    font-size: 1.3rem;
   }
 }
 .categories-overview .categories-list {
@@ -12511,6 +12534,11 @@ a:hover {
   gap: 1.5rem;
   list-style: none;
   padding: 0;
+}
+@media (max-width: 240px) {
+  .categories-overview .categories-list {
+    flex-direction: column;
+  }
 }
 .categories-overview .categories-list li a {
   color: #fff;
@@ -12531,6 +12559,11 @@ a:hover {
 }
 .categories-overview .categories-list li a:hover {
   background-color: rgb(14.5996015936, 125.8346613546, 159.9003984064);
+}
+@media (max-width: 240px) {
+  .categories-overview .categories-list li a {
+    padding: 8px;
+  }
 }
 
 .footer {
