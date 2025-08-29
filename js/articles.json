@@ -3,7 +3,7 @@
     "id": 1,
     "title": "The Rise of AI",
     "category": "Technology",
-    "content": "Artificial Intelligence is transforming industries at a rapid pace...",
+    "content": "Technology in 2025 is set to be defined by rapid advancements in artificial intelligence, sustainable innovations, and immersive digital experiences. Discover how emerging trends like quantum computing, smart automation, and next-gen connectivity will reshape industries and everyday life.",
     "image": "/assets/images/tech_trends.jpeg",
     "date": "2025-08-01",
     "views": 120
@@ -12,7 +12,7 @@
     "id": 2,
     "title": "Healthy Living Tips",
     "category": "Health",
-    "content": "Maintaining a healthy lifestyle requires balanced diet and exercise...",
+    "content": "Living a healthy lifestyle is essential for overall well-being. From diets to regular exercise, discover practical tips and expert advice on how to maintain a balanced life. Learn about mental health, wellness practices, and the importance of self-care.",
     "image": "/assets/images/healthy_life.jpeg",
     "date": "2025-07-15",
     "views": 85
@@ -21,7 +21,7 @@
     "id": 3,
     "title": "Traveling Smart",
     "category": "Travel",
-    "content": "Explore the world with smart planning and budget-friendly strategies...",
+    "content": "Travel opens up a world of adventure and discovery. From vibrant cities to tranquil retreats, explore our curated list of top travel destinations. Get inspired by cultural experiences, culinary delights, and breathtaking sights that await you around the globe.",
     "image": "assets/images/travel_adventure.jpeg",
     "date": "2025-06-20",
     "views": 200
@@ -39,7 +39,7 @@
     "id": 5,
     "title": "The Future of Education",
     "category": "Education",
-    "content": "Digital learning platforms are reshaping how we acquire knowledge...",
+    "content": "Education is evolving rapidly with technology. Discover how online learning, virtual classrooms, and AI-driven tools are transforming the educational landscape. Explore innovative teaching methods, lifelong learning opportunities, and the future skills needed for success.",
     "image": "assets/images/education_future.jpeg",
     "date": "2025-04-10",
     "views": 95
