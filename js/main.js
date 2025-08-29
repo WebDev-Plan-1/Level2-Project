@@ -167,11 +167,11 @@ function displayArticles(category, sortBy) {
             : allArticles.filter(article => article.category === category);
 
     // 2. Sort articles based on selected option
-    if (sortBy === "latest") {
+    if (sortBy === "Latest") {
         filteredArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
-    } else if (sortBy === "oldest") {
+    } else if (sortBy === "Oldest") {
         filteredArticles.sort((a, b) => new Date(a.date) - new Date(b.date));
-    } else if (sortBy === "mostViewed") {
+    } else if (sortBy === "Most Viewed") {
         filteredArticles.sort((a, b) => b.views - a.views);
     }
 

@@ -138,6 +138,50 @@
     }
 }
 
+.category-controls {
+    display: flex;
+    justify-content: center; // Center the controls horizontally
+    align-items: center;
+    gap: 1rem; // Space between filter & sorter
+    margin: 2rem 0;
+
+    select {
+        padding: 0.6rem 1rem 0.6rem 0.6rem;
+        font-size: 1rem;
+        font-family: inherit;
+        border: 1px solid #ccc;
+        border-radius: 0.5rem;
+        background: #fff;
+        color: v.$primary-color;
+        cursor: pointer;
+        transition: all 0.3s ease;
+
+        &:hover {
+            border-color: v.$primary-color;
+            box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+        }
+
+        &:focus {
+            outline: none;
+            border-color: v.$primary-color;
+            box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+        }
+    }
+
+    // Responsive: stack controls on smaller screens
+    @media (max-width: v.$breakpoint-mobile) {
+        flex-direction: column;
+        gap: 0.8rem;
+        width: 100%;
+    }
+    @media (max-width: v.$breakpoint-watch) {
+        select {
+            font-size: 0.8rem;
+            padding: 0.4rem 0.8rem 0.4rem 0.4rem;
+        }
+    }
+}
+
 // ================================
 // Responsive Tweaks
 // ================================

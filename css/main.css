@@ -12927,6 +12927,47 @@ a:hover {
   }
 }
 
+.category-controls {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin: 2rem 0;
+}
+.category-controls select {
+  padding: 0.6rem 1rem 0.6rem 0.6rem;
+  font-size: 1rem;
+  font-family: inherit;
+  border: 1px solid #ccc;
+  border-radius: 0.5rem;
+  background: #fff;
+  color: #15b5e6;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+.category-controls select:hover {
+  border-color: #15b5e6;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+.category-controls select:focus {
+  outline: none;
+  border-color: #15b5e6;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
+@media (max-width: 576px) {
+  .category-controls {
+    flex-direction: column;
+    gap: 0.8rem;
+    width: 100%;
+  }
+}
+@media (max-width: 240px) {
+  .category-controls select {
+    font-size: 0.8rem;
+    padding: 0.4rem 0.8rem 0.4rem 0.4rem;
+  }
+}
+
 @media (max-width: 768px) {
   .articles-list .posts {
     grid-template-columns: repeat(2, 1fr);
