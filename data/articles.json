@@ -6,7 +6,7 @@
     "content": "Technology in 2025 is set to be defined by rapid advancements in artificial intelligence, sustainable innovations, and immersive digital experiences. Discover how emerging trends like quantum computing, smart automation, and next-gen connectivity will reshape industries and everyday life.",
     "image": "/assets/images/tech_trends.jpeg",
     "date": "2025-08-01",
-    "views": 120
+    "views": 11234
   },
   {
     "id": 2,
@@ -15,7 +15,7 @@
     "content": "Living a healthy lifestyle is essential for overall well-being. From diets to regular exercise, discover practical tips and expert advice on how to maintain a balanced life. Learn about mental health, wellness practices, and the importance of self-care.",
     "image": "/assets/images/healthy_life.jpeg",
     "date": "2025-07-15",
-    "views": 85
+    "views": 85342
   },
   {
     "id": 3,
@@ -24,7 +24,7 @@
     "content": "Travel opens up a world of adventure and discovery. From vibrant cities to tranquil retreats, explore our curated list of top travel destinations. Get inspired by cultural experiences, culinary delights, and breathtaking sights that await you around the globe.",
     "image": "assets/images/travel_adventure.jpeg",
     "date": "2025-06-20",
-    "views": 200
+    "views": 7240998
   },
   {
     "id": 4,
@@ -33,7 +33,7 @@
     "content": "Nature's beauty is unparalleled, from majestic mountains to beaches. Join us as we explore breathtaking landscapes, discover hidden gems, and learn how to protect our planet for future generations.",
     "image": "assets/images/nature_exploring.jpeg",
     "date": "2025-05-30",
-    "views": 150
+    "views": 612360
   },
   {
     "id": 5,
@@ -42,7 +42,7 @@
     "content": "Education is evolving rapidly with technology. Discover how online learning, virtual classrooms, and AI-driven tools are transforming the educational landscape. Explore innovative teaching methods, lifelong learning opportunities, and the future skills needed for success.",
     "image": "assets/images/education_future.jpeg",
     "date": "2025-04-10",
-    "views": 95
+    "views": 95420
   },
   {
     "id": 6,
@@ -51,7 +51,7 @@
     "content": "Food is a universal language that brings people together. Explore diverse cuisines, cooking techniques, and recipes from around the world. From street food to gourmet dining, embark on a culinary journey that tantalizes your taste buds.",
     "image": "assets/images/Culinary Delights from Around the World.webp",
     "date": "2025-03-25",
-    "views": 110
+    "views": 117203
   },
   {
     "id": 7,
@@ -60,7 +60,7 @@
     "content": "Mindfulness is the practice of being present in the moment. Learn techniques to cultivate mindfulness in your daily life, reduce stress, and enhance your overall well-being. Discover the benefits of meditation, deep breathing, and mindful living.",
     "image": "assets/images/The Art of Mindfulness.jpeg",
     "date": "2025-02-14",
-    "views": 130
+    "views": 7367
   },
   {
     "id": 8,
@@ -69,7 +69,7 @@
     "content": "Renewable energy is crucial for a sustainable future. Explore the latest innovations in solar, wind, and hydroelectric power. Learn about cutting-edge technologies, government initiatives, and how individuals can contribute to a greener planet.",
     "image": "assets/images/Innovations in Renewable Energy.jpg",
     "date": "2025-01-05",
-    "views": 175
+    "views": 1420
   },
   {
     "id": 9,
@@ -78,7 +78,7 @@
     "content": "Personal finance is key to achieving financial freedom. Discover strategies for budgeting, saving, investing, and managing debt. Learn how to set financial goals, plan for retirement, and make informed decisions about your money.",
     "image": "assets/images/Mastering Personal Finance.jpg",
     "date": "2024-12-20",
-    "views": 90
+    "views": 860000
   },
   {
     "id": 10,
@@ -87,7 +87,7 @@
     "content": "Social media has transformed how we connect and communicate. Explore the evolution of social platforms, emerging trends, and the impact on society. Learn about digital marketing strategies, influencer culture, and the future of online interaction.",
     "image": "assets/images/The Evolution of Social Media.png",
     "date": "2024-11-10",
-    "views": 160
+    "views": 2400000
   },
   {
     "id": 11,
@@ -96,7 +96,7 @@
     "content": "Space exploration is entering a new era with missions to Mars, lunar bases, and private space travel. Discover the latest advancements in space technology, international collaborations, and the quest to understand our universe.",
     "image": "assets/images/Advancements in Space Exploration.jpeg",
     "date": "2024-10-01",
-    "views": 140
+    "views": 3200
   },
   {
     "id": 12,
@@ -105,6 +105,6 @@
     "content": "Positive thinking can transform your life. Learn how to cultivate a positive mindset, overcome challenges, and achieve your goals. Discover techniques for building resilience, practicing gratitude, and fostering optimism.",
     "image": "assets/images/The Power of Positive Thinking.webp",
     "date": "2024-09-15",
-    "views": 115
+    "views": 115000000
   }
 ]

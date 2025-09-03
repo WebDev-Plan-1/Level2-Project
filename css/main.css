@@ -12896,6 +12896,47 @@ a:hover {
   margin-bottom: 16px;
   font-size: clamp(0.9rem, 1.2rem, 2vw);
 }
+.articles-list .posts .post-card .post-category {
+  font-size: 0.9rem;
+  font-family: "Asimovian", sans-serif;
+  color: rgb(12.4661354582, 107.4462151394, 136.5338645418);
+  margin: 4px 0;
+  pointer-events: none;
+}
+.articles-list .posts .post-card .post-info {
+  font-size: 0.9rem;
+  font-family: "Poppins", sans-serif;
+  color: #4a4a4a;
+  margin: 8px 0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 1rem;
+  pointer-events: none;
+}
+.articles-list .posts .post-card .post-info .post-views {
+  font-weight: 600;
+  font-family: "Poppins", sans-serif;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+.articles-list .posts .post-card .post-info .post-date {
+  font-style: italic;
+  font-size: 0.85rem;
+  font-family: "Asimovian", sans-serif;
+  color: #171717;
+  transition: all 0.3s ease-in-out;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+.articles-list .posts .post-card:hover .post-info > * {
+  color: #15b5e6;
+}
 .articles-list .posts .post-card .post__btn {
   background-color: #15b5e6;
   text-align: center;

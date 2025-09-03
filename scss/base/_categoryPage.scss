@@ -116,6 +116,45 @@
                 // line-height: 1.4;
             }
 
+            .post-category {
+                font-size: 0.9rem;
+                font-family: v.$font-second;
+                color: darken(v.$primary-color, 20%);
+                margin: v.$spacing-xs 0;
+                pointer-events: none;
+            }
+
+            .post-info {
+                font-size: 0.9rem;
+                font-family: v.$font-main;
+                color: v.$secondary-color;
+                margin: v.$spacing-sm 0;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                gap: 1rem;
+                pointer-events: none;
+
+                .post-views {
+                    font-weight: 600;
+                    font-family: v.$font-main;
+                    @include m.transition(0.3s);
+                }
+
+                .post-date {
+                    font-style: italic;
+                    font-size: 0.85rem;
+                    font-family: v.$font-second;
+                    color: darken(v.$secondary-color, 20%);
+                    @include m.transition(0.3s);
+                }
+            }
+            &:hover {
+                .post-info > * {
+                    color: v.$primary-color;
+                }
+            }
+
             .post__btn {
                 @include c.button-primary;
                 align-self: center;

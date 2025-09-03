@@ -1,6 +1,7 @@
 /* =============================================
    ########### Global Config & Data ############
 ============================================= */
+// URL to fetch articles data
 const DATA_URL = "data/articles.json";
 let allArticles = [];
 
@@ -11,6 +12,7 @@ const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
 const navLinkItems = document.querySelectorAll(".nav-links .nav-link-item");
 
+// Set active nav link based on current URL
 function setActiveNavLink() {
     const currentPath = window.location.pathname.split("/").pop() || "index.html";
     navLinkItems.forEach((link) => {
@@ -18,6 +20,7 @@ function setActiveNavLink() {
     });
 }
 
+// Handle scroll behavior for nav links on small screens
 function toggleNavScroll() {
     if (navLinks.classList.contains("active") && window.innerWidth <= 240) {
         document.body.style.overflow = "hidden";
@@ -30,6 +33,12 @@ function toggleNavScroll() {
     }
 }
 
+// Initialize Navbar functionality
+// including hamburger toggle and active link highlighting
+// and preserving active state across reloads
+// and responsive scroll handling
+// and keyboard accessibility
+// and localStorage usage
 function initNavbar() {
     if (!hamburger) return;
 
@@ -69,21 +78,26 @@ function initNavbar() {
 /* =============================================
    ############### Initialize AOS ##############
 ============================================= */
+// Initialize AOS (Animate On Scroll) library
 AOS.init({ duration: 1200, mirror: false });
 
 /* =============================================
    ############### Utilities ###################
 ============================================= */
+
+// Shuffle an array randomly
 function shuffleArray(array) {
     return array.sort(() => 0.5 - Math.random());
 }
 
+// Update URL parameters without reloading the page
 function updateURLParam(key, value) {
     const url = new URL(window.location);
     url.searchParams.set(key, value);
     window.history.pushState({}, "", url);
 }
 
+// Create an element with optional classes and inner HTML
 function createElement(tag, classes = [], html = "") {
     const el = document.createElement(tag);
     if (classes.length) el.classList.add(...classes);
@@ -91,11 +105,27 @@ function createElement(tag, classes = [], html = "") {
     return el;
 }
 
+// Format large numbers into readable strings (e.g., 1.2K, 3.4M)
+function formatViews(num) {
+    if (num >= 1_000_000_000) {
+        return (num / 1_000_000_000).toFixed(1).replace(/\.0$/, '') + 'B';
+    } else if (num >= 1_000_000) {
+        return (num / 1_000_000).toFixed(1).replace(/\.0$/, '') + 'M';
+    } else if (num >= 1_000) {
+        return (num / 1_000).toFixed(1).replace(/\.0$/, '') + 'K';
+    } else {
+        return num.toString();
+    }
+}
+
+
 /* =============================================
    ########## Home Page: Top Posts #############
 ============================================= */
 const topPostsContainer = document.querySelector("#top-posts-container");
 
+// Display top posts in a Swiper carousel
+// Select top 10 by views, shuffle, and show 6
 function displayTopPosts() {
     if (!topPostsContainer) return;
 
@@ -119,6 +149,8 @@ function displayTopPosts() {
         topPostsContainer.appendChild(slide);
     });
 
+    // Initialize Swiper carousel
+    // Check if Swiper is loaded
     if (typeof Swiper !== "undefined") {
         new Swiper(".mySwiper", {
             loop: true,
@@ -128,8 +160,10 @@ function displayTopPosts() {
             pagination: {
                 el: ".swiper-pagination",
                 clickable: true,
-                dynamicBullets: true,
-                dynamicMainBullets: 3,
+                // type: "bullets",         // Default is 'bullets'
+                // type: "fraction",        // fraction pagination 3/16
+                dynamicBullets: true,       // dynamic bullets size
+                dynamicMainBullets: 3,      // show 3 main bullets
             },
             breakpoints: {
                 640: { slidesPerView: 1 },
@@ -149,6 +183,8 @@ const categoriesContainer = document.querySelector(
     ".categories-overview .categories-list"
 );
 
+// Display categories with pagination
+// 7 categories per page
 function renderCategoriesPage(categories, page, perPage) {
     const start = (page - 1) * perPage;
     const paginatedCats = categories.slice(start, start + perPage);
@@ -166,12 +202,16 @@ function renderCategoriesPage(categories, page, perPage) {
     });
 }
 
+// Render pagination controls for categories
+// with ellipses for large page sets, and previous/next buttons
 function renderCategoriesPagination(total, current, perPage, categories) {
     const paginationContainer = document.querySelector(".categories-pagination");
     if (!paginationContainer) return;
 
     paginationContainer.innerHTML = "";
 
+    // Helper to create pagination buttons
+    // with active and disabled states
     function createBtn(label, page, isActive = false, isDisabled = false) {
         const btn = createElement("button", ["pagination-btn"], label);
         if (isActive) btn.classList.add("active");
@@ -200,6 +240,8 @@ function renderCategoriesPagination(total, current, perPage, categories) {
     if (current < total) createBtn("»", current + 1);
 }
 
+// Main function to display categories with pagination
+// 7 categories per page
 function displayCategories(perPage = 7) {
     if (!categoriesContainer) return;
     const categories = [...new Set(allArticles.map((a) => a.category))];
@@ -218,6 +260,10 @@ const categoryHeader = document.querySelector(".category-header");
 const categoryFilter = document.querySelector("#category-filter");
 const sortFilter = document.querySelector("#sort-filter");
 
+// Display articles based on selected category and sort option
+// Update category header and handle no articles found case
+// Categories filter and sort filter event listeners
+// Update URL parameters on category change
 function displayArticles(category, sortBy) {
     const normalizedCategory = category.toLowerCase();
     let filtered =
@@ -247,7 +293,9 @@ function displayArticles(category, sortBy) {
                 `
         <img src="${article.image}" class="post-image post__image" alt="${article.title}" />
         <h3 class="post-title post__title">${article.title}</h3>
+        <p class="post-category">#${article.category}</p>
         <p class="post-excerpt post__description">${article.content}</p>
+        <p class="post-info"><span class="post-views"><i class="fa-solid fa-eye"></i> ${formatViews(article.views)}</span><span class="post-date">${article.date}</span></p>
         <a href="single.html?id=${article.id}" class="read-more post__btn btn">Read More</a>
       `
             );
@@ -258,6 +306,10 @@ function displayArticles(category, sortBy) {
     }
 }
 
+
+// Populate category filter dropdown with unique categories
+// Add "All" option at the top
+// Called during category page initialization
 function populateCategoryFilter() {
     if (!categoryFilter) return;
     const categories = [...new Set(allArticles.map((a) => a.category))];
@@ -269,6 +321,10 @@ function populateCategoryFilter() {
     });
 }
 
+// Initialize category page functionality
+// Read category from URL parameters and set filters
+// Add event listeners for category and sort filters
+// Update URL parameters on category change
 function initCategoryPage() {
     const urlParams = new URLSearchParams(window.location.search);
     const catParam = urlParams.get("cat");
@@ -294,6 +350,10 @@ function initCategoryPage() {
 /* =============================================
    ######## Initialize Per Page Features ########
 ============================================= */
+// Initialize features based on page context
+// Home page: top posts and categories
+// Category page: category filter and articles
+// Called after fetching articles data
 function initPageFeatures() {
     if (topPostsContainer) displayTopPosts();
     if (categoriesContainer) displayCategories();
@@ -306,6 +366,8 @@ function initPageFeatures() {
 /* =============================================
    ################ Init App ###################
 ============================================= */
+// Fetch articles data and initialize page features
+// Handle fetch errors gracefully
 async function fetchArticles() {
     try {
         const res = await fetch(DATA_URL);
@@ -316,6 +378,8 @@ async function fetchArticles() {
     }
 }
 
+// Initialize navbar and fetch articles on DOMContentLoaded
+// Ensures all DOM elements are ready before manipulation
 document.addEventListener("DOMContentLoaded", () => {
     initNavbar();
     fetchArticles();
