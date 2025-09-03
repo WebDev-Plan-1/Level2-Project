@@ -188,27 +188,61 @@ function displayCategories(perPage = 7) {
         renderPaginationControls(totalPages, page);
     }
 
-    // Render pagination buttons
+    // Render pagination buttons with ellipsis
     function renderPaginationControls(total, current) {
         const paginationContainer = document.querySelector(".categories-pagination");
         if (!paginationContainer) return;
 
         paginationContainer.innerHTML = "";
 
-        for (let i = 1; i <= total; i++) {
+        // Helper: Create button
+        function createBtn(label, page, isActive = false, isDisabled = false) {
             const btn = document.createElement("button");
-            btn.textContent = i;
+            btn.textContent = label;
             btn.classList.add("pagination-btn");
-            if (i === current) btn.classList.add("active");
 
-            btn.addEventListener("click", () => {
-                currentPage = i;
-                renderPage(currentPage);
-            });
+            if (isActive) btn.classList.add("active");
+            if (isDisabled) btn.disabled = true;
+
+            if (!isDisabled && !isActive) {
+                btn.addEventListener("click", () => {
+                    renderPage(page);
+                });
+            }
 
             paginationContainer.appendChild(btn);
         }
+
+        // Always show first page
+        if (current > 1) createBtn("«", current - 1); // Prev button
+        createBtn("1", 1, current === 1);
+
+        // Ellipsis before current range
+        if (current > 3) {
+            const dots = document.createElement("span");
+            dots.textContent = "...";
+            dots.classList.add("pagination-dots");
+            paginationContainer.appendChild(dots);
+        }
+
+        // Pages around current
+        for (let i = Math.max(2, current - 2); i <= Math.min(total - 1, current + 2); i++) {
+            createBtn(i, i, current === i);
+        }
+
+        // Ellipsis after current range
+        if (current < total - 2) {
+            const dots = document.createElement("span");
+            dots.textContent = "...";
+            dots.classList.add("pagination-dots");
+            paginationContainer.appendChild(dots);
+        }
+
+        // Always show last page
+        if (total > 1) createBtn(total, total, current === total);
+        if (current < total) createBtn("»", current + 1); // Next button
     }
+
 
     // First render
     renderPage(currentPage);
