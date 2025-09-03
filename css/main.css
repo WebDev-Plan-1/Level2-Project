@@ -12610,6 +12610,30 @@ a:hover {
   }
 }
 
+.categories-pagination {
+  margin-top: 2rem;
+  display: flex;
+  justify-content: center;
+  gap: 0.5rem;
+}
+.categories-pagination .pagination-btn {
+  background: #f0f0f0;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+.categories-pagination .pagination-btn.active {
+  background: #15b5e6;
+  color: #fff;
+  font-weight: bold;
+}
+.categories-pagination .pagination-btn:hover {
+  background: rgb(12.4661354582, 107.4462151394, 136.5338645418);
+  color: #fff;
+}
+
 .footer {
   background-color: #1a1a1a;
   color: #ccc;

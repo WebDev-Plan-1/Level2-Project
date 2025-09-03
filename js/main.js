@@ -160,21 +160,58 @@ function displayTopPosts() {
     }
 }
 
-// Show distinct categories dynamically
-function displayCategories() {
+// Show distinct categories dynamically with pagination
+function displayCategories(perPage = 7) {
     if (!categoriesContainer) return;
 
     let categories = [...new Set(allArticles.map(article => article.category))];
-    categoriesContainer.innerHTML = "";
+    let currentPage = 1;
+    const totalPages = Math.ceil(categories.length / perPage);
 
-    categories.forEach(cat => {
-        const li = document.createElement("li");
-        li.classList.add("category-item");
-        li.setAttribute("data-aos", "fade-right");
-        li.setAttribute("data-aos-duration", "1000");
-        li.innerHTML = `<a href="category.html?cat=${cat}" class="category-link">${cat}</a>`;
-        categoriesContainer.appendChild(li);
-    });
+    // Render categories for specific page
+    function renderPage(page) {
+        const start = (page - 1) * perPage;
+        const end = start + perPage;
+        const paginatedCats = categories.slice(start, end);
+
+        categoriesContainer.innerHTML = "";
+
+        paginatedCats.forEach(cat => {
+            const li = document.createElement("li");
+            li.classList.add("category-item");
+            li.setAttribute("data-aos", "fade-right");
+            li.setAttribute("data-aos-duration", "1000");
+            li.innerHTML = `<a href="category.html?cat=${cat}" class="category-link">${cat}</a>`;
+            categoriesContainer.appendChild(li);
+        });
+
+        renderPaginationControls(totalPages, page);
+    }
+
+    // Render pagination buttons
+    function renderPaginationControls(total, current) {
+        const paginationContainer = document.querySelector(".categories-pagination");
+        if (!paginationContainer) return;
+
+        paginationContainer.innerHTML = "";
+
+        for (let i = 1; i <= total; i++) {
+            const btn = document.createElement("button");
+            btn.textContent = i;
+            btn.classList.add("pagination-btn");
+            if (i === current) btn.classList.add("active");
+
+            btn.addEventListener("click", () => {
+                currentPage = i;
+                renderPage(currentPage);
+            });
+
+            paginationContainer.appendChild(btn);
+        }
+    }
+
+    // First render
+    renderPage(currentPage);
 }
 
 /* ============================================= */
