@@ -106,5 +106,32 @@
     "image": "assets/images/The Power of Positive Thinking.webp",
     "date": "2024-10-15",
     "views": 115000000
+  },
+  {
+    "id": 13,
+    "title": "Urban Gardening: Growing Green in Small Spaces",
+    "category": "Lifestyle",
+    "content": "Urban gardening is a growing trend that allows city dwellers to cultivate their own green spaces. Learn how to start a garden in small spaces, from balconies to rooftops. Discover tips for selecting plants, soil preparation, and sustainable gardening practices.",
+    "image": "assets/images/Urban Gardening.jpg",
+    "date": "2024-08-22",
+    "views": 45000
+  },
+  {
+    "id": 14,
+    "title": "The Impact of Climate Change",
+    "category": "Environment",
+    "content": "Climate change is one of the most pressing issues of our time. Explore the causes and effects of climate change, as well as strategies for mitigation and adaptation. Learn about global initiatives, renewable energy solutions, and how individuals can make a difference.",
+    "image": "assets/images/The Impact of Climate Change.jpg",
+    "date": "2024-07-30",
+    "views": 670000
+  },
+  {
+    "id": 15,
+    "title": "The Art of Photography",
+    "category": "Art",
+    "content": "Photography is a powerful medium for storytelling and self-expression. Discover techniques for capturing stunning images, from composition to lighting. Explore different styles of photography, post-processing tips, and how to build a successful photography career.",
+    "image": "assets/images/The Art of Photography.jpg",
+    "date": "2024-06-18",
+    "views": 9800
   }
 ]
