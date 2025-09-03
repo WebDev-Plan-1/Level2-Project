@@ -78,6 +78,42 @@
       flex-grow: 1;
     }
 
+    .top-post-info {
+      display: flex;
+      justify-content: space-between;
+      padding: 0 1rem;
+      font-size: 0.85rem;
+      // color: v.$primary-color;
+      margin-bottom: 0.5rem;
+
+      .top-post-category {
+        background: #fff;
+        color: v.$primary-color;
+        @include m.box-shadow(0, 2px, 6px, rgba(0, 0, 0, 0.1));
+        padding: 0.1rem 0.5rem;
+        border-radius: 0.25rem;
+        font-size: 0.75rem;
+        font-family: v.$font-second;
+        text-transform: uppercase;
+        letter-spacing: 0.05em;
+        @include m.transition(0.3s);
+      }
+
+      .top-post-views {
+        color: v.$secondary-color;
+        @include m.transition(0.3s);
+      }
+    }
+    &:hover {
+      .top-post-views {
+        color: v.$primary-color;
+      }
+      .top-post-category {
+        background: darken(v.$primary-color, 20%);
+        color: #fff;
+      }
+    }
+
     .post__btn {
       @include c.button-primary;
       margin: 1rem;
@@ -124,7 +160,7 @@
 /* ================================
    Responsive
    ================================ */
-@media (max-width: 1024px) {
+@media (max-width: v.$breakpoint-desktop) {
   .featured-posts .post-card {
     max-width: 300px;
 
@@ -134,7 +170,7 @@
   }
 }
 
-@media (max-width: 768px) {
+@media (max-width: v.$breakpoint-tablet) {
   .featured-posts {
     padding: 3rem 1.5rem;
 
@@ -152,7 +188,7 @@
   }
 }
 
-@media (max-width: 480px) {
+@media (max-width: v.$breakpoint-mobile) {
   .featured-posts {
     padding: 2rem 1rem;
 

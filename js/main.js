@@ -150,6 +150,10 @@ function displayTopPosts() {
         <img src="${article.image}" alt="${article.title}" class="post-image post__image" />
         <h3 class="post-title post__title">${article.title}</h3>
         <p class="post-excerpt post__description">${article.content.substring(0, 100)}...</p>
+        <p class="top-post-info">
+                <span class="top-post-views"><i class="fa-solid fa-eye"></i> ${formatViews(article.views)}</span>
+                <span class="top-post-category">${article.category}</span>
+        </p>
         <a href="single.html?id=${article.id}" class="read-more post__btn">Read More</a>
       </article>`
         );
