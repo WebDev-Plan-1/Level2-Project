@@ -116,6 +116,13 @@ function formatDate(dateString) {
     return new Date(dateString).toLocaleDateString('en-US', options);
 }
 
+// Smoothly scroll the page to the top of the articles area (or header if present)
+function scrollToArticlesTop() {
+    if (!articlesContainer) return;
+    const target = categoryHeader || articlesContainer;
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
 /* =============================================
    ########## Home Page: Top Posts #############
 ============================================= */
@@ -334,6 +341,9 @@ function renderPostsPaginationButtons(totalPages, category, sortBy) {
         bullet.addEventListener("click", () => {
             currentPage = i;
             displayArticles(category, sortBy);
+
+            // ✅ scroll to top of the articles after page changes
+            scrollToArticlesTop();
         });
 
         postsPaginationContainer.appendChild(bullet);
@@ -368,11 +378,15 @@ function initCategoryPage() {
         currentPage = 1;
         const selected = categoryFilter.value;
         displayArticles(selected, sortFilter.value);
+        // ✅ scroll up after category changes
+        scrollToArticlesTop();
     });
 
     sortFilter.addEventListener("change", () => {
         currentPage = 1;
         displayArticles(categoryFilter.value, sortFilter.value);
+        // ✅ scroll up after category changes
+        scrollToArticlesTop();
     });
 }
 
