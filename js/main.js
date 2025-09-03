@@ -12,15 +12,15 @@ const hamburger = document.querySelector(".hamburger");
 const navLinks = document.querySelector(".nav-links");
 const navLinkItems = document.querySelectorAll(".nav-links .nav-link-item");
 
-// Set active nav link based on current URL
+// ⭐ UPDATED: Set active nav link based on current URL (ignoring query string)
 function setActiveNavLink() {
     const currentPath = window.location.pathname.split("/").pop() || "index.html";
     navLinkItems.forEach((link) => {
-        link.classList.toggle("active", link.getAttribute("href") === currentPath);
+        const linkPath = link.getAttribute("href").split("?")[0]; // ⭐ strip query string
+        link.classList.toggle("active", linkPath === currentPath);
     });
 }
 
-// Handle scroll behavior for nav links on small screens
 function toggleNavScroll() {
     if (navLinks.classList.contains("active") && window.innerWidth <= 240) {
         document.body.style.overflow = "hidden";
@@ -33,12 +33,6 @@ function toggleNavScroll() {
     }
 }
 
-// Initialize Navbar functionality
-// including hamburger toggle and active link highlighting
-// and preserving active state across reloads
-// and responsive scroll handling
-// and keyboard accessibility
-// and localStorage usage
 function initNavbar() {
     if (!hamburger) return;
 
@@ -66,9 +60,10 @@ function initNavbar() {
 
     const savedNav = localStorage.getItem("activeNav");
     if (savedNav) {
-        navLinkItems.forEach((link) =>
-            link.classList.toggle("active", link.getAttribute("href") === savedNav)
-        );
+        navLinkItems.forEach((link) => {
+            const linkPath = link.getAttribute("href").split("?")[0]; // ⭐ ignore query
+            link.classList.toggle("active", linkPath === savedNav);
+        });
     }
 
     window.addEventListener("resize", toggleNavScroll);
@@ -84,20 +79,19 @@ AOS.init({ duration: 1200, mirror: false });
 /* =============================================
    ############### Utilities ###################
 ============================================= */
-
-// Shuffle an array randomly
 function shuffleArray(array) {
     return array.sort(() => 0.5 - Math.random());
 }
 
-// Update URL parameters without reloading the page
-function updateURLParam(key, value) {
+// ⭐ UPDATED: Update URL params (support multiple keys at once)
+function updateURLParams(params) {
     const url = new URL(window.location);
-    url.searchParams.set(key, value);
+    Object.keys(params).forEach((key) => {
+        url.searchParams.set(key, params[key]);
+    });
     window.history.pushState({}, "", url);
 }
 
-// Create an element with optional classes and inner HTML
 function createElement(tag, classes = [], html = "") {
     const el = document.createElement(tag);
     if (classes.length) el.classList.add(...classes);
@@ -105,7 +99,6 @@ function createElement(tag, classes = [], html = "") {
     return el;
 }
 
-// Format large numbers into readable strings (e.g., 1.2K, 3.4M)
 function formatViews(num) {
     if (num >= 1_000_000_000) {
         return (num / 1_000_000_000).toFixed(1).replace(/\.0$/, '') + 'B';
@@ -118,13 +111,10 @@ function formatViews(num) {
     }
 }
 
-// Format date strings into a more readable format
-// Example: "2025-01-05" -> "January 5, 2025"
 function formatDate(dateString) {
     const options = { year: 'numeric', month: 'long', day: 'numeric' };
     return new Date(dateString).toLocaleDateString('en-US', options);
 }
-
 
 /* =============================================
    ########## Home Page: Top Posts #############
@@ -271,11 +261,10 @@ const postsPaginationContainer = document.querySelector(".posts-pagination");
 const categoryHeader = document.querySelector(".category-header");
 const categoryFilter = document.querySelector("#category-filter");
 const sortFilter = document.querySelector("#sort-filter");
-// Pagination state
+
 let currentPage = 1;
 const perPage = 6;
 
-// Main display function with pagination
 function displayArticles(category, sortBy) {
     const normalizedCategory = category.toLowerCase();
     let filtered =
@@ -283,12 +272,10 @@ function displayArticles(category, sortBy) {
             ? allArticles
             : allArticles.filter((a) => a.category === category);
 
-    // Sorting
     if (sortBy === "Latest") filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
     if (sortBy === "Oldest") filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
     if (sortBy === "Most Viewed") filtered.sort((a, b) => b.views - a.views);
 
-    // Update category header
     if (categoryHeader) {
         categoryHeader.innerHTML =
             normalizedCategory === "all"
@@ -298,20 +285,17 @@ function displayArticles(category, sortBy) {
                    <p class="section-title-desc">Latest updates and articles about <span class="cat-desc">${category}</span>.</p>`;
     }
 
-    // Handle no results
     if (filtered.length === 0) {
         articlesContainer.innerHTML = `<p class="not-found">No articles found in this category.</p>`;
         postsPaginationContainer.innerHTML = "";
         return;
     }
 
-    // Pagination: calculate slice
     const totalPages = Math.ceil(filtered.length / perPage);
     const start = (currentPage - 1) * perPage;
     const end = start + perPage;
     const paginatedArticles = filtered.slice(start, end);
 
-    // Render articles
     articlesContainer.innerHTML = "";
     paginatedArticles.forEach((article) => {
         const card = createElement(
@@ -332,13 +316,12 @@ function displayArticles(category, sortBy) {
         articlesContainer.appendChild(card);
     });
 
-    // Render pagination bullets
     renderPostsPaginationButtons(totalPages, category, sortBy);
+
+    // ⭐ NEW: Sync URL params
+    updateURLParams({ cat: category, sort: sortBy, page: currentPage });
 }
 
-// Render pagination bullets for articles
-// with active state and click handlers
-// Called from displayArticles
 function renderPostsPaginationButtons(totalPages, category, sortBy) {
     postsPaginationContainer.innerHTML = "";
 
@@ -357,10 +340,6 @@ function renderPostsPaginationButtons(totalPages, category, sortBy) {
     }
 }
 
-
-// Populate category filter dropdown with unique categories
-// Add "All" option at the top
-// Called during category page initialization
 function populateCategoryFilter() {
     if (!categoryFilter) return;
     const categories = [...new Set(allArticles.map((a) => a.category))];
@@ -372,30 +351,27 @@ function populateCategoryFilter() {
     });
 }
 
-// Initialize category page functionality
-// Read category from URL parameters and set filters
-// Add event listeners for category and sort filters
-// Update URL parameters on category change
+// ⭐ UPDATED: Init category page with URL sync
 function initCategoryPage() {
     const urlParams = new URLSearchParams(window.location.search);
-    const catParam = urlParams.get("cat");
+    const catParam = urlParams.get("cat") || "All";
+    const sortParam = urlParams.get("sort") || "Most Viewed"; // default
+    const pageParam = parseInt(urlParams.get("page")) || 1;
 
-    if (catParam) {
-        categoryFilter.value = catParam;
-        displayArticles(catParam, sortFilter.value);
-    } else {
-        displayArticles("All", sortFilter.value);
-    }
+    categoryFilter.value = catParam;
+    sortFilter.value = sortParam;
+    currentPage = pageParam;
+
+    displayArticles(catParam, sortParam);
 
     categoryFilter.addEventListener("change", () => {
-        currentPage = 1; // ✅ reset pagination
+        currentPage = 1;
         const selected = categoryFilter.value;
-        updateURLParam("cat", selected);
         displayArticles(selected, sortFilter.value);
     });
 
     sortFilter.addEventListener("change", () => {
-        currentPage = 1; // ✅ reset pagination
+        currentPage = 1;
         displayArticles(categoryFilter.value, sortFilter.value);
     });
 }
