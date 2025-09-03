@@ -118,6 +118,13 @@ function formatViews(num) {
     }
 }
 
+// Format date strings into a more readable format
+// Example: "2025-01-05" -> "January 5, 2025"
+function formatDate(dateString) {
+    const options = { year: 'numeric', month: 'long', day: 'numeric' };
+    return new Date(dateString).toLocaleDateString('en-US', options);
+}
+
 
 /* =============================================
    ########## Home Page: Top Posts #############
@@ -295,7 +302,7 @@ function displayArticles(category, sortBy) {
         <h3 class="post-title post__title">${article.title}</h3>
         <p class="post-category">#${article.category}</p>
         <p class="post-excerpt post__description">${article.content}</p>
-        <p class="post-info"><span class="post-views"><i class="fa-solid fa-eye"></i> ${formatViews(article.views)}</span><span class="post-date">${article.date}</span></p>
+        <p class="post-info"><span class="post-views"><i class="fa-solid fa-eye"></i> ${formatViews(article.views)}</span><span class="post-date">${formatDate(article.date)}</span></p>
         <a href="single.html?id=${article.id}" class="read-more post__btn btn">Read More</a>
       `
             );
