@@ -49,7 +49,7 @@
     "title": "Culinary Delights from Around the World",
     "category": "Food",
     "content": "Food is a universal language that brings people together. Explore diverse cuisines, cooking techniques, and recipes from around the world. From street food to gourmet dining, embark on a culinary journey that tantalizes your taste buds.",
-    "image": "assets/images/culinary_delights.jpeg",
+    "image": "assets/images/Culinary Delights from Around the World.webp",
     "date": "2025-03-25",
     "views": 110
   },
@@ -58,7 +58,7 @@
     "title": "The Art of Mindfulness",
     "category": "Wellness",
     "content": "Mindfulness is the practice of being present in the moment. Learn techniques to cultivate mindfulness in your daily life, reduce stress, and enhance your overall well-being. Discover the benefits of meditation, deep breathing, and mindful living.",
-    "image": "assets/images/mindfulness_art.jpeg",
+    "image": "assets/images/The Art of Mindfulness.jpeg",
     "date": "2025-02-14",
     "views": 130
   },
@@ -67,7 +67,7 @@
     "title": "Innovations in Renewable Energy",
     "category": "Science",
     "content": "Renewable energy is crucial for a sustainable future. Explore the latest innovations in solar, wind, and hydroelectric power. Learn about cutting-edge technologies, government initiatives, and how individuals can contribute to a greener planet.",
-    "image": "assets/images/renewable_energy.jpeg",
+    "image": "assets/images/Innovations in Renewable Energy.jpg",
     "date": "2025-01-05",
     "views": 175
   },
@@ -76,7 +76,7 @@
     "title": "Mastering Personal Finance",
     "category": "Finance",
     "content": "Personal finance is key to achieving financial freedom. Discover strategies for budgeting, saving, investing, and managing debt. Learn how to set financial goals, plan for retirement, and make informed decisions about your money.",
-    "image": "assets/images/personal_finance.jpeg",
+    "image": "assets/images/Mastering Personal Finance.jpg",
     "date": "2024-12-20",
     "views": 90
   },
@@ -85,7 +85,7 @@
     "title": "The Evolution of Social Media",
     "category": "Social Media",
     "content": "Social media has transformed how we connect and communicate. Explore the evolution of social platforms, emerging trends, and the impact on society. Learn about digital marketing strategies, influencer culture, and the future of online interaction.",
-    "image": "assets/images/social_media_evolution.jpeg",
+    "image": "assets/images/The Evolution of Social Media.png",
     "date": "2024-11-10",
     "views": 160
   },
@@ -94,7 +94,7 @@
     "title": "Advancements in Space Exploration",
     "category": "Space",
     "content": "Space exploration is entering a new era with missions to Mars, lunar bases, and private space travel. Discover the latest advancements in space technology, international collaborations, and the quest to understand our universe.",
-    "image": "assets/images/space_exploration.jpeg",
+    "image": "assets/images/Advancements in Space Exploration.jpeg",
     "date": "2024-10-01",
     "views": 140
   },
@@ -103,7 +103,7 @@
     "title": "The Power of Positive Thinking",
     "category": "Self-Help",
     "content": "Positive thinking can transform your life. Learn how to cultivate a positive mindset, overcome challenges, and achieve your goals. Discover techniques for building resilience, practicing gratitude, and fostering optimism.",
-    "image": "assets/images/positive_thinking.jpeg",
+    "image": "assets/images/The Power of Positive Thinking.webp",
     "date": "2024-09-15",
     "views": 115
   }
