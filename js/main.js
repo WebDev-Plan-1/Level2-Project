@@ -263,14 +263,15 @@ function displayCategories(perPage = 7) {
    ########## Category Page Articles ############
 ============================================= */
 const articlesContainer = document.querySelector(".articles-list .posts");
+const postsPaginationContainer = document.querySelector(".posts-pagination");
 const categoryHeader = document.querySelector(".category-header");
 const categoryFilter = document.querySelector("#category-filter");
 const sortFilter = document.querySelector("#sort-filter");
+// Pagination state
+let currentPage = 1;
+const perPage = 6;
 
-// Display articles based on selected category and sort option
-// Update category header and handle no articles found case
-// Categories filter and sort filter event listeners
-// Update URL parameters on category change
+// Main display function with pagination
 function displayArticles(category, sortBy) {
     const normalizedCategory = category.toLowerCase();
     let filtered =
@@ -278,40 +279,80 @@ function displayArticles(category, sortBy) {
             ? allArticles
             : allArticles.filter((a) => a.category === category);
 
+    // Sorting
     if (sortBy === "Latest") filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
     if (sortBy === "Oldest") filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
     if (sortBy === "Most Viewed") filtered.sort((a, b) => b.views - a.views);
 
+    // Update category header
     if (categoryHeader) {
         categoryHeader.innerHTML =
             normalizedCategory === "all"
                 ? `<h2 class="section-title">All Articles</h2>
-           <p class="section-title-desc">Latest updates and articles about <span class="cat-desc">different Categories</span>.</p>`
+                   <p class="section-title-desc">Latest updates and articles about <span class="cat-desc">different Categories</span>.</p>`
                 : `<h2 class="section-title">${category} Articles</h2>
-           <p class="section-title-desc">Latest updates and articles about <span class="cat-desc">${category}</span>.</p>`;
+                   <p class="section-title-desc">Latest updates and articles about <span class="cat-desc">${category}</span>.</p>`;
     }
 
-    articlesContainer.innerHTML = "";
-    if (filtered.length > 0) {
-        filtered.forEach((article) => {
-            const card = createElement(
-                "article",
-                ["post__card", "post-card"],
-                `
-        <img src="${article.image}" class="post-image post__image" alt="${article.title}" />
-        <h3 class="post-title post__title">${article.title}</h3>
-        <p class="post-category">#${article.category}</p>
-        <p class="post-excerpt post__description">${article.content}</p>
-        <p class="post-info"><span class="post-views"><i class="fa-solid fa-eye"></i> ${formatViews(article.views)}</span><span class="post-date">${formatDate(article.date)}</span></p>
-        <a href="single.html?id=${article.id}" class="read-more post__btn btn">Read More</a>
-      `
-            );
-            articlesContainer.appendChild(card);
-        });
-    } else {
+    // Handle no results
+    if (filtered.length === 0) {
         articlesContainer.innerHTML = `<p class="not-found">No articles found in this category.</p>`;
+        postsPaginationContainer.innerHTML = "";
+        return;
+    }
+
+    // Pagination: calculate slice
+    const totalPages = Math.ceil(filtered.length / perPage);
+    const start = (currentPage - 1) * perPage;
+    const end = start + perPage;
+    const paginatedArticles = filtered.slice(start, end);
+
+    // Render articles
+    articlesContainer.innerHTML = "";
+    paginatedArticles.forEach((article) => {
+        const card = createElement(
+            "article",
+            ["post__card", "post-card"],
+            `
+            <img src="${article.image}" class="post-image post__image" alt="${article.title}" />
+            <h3 class="post-title post__title">${article.title}</h3>
+            <p class="post-category">#${article.category}</p>
+            <p class="post-excerpt post__description">${article.content}</p>
+            <p class="post-info">
+                <span class="post-views"><i class="fa-solid fa-eye"></i> ${formatViews(article.views)}</span>
+                <span class="post-date">${formatDate(article.date)}</span>
+            </p>
+            <a href="single.html?id=${article.id}" class="read-more post__btn btn">Read More</a>
+        `
+        );
+        articlesContainer.appendChild(card);
+    });
+
+    // Render pagination bullets
+    renderPostsPaginationButtons(totalPages, category, sortBy);
+}
+
+// Render pagination bullets for articles
+// with active state and click handlers
+// Called from displayArticles
+function renderPostsPaginationButtons(totalPages, category, sortBy) {
+    postsPaginationContainer.innerHTML = "";
+
+    for (let i = 1; i <= totalPages; i++) {
+        const bullet = document.createElement("button");
+        bullet.classList.add("post-page-bullet");
+        if (i === currentPage) bullet.classList.add("active");
+        bullet.innerText = i;
+
+        bullet.addEventListener("click", () => {
+            currentPage = i;
+            displayArticles(category, sortBy);
+        });
+
+        postsPaginationContainer.appendChild(bullet);
     }
 }
+
 
 // Populate category filter dropdown with unique categories
 // Add "All" option at the top
@@ -343,12 +384,14 @@ function initCategoryPage() {
     }
 
     categoryFilter.addEventListener("change", () => {
+        currentPage = 1; // ✅ reset pagination
         const selected = categoryFilter.value;
         updateURLParam("cat", selected);
         displayArticles(selected, sortFilter.value);
     });
 
     sortFilter.addEventListener("change", () => {
+        currentPage = 1; // ✅ reset pagination
         displayArticles(categoryFilter.value, sortFilter.value);
     });
 }

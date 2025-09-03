@@ -12992,6 +12992,31 @@ a:hover {
     font-size: 0.7rem;
   }
 }
+.articles-list .posts-pagination {
+  text-align: center;
+  margin-top: 2rem;
+}
+.articles-list .posts-pagination .post-page-bullet {
+  background: #f0f0f0;
+  border: none;
+  border-radius: 50%;
+  width: 35px;
+  height: 35px;
+  margin: 0 5px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background 0.3s, color 0.3s;
+}
+.articles-list .posts-pagination .post-page-bullet:hover {
+  background: #15b5e6;
+  color: #fff;
+}
+.articles-list .posts-pagination .post-page-bullet.active {
+  background: #15b5e6;
+  color: #fff;
+  font-weight: bold;
+  box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+}
 
 .category-controls {
   display: flex;
