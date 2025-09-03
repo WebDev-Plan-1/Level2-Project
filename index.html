@@ -19,7 +19,7 @@
         content="NileNotes, Blog, Blogs, blog, Posts, books, Nature, development, writing, reading, social" />
     <meta name="author" content="NileNotes - Personal Blog CMS" />
     <!-- Swiper CSS -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" /> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <!-- AOS Scroll Animation -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
     <!-- Link to fonts -->
@@ -87,61 +87,16 @@
         </section>
 
         <!-- Latest blog posts grid -->
-        <section class="latest-posts">
-            <h2 class="section-title">Latest Posts</h2>
-            <div class="posts" aria-live="polite">
-                <!-- Example post card -->
-                <article class="post-card post__card" tabindex="0" data-aos="fade-up" data-aos-duration="1000">
-                    <img src="assets/images/tech_trends.jpeg" alt="Post 1 image" class="post-image post__image" />
-                    <h3 class="post-title post__title">Technology Trends in 2025</h3>
-                    <p class="post-excerpt post__description">Technology in 2025 is set to be defined by rapid
-                        advancements
-                        in artificial
-                        intelligence, sustainable innovations, and immersive digital experiences. Discover how emerging
-                        trends like quantum computing, smart automation, and next-gen connectivity will reshape
-                        industries and everyday life.</p>
-                    <a href="single-post.html" class="read-more post__btn">Read More</a>
-                </article>
-                <article class="post-card post__card" tabindex="0" data-aos="fade-up" data-aos-duration="1000">
-                    <img src="assets/images/nature_exploring.jpeg" alt="Post 2 image" class="post- post__image" />
-                    <h3 class="post-title post__title">Exploring the Wonders of Nature</h3>
-                    <p class="post-excerpt post__description">Nature's beauty is unparalleled, from majestic mountains
-                        to
-                        serene beaches.
-                        Join us as we explore breathtaking landscapes, discover hidden gems, and learn how to protect
-                        our planet for future generations.</p>
-                    <a href="single-post.html" class="read-more post__btn">Read More</a>
-                </article>
-                <article class="post-card post__card" tabindex="0" data-aos="fade-up" data-aos-duration="1000">
-                    <img src="assets/images/healthy_life.jpeg" alt="Post 3 image" class="post-image post__image" />
-                    <h3 class="post-title post__title">Healthy Living: Tips for a Balanced Life</h3>
-                    <p class="post-excerpt post__description">Living a healthy lifestyle is essential for overall
-                        well-being. From
-                        nutritious diets to regular exercise, discover practical tips and expert advice on how to
-                        maintain a balanced life. Learn about mental health, wellness practices, and the importance of
-                        self-care.</p>
-                    <a href="single-post.html" class="read-more post__btn">Read More</a>
-                </article>
-                <article class="post__card" tabindex="0" data-aos="fade-up" data-aos-duration="1000">
-                    <img src="assets/images/travel_adventure.jpeg" alt="Post 4 image" class="post__image" />
-                    <h3 class="post__title">Travel Adventures: Top Destinations to Explore</h3>
-                    <p class="post__description">Travel opens up a world of adventure and discovery. From
-                        vibrant cities
-                        to tranquil retreats, explore our curated list of top travel destinations. Get inspired by
-                        cultural experiences, culinary delights, and breathtaking sights that await you around the
-                        globe.</p>
-                    <a href="single-post.html" class="read-more post__btn">Read More</a>
-                </article>
-                <article class="post__card" tabindex="0" data-aos="fade-up" data-aos-duration="1000">
-                    <img src="assets/images/education_future.jpeg" alt="Post 5 image" class="post__image" />
-                    <h3 class="post__title">The Future of Education: Innovations and Trends</h3>
-                    <p class="post__description">Education is evolving rapidly with technology. Discover how online
-                        learning,
-                        virtual classrooms, and AI-driven tools are transforming the educational landscape. Explore
-                        innovative teaching methods, lifelong learning opportunities, and the future skills needed for
-                        success.</p>
-                    <a href="single-post.html" class="read-more post__btn">Read More</a>
-                </article>
+        <section class="featured-posts">
+            <h2 class="section-title">Top Viewed Posts</h2>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper" id="top-posts-container">
+                    <!-- Cards will be injected dynamically -->
+                </div>
+                <!-- Controls -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
         </section>
 
@@ -204,6 +159,8 @@
         </div>
     </footer>
 
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- AOS Scroll Animation JS -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <!-- Link to main JavaScript file -->

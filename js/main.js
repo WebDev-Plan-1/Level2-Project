@@ -1,21 +1,12 @@
-// Variables Start Here
-// Select DOM elements
-const hamburger = document.querySelector(".hamburger");
-const navLinkItems = document.querySelectorAll(".nav-links .nav-link-item");
-const navLinks = document.querySelector(".nav-links");
+/* ============================================= */
+/* ############### Navbar Script ################ */
 /* ============================================= */
 
-// Functions Start Here
-// Highlight the active link based on current URL
+// Highlight the active nav link
 function setActiveNavLink() {
     const currentPath = window.location.pathname.split("/").pop();
-    // console.log("Current Path:", currentPath); // Debugging line
-
     navLinkItems.forEach((link) => {
-        // Remove active class from all links
         link.classList.remove("active");
-        // console.log("Current Link:", link.getAttribute("href")); // Debugging line
-        // Add active class if href matches current path
         if (
             link.getAttribute("href") === currentPath ||
             (link.getAttribute("href") === "index.html" && currentPath === "")
@@ -25,32 +16,39 @@ function setActiveNavLink() {
     });
 }
 
-// Toggle body scroll based on nav state and screen width
+// Toggle nav scroll lock for small screens
 function toggleNavScroll() {
     if (navLinks.classList.contains("active") && window.innerWidth <= 240) {
-        // document.body.scroll = 'no';
         document.body.style.overflow = "hidden";
         navLinks.style.overflowY = "scroll";
         navLinks.style.maxHeight = "80vh";
     } else {
-        // document.body.scroll = 'yes';
         document.body.style.overflow = "";
         navLinks.style.overflowY = "";
         navLinks.style.maxHeight = "";
     }
 }
-/* ============================================= */
 
-// Event Listeners Start Here
-// Ensure the DOM is fully loaded before running the script
+// Navbar DOM elements
+const hamburger = document.querySelector(".hamburger");
+const navLinkItems = document.querySelectorAll(".nav-links .nav-link-item");
+const navLinks = document.querySelector(".nav-links");
+
+// Navbar events
 document.addEventListener("DOMContentLoaded", () => {
-    // Toggle navigation links on hamburger click
-    hamburger.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-        toggleNavScroll();
-    });
+    if (hamburger) {
+        hamburger.addEventListener("click", () => {
+            navLinks.classList.toggle("active");
+            toggleNavScroll();
+        });
+        hamburger.addEventListener("keydown", (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+                e.preventDefault();
+                navLinks.classList.toggle("active");
+            }
+        });
+    }
 
-    // Adjust scroll behavior on window resize
     window.addEventListener("resize", toggleNavScroll);
 
     setActiveNavLink();
@@ -60,13 +58,11 @@ document.addEventListener("DOMContentLoaded", () => {
             navLinkItems.forEach((i) => i.classList.remove("active"));
             item.classList.add("active");
             navLinks.classList.remove("active");
-            // Store the active link in localStorage
             localStorage.setItem("activeNav", item.getAttribute("href"));
             toggleNavScroll();
         });
     });
 
-    // Restore active link from localStorage if available
     const savedNav = localStorage.getItem("activeNav");
     if (savedNav) {
         navLinkItems.forEach((link) => {
@@ -76,63 +72,125 @@ document.addEventListener("DOMContentLoaded", () => {
             }
         });
     }
-
-    // Optional: enable toggle with keyboard (Enter key)
-    hamburger.addEventListener("keydown", (e) => {
-        if (e.key === "Enter" || e.key === " ") {
-            e.preventDefault();
-            navLinks.classList.toggle("active");
-        }
-    });
 });
 
 /* ============================================= */
-// Initialize AOS (Animate On Scroll)
-
+/* ############### Initialize AOS ############### */
+/* ============================================= */
 AOS.init({
-    duration: 1200, // Animation duration in milliseconds
-    //once: true, // Whether animation should happen only once
-    mirror: false, // Whether elements should animate when scrolled past
+    duration: 1200,
+    mirror: false,
 });
 
-// ================================
-// Category Page Script (main.js)
-// ================================
+/* ============================================= */
+/* ######## Global Data: Fetch Articles ######## */
+/* ============================================= */
 
-// Path to articles data JSON file
 const dataUrl = "/js/articles.json";
-
-// Select DOM elements
-const articlesContainer = document.querySelector(".articles-list .posts");
-const categoryHeader = document.querySelector(".category-header"); // Section header (title)
-const categoryFilter = document.querySelector("#category-filter");
-const sortFilter = document.querySelector("#sort-filter");
-
-// Global variable to store all articles
 let allArticles = [];
 
-// -------------------------------
-// 1. Fetch Articles from JSON File
-// -------------------------------
 async function fetchArticles() {
     try {
-        const response = await fetch(dataUrl); // Load JSON file
-        allArticles = await response.json();   // Convert response to JS object
-        initCategoryPage(); // Initialize page once data is ready
+        const response = await fetch(dataUrl);
+        allArticles = await response.json();
+        initPageFeatures(); // Once data is ready
     } catch (error) {
         console.error("Error fetching articles:", error);
     }
 }
 
-// -------------------------------
-// 2. Initialize Category Page
-// -------------------------------
+/* ============================================= */
+/* ######## Home Page Functions (index.html) #### */
+/* ============================================= */
+
+const topPostsContainer = document.querySelector("#top-posts-container");
+const categoriesContainer = document.querySelector(".categories-overview .categories-list");
+
+// Show 6 random posts from top viewed
+function displayTopPosts() {
+    if (!topPostsContainer) return;
+
+    let sorted = [...allArticles].sort((a, b) => b.views - a.views);
+    let topCandidates = sorted.slice(0, 10);
+    let shuffled = topCandidates.sort(() => 0.5 - Math.random());
+    let selected = shuffled.slice(0, 6);
+
+    topPostsContainer.innerHTML = "";
+
+    selected.forEach(article => {
+        const slide = document.createElement("div");
+        slide.classList.add("swiper-slide");
+        slide.innerHTML = `
+          <article class="post-card post__card">
+            <img src="${article.image}" alt="${article.title}" class="post-image post__image" />
+            <h3 class="post-title post__title">${article.title}</h3>
+            <p class="post-excerpt post__description">${article.content.substring(0, 100)}...</p>
+            <a href="single.html?id=${article.id}" class="read-more post__btn">Read More</a>
+          </article>
+        `;
+        topPostsContainer.appendChild(slide);
+    });
+
+    if (typeof Swiper !== "undefined") {
+        new Swiper(".mySwiper", {
+            loop: true,
+            slidesPerView: 1,
+            spaceBetween: 20,
+            navigation: {
+                nextEl: ".swiper-button-next",
+                prevEl: ".swiper-button-prev"
+            },
+            pagination: {
+                el: ".swiper-pagination",
+                clickable: true,
+                // type: "bullets"         // Default Bullets
+                // type: "fraction",        // Shows Pagination as 1/16
+                // type: "progressbar"  // Shows Pagination as a progress bar
+                dynamicBullets: true,    //  Makes bullets larger based on active slide
+                dynamicMainBullets: 3,   //  Number of larger bullets to show
+            },
+            breakpoints: {
+                640: { slidesPerView: 1 },
+                768: { slidesPerView: 2 },
+                1024: { slidesPerView: 3 }
+            }
+        });
+    } else {
+        console.error("Swiper is not loaded. Please check script includes.");
+    }
+}
+
+// Show distinct categories dynamically
+function displayCategories() {
+    if (!categoriesContainer) return;
+
+    let categories = [...new Set(allArticles.map(article => article.category))];
+    categoriesContainer.innerHTML = "";
+
+    categories.forEach(cat => {
+        const li = document.createElement("li");
+        li.classList.add("category-item");
+        li.setAttribute("data-aos", "fade-right");
+        li.setAttribute("data-aos-duration", "1000");
+        li.innerHTML = `<a href="category.html?cat=${cat}" class="category-link">${cat}</a>`;
+        categoriesContainer.appendChild(li);
+    });
+}
+
+/* ============================================= */
+/* ######## Category Page Functions ############ */
+/* ============================================= */
+
+const articlesContainer = document.querySelector(".articles-list .posts");
+const categoryHeader = document.querySelector(".category-header");
+const categoryFilter = document.querySelector("#category-filter");
+const sortFilter = document.querySelector("#sort-filter");
+
+// Init category page
 function initCategoryPage() {
-    // Get category from URL parameter (?cat=Technology)
     const urlParams = new URLSearchParams(window.location.search);
     const categoryParam = urlParams.get("cat");
 
-    // If a category is in URL, set filter to it, otherwise default "All"
     if (categoryParam) {
         categoryFilter.value = categoryParam;
         displayArticles(categoryParam, sortFilter.value);
@@ -140,33 +198,27 @@ function initCategoryPage() {
         displayArticles("All", sortFilter.value);
     }
 
-    // Event: Change category filter
     categoryFilter.addEventListener("change", () => {
         const selectedCategory = categoryFilter.value;
-        updateURL(selectedCategory); // <-- Update URL
+        updateURL(selectedCategory);
         displayArticles(selectedCategory, sortFilter.value);
     });
 
-    // Event: Change sort filter
     sortFilter.addEventListener("change", () => {
         displayArticles(categoryFilter.value, sortFilter.value);
     });
 }
 
-// -------------------------------
-// 3. Display Articles by Filter + Sort
-// -------------------------------
+// Render articles
 function displayArticles(category, sortBy) {
-    // Normalize category value (make "All" case-insensitive)
     const normalizedCategory = category.toLowerCase();
 
-    // 1. Filter by category
     let filteredArticles =
         normalizedCategory === "all"
             ? allArticles
             : allArticles.filter(article => article.category === category);
 
-    // 2. Sort articles based on selected option
+    // Sort
     if (sortBy === "Latest") {
         filteredArticles.sort((a, b) => new Date(b.date) - new Date(a.date));
     } else if (sortBy === "Oldest") {
@@ -175,40 +227,30 @@ function displayArticles(category, sortBy) {
         filteredArticles.sort((a, b) => b.views - a.views);
     }
 
-    // 3. Update category header text dynamically
+    // Update header
     if (categoryHeader) {
-        categoryHeader.textContent =
+        categoryHeader.innerHTML =
             normalizedCategory === "all"
-                ? "All Articles"
-                : `${category} Articles`;
-
-        categoryHeader.innerHTML = normalizedCategory === "all"
-            ? `
-        <h2 class="section-title">All Articles</h2>
-        <p class="section-title-desc">Latest updates and articles about <span class="cat-desc">different Categories</span>.</p>`
-            : `
-        <h2 class="section-title">${category} Articles</h2>
-        <p class="section-title-desc">Latest updates and articles about <span class="cat-desc">${category}</span>.</p>
-      `;
-
+                ? `
+          <h2 class="section-title">All Articles</h2>
+          <p class="section-title-desc">Latest updates and articles about <span class="cat-desc">different Categories</span>.</p>`
+                : `
+          <h2 class="section-title">${category} Articles</h2>
+          <p class="section-title-desc">Latest updates and articles about <span class="cat-desc">${category}</span>.</p>`;
     }
 
-    // 4. Clear container before adding new posts
+    // Render
     articlesContainer.innerHTML = "";
-
-    // 5. Render each article as a card
     if (filteredArticles.length > 0) {
         filteredArticles.forEach(article => {
             const card = document.createElement("article");
             card.classList.add("post__card", "post-card");
-
             card.innerHTML = `
-        <img src="${article.image}" class="post-image post__image" alt="${article.title}" />
-        <h3 class="post-title post__title">${article.title}</h3>
-        <p class="post-excerpt post__description">${article.content}</p>
-        <a href="single.html?id=${article.id}" class="read-more post__btn btn">Read More</a>
-      `;
-
+              <img src="${article.image}" class="post-image post__image" alt="${article.title}" />
+              <h3 class="post-title post__title">${article.title}</h3>
+              <p class="post-excerpt post__description">${article.content}</p>
+              <a href="single.html?id=${article.id}" class="read-more post__btn btn">Read More</a>
+            `;
             articlesContainer.appendChild(card);
         });
     } else {
@@ -216,19 +258,46 @@ function displayArticles(category, sortBy) {
     }
 }
 
-// -------------------------------
-// 4. Update URL Without Reload
-// -------------------------------
+// Update URL param
 function updateURL(category) {
     const url = new URL(window.location);
     url.searchParams.set("cat", category);
-    window.history.pushState({}, "", url); // Update URL without reload
+    window.history.pushState({}, "", url);
 }
 
-// -------------------------------
-// 5. Run Fetch on Page Load
-// -------------------------------
-if (document.body.contains(articlesContainer)) {
-    fetchArticles();
+// Populate category filter dynamically
+function populateCategoryFilter() {
+    if (!categoryFilter) return;
+
+    let categories = [...new Set(allArticles.map(article => article.category))];
+    categoryFilter.innerHTML = `<option value="All">All</option>`;
+
+    categories.forEach(cat => {
+        const option = document.createElement("option");
+        option.value = cat;
+        option.textContent = cat;
+        categoryFilter.appendChild(option);
+    });
 }
-// ================================
+
+/* ============================================= */
+/* ######## Initialize Features Per Page ######## */
+/* ============================================= */
+
+function initPageFeatures() {
+    if (topPostsContainer) displayTopPosts();
+    if (categoriesContainer) displayCategories();
+    if (articlesContainer) {
+        populateCategoryFilter();
+        initCategoryPage();
+    }
+}
+
+/* ============================================= */
+/* ######## Run Fetch on Page Load ############## */
+/* ============================================= */
+fetchArticles();
+
+/* ============================================= */
+/* ################# End Script ################# */
+/* ============================================= */
