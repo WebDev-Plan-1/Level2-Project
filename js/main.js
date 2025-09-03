@@ -1,7 +1,7 @@
 /* =============================================
    ########### Global Config & Data ############
 ============================================= */
-const DATA_URL = "/data/articles.json";
+const DATA_URL = "data/articles.json";
 let allArticles = [];
 
 /* =============================================

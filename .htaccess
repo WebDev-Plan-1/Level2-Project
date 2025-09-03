@@ -1,0 +1,33 @@
+# Enable URL rewriting
+<IfModule mod_rewrite.c>
+  RewriteEngine On
+  RewriteBase /
+
+  # Example: force index.html as default
+  DirectoryIndex index.html
+</IfModule>
+
+# Ensure JSON files are served with the correct MIME type
+AddType application/json .json
+# Ensure WebP images are served with the correct MIME type
+AddType image/webp .webp
+
+
+# Allow CORS for fetch API requests
+<IfModule mod_headers.c>
+  Header set Access-Control-Allow-Origin "*"
+  Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
+  Header set Access-Control-Allow-Headers "Content-Type, Authorization"
+</IfModule>
+
+# Optional: improve caching for static files (CSS, JS, Images, JSON)
+<IfModule mod_expires.c>
+  ExpiresActive On
+  ExpiresByType text/css "access plus 1 month"
+  ExpiresByType application/javascript "access plus 1 month"
+  ExpiresByType application/json "access plus 1 hour"
+  ExpiresByType image/png "access plus 1 year"
+  ExpiresByType image/jpeg "access plus 1 year"
+  ExpiresByType image/gif "access plus 1 year"
+  ExpiresByType image/svg+xml "access plus 1 year"
+</IfModule>
