@@ -313,7 +313,6 @@ function displayArticles(category, sortBy) {
     }
 }
 
-
 // Populate category filter dropdown with unique categories
 // Add "All" option at the top
 // Called during category page initialization
