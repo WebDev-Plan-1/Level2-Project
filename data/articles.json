@@ -133,5 +133,275 @@
     "image": "assets/images/The Art of Photography.jpg",
     "date": "2024-06-18",
     "views": 9800
+  },
+  {
+    "id": 16,
+    "title": "Quantum Computing Breakthroughs",
+    "category": "Technology",
+    "content": "Quantum computing is revolutionizing data processing and security. Explore the latest breakthroughs and their impact on industries.",
+    "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
+    "date": "2025-09-01",
+    "views": 12000
+  },
+  {
+    "id": 17,
+    "title": "AI in Everyday Life",
+    "category": "Technology",
+    "content": "Artificial intelligence is now part of our daily routines. Discover how AI is transforming homes, workplaces, and cities.",
+    "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+    "date": "2025-08-15",
+    "views": 9500
+  },
+  {
+    "id": 18,
+    "title": "The Rise of Smart Cities",
+    "category": "Technology",
+    "content": "Smart cities use technology to improve urban living. Learn about IoT, data analytics, and sustainable infrastructure.",
+    "image": "assets/images/The Rise of Smart Cities.jpg",
+    "date": "2025-07-30",
+    "views": 8700
+  },
+  {
+    "id": 19,
+    "title": "Cybersecurity Trends",
+    "category": "Technology",
+    "content": "Stay ahead of cyber threats with the latest trends in cybersecurity, including AI-driven protection and blockchain security.",
+    "image": "https://images.unsplash.com/photo-1510511459019-5dda7724fd87",
+    "date": "2025-07-10",
+    "views": 11000
+  },
+  {
+    "id": 20,
+    "title": "Wearable Tech Innovations",
+    "category": "Technology",
+    "content": "Wearable technology is enhancing health and productivity. Explore new devices and their applications.",
+    "image": "assets/images/Wearable Tech Innovations.jpeg",
+    "date": "2025-06-25",
+    "views": 7800
+  },
+  {
+    "id": 21,
+    "title": "5G and Beyond",
+    "category": "Technology",
+    "content": "5G networks are changing connectivity. Discover what’s next for mobile technology and internet speeds.",
+    "image": "assets/images/5G and Beyond.webp",
+    "date": "2025-06-10",
+    "views": 9900
+  },
+  {
+    "id": 22,
+    "title": "Virtual Reality in Education",
+    "category": "Technology",
+    "content": "VR is transforming how we learn. See how immersive experiences are used in classrooms and training.",
+    "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97",
+    "date": "2025-05-28",
+    "views": 6500
+  },
+  {
+    "id": 23,
+    "title": "Blockchain Beyond Crypto",
+    "category": "Technology",
+    "content": "Blockchain technology is finding new uses beyond cryptocurrencies. Explore its impact on supply chains and security.",
+    "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
+    "date": "2025-05-10",
+    "views": 7200
+  },
+  {
+    "id": 24,
+    "title": "Robotics in Industry",
+    "category": "Technology",
+    "content": "Robots are revolutionizing manufacturing and logistics. Learn about the latest advancements in industrial robotics.",
+    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475",
+    "date": "2025-04-22",
+    "views": 8100
+  },
+  {
+    "id": 25,
+    "title": "Cloud Computing Evolution",
+    "category": "Technology",
+    "content": "Cloud computing is powering modern businesses. Discover new trends in cloud services and data management.",
+    "image": "https://www.gyansetu.in/wp-content/uploads/2024/02/2022_04_Add-a-heading-1-1200x675.jpg",
+    "date": "2025-04-05",
+    "views": 7300
+  },
+  {
+    "id": 26,
+    "title": "Smart Home Automation",
+    "category": "Technology",
+    "content": "Smart home devices are making life easier. Explore the latest in home automation and security.",
+    "image": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308",
+    "date": "2025-03-20",
+    "views": 6700
+  },
+  {
+    "id": 27,
+    "title": "Tech for Sustainability",
+    "category": "Technology",
+    "content": "Technology is helping create a sustainable future. Learn about green tech innovations and eco-friendly solutions.",
+    "image": "assets/images/Tech for Sustainability.jpg",
+    "date": "2025-03-05",
+    "views": 8000
+  },
+  {
+    "id": 28,
+    "title": "Augmented Reality in Retail",
+    "category": "Technology",
+    "content": "AR is changing the shopping experience. Discover how retailers use AR for customer engagement.",
+    "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97",
+    "date": "2025-02-18",
+    "views": 6200
+  },
+  {
+    "id": 29,
+    "title": "Tech Startups to Watch",
+    "category": "Technology",
+    "content": "Meet the tech startups that are shaping the future. Explore their innovations and growth stories.",
+    "image": "assets/images/Tech Startups to Watch.png",
+    "date": "2025-02-01",
+    "views": 9100
+  },
+  {
+    "id": 30,
+    "title": "Journey to Mars",
+    "category": "Space",
+    "content": "Mars missions are closer than ever. Learn about the technology and challenges of reaching the Red Planet.",
+    "image": "assets/images/Journey to Mars.jpg",
+    "date": "2025-01-15",
+    "views": 10500
+  },
+  {
+    "id": 31,
+    "title": "The Mystery of Black Holes",
+    "category": "Space",
+    "content": "Black holes are among the universe’s greatest mysteries. Discover recent discoveries and theories.",
+    "image": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564",
+    "date": "2025-01-01",
+    "views": 9800
+  },
+  {
+    "id": 32,
+    "title": "International Space Station Life",
+    "category": "Space",
+    "content": "Life aboard the ISS is unique. Explore daily routines, experiments, and international cooperation.",
+    "image": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca",
+    "date": "2024-12-15",
+    "views": 8700
+  },
+  {
+    "id": 33,
+    "title": "Space Telescopes Revolution",
+    "category": "Space",
+    "content": "Space telescopes are revealing new worlds. Learn about the latest missions and discoveries.",
+    "image": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564",
+    "date": "2024-12-01",
+    "views": 9400
+  },
+  {
+    "id": 34,
+    "title": "Women in Space",
+    "category": "Space",
+    "content": "Women are making history in space exploration. Discover their achievements and future missions.",
+    "image": "assets/images/Women in Space.jpg",
+    "date": "2024-11-15",
+    "views": 7600
+  },
+  {
+    "id": 35,
+    "title": "The Search for Exoplanets",
+    "category": "Space",
+    "content": "Scientists are searching for planets beyond our solar system. Explore the methods and discoveries.",
+    "image": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564",
+    "date": "2024-11-01",
+    "views": 8200
+  },
+  {
+    "id": 36,
+    "title": "Space Tourism: The Next Frontier",
+    "category": "Space",
+    "content": "Space tourism is becoming a reality. Learn about companies and technology making it possible.",
+    "image": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca",
+    "date": "2024-10-15",
+    "views": 9900
+  },
+  {
+    "id": 37,
+    "title": "Street Food Around the World",
+    "category": "Food",
+    "content": "Street food offers a taste of local culture. Explore popular street foods from different countries.",
+    "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
+    "date": "2024-10-01",
+    "views": 12000
+  },
+  {
+    "id": 38,
+    "title": "The Art of Baking",
+    "category": "Food",
+    "content": "Baking is both science and art. Discover tips, recipes, and trends in the world of baking.",
+    "image": "assets/images/The Art of Baking.webp",
+    "date": "2024-09-15",
+    "views": 9500
+  },
+  {
+    "id": 39,
+    "title": "Healthy Breakfast Ideas",
+    "category": "Food",
+    "content": "Start your day right with healthy breakfast recipes and nutrition tips.",
+    "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
+    "date": "2024-09-01",
+    "views": 8700
+  },
+  {
+    "id": 40,
+    "title": "Global Cuisine Trends",
+    "category": "Food",
+    "content": "Explore the latest trends in global cuisine and how chefs are innovating traditional dishes.",
+    "image": "https://images.unsplash.com/photo-1517841905240-472988babdf9",
+    "date": "2024-08-15",
+    "views": 11000
+  },
+  {
+    "id": 41,
+    "title": "Vegetarian Delights",
+    "category": "Food",
+    "content": "Vegetarian cuisine is delicious and healthy. Discover recipes and tips for plant-based eating.",
+    "image": "https://www.golcondachimney.com/wp-content/uploads/2024/03/vegetarian-delights-1200x900.png",
+    "date": "2024-08-01",
+    "views": 7800
+  },
+  {
+    "id": 42,
+    "title": "Desserts from Egypt",
+    "category": "Food",
+    "content": "Egyptian desserts are rich in flavor and tradition. Explore recipes and stories behind classic sweets.",
+    "image": "https://images.unsplash.com/photo-1502082553048-f009c37129b9",
+    "date": "2024-07-15",
+    "views": 9900
+  },
+  {
+    "id": 43,
+    "title": "Coffee Culture Worldwide",
+    "category": "Food",
+    "content": "Coffee brings people together. Discover coffee traditions and brewing methods from around the world.",
+    "image": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
+    "date": "2024-07-01",
+    "views": 6500
+  },
+  {
+    "id": 44,
+    "title": "Modern Egyptian Cuisine",
+    "category": "Food",
+    "content": "Modern Egyptian chefs are reinventing classic dishes. Learn about new flavors and culinary techniques.",
+    "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
+    "date": "2024-06-15",
+    "views": 7200
+  },
+  {
+    "id": 45,
+    "title": "Food Photography Tips",
+    "category": "Food",
+    "content": "Capture stunning food photos with these tips on lighting, composition, and styling.",
+    "image": "assets/images/Food Photography Tips.webp",
+    "date": "2024-06-01",
+    "views": 8100
   }
 ]
