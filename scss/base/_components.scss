@@ -1,18 +1,6 @@
 @use "../abstracts/variables" as v;
 @use "../abstracts/mixins" as m;
 
-// .button-primary {
-//   background-color: v.$primary-color;
-//   color: #fff;
-//   padding: v.$spacing-md;
-//   border-radius: 4px;
-//   @include m.transition(0.3s);
-
-//   &:hover {
-//     background-color: darken(v.$primary-color, 10%);
-//   }
-// }
-
 // ==========================
 // Button Primary Mixin
 // ==========================
@@ -88,3 +76,24 @@
 }
 
 // ==========================
+
+@mixin not-found {
+  text-align: center;
+  color: v.$secondary-color;
+  margin: 2rem 0;
+  color: rgb(151, 28, 28);
+  font-family: v.$font-second;
+  font-weight: 600;
+  @include m.responsive-font(1rem, 1.2rem);
+}
+
+.not-found {
+  @include not-found;
+}
+
+@mixin empty-section {
+  padding: v.$spacing-md 0;
+}
+.empty-section {
+  @include empty-section;
+}

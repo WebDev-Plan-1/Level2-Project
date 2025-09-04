@@ -20,20 +20,23 @@
   .swiper {
     width: 100%;
     padding-bottom: 3rem; // leave space for pagination
-  }
 
-  .swiper-wrapper {
-    display: flex;
-    align-items: stretch;
-  }
+    .swiper-wrapper {
+      display: flex;
+      align-items: stretch;
 
-  .swiper-slide {
-    display: flex;
-    justify-content: center;
-    align-items: stretch;
-    height: auto; // makes cards equal height
+      .swiper-slide {
+        display: flex;
+        justify-content: center;
+        align-items: stretch;
+        height: auto; // makes cards equal height
+      }
+      .not-found {
+        @include c.not-found;
+        flex-grow: 1;
+      }
+    }
   }
-
   /* ================================
      Post Card inside slider
      ================================ */
@@ -208,4 +211,8 @@
       display: none; // hide arrows on very small screens
     }
   }
+}
+
+.empty-section {
+  @include c.empty-section;
 }

@@ -4,7 +4,6 @@
 // URL to fetch articles data
 const DATA_URL = "data/articles.json";
 let allArticles = [];
-
 /* =============================================
    ################# Navbar ####################
 ============================================= */
@@ -14,60 +13,64 @@ const navLinkItems = document.querySelectorAll(".nav-links .nav-link-item");
 
 // ⭐ UPDATED: Set active nav link based on current URL (ignoring query string)
 function setActiveNavLink() {
-    const currentPath = window.location.pathname.split("/").pop() || "index.html";
-    navLinkItems.forEach((link) => {
-        const linkPath = link.getAttribute("href").split("?")[0]; // ⭐ strip query string
-        link.classList.toggle("active", linkPath === currentPath);
-    });
+  const currentPath = window.location.pathname.split("/").pop() || "index.html";
+  navLinkItems.forEach((link) => {
+    const linkPath = link.getAttribute("href").split("?")[0]; // ⭐ strip query string
+    link.classList.toggle("active", linkPath === currentPath);
+  });
 }
-
+// Handle scroll behavior for nav links on small screens
 function toggleNavScroll() {
-    if (navLinks.classList.contains("active") && window.innerWidth <= 240) {
-        document.body.style.overflow = "hidden";
-        navLinks.style.overflowY = "scroll";
-        navLinks.style.maxHeight = "80vh";
-    } else {
-        document.body.style.overflow = "";
-        navLinks.style.overflowY = "";
-        navLinks.style.maxHeight = "";
-    }
+  if (navLinks.classList.contains("active") && window.innerWidth <= 240) {
+    document.body.style.overflow = "hidden";
+    navLinks.style.overflowY = "scroll";
+    navLinks.style.maxHeight = "80vh";
+  } else {
+    document.body.style.overflow = "";
+    navLinks.style.overflowY = "";
+    navLinks.style.maxHeight = "";
+  }
 }
 
+// Initialize Navbar functionality
+// including hamburger toggle and active link highlighting
+// and preserving active state across reloads, and responsive scroll handling
+// and keyboard accessibility, and localStorage usage
 function initNavbar() {
-    if (!hamburger) return;
+  if (!hamburger) return;
 
-    hamburger.addEventListener("click", () => {
-        navLinks.classList.toggle("active");
-        toggleNavScroll();
-    });
+  hamburger.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+    toggleNavScroll();
+  });
 
-    hamburger.addEventListener("keydown", (e) => {
-        if (["Enter", " "].includes(e.key)) {
-            e.preventDefault();
-            navLinks.classList.toggle("active");
-        }
-    });
-
-    navLinkItems.forEach((item) =>
-        item.addEventListener("click", () => {
-            navLinkItems.forEach((i) => i.classList.remove("active"));
-            item.classList.add("active");
-            navLinks.classList.remove("active");
-            localStorage.setItem("activeNav", item.getAttribute("href"));
-            toggleNavScroll();
-        })
-    );
-
-    const savedNav = localStorage.getItem("activeNav");
-    if (savedNav) {
-        navLinkItems.forEach((link) => {
-            const linkPath = link.getAttribute("href").split("?")[0]; // ⭐ ignore query
-            link.classList.toggle("active", linkPath === savedNav);
-        });
+  hamburger.addEventListener("keydown", (e) => {
+    if (["Enter", " "].includes(e.key)) {
+      e.preventDefault();
+      navLinks.classList.toggle("active");
     }
+  });
 
-    window.addEventListener("resize", toggleNavScroll);
-    setActiveNavLink();
+  navLinkItems.forEach((item) =>
+    item.addEventListener("click", () => {
+      navLinkItems.forEach((i) => i.classList.remove("active"));
+      item.classList.add("active");
+      navLinks.classList.remove("active");
+      localStorage.setItem("activeNav", item.getAttribute("href"));
+      toggleNavScroll();
+    })
+  );
+
+  const savedNav = localStorage.getItem("activeNav");
+  if (savedNav) {
+    navLinkItems.forEach((link) => {
+      const linkPath = link.getAttribute("href").split("?")[0]; // ⭐ ignore query
+      link.classList.toggle("active", linkPath === savedNav);
+    });
+  }
+
+  window.addEventListener("resize", toggleNavScroll);
+  setActiveNavLink();
 }
 
 /* =============================================
@@ -79,189 +82,296 @@ AOS.init({ duration: 1200, mirror: false });
 /* =============================================
    ############### Utilities ###################
 ============================================= */
+// Shuffle an array randomly
 function shuffleArray(array) {
-    return array.sort(() => 0.5 - Math.random());
+  return array.sort(() => 0.5 - Math.random());
 }
 
 // ⭐ UPDATED: Update URL params (support multiple keys at once)
+// without reloading the page
 function updateURLParams(params) {
-    const url = new URL(window.location);
-    Object.keys(params).forEach((key) => {
-        url.searchParams.set(key, params[key]);
-    });
-    window.history.pushState({}, "", url);
+  const url = new URL(window.location);
+  Object.keys(params).forEach((key) => {
+    url.searchParams.set(key, params[key]);
+  });
+  window.history.pushState({}, "", url);
 }
 
+// Create an element with optional classes and inner HTML
 function createElement(tag, classes = [], html = "") {
-    const el = document.createElement(tag);
-    if (classes.length) el.classList.add(...classes);
-    if (html) el.innerHTML = html;
-    return el;
+  const el = document.createElement(tag);
+  if (classes.length) el.classList.add(...classes);
+  if (html) el.innerHTML = html;
+  return el;
 }
 
+// Format view counts into human-readable strings
+// e.g., 1500 -> 1.5K, 2000000 -> 2M
 function formatViews(num) {
-    if (num >= 1_000_000_000) {
-        return (num / 1_000_000_000).toFixed(1).replace(/\.0$/, '') + 'B';
-    } else if (num >= 1_000_000) {
-        return (num / 1_000_000).toFixed(1).replace(/\.0$/, '') + 'M';
-    } else if (num >= 1_000) {
-        return (num / 1_000).toFixed(1).replace(/\.0$/, '') + 'K';
-    } else {
-        return num.toString();
-    }
+  if (num >= 1_000_000_000) {
+    return (num / 1_000_000_000).toFixed(1).replace(/\.0$/, "") + "B";
+  } else if (num >= 1_000_000) {
+    return (num / 1_000_000).toFixed(1).replace(/\.0$/, "") + "M";
+  } else if (num >= 1_000) {
+    return (num / 1_000).toFixed(1).replace(/\.0$/, "") + "K";
+  } else {
+    return num.toString();
+  }
 }
 
+// Format date strings into a more readable format
+// e.g., "2023-08-15" -> "August 15, 2023"
 function formatDate(dateString) {
-    const options = { year: 'numeric', month: 'long', day: 'numeric' };
-    return new Date(dateString).toLocaleDateString('en-US', options);
+  const options = { year: "numeric", month: "long", day: "numeric" };
+  return new Date(dateString).toLocaleDateString("en-US", options);
 }
 
 // Smoothly scroll the page to the top of the articles area (or header if present)
 function scrollToArticlesTop() {
-    if (!articlesContainer) return;
-    const target = categoryHeader || articlesContainer;
-    target.scrollIntoView({ behavior: "smooth", block: "start" });
+  if (!articlesContainer) return;
+  const target = categoryHeader || articlesContainer;
+  target.scrollIntoView({ behavior: "smooth", block: "start" });
+}
+
+// Display a not found message in the given container
+// Used when no articles match the selected category
+function notFoundMessage(container, message) {
+  if (!container) return;
+  container.innerHTML = `<p class="not-found">${message}</p>`;
+}
+
+// Remove Swiper controls if they exist
+// Used when there are no slides to show
+function removeSwiperControls() {
+  const nextBtn = document.querySelector(".swiper-button-next");
+  const prevBtn = document.querySelector(".swiper-button-prev");
+  const pagination = document.querySelector(".swiper-pagination");
+
+  [nextBtn, prevBtn, pagination].forEach((el) => {
+    if (el) el.remove();
+  });
+  // const swiperContainer = document.querySelector(".swiper");
+  // if (swiperContainer) swiperContainer.style.display = "none";
+}
+
+// Handle fetch failure gracefully
+// Display fallback messages in all sections
+// and clear filters and pagination
+function handleFailFetch() {
+  if (categoryHeader) {
+    categoryHeader.innerHTML = `<h2 class="section-title">All Articles</h2>
+            <p class="section-title-desc">Latest updates and articles about <span class="cat-desc">different Categories</span>.</p>`;
+  }
+  if (categoryFilter)
+    categoryFilter.innerHTML = `<option value="All">All</option>`;
+  if (sortFilter)
+    sortFilter.innerHTML = `<option value="Latest">Latest</option>`;
+  if (postsPaginationContainer) postsPaginationContainer.innerHTML = "";
+  //   [articlesContainer, categoriesContainer, topPostsContainer].forEach((el) =>
+  //     el.classList.add("empty-section")
+  //   );
+  if (articlesContainer)
+    articlesContainer.parentNode.classList.add("empty-section");
+  if (categoriesContainer)
+    categoriesContainer.parentNode.classList.add("empty-section");
+  if (topPostsContainer)
+    topPostsContainer.parentNode.parentNode.classList.add("empty-section");
+  notFoundMessage(
+    articlesContainer,
+    "Articles will be shown here soon. Please check back later."
+  );
+  removeSwiperControls();
+  notFoundMessage(
+    categoriesContainer,
+    "Categories will be available soon. Please check back later."
+  );
+  notFoundMessage(
+    topPostsContainer,
+    "Featured articles will be Ready soon. STAY TUNED."
+  );
+  return;
 }
 
 /* =============================================
-   ########## Home Page: Top Posts #############
+   ########## Home Page: Top Posts Section #############
 ============================================= */
 const topPostsContainer = document.querySelector("#top-posts-container");
 
 // Display top posts in a Swiper carousel
 // Select top 10 by views, shuffle, and show 6
 function displayTopPosts() {
-    if (!topPostsContainer) return;
+  if (!topPostsContainer) return;
 
-    const selected = shuffleArray(
-        [...allArticles].sort((a, b) => b.views - a.views).slice(0, 10)
-    ).slice(0, 6);
+  const selected = shuffleArray(
+    [...allArticles].sort((a, b) => b.views - a.views).slice(0, 10)
+  ).slice(0, 6);
 
-    topPostsContainer.innerHTML = "";
-    selected.forEach((article) => {
-        const slide = createElement(
-            "div",
-            ["swiper-slide"],
-            `
+  console.log("Selected Top Posts:", selected);
+
+  topPostsContainer.innerHTML = "";
+
+  if (selected.length === 0) {
+    notFoundMessage(
+      topPostsContainer,
+      "No posts are available now. Please check back later."
+    );
+    removeSwiperControls();
+    return;
+  }
+
+  selected.forEach((article) => {
+    const slide = createElement(
+      "div",
+      ["swiper-slide"],
+      `
       <article class="post-card post__card">
-        <img src="${article.image}" alt="${article.title}" class="post-image post__image" />
+        <img src="${article.image}" alt="${
+        article.title
+      }" class="post-image post__image" />
         <h3 class="post-title post__title">${article.title}</h3>
-        <p class="post-excerpt post__description">${article.content.substring(0, 100)}...</p>
+        <p class="post-excerpt post__description">${article.content.substring(
+          0,
+          100
+        )}...</p>
         <p class="top-post-info">
-                <span class="top-post-views"><i class="fa-solid fa-eye"></i> ${formatViews(article.views)}</span>
+                <span class="top-post-views"><i class="fa-solid fa-eye"></i> ${formatViews(
+                  article.views
+                )}</span>
                 <span class="top-post-category">${article.category}</span>
         </p>
-        <a href="single.html?id=${article.id}" class="read-more post__btn">Read More</a>
+        <a href="single.html?id=${
+          article.id
+        }" class="read-more post__btn">Read More</a>
       </article>`
-        );
-        topPostsContainer.appendChild(slide);
-    });
+    );
+    topPostsContainer.appendChild(slide);
+  });
 
-    // Initialize Swiper carousel
-    // Check if Swiper is loaded
-    if (typeof Swiper !== "undefined") {
-        new Swiper(".mySwiper", {
-            loop: true,
-            slidesPerView: 1,
-            spaceBetween: 20,
-            navigation: { nextEl: ".swiper-button-next", prevEl: ".swiper-button-prev" },
-            pagination: {
-                el: ".swiper-pagination",
-                clickable: true,
-                // type: "bullets",         // Default is 'bullets'
-                // type: "fraction",        // fraction pagination 3/16
-                dynamicBullets: true,       // dynamic bullets size
-                dynamicMainBullets: 3,      // show 3 main bullets
-            },
-            breakpoints: {
-                640: { slidesPerView: 1 },
-                768: { slidesPerView: 2 },
-                1024: { slidesPerView: 3 },
-            },
-        });
-    } else {
-        console.error("Swiper is not loaded.");
-    }
+  // Initialize Swiper carousel
+  // Check if Swiper is loaded
+  if (typeof Swiper !== "undefined") {
+    new Swiper(".mySwiper", {
+      loop: true,
+      slidesPerView: 1,
+      spaceBetween: 20,
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+      pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        // type: "bullets",         // Default is 'bullets'
+        // type: "fraction",        // fraction pagination 3/16
+        dynamicBullets: true, // dynamic bullets size
+        dynamicMainBullets: 3, // show 3 main bullets
+      },
+      breakpoints: {
+        640: { slidesPerView: 1 },
+        768: { slidesPerView: 2 },
+        1024: { slidesPerView: 3 },
+      },
+    });
+  } else {
+    console.error("Swiper is not loaded.");
+  }
 }
 
 /* =============================================
-   ######### Home Page: Categories #############
+   ######### Home Page: Categories Section #############
 ============================================= */
 const categoriesContainer = document.querySelector(
-    ".categories-overview .categories-list"
+  ".categories-overview .categories-list"
 );
 
 // Display categories with pagination
 // 7 categories per page
 function renderCategoriesPage(categories, page, perPage) {
-    const start = (page - 1) * perPage;
-    const paginatedCats = categories.slice(start, start + perPage);
+  const start = (page - 1) * perPage;
+  const paginatedCats = categories.slice(start, start + perPage);
 
-    categoriesContainer.innerHTML = "";
-    paginatedCats.forEach((cat) => {
-        const li = createElement(
-            "li",
-            ["category-item"],
-            `<a href="category.html?cat=${cat}" class="category-link">${cat}</a>`
-        );
-        li.setAttribute("data-aos", "fade-right");
-        li.setAttribute("data-aos-duration", "1000");
-        categoriesContainer.appendChild(li);
-    });
+  categoriesContainer.innerHTML = "";
+  paginatedCats.forEach((cat) => {
+    const li = createElement(
+      "li",
+      ["category-item"],
+      `<a href="category.html?cat=${cat}" class="category-link">${cat}</a>`
+    );
+    li.setAttribute("data-aos", "fade-right");
+    li.setAttribute("data-aos-duration", "1000");
+    categoriesContainer.appendChild(li);
+  });
 }
 
 // Render pagination controls for categories
 // with ellipses for large page sets, and previous/next buttons
 function renderCategoriesPagination(total, current, perPage, categories) {
-    const paginationContainer = document.querySelector(".categories-pagination");
-    if (!paginationContainer) return;
+  const paginationContainer = document.querySelector(".categories-pagination");
+  if (!paginationContainer) return;
 
-    paginationContainer.innerHTML = "";
+  paginationContainer.innerHTML = "";
 
-    // Helper to create pagination buttons
-    // with active and disabled states
-    function createBtn(label, page, isActive = false, isDisabled = false) {
-        const btn = createElement("button", ["pagination-btn"], label);
-        if (isActive) btn.classList.add("active");
-        if (isDisabled) btn.disabled = true;
-        if (!isDisabled && !isActive) {
-            btn.addEventListener("click", () => {
-                renderCategoriesPage(categories, page, perPage);
-                renderCategoriesPagination(total, page, perPage, categories);
-            });
-        }
-        paginationContainer.appendChild(btn);
+  // Helper to create pagination buttons
+  // with active and disabled states
+  function createBtn(label, page, isActive = false, isDisabled = false) {
+    const btn = createElement("button", ["pagination-btn"], label);
+    if (isActive) btn.classList.add("active");
+    if (isDisabled) btn.disabled = true;
+    if (!isDisabled && !isActive) {
+      btn.addEventListener("click", () => {
+        renderCategoriesPage(categories, page, perPage);
+        renderCategoriesPagination(total, page, perPage, categories);
+      });
     }
+    paginationContainer.appendChild(btn);
+  }
 
-    if (current > 1) createBtn("«", current - 1);
-    createBtn("1", 1, current === 1);
+  if (current > 1) createBtn("«", current - 1);
+  createBtn("1", 1, current === 1);
 
-    if (current > 3) paginationContainer.appendChild(createElement("span", ["pagination-dots"], "..."));
+  if (current > 3)
+    paginationContainer.appendChild(
+      createElement("span", ["pagination-dots"], "...")
+    );
 
-    for (let i = Math.max(2, current - 2); i <= Math.min(total - 1, current + 2); i++) {
-        createBtn(i, i, current === i);
-    }
+  for (
+    let i = Math.max(2, current - 2);
+    i <= Math.min(total - 1, current + 2);
+    i++
+  ) {
+    createBtn(i, i, current === i);
+  }
 
-    if (current < total - 2) paginationContainer.appendChild(createElement("span", ["pagination-dots"], "..."));
+  if (current < total - 2)
+    paginationContainer.appendChild(
+      createElement("span", ["pagination-dots"], "...")
+    );
 
-    if (total > 1) createBtn(total, total, current === total);
-    if (current < total) createBtn("»", current + 1);
+  if (total > 1) createBtn(total, total, current === total);
+  if (current < total) createBtn("»", current + 1);
 }
 
 // Main function to display categories with pagination
 // 7 categories per page
 function displayCategories(perPage = 7) {
-    if (!categoriesContainer) return;
-    const categories = [...new Set(allArticles.map((a) => a.category))];
-    const totalPages = Math.ceil(categories.length / perPage);
-    const currentPage = 1;
+  if (!categoriesContainer) return;
+  const categories = [...new Set(allArticles.map((a) => a.category))];
 
-    renderCategoriesPage(categories, currentPage, perPage);
-    renderCategoriesPagination(totalPages, currentPage, perPage, categories);
+  if (categories.length === 0) {
+    notFoundMessage(
+      categoriesContainer,
+      "No categories available now. Please check back later."
+    );
+    return;
+  }
+  const totalPages = Math.ceil(categories.length / perPage);
+  const currentPage = 1;
+
+  renderCategoriesPage(categories, currentPage, perPage);
+  renderCategoriesPagination(totalPages, currentPage, perPage, categories);
 }
-
 /* =============================================
-   ########## Category Page Articles ############
+   ########## Category Page -- Articles Section ############
 ============================================= */
 const articlesContainer = document.querySelector(".articles-list .posts");
 const postsPaginationContainer = document.querySelector(".posts-pagination");
@@ -272,122 +382,143 @@ const sortFilter = document.querySelector("#sort-filter");
 let currentPage = 1;
 const perPage = 6;
 
+// Display articles based on selected category and sort option
 function displayArticles(category, sortBy) {
-    const normalizedCategory = category.toLowerCase();
-    let filtered =
-        normalizedCategory === "all"
-            ? allArticles
-            : allArticles.filter((a) => a.category === category);
+  const normalizedCategory = category.toLowerCase();
+  let filtered =
+    normalizedCategory === "all"
+      ? allArticles
+      : allArticles.filter((a) => a.category === category);
 
-    if (sortBy === "Latest") filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
-    if (sortBy === "Oldest") filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
-    if (sortBy === "Most Viewed") filtered.sort((a, b) => b.views - a.views);
+  if (sortBy === "Latest")
+    filtered.sort((a, b) => new Date(b.date) - new Date(a.date));
+  if (sortBy === "Oldest")
+    filtered.sort((a, b) => new Date(a.date) - new Date(b.date));
+  if (sortBy === "Most Viewed") filtered.sort((a, b) => b.views - a.views);
 
-    if (categoryHeader) {
-        categoryHeader.innerHTML =
-            normalizedCategory === "all"
-                ? `<h2 class="section-title">All Articles</h2>
+  if (categoryHeader) {
+    categoryHeader.innerHTML =
+      normalizedCategory === "all"
+        ? `<h2 class="section-title">All Articles</h2>
                    <p class="section-title-desc">Latest updates and articles about <span class="cat-desc">different Categories</span>.</p>`
-                : `<h2 class="section-title">${category} Articles</h2>
+        : `<h2 class="section-title">${category} Articles</h2>
                    <p class="section-title-desc">Latest updates and articles about <span class="cat-desc">${category}</span>.</p>`;
-    }
+  }
 
-    if (filtered.length === 0) {
-        articlesContainer.innerHTML = `<p class="not-found">No articles found in this category.</p>`;
-        postsPaginationContainer.innerHTML = "";
-        return;
-    }
+  if (filtered.length === 0) {
+    // notFoundMessage(articlesContainer, `No articles found in " ${normalizedCategory === "all" ? "all categories" : "in" + category + "category"} ". Please check back later.`);
+    notFoundMessage(
+      articlesContainer,
+      `No articles found in any category. Please check back later.`
+    );
+    postsPaginationContainer.innerHTML = "";
+    return;
+  }
 
-    const totalPages = Math.ceil(filtered.length / perPage);
-    const start = (currentPage - 1) * perPage;
-    const end = start + perPage;
-    const paginatedArticles = filtered.slice(start, end);
+  const totalPages = Math.ceil(filtered.length / perPage);
+  const start = (currentPage - 1) * perPage;
+  const end = start + perPage;
+  const paginatedArticles = filtered.slice(start, end);
 
-    articlesContainer.innerHTML = "";
-    paginatedArticles.forEach((article) => {
-        const card = createElement(
-            "article",
-            ["post__card", "post-card"],
-            `
-            <img src="${article.image}" class="post-image post__image" alt="${article.title}" />
+  articlesContainer.innerHTML = "";
+  paginatedArticles.forEach((article) => {
+    const card = createElement(
+      "article",
+      ["post__card", "post-card"],
+      `
+            <img src="${article.image}" class="post-image post__image" alt="${
+        article.title
+      }" />
             <h3 class="post-title post__title">${article.title}</h3>
             <p class="post-category">#${article.category}</p>
             <p class="post-excerpt post__description">${article.content}</p>
             <p class="post-info">
-                <span class="post-views"><i class="fa-solid fa-eye"></i> ${formatViews(article.views)}</span>
+                <span class="post-views"><i class="fa-solid fa-eye"></i> ${formatViews(
+                  article.views
+                )}</span>
                 <span class="post-date">${formatDate(article.date)}</span>
             </p>
-            <a href="single.html?id=${article.id}" class="read-more post__btn btn">Read More</a>
+            <a href="single.html?id=${
+              article.id
+            }" class="read-more post__btn btn">Read More</a>
         `
-        );
-        articlesContainer.appendChild(card);
-    });
+    );
+    articlesContainer.appendChild(card);
+  });
 
-    renderPostsPaginationButtons(totalPages, category, sortBy);
+  renderPostsPaginationButtons(totalPages, category, sortBy);
 
-    // ⭐ NEW: Sync URL params
-    updateURLParams({ cat: category, sort: sortBy, page: currentPage });
+  // ⭐ NEW: Sync URL params
+  updateURLParams({ cat: category, sort: sortBy, page: currentPage });
 }
 
+// Render pagination buttons for articles
+// with active state and click handlers
 function renderPostsPaginationButtons(totalPages, category, sortBy) {
-    postsPaginationContainer.innerHTML = "";
+  postsPaginationContainer.innerHTML = "";
 
-    for (let i = 1; i <= totalPages; i++) {
-        const bullet = document.createElement("button");
-        bullet.classList.add("post-page-bullet");
-        if (i === currentPage) bullet.classList.add("active");
-        bullet.innerText = i;
+  for (let i = 1; i <= totalPages; i++) {
+    const bullet = document.createElement("button");
+    bullet.classList.add("post-page-bullet");
+    if (i === currentPage) bullet.classList.add("active");
+    bullet.innerText = i;
 
-        bullet.addEventListener("click", () => {
-            currentPage = i;
-            displayArticles(category, sortBy);
+    bullet.addEventListener("click", () => {
+      currentPage = i;
+      displayArticles(category, sortBy);
 
-            // ✅ scroll to top of the articles after page changes
-            scrollToArticlesTop();
-        });
+      // ✅ scroll to top of the articles after page changes
+      scrollToArticlesTop();
+    });
 
-        postsPaginationContainer.appendChild(bullet);
-    }
+    postsPaginationContainer.appendChild(bullet);
+  }
 }
 
+// Populate category filter dropdown with unique categories
+// plus an "All" option
 function populateCategoryFilter() {
-    if (!categoryFilter) return;
-    const categories = [...new Set(allArticles.map((a) => a.category))];
-    categoryFilter.innerHTML = `<option value="All">All</option>`;
-    categories.forEach((cat) => {
-        const option = createElement("option", [], cat);
-        option.value = cat;
-        categoryFilter.appendChild(option);
-    });
+  if (!categoryFilter) return;
+  const categories = [...new Set(allArticles.map((a) => a.category))];
+  categoryFilter.innerHTML = `<option value="All">All</option>`;
+  categories.forEach((cat) => {
+    const option = createElement("option", [], cat);
+    option.value = cat;
+    categoryFilter.appendChild(option);
+  });
 }
 
 // ⭐ UPDATED: Init category page with URL sync
+// Read URL params for category, sort, and page
+// Set filters and display articles accordingly
+// Add event listeners to filters to update articles and URL
+// Scroll to top of articles on page/category/sort change
 function initCategoryPage() {
-    const urlParams = new URLSearchParams(window.location.search);
-    const catParam = urlParams.get("cat") || "All";
-    const sortParam = urlParams.get("sort") || "Most Viewed"; // default
-    const pageParam = parseInt(urlParams.get("page")) || 1;
+  const urlParams = new URLSearchParams(window.location.search);
+  const catParam = urlParams.get("cat") || "All";
+  const sortParam = urlParams.get("sort") || "Most Viewed"; // default
+  const pageParam = parseInt(urlParams.get("page")) || 1;
 
-    categoryFilter.value = catParam;
-    sortFilter.value = sortParam;
-    currentPage = pageParam;
+  categoryFilter.value = catParam;
+  sortFilter.value = sortParam;
+  currentPage = pageParam;
 
-    displayArticles(catParam, sortParam);
+  displayArticles(catParam, sortParam);
 
-    categoryFilter.addEventListener("change", () => {
-        currentPage = 1;
-        const selected = categoryFilter.value;
-        displayArticles(selected, sortFilter.value);
-        // ✅ scroll up after category changes
-        scrollToArticlesTop();
-    });
+  categoryFilter.addEventListener("change", () => {
+    currentPage = 1;
+    const selected = categoryFilter.value;
+    displayArticles(selected, sortFilter.value);
+    // ✅ scroll up after category changes
+    scrollToArticlesTop();
+  });
 
-    sortFilter.addEventListener("change", () => {
-        currentPage = 1;
-        displayArticles(categoryFilter.value, sortFilter.value);
-        // ✅ scroll up after category changes
-        scrollToArticlesTop();
-    });
+  sortFilter.addEventListener("change", () => {
+    currentPage = 1;
+    displayArticles(categoryFilter.value, sortFilter.value);
+    // ✅ scroll up after category changes
+    scrollToArticlesTop();
+  });
 }
 
 /* =============================================
@@ -398,12 +529,12 @@ function initCategoryPage() {
 // Category page: category filter and articles
 // Called after fetching articles data
 function initPageFeatures() {
-    if (topPostsContainer) displayTopPosts();
-    if (categoriesContainer) displayCategories();
-    if (articlesContainer) {
-        populateCategoryFilter();
-        initCategoryPage();
-    }
+  if (topPostsContainer) displayTopPosts();
+  if (categoriesContainer) displayCategories();
+  if (articlesContainer) {
+    populateCategoryFilter();
+    initCategoryPage();
+  }
 }
 
 /* =============================================
@@ -412,20 +543,23 @@ function initPageFeatures() {
 // Fetch articles data and initialize page features
 // Handle fetch errors gracefully
 async function fetchArticles() {
-    try {
-        const res = await fetch(DATA_URL);
-        allArticles = await res.json();
-        initPageFeatures();
-    } catch (err) {
-        console.error("Error fetching articles:", err);
-    }
+  try {
+    const res = await fetch(DATA_URL);
+    allArticles = await res.json();
+
+    initPageFeatures();
+  } catch (err) {
+    console.error("Error fetching articles:", err);
+    // console.log("Fetched Articles ERr:", allArticles);
+    handleFailFetch();
+  }
 }
 
 // Initialize navbar and fetch articles on DOMContentLoaded
 // Ensures all DOM elements are ready before manipulation
 document.addEventListener("DOMContentLoaded", () => {
-    initNavbar();
-    fetchArticles();
+  initNavbar();
+  fetchArticles();
 });
 /* =============================================
    ############# End of Main JS ################
