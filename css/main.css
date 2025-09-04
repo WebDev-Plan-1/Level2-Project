@@ -13292,6 +13292,7 @@ a:hover {
   text-decoration: none;
   text-align: center;
   align-self: center;
+  font-family: "Asimovian", sans-serif;
 }
 .single-article .related-articles .check-more-art.active {
   display: inline-block;
