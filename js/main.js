@@ -454,25 +454,84 @@ function displayArticles(category, sortBy) {
 
 // Render pagination buttons for articles
 // with active state and click handlers
+// function renderPostsPaginationButtons(totalPages, category, sortBy) {
+//   postsPaginationContainer.innerHTML = "";
+
+//   for (let i = 1; i <= totalPages; i++) {
+//     const bullet = document.createElement("button");
+//     bullet.classList.add("post-page-bullet");
+//     if (i === currentPage) bullet.classList.add("active");
+//     bullet.innerText = i;
+
+//     bullet.addEventListener("click", () => {
+//       currentPage = i;
+//       displayArticles(category, sortBy);
+
+//       // ✅ scroll to top of the articles after page changes
+//       scrollToArticlesTop();
+//     });
+
+//     postsPaginationContainer.appendChild(bullet);
+//   }
+// }
+
 function renderPostsPaginationButtons(totalPages, category, sortBy) {
   postsPaginationContainer.innerHTML = "";
 
-  for (let i = 1; i <= totalPages; i++) {
-    const bullet = document.createElement("button");
-    bullet.classList.add("post-page-bullet");
-    if (i === currentPage) bullet.classList.add("active");
-    bullet.innerText = i;
+  if (totalPages <= 5) {
+    // ✅ Show all pages if small number
+    for (let i = 1; i <= totalPages; i++) {
+      createPageButton(i, category, sortBy);
+    }
+  } else {
+    // ✅ Always show first page
+    createPageButton(1, category, sortBy);
 
-    bullet.addEventListener("click", () => {
-      currentPage = i;
-      displayArticles(category, sortBy);
+    if (currentPage > 3) {
+      addEllipsis();
+    }
 
-      // ✅ scroll to top of the articles after page changes
-      scrollToArticlesTop();
-    });
+    // ✅ Show pages around currentPage
+    let start = Math.max(2, currentPage - 1);
+    let end = Math.min(totalPages - 1, currentPage + 1);
 
-    postsPaginationContainer.appendChild(bullet);
+    for (let i = start; i <= end; i++) {
+      createPageButton(i, category, sortBy);
+    }
+
+    if (currentPage < totalPages - 2) {
+      addEllipsis();
+    }
+
+    // ✅ Always show last page
+    createPageButton(totalPages, category, sortBy);
   }
+}
+
+// Create individual page button with click handler
+// and active state
+function createPageButton(page, category, sortBy) {
+  const bullet = document.createElement("button");
+  bullet.classList.add("post-page-bullet");
+  if (page === currentPage) bullet.classList.add("active");
+  bullet.innerText = page;
+
+  bullet.addEventListener("click", () => {
+    currentPage = page;
+    displayArticles(category, sortBy);
+    scrollToArticlesTop();
+  });
+
+  postsPaginationContainer.appendChild(bullet);
+}
+
+// Add ellipsis element to pagination
+// to indicate skipped pages
+function addEllipsis() {
+  const span = document.createElement("span");
+  span.classList.add("ellipsis");
+  span.innerText = "...";
+  postsPaginationContainer.appendChild(span);
 }
 
 // Populate category filter dropdown with unique categories
