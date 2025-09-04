@@ -82,6 +82,79 @@ AOS.init({ duration: 1200, mirror: false });
 /* =============================================
    ############### Utilities ###################
 ============================================= */
+// ===============================
+// lazy-loader.js (or inside main.js)
+// ===============================
+
+/* Check if IntersectionObserver is supported */
+if ("IntersectionObserver" in window) {
+  /* Create a single IntersectionObserver instance for performance */
+  /* This observer will call the callback when image enters viewport */
+  const lazyObserver = new IntersectionObserver(
+    (entries, observer) => {
+      entries.forEach((entry) => {
+        /* If the observed element is intersecting (visible) */
+        if (entry.isIntersecting) {
+          const img = entry.target;
+          /* Stop observing this image */
+          observer.unobserve(img);
+
+          /* If data-src exists, set it to src to start loading */
+          if (img.dataset && img.dataset.src) {
+            img.src = img.dataset.src;
+          }
+
+          /* When image loaded, remove blur class and add loaded class */
+          img.addEventListener("load", () => {
+            img.classList.remove("lazy-blur"); // remove the blur/filter
+            img.classList.add("lazy-loaded"); // mark as loaded
+            img.style.opacity = ""; // show fully
+          });
+
+          /* If image failed to load, fallback to placeholder */
+          img.addEventListener("error", () => {
+            img.src = "assets/images/fallback.jpg";
+            img.classList.remove("lazy-blur");
+          });
+        }
+      });
+    },
+    {
+      /* rootMargin to start loading earlier (preload) */
+      rootMargin: "200px 0px",
+      threshold: 0.01,
+    }
+  );
+
+  /* Function to observe all lazy images on page (call after render) */
+  function observeLazyImages() {
+    const lazyImages = document.querySelectorAll("img.lazy-img");
+    lazyImages.forEach((img) => {
+      /* set initial styles to avoid flash */
+      img.style.opacity = "0";
+      img.style.transition = "filter 400ms ease, opacity 400ms ease";
+      lazyObserver.observe(img);
+    });
+  }
+
+  /* Expose observeLazyImages to global so you can call it after render */
+  window.observeLazyImages = observeLazyImages;
+} else {
+  /* Fallback: no IntersectionObserver - load all images immediately */
+  function observeLazyImages() {
+    const lazyImages = document.querySelectorAll("img.lazy-img");
+    lazyImages.forEach((img) => {
+      if (img.dataset && img.dataset.src) {
+        img.src = img.dataset.src;
+      }
+      img.classList.remove("lazy-blur");
+      img.classList.add("lazy-loaded");
+      img.style.opacity = "";
+    });
+  }
+  window.observeLazyImages = observeLazyImages;
+}
+
 // Shuffle an array randomly
 function shuffleArray(array) {
   return array.sort(() => 0.5 - Math.random());
@@ -206,7 +279,7 @@ function displayTopPosts() {
     [...allArticles].sort((a, b) => b.views - a.views).slice(0, 10)
   ).slice(0, 6);
 
-  console.log("Selected Top Posts:", selected);
+  //   console.log("Selected Top Posts:", selected);
 
   topPostsContainer.innerHTML = "";
 
@@ -220,14 +293,29 @@ function displayTopPosts() {
   }
 
   selected.forEach((article) => {
+    /* Create a wrapper element for image and placeholder */
+    const imgWrapHtml = `
+  <!-- Put a low-cost background placeholder via CSS and keep real image in data-src -->
+  <div class="img-wrap">
+    <img
+      loading="lazy"
+      class="lazy-img lazy-blur post-image"
+      data-src="${article.image}"
+      src="data:image/svg+xml;charset=utf-8,${encodeURIComponent(
+        "<svg xmlns='http://www.w3.org/2000/svg' width='10' height='7'></svg>"
+      )}"
+      alt="${article.title}"
+      onerror="this.dataset.src='assets/images/logo.png'; this.onerror=null;"
+    />
+  </div>
+`;
+
     const slide = createElement(
       "div",
       ["swiper-slide"],
       `
       <article class="post-card post__card">
-        <img src="${article.image}" alt="${
-        article.title
-      }" class="post-image post__image" />
+        ${imgWrapHtml}
         <h3 class="post-title post__title">${article.title}</h3>
         <p class="post-excerpt post__description">${article.content.substring(
           0,
@@ -244,6 +332,31 @@ function displayTopPosts() {
         }" class="read-more post__btn">Read More</a>
       </article>`
     );
+    // const slide = createElement(
+    //   "div",
+    //   ["swiper-slide"],
+    //   `
+    //   <article class="post-card post__card">
+    //     <img src="${article.image}" alt="${
+    //     article.title
+    //   }" class="post-image post__image" />
+    //     <h3 class="post-title post__title">${article.title}</h3>
+    //     <p class="post-excerpt post__description">${article.content.substring(
+    //       0,
+    //       100
+    //     )}...</p>
+    //     <p class="top-post-info">
+    //             <span class="top-post-views"><i class="fa-solid fa-eye"></i> ${formatViews(
+    //               article.views
+    //             )}</span>
+    //             <span class="top-post-category">${article.category}</span>
+    //     </p>
+    //     <a href="single.html?id=${
+    //       article.id
+    //     }" class="read-more post__btn">Read More</a>
+    //   </article>`
+    // );
+
     topPostsContainer.appendChild(slide);
   });
 
@@ -275,6 +388,9 @@ function displayTopPosts() {
   } else {
     console.error("Swiper is not loaded.");
   }
+
+  // After rendering articles into articlesContainer
+  if (window.observeLazyImages) window.observeLazyImages();
 }
 
 /* =============================================
@@ -422,13 +538,26 @@ function displayArticles(category, sortBy) {
 
   articlesContainer.innerHTML = "";
   paginatedArticles.forEach((article) => {
+    const imgWrapHtml = `
+    <!-- Put a low-cost background placeholder via CSS and keep real image in data-src -->
+    <div class="img-wrap">
+        <img
+        loading="lazy"
+        class="lazy-img lazy-blur post-image"
+        data-src="${article.image}"
+        src="data:image/svg+xml;charset=utf-8,${encodeURIComponent(
+          "<svg xmlns='http://www.w3.org/2000/svg' width='10' height='7'></svg>"
+        )}"
+        alt="${article.title}"
+        onerror="this.dataset.src='assets/images/logo.png'; this.onerror=null;"
+        />
+    </div>
+    `;
     const card = createElement(
       "article",
       ["post__card", "post-card"],
       `
-            <img src="${article.image}" class="post-image post__image" alt="${
-        article.title
-      }" />
+            ${imgWrapHtml}
             <h3 class="post-title post__title">${article.title}</h3>
             <p class="post-category">#${article.category}</p>
             <p class="post-excerpt post__description">${article.content}</p>
@@ -443,10 +572,34 @@ function displayArticles(category, sortBy) {
             }" class="read-more post__btn btn">Read More</a>
         `
     );
+    // const card = createElement(
+    //   "article",
+    //   ["post__card", "post-card"],
+    //   `
+    //         <img src="${article.image}" class="post-image post__image" alt="${
+    //     article.title
+    //   }" />
+    //         <h3 class="post-title post__title">${article.title}</h3>
+    //         <p class="post-category">#${article.category}</p>
+    //         <p class="post-excerpt post__description">${article.content}</p>
+    //         <p class="post-info">
+    //             <span class="post-views"><i class="fa-solid fa-eye"></i> ${formatViews(
+    //               article.views
+    //             )}</span>
+    //             <span class="post-date">${formatDate(article.date)}</span>
+    //         </p>
+    //         <a href="single.html?id=${
+    //           article.id
+    //         }" class="read-more post__btn btn">Read More</a>
+    //     `
+    // );
     articlesContainer.appendChild(card);
   });
 
   renderPostsPaginationButtons(totalPages, category, sortBy);
+
+  // Ensure lazy images are observed after render
+  if (window.observeLazyImages) window.observeLazyImages();
 
   // ⭐ NEW: Sync URL params
   updateURLParams({ cat: category, sort: sortBy, page: currentPage });

@@ -97,3 +97,82 @@
 .empty-section {
   @include empty-section;
 }
+
+// =============Lazy Images=================== //
+
+/* Image wrapper: preserve aspect, show placeholder background */
+.img-wrap {
+  /*createarelativecontextforoverlayandimage*/
+  position: relative;
+  /*placeholderbackgroundcolorbeforeimageloads*/
+  background: #f0f0f0;
+  /*keepoverflowhiddenforroundedcorners*/
+  overflow: hidden;
+  width: 100%;
+  height: 200px;
+  /*optionalradius*/
+  border-radius: 8px;
+  -webkit-border-radius: 8px;
+  -moz-border-radius: 8px;
+  -ms-border-radius: 8px;
+  -o-border-radius: 8px;
+}
+
+/* Lazy images base */
+.lazy-img {
+  /* ensure image covers the wrapper */
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  /* make it a block-level element */
+  display: block;
+  /* smooth transition for opacity and filter change */
+  transition:
+    filter 0.4s ease,
+    opacity 0.4s ease;
+  /* show as blurred initially */
+  filter: blur(16px) scale(1.02);
+  opacity: 0;
+}
+
+/* When image finished loading: remove blur and show image */
+.lazy-img.lazy-loaded {
+  /* remove the blur effect */
+  filter: none;
+  /* full opacity */
+  opacity: 1;
+}
+
+/* Small devices: reduce blur scale if needed */
+@media (max-width: v.$breakpoint-mobile) {
+  .lazy-img {
+    filter: blur(10px) scale(1.01);
+  }
+}
+
+/* Skeleton shimmer overlay (optional) */
+.img-wrap::after {
+  /* shimmering bar to indicate loading */
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    90deg,
+    rgba(255, 255, 255, 0) 0%,
+    rgba(255, 255, 255, 0.35) 50%,
+    rgba(255, 255, 255, 0) 100%
+  );
+  transform: translateX(-100%);
+  transition: transform 1.2s linear;
+  /* show shimmer while blurred (not after loaded) */
+  pointer-events: none;
+}
+
+/* Remove shimmer when image loaded */
+.lazy-img.lazy-loaded + .img-wrap::after,
+.img-wrap .lazy-img.lazy-loaded ~ .img-wrap::after {
+  transform: translateX(100%);
+  opacity: 0;
+}
+
+// ============================ //

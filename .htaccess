@@ -15,6 +15,9 @@ AddType image/webp .webp
 
 # Allow CORS for fetch API requests
 <IfModule mod_headers.c>
+  <FilesMatch "\.(jpg|jpeg|png|gif|webp|avif)$">
+    Header set Cache-Control "public, max-age=2592000, immutable"
+  </FilesMatch>
   Header set Access-Control-Allow-Origin "*"
   Header set Access-Control-Allow-Methods "GET, POST, OPTIONS"
   Header set Access-Control-Allow-Headers "Content-Type, Authorization"
@@ -23,11 +26,16 @@ AddType image/webp .webp
 # Optional: improve caching for static files (CSS, JS, Images, JSON)
 <IfModule mod_expires.c>
   ExpiresActive On
-  ExpiresByType text/css "access plus 1 month"
-  ExpiresByType application/javascript "access plus 1 month"
-  ExpiresByType application/json "access plus 1 hour"
-  ExpiresByType image/png "access plus 1 year"
-  ExpiresByType image/jpeg "access plus 1 year"
-  ExpiresByType image/gif "access plus 1 year"
+  # Images: cache for 1 month
+  ExpiresByType image/jpg "access plus 30 days"
+  ExpiresByType image/jpeg "access plus 30 days"
+  ExpiresByType image/gif "access plus 30 days"
+  ExpiresByType image/png "access plus 30 days"
+  ExpiresByType image/webp "access plus 30 days"
+  ExpiresByType image/avif "access plus 30 days"
   ExpiresByType image/svg+xml "access plus 1 year"
+  # CSS/JS: cache for 1 week
+  ExpiresByType text/css "access plus 7 days"
+  ExpiresByType application/javascript "access plus 7 days"
+  ExpiresByType application/json "access plus 1 hour"
 </IfModule>
