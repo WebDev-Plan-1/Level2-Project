@@ -1,110 +1,47 @@
-// Extract article ID from URL (ex: single.html?id=3)
-const urlParams = new URLSearchParams(window.location.search);
-const articleId = parseInt(urlParams.get("id"));
+/* =============================================
+   ########### Import Utils ############
+============================================= */
+import {
+  formatViews,
+  notFoundMessage,
+  removeSwiperControls,
+  initNavbar,
+  lazyLoading,
+  AOSInit,
+} from "./utils.js";
+// =========== Import Constants =======================
+import {
+  articleId,
+  titleEl,
+  heroImg,
+  dateEl,
+  categoryEl,
+  viewsEl,
+  contentEl,
+  readMoreBtn,
+  relatedContainer,
+} from "./utils.js";
 
-// Containers
-const titleEl = document.querySelector(".article-title");
-const heroImg = document.querySelector("#article-hero-img");
-const dateEl = document.querySelector(".article-date");
-const categoryEl = document.querySelector(".article-category");
-const viewsEl = document.querySelector(".article-views");
-const contentEl = document.querySelector("#article-text");
-const readMoreBtn = document.querySelector("#read-more-btn");
-const relatedContainer = document.querySelector("#related-articles-container");
+/* =============================================
+   ########### Global Config & Data ############
+============================================= */
 
 let fullContent = "";
 let isExpanded = false;
 
-/* Check if IntersectionObserver is supported */
-if ("IntersectionObserver" in window) {
-  /* Create a single IntersectionObserver instance for performance */
-  /* This observer will call the callback when image enters viewport */
-  const lazyObserver = new IntersectionObserver(
-    (entries, observer) => {
-      entries.forEach((entry) => {
-        /* If the observed element is intersecting (visible) */
-        if (entry.isIntersecting) {
-          const img = entry.target;
-          /* Stop observing this image */
-          observer.unobserve(img);
+/* =============================================
+   ############### Initialize Lazy Loading Images ##############
+============================================= */
+lazyLoading();
 
-          /* If data-src exists, set it to src to start loading */
-          if (img.dataset && img.dataset.src) {
-            img.src = img.dataset.src;
-          }
+/* =============================================
+   ############### Initialize AOS ##############
+============================================= */
+AOSInit();
 
-          /* When image loaded, remove blur class and add loaded class */
-          img.addEventListener("load", () => {
-            img.classList.remove("lazy-blur"); // remove the blur/filter
-            img.classList.add("lazy-loaded"); // mark as loaded
-            img.style.opacity = ""; // show fully
-          });
-
-          /* If image failed to load, fallback to placeholder */
-          img.addEventListener("error", () => {
-            img.src = "assets/images/logo.png";
-            img.classList.remove("lazy-blur");
-          });
-        }
-      });
-    },
-    {
-      /* rootMargin to start loading earlier (preload) */
-      rootMargin: "200px 0px",
-      threshold: 0.01,
-    }
-  );
-
-  /* Function to observe all lazy images on page (call after render) */
-  function observeLazyImages() {
-    const lazyImages = document.querySelectorAll("img.lazy-img");
-    lazyImages.forEach((img) => {
-      /* set initial styles to avoid flash */
-      img.style.opacity = "0";
-      img.style.transition = "filter 400ms ease, opacity 400ms ease";
-      lazyObserver.observe(img);
-    });
-  }
-
-  /* Expose observeLazyImages to global so you can call it after render */
-  window.observeLazyImages = observeLazyImages;
-} else {
-  /* Fallback: no IntersectionObserver - load all images immediately */
-  function observeLazyImages() {
-    const lazyImages = document.querySelectorAll("img.lazy-img");
-    lazyImages.forEach((img) => {
-      if (img.dataset && img.dataset.src) {
-        img.src = img.dataset.src;
-      }
-      img.classList.remove("lazy-blur");
-      img.classList.add("lazy-loaded");
-      img.style.opacity = "";
-    });
-  }
-  window.observeLazyImages = observeLazyImages;
-}
-
-// Display a not found message in the given container
-// Used when no articles match the selected category
-function notFoundMessage(container, message) {
-  if (!container) return;
-  container.innerHTML = `<p class="not-found">${message}</p>`;
-}
-
-// Remove Swiper controls if they exist
-// Used when there are no slides to show
-function removeSwiperControls() {
-  const nextBtn = document.querySelector(".swiper-button-next");
-  const prevBtn = document.querySelector(".swiper-button-prev");
-  const pagination = document.querySelector(".swiper-pagination");
-
-  [nextBtn, prevBtn, pagination].forEach((el) => {
-    if (el) el.remove();
-  });
-  // const swiperContainer = document.querySelector(".swiper");
-  // if (swiperContainer) swiperContainer.style.display = "none";
-}
-// fetching data
+/* =============================================
+   ############### Fetching & Show Articles ##############
+============================================= */
 fetch("data/articles.json")
   .then((res) => res.json())
   .then((data) => {
@@ -230,9 +167,12 @@ fetch("data/articles.json")
     if (window.observeLazyImages) window.observeLazyImages();
   });
 
-// Views formatter
-function formatViews(num) {
-  if (num >= 1_000_000) return (num / 1_000_000).toFixed(1) + "M views";
-  if (num >= 1_000) return (num / 1_000).toFixed(1) + "K views";
-  return num + " views";
-}
+// ================== //
+// Initialize navbar and fetch articles on DOMContentLoaded
+// Ensures all DOM elements are ready before manipulation
+document.addEventListener("DOMContentLoaded", () => {
+  initNavbar();
+});
+/* =============================================
+   ############# End of SinglePage JS ################
+============================================= */
