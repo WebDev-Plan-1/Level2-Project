@@ -36,17 +36,22 @@
 </head>
 
 <body>
+
+
     <!-- Header >> Nav -->
     <header class="navbar sticky">
         <div class="container navbar-container">
-            <!-- Website logo linking back to home -->
-            <!-- <a href="index.html" class="logo navbar-logo"><span class="logoSpan">Nile</span>Notes</a> -->
+            <!-- Logo -->
             <div class="logo-box">
-                <a href="index.html" class="logo-img navbar-logo"><img src="assets/images/logo-browser.png" alt="Logo"
-                        loading="lazy"></a>
-                <a href="index.html" class="logo-text navbar-logo"><span class="logoSpan">Nile</span>Notes</a>
+                <a href="index.html" class="logo-img navbar-logo">
+                    <img src="assets/images/logo-browser.png" alt="Logo" loading="lazy" />
+                </a>
+                <a href="index.html" class="logo-text navbar-logo">
+                    <span class="logoSpan">Nile</span>Notes
+                </a>
             </div>
 
+            <!-- Navigation Links -->
             <nav class="nav-links" id="navLinks" aria-expanded="false">
                 <a href="index.html" class="nav-link-item">Home</a>
                 <a href="about-us.html" class="nav-link-item">About</a>
@@ -55,28 +60,38 @@
                 <a href="contact.html" class="nav-link-item">Contact</a>
             </nav>
 
-            <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-controls="navLinks"
-                aria-expanded="false">
-                <span></span>
-                <span></span>
-                <span></span>
-            </button>
+            <!-- Right-side controls -->
+            <div class="nav-actions">
+                <!-- Search Toggle -->
+                <button class="search-toggle" aria-label="Open search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
 
-            <!-- Button to toggle dark/light theme -->
-            <!-- <div class="theme-toggle" aria-label="Toggle dark/light theme">
-                <span class="toggle-icon dark-mode-off">
-                    <img src="./assets/icons/night-mode-off.png" class="dark-mode-off active" alt="Toggle light mode" />
-                    <img src="./assets/icons/night-mode-on.png" class="dark-mode-on" alt="Toggle dark mode" />
-                </span>
-            </div> -->
-            <!-- Search bar for quick access to articles -->
-            <!-- <form class="search-form navbar-search" action="search.html" method="GET" role="search">
-                <input type="text" name="query" class="search-input navbar-search-input"
-                    placeholder="Search articles..." aria-label="Search articles" required />
-                <button type="submit" class="search-button navbar-search-button">Search</button>
-            </form> -->
+                <!-- Hidden Search Form -->
+                <form class="search-form" id="navbarSearchForm" role="search">
+                    <div class="search-wrapper">
+                        <input type="text" id="navbarSearchInput" class="search-input" placeholder="Search articles..."
+                            aria-label="Search articles" />
+                        <button type="button" class="clear-btn" aria-label="Clear search">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                        <small class="char-counter">0 / 50</small>
+                    </div>
+                    <button type="submit" class="search-submit">
+                        <!-- <i class="fa-solid fa-arrow-right"></i> -->
+                        Search
+                    </button>
+                </form>
+
+                <!-- Hamburger -->
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-controls="navLinks"
+                    aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
         </div>
     </header>
+
 
     <!-- Main content area -->
     <main class="main-content container">

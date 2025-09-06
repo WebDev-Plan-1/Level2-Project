@@ -1,12 +1,11 @@
 // ==========================
 // Navbar Styles
 // ==========================
-
 @use "../abstracts/variables" as v;
 @use "../abstracts/mixins" as m;
 
 .navbar {
-  position: sticky; // Make navbar sticky on top
+  position: sticky;
   top: 0;
   width: 100%;
   background-color: v.$light-bg;
@@ -21,7 +20,6 @@
 
     .logo-box {
       display: flex;
-      justify-content: center;
       align-items: center;
       gap: 10px;
 
@@ -41,10 +39,6 @@
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        -webkit-border-radius: 50%;
-        -moz-border-radius: 50%;
-        -ms-border-radius: 50%;
-        -o-border-radius: 50%;
         @include m.box-shadow(0, 4px, 8px, v.$box-shadow-light);
         background-color: v.$primary-color;
 
@@ -52,15 +46,146 @@
           width: 100%;
           height: 100%;
           border-radius: 50%;
-          -webkit-border-radius: 50%;
-          -moz-border-radius: 50%;
-          -ms-border-radius: 50%;
-          -o-border-radius: 50%;
           object-fit: cover;
         }
       }
     }
 
+    // Right side actions (search + hamburger)
+    .nav-actions {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    // ==========================
+    // Navbar Search Styles
+    // ==========================
+    .search-toggle {
+      background: #fff;
+      @include m.box-shadow(8px, 10px, 24px, v.$light-bg);
+      padding: v.$spacing-xs v.$spacing-sm;
+      border: none;
+      border-radius: 5px;
+      font-size: 1.2rem;
+      color: v.$primary-color;
+      cursor: pointer;
+      transition:
+        background 0.3s ease,
+        color 0.3s ease;
+
+      &:hover,
+      &.active {
+        background: v.$primary-color;
+        color: #fff;
+      }
+    }
+
+    .search-form {
+      position: absolute;
+      top: 100%;
+      left: 50%;
+      transform: translateX(-50%) translateY(-120%);
+      width: 90%;
+      max-width: 750px;
+      background: v.$light-bg;
+      padding: v.$spacing-md v.$spacing-xs;
+      display: flex;
+      flex-direction: column;
+      // align-items: center;
+      gap: 15px;
+      border-radius: 8px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      opacity: 0;
+      pointer-events: none;
+      transition: all 0.3s ease;
+
+      &.active {
+        transform: translateX(-50%) translateY(0);
+        opacity: 1;
+        pointer-events: auto;
+      }
+
+      .search-wrapper {
+        flex-grow: 1;
+        position: relative;
+        display: flex;
+        align-items: center;
+        justify-content: space-around;
+        // flex-direction: column;
+        gap: 10px;
+
+        .search-input {
+          // flex-grow: 1;
+          width: 85%;
+          padding: 8px 12px;
+          padding-right: 35px;
+          border: 1px solid v.$secondary-color;
+          border-radius: 5px;
+          font-size: 1rem;
+          color: darken(v.$primary-color, 15%);
+
+          &:focus {
+            outline: none;
+            border: 1px solid v.$primary-color;
+
+            &::placeholder {
+              color: v.$primary-color;
+              opacity: 0.8;
+            }
+          }
+        }
+
+        .clear-btn {
+          width: 5%;
+          border: none;
+          background: transparent;
+          font-size: 1rem;
+          color: v.$secondary-color;
+          cursor: pointer;
+          display: none;
+          transition: color 0.3s ease;
+          -webkit-transition: color 0.3s ease;
+          -moz-transition: color 0.3s ease;
+          -ms-transition: color 0.3s ease;
+          -o-transition: color 0.3s ease;
+          &:hover {
+            color: red;
+          }
+        }
+
+        .char-counter {
+          width: 10%;
+          display: block;
+          font-size: 0.75rem;
+          color: v.$secondary-color;
+          padding-right: 10px;
+          // text-align: center;
+        }
+      }
+
+      .search-submit {
+        background: v.$primary-color;
+        border: none;
+        color: #fff;
+        padding: 8px 12px;
+        border-radius: 5px;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        -webkit-transition: background 0.3s ease;
+        -moz-transition: background 0.3s ease;
+        -ms-transition: background 0.3s ease;
+        -o-transition: background 0.3s ease;
+        align-self: center;
+        &:hover {
+          background: darken(v.$primary-color, 10%);
+        }
+      }
+    }
+
+    // ==========================
+    // Nav Links
+    // ==========================
     .nav-links {
       display: flex;
       gap: 20px;
@@ -71,10 +196,6 @@
         text-decoration: none;
         font-size: 1rem;
         transition: color 0.3s ease;
-        -webkit-transition: color 0.3s ease;
-        -moz-transition: color 0.3s ease;
-        -ms-transition: color 0.3s ease;
-        -o-transition: color 0.3s ease;
 
         &:hover,
         &.active {
@@ -82,11 +203,13 @@
         }
       }
     }
-    /* Hamburger button */
+
+    // ==========================
+    // Hamburger
+    // ==========================
     .hamburger {
       display: none;
       flex-direction: column;
-      justify-content: center;
       gap: 6px;
       background: none;
       border: none;
@@ -98,27 +221,18 @@
         background-color: v.$primary-color;
         border-radius: 3px;
         transition: transform 0.3s ease;
-        -webkit-transition: transform 0.3s ease;
-        -moz-transition: transform 0.3s ease;
-        -ms-transition: transform 0.3s ease;
-        -o-transition: transform 0.3s ease;
-        -webkit-border-radius: 3px;
-        -moz-border-radius: 3px;
-        -ms-border-radius: 3px;
-        -o-border-radius: 3px;
       }
     }
   }
 }
 
 //=========== Responsive Styles ================//
+
+// Tablet
 @media (max-width: v.$breakpoint-tablet) {
   .navbar {
     .container {
-      justify-content: space-between;
-
       .nav-links {
-        display: flex;
         flex-direction: column;
         background-color: v.$light-bg;
         position: absolute;
@@ -131,23 +245,11 @@
         opacity: 0;
         pointer-events: none;
         transition: all 0.3s ease;
-        -webkit-transition: all 0.3s ease;
-        -moz-transition: all 0.3s ease;
-        -ms-transition: all 0.3s ease;
-        -o-transition: all 0.3s ease;
-        -webkit-transform: translateY(-100%);
-        -moz-transform: translateY(-100%);
-        -ms-transform: translateY(-100%);
-        -o-transform: translateY(-100%);
 
         &.active {
           transform: translateY(0);
           opacity: 1;
           pointer-events: auto;
-          -webkit-transform: translateY(0);
-          -moz-transform: translateY(0);
-          -ms-transform: translateY(0);
-          -o-transform: translateY(0);
         }
       }
 
@@ -157,13 +259,57 @@
     }
   }
 }
+
+// Tablet
+@media (max-width: v.$breakpoint-mobile) {
+  .navbar .container {
+    .logo-box {
+      .logo-text {
+        font-size: 1.3rem;
+      }
+
+      .logo-img {
+        width: 40px;
+        height: 40px;
+      }
+    }
+    .search-form {
+      width: 100%;
+      border-radius: 0px;
+      -webkit-border-radius: 0px;
+      -moz-border-radius: 0px;
+      -ms-border-radius: 0px;
+      -o-border-radius: 0px;
+      gap: 5px;
+      .search-wrapper {
+        // flex-direction: column;
+        // flex-flow: wrap;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        .search-input {
+          width: 100%;
+        }
+        .clear-btn {
+          width: 10%;
+          order: 2;
+        }
+        .char-counter {
+          width: 25%;
+          // text-align: center;
+          padding-right: 0;
+          padding-left: 12px;
+          order: 1;
+        }
+      }
+    }
+  }
+}
+
+// Watch / very small devices
 @media (max-width: v.$breakpoint-watch) {
   .navbar {
-    padding: 0;
     .container {
-      padding: v.$spacing-sm v.$spacing-sm;
-      // flex-direction: column;
-      // gap: 10px;
+      padding: v.$spacing-sm;
 
       .logo-box .logo-text {
         font-size: 1.1rem;
@@ -178,31 +324,19 @@
         padding: 10px 0;
 
         &.active {
-          transform: translateY(-17%);
-          opacity: 1;
-          pointer-events: auto;
-          -webkit-transform: translateY(-17%);
-          -moz-transform: translateY(-17%);
-          -ms-transform: translateY(-17%);
-          -o-transform: translateY(-17%);
+          transform: translateY(0);
           height: 80vh;
-          overflow-y: scroll;
+          overflow-y: auto;
         }
 
         .nav-link-item {
           font-size: 0.9rem;
         }
       }
-      .hamburger {
-        gap: 3px;
 
-        span {
-          width: 20px;
-          height: 3px;
-        }
+      .hamburger span {
+        width: 20px;
       }
     }
   }
 }
-
-/* =================================== */

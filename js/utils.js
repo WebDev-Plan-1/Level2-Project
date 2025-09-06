@@ -5,14 +5,7 @@
    ########### Global Config & Data ############
 ============================================= */
 
-//============= Navbar constants ============ //
-
-const hamburger = document.querySelector(".hamburger");
-const navLinks = document.querySelector(".nav-links");
-const navLinkItems = document.querySelectorAll(".nav-links .nav-link-item");
-
 //============= Home & Category Pages constants ============ //
-
 // URL to fetch articles data
 export const DATA_URL = "data/articles.json";
 // featured posts section Container -- Home Page
@@ -55,7 +48,19 @@ export const relatedContainer = document.querySelector(
 /* =============================================
    ################# Navbar ####################
 ============================================= */
-// ⭐ UPDATED: Set active nav link based on current URL (ignoring query string)
+//============= Navbar constants ============ //
+
+const hamburger = document.querySelector(".hamburger");
+const navLinks = document.querySelector(".nav-links");
+const navLinkItems = document.querySelectorAll(".nav-links .nav-link-item");
+// ================= Handle navbar Search Bar
+const searchToggle = document.querySelector(".search-toggle");
+const searchForm = document.getElementById("navbarSearchForm");
+const searchInput = document.getElementById("navbarSearchInput");
+const counter = document.querySelector(".char-counter");
+const clearBtn = document.querySelector(".clear-btn");
+
+// ================= ⭐ UPDATED: Set active nav link based on current URL (ignoring query string)
 function setActiveNavLink() {
   const currentPath = window.location.pathname.split("/").pop() || "index.html";
   navLinkItems.forEach((link) => {
@@ -63,7 +68,7 @@ function setActiveNavLink() {
     link.classList.toggle("active", linkPath === currentPath);
   });
 }
-// Handle scroll behavior for nav links on small screens
+// ================= Handle scroll behavior for nav links on small screens
 function toggleNavScroll() {
   if (navLinks.classList.contains("active") && window.innerWidth <= 240) {
     document.body.style.overflow = "hidden";
@@ -76,6 +81,54 @@ function toggleNavScroll() {
   }
 }
 
+function initSearchBar() {
+  if (!searchToggle || !searchForm || !searchInput) return;
+
+  // Toggle Search form
+  searchToggle.addEventListener("click", () => {
+    if (navLinks.classList.contains("active")) {
+      navLinks.classList.toggle("active");
+    }
+    searchForm.classList.toggle("active");
+    searchToggle.classList.toggle("active");
+    if (searchForm.classList.contains("active")) {
+      searchInput.focus();
+    }
+  });
+
+  // ============ Limit Search input size with validation
+  const limit = 50;
+  searchInput.addEventListener("input", () => {
+    // ======= Show clear button on typing only
+    clearBtn.style.display = searchInput.value ? "block" : "none";
+    // ======= Counting characters
+    counter.textContent = `${searchInput.value.length} / ${limit}`;
+    if (searchInput.value.length > limit) {
+      counter.textContent = `${searchInput.value.length - 1} / ${limit}`;
+      searchInput.value = searchInput.value.slice(0, limit); // cut extra chars
+      alert(`Maximum ${limit} characters allowed`); // alert if characters exceeded
+    }
+  });
+
+  // ======== Clear Input
+  clearBtn.addEventListener("click", () => {
+    searchInput.value = "";
+    clearBtn.style.display = "none";
+    counter.textContent = `${searchInput.value.length} / ${limit}`;
+    searchInput.focus();
+  });
+  // ============ Search on Submit
+  searchForm.addEventListener("submit", (e) => {
+    e.preventDefault();
+    const query = searchInput.value.trim().toLowerCase();
+
+    if (!query) return;
+
+    // Save the keywork in local storage or in a query string parameter
+    window.location.href = `search.html?query=${encodeURIComponent(query)}`;
+  });
+}
+
 // Initialize Navbar functionality
 // including hamburger toggle and active link highlighting
 // and preserving active state across reloads, and responsive scroll handling
@@ -84,6 +137,13 @@ export function initNavbar() {
   if (!hamburger) return;
 
   hamburger.addEventListener("click", () => {
+    if (
+      searchForm.classList.contains("active") &&
+      searchToggle.classList.contains("active")
+    ) {
+      searchForm.classList.toggle("active");
+      searchToggle.classList.toggle("active");
+    }
     navLinks.classList.toggle("active");
     toggleNavScroll();
   });
@@ -115,6 +175,7 @@ export function initNavbar() {
 
   window.addEventListener("resize", toggleNavScroll);
   setActiveNavLink();
+  initSearchBar();
 }
 
 /* =============================================
