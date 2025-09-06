@@ -106,7 +106,8 @@ function renderResults(sortBy) {
     card.innerHTML = `
       ${resImgWrapHtml}
       <h2>${article.title}</h2>
-      <p>${article.content.substring(0, 100)}...</p>
+      <p class="post-category">#${article.category}</p>
+      <p class="post-content">${article.content.substring(0, 100)}...</p>
       <a href="single.html?id=${article.id}" class="read-more btn">Read More</a>
     `;
     resultsContainer.appendChild(card);

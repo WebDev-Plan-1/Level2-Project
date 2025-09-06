@@ -13626,7 +13626,13 @@ a:hover {
   margin: 10px 0 15px 0;
   font-size: clamp(0.8rem, 1.3rem, 2vw);
 }
-.search-results .container .results-container .article-card p {
+.search-results .container .results-container .article-card p.post-category {
+  flex-grow: 1;
+  font-family: "Asimovian", sans-serif;
+  font-size: 0.8rem;
+  color: rgb(14.5996015936, 125.8346613546, 159.9003984064);
+}
+.search-results .container .results-container .article-card p.post-content {
   flex-grow: 1;
   color: #4a4a4a;
   font-family: "Poppins", sans-serif;
