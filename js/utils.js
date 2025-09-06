@@ -89,6 +89,7 @@ function initSearchBar() {
   searchToggle.addEventListener("click", () => {
     if (navLinks.classList.contains("active")) {
       navLinks.classList.toggle("active");
+      hamburger.classList.toggle("active");
     }
     searchForm.classList.toggle("active");
     searchToggle.classList.toggle("active");
@@ -162,6 +163,7 @@ export function initNavbar() {
     if (["Enter", " "].includes(e.key)) {
       e.preventDefault();
       navLinks.classList.toggle("active");
+      hamburger.classList.toggle("active");
     }
   });
 

@@ -89,14 +89,25 @@
         </div>
     </header>
 
-    <main class="search-results container">
-        <h1 class="search-title">Search Results</h1>
-        <p class="search-summary" id="searchSummary"></p>
+    <main class="search-results">
+        <div class="container">
+            <h1 class="search-title">Search Results</h1>
+            <p class="search-summary" id="searchSummary"></p>
+            <section class="category-controls">
+                <!-- Sort Options -->
+                <label for="sort-filter">Sort By:</label>
+                <select id="sort-filter">
+                    <option value="Latest">Latest</option>
+                    <option value="Oldest">Oldest</option>
+                    <option value="Most Viewed" selected>Most Viewed</option>
+                </select>
+            </section>
 
-        <div id="resultsContainer" class="results-container"></div>
+            <div id="resultsContainer" class="results-container"></div>
 
-        <!-- Pagination -->
-        <div id="searchPagination" class="search-pagination"></div>
+            <!-- Pagination -->
+            <div id="searchPagination" class="search-pagination"></div>
+        </div>
     </main>
 
     <!-- Footer section -->

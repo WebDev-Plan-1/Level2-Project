@@ -7,6 +7,7 @@ import {
   AOSInit,
   scrollToArticlesTop,
   renderPagination,
+  sortFilter,
 } from "./utils.js";
 
 /* =============================================
@@ -62,8 +63,15 @@ async function filterArticles(query) {
 }
 
 // 3. Render Results
-function renderResults() {
+function renderResults(sortBy) {
   resultsContainer.innerHTML = "";
+
+  if (sortBy === "Latest")
+    filteredResults.sort((a, b) => new Date(b.date) - new Date(a.date));
+  if (sortBy === "Oldest")
+    filteredResults.sort((a, b) => new Date(a.date) - new Date(b.date));
+  if (sortBy === "Most Viewed")
+    filteredResults.sort((a, b) => b.views - a.views);
 
   if (filteredResults.length === 0) {
     resultsContainer.innerHTML = `<p class="not-found">No results found.</p>`;
@@ -107,13 +115,31 @@ function renderResults() {
   // =========== Rendering dynamic Pagination
   renderPagination(searchPagination, totalPages, currentPage, (page) => {
     currentPage = page;
-    renderResults();
+    renderResults(sortBy);
     scrollToArticlesTop();
   });
   // After rendering articles into articlesContainer
   if (window.observeLazyImages) window.observeLazyImages();
 }
 
+//======= Sort
+function initCategoryPage() {
+  const urlParams = new URLSearchParams(window.location.search);
+  const sortParam = urlParams.get("sort") || "Most Viewed"; // default
+  const pageParam = parseInt(urlParams.get("page")) || 1;
+
+  sortFilter.value = sortParam;
+  currentPage = pageParam;
+
+  renderResults(sortParam);
+
+  sortFilter.addEventListener("change", () => {
+    currentPage = 1;
+    renderResults(sortFilter.value);
+    // ✅ scroll up after category changes
+    scrollToArticlesTop();
+  });
+}
 // 4. Init
 
 (async function initSearch() {
@@ -125,7 +151,8 @@ function renderResults() {
 
   filteredResults = await filterArticles(query);
   searchSummary.textContent = `${filteredResults.length} result(s) found for "${query}"`;
-  renderResults();
+  //   renderResults();
+  initCategoryPage();
 })();
 
 /* =============================================
