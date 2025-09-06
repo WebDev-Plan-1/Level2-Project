@@ -123,7 +123,7 @@ function renderResults(sortBy) {
 }
 
 //======= Sort
-function initCategoryPage() {
+function initSortPosts() {
   const urlParams = new URLSearchParams(window.location.search);
   const sortParam = urlParams.get("sort") || "Latest"; // default
   const pageParam = parseInt(urlParams.get("page")) || 1;
@@ -152,7 +152,7 @@ function initCategoryPage() {
   filteredResults = await filterArticles(query);
   searchSummary.textContent = `${filteredResults.length} result(s) found for "${query}"`;
   //   renderResults();
-  initCategoryPage();
+  initSortPosts();
 })();
 
 /* =============================================
