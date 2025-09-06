@@ -1,14 +1,20 @@
-# 📌 Level 2 – Personal Blog CMS
-A multi-page web app to manage and display blog posts with category filtering, article submission, and JSON data handling, styled using **SASS** and **Bootstrap**, with light PHP backend processing.
+# 📌 NileNotes -- Personal Blog CMS (WebDev Plan1 - Level 2)
+A multi-page web app to manage and display blog posts with category filtering, article submission, and JSON data handling, styled using CSS/SASS, with light PHP backend processing.
 
 ---
 
 ## **🎯 Project Goals**
 - Learn and apply **SASS** for styling and CSS architecture.
-- Use **Bootstrap** for responsive and accessible UI components.
-- Apply **JavaScript ES6 basics** (let/const, arrow functions, template literals, destructuring, modules).
+- Use **FlexBox / Grid System** for responsive UI components.
+- Apply **JavaScript ES6 basics** (arrow functions, template literals, destructuring, modules, etc..).
 - Handle **JSON data** for storing and loading blog posts.
-- Build a **category filter** system.
+- Build a **category filter & sort** system.
+- Show cards inside **trendy sliders** using "Swiper.JS" library.
+- Apply different types of **dynamic Pagination**.
+- Apply **lazy loading** by creating a single **IntersectionObserver instance** for performance.
+- Apply **Skeleton & Blur** styling for images till loading them in viewport.
+- Ensure **active navbar item** while switching per pages from URL query string.
+- Build a **single article page** with related-category recommendations.
 - Create a **blog submission form** and process it with **PHP**.
 - Apply **Dark/Light mode** switching.
 - Ensure **fully responsive design** across all devices & browsers.
@@ -20,12 +26,12 @@ A multi-page web app to manage and display blog posts with category filtering, a
 
 ## **🛠 Tools & Technologies**
 - **HTML5**
-- **SASS (SCSS syntax)**
-- **Bootstrap 5**
+- **CSS3/SASS (SCSS syntax)**
 - **JavaScript (ES6)**
 - **JSON**
 - **PHP (Basic)**
-- **Git & GitHub**
+- **Bootstrap 5 (If needed)**
+- **Version Control (Git & GitHub)**
 - **VS Code Extensions:**
   - Live Server
   - Prettier
@@ -39,55 +45,51 @@ A multi-page web app to manage and display blog posts with category filtering, a
 
 * Homepage
 
-* Display latest articles in a grid layout.
+  * Display random featured articles in a trendy slider.
 
-* Featured posts section.
+  * Categories section.
 
-* Category filter bar.
-
-* Pagination.
+  * Dynamic Pagination.
 
 * Category Page
 
-* Display articles under a selected category.
+  * Display articles under a selected category.
+  
+  * Filtering & Sorting system.
 
-* Same grid layout with filter options.
+  * Responsive flex Box layout.
+
+  * Dynamic Pagination.
 
 * Single Post Page
 
-* Display article title, image, content, and publish date.
+  * Display every single article information.
 
-* Related posts section at the bottom.
+  * Related articles section at the bottom.
 
 * Contact Page
 
-* Contact form.
+  * Contact form.
 
-* Submit data via PHP (no database, just processing).
+  * Submit data via PHP (no database, just processing).
 
 * Blog Submission Page
 
-* Form to add a new blog post.
+  * Form to add a new blog post.
 
-* Save data to JSON file (database simulation).
-
-* Search
+  * Save data to JSON file (database simulation).
 
 * Instant search bar for articles.
 
 * Dark/Light Mode
 
-* Toggle button to switch themes.
+* Lazy loading & Skeleton/Blur for images
 
-* Save preference in localStorage.
+* Save preferences in localStorage.
 
 * SEO Optimization
 
-* Meta tags, OG tags, structured data.
-
 * Responsive Design
-
-* Fully responsive using Bootstrap + SASS.
 
 ---
 
@@ -104,7 +106,9 @@ Level2-Project/
 │ └── main.css.map
 ├── js/
 │ ├── main.js
-│ └── data.json
+│ ├── data.json
+│ ├── modules/
+│ | ├── utils.js
 ├── scss/
 │ |── abstracts/
 │ | ├── _variables.scss
@@ -119,10 +123,9 @@ Level2-Project/
 │
 ├── index.html
 ├── category.html
-├── single-post.html
+├── single.html
 ├── contact.html
 └── README.md
-
 
 ---
 
@@ -140,7 +143,7 @@ Level2-Project/
 ### **Phase 2 – Design & Layout**
 1. Create Navbar (Bootstrap + custom SCSS).
 2. Create Hero Section for the homepage.
-3. Build Blog Grid Layout (Bootstrap cards).
+3. Build Blogs Layout (FlexBox cards).
 4. Style components using **SASS variables, mixins, nesting**.
 5. Implement Dark/Light mode toggle.
 
