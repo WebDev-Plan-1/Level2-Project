@@ -125,7 +125,7 @@ function renderResults(sortBy) {
 //======= Sort
 function initCategoryPage() {
   const urlParams = new URLSearchParams(window.location.search);
-  const sortParam = urlParams.get("sort") || "Most Viewed"; // default
+  const sortParam = urlParams.get("sort") || "Latest"; // default
   const pageParam = parseInt(urlParams.get("page")) || 1;
 
   sortFilter.value = sortParam;

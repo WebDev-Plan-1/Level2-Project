@@ -13592,7 +13592,7 @@ a:hover {
   display: flex;
   flex-direction: column;
 }
-@media (max-width: 576px) {
+@media (max-width: 768px) {
   .search-results .container .results-container .article-card {
     max-width: 100%;
   }
