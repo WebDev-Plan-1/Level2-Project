@@ -14,6 +14,8 @@ import {
   scrollToArticlesTop,
   lazyLoading,
   AOSInit,
+  renderPagination,
+  populateCategoryFilter,
 } from "./utils.js";
 // =========== Import Utils Constants =======================
 import {
@@ -341,31 +343,20 @@ function displayArticles(category, sortBy) {
             }" class="read-more post__btn btn">Read More</a>
         `
     );
-    // const card = createElement(
-    //   "article",
-    //   ["post__card", "post-card"],
-    //   `
-    //         <img src="${article.image}" class="post-image post__image" alt="${
-    //     article.title
-    //   }" />
-    //         <h3 class="post-title post__title">${article.title}</h3>
-    //         <p class="post-category">#${article.category}</p>
-    //         <p class="post-excerpt post__description">${article.content}</p>
-    //         <p class="post-info">
-    //             <span class="post-views"><i class="fa-solid fa-eye"></i> ${formatViews(
-    //               article.views
-    //             )}</span>
-    //             <span class="post-date">${formatDate(article.date)}</span>
-    //         </p>
-    //         <a href="single.html?id=${
-    //           article.id
-    //         }" class="read-more post__btn btn">Read More</a>
-    //     `
-    // );
     articlesContainer.appendChild(card);
   });
 
-  renderPostsPaginationButtons(totalPages, category, sortBy);
+  // =========== Rendering dynamic Pagination
+  renderPagination(
+    postsPaginationContainer,
+    totalPages,
+    currentPage,
+    (page) => {
+      currentPage = page;
+      displayArticles(category, sortBy);
+      scrollToArticlesTop();
+    }
+  );
 
   // Ensure lazy images are observed after render
   if (window.observeLazyImages) window.observeLazyImages();
@@ -374,77 +365,18 @@ function displayArticles(category, sortBy) {
   updateURLParams({ cat: category, sort: sortBy, page: currentPage });
 }
 
-function renderPostsPaginationButtons(totalPages, category, sortBy) {
-  postsPaginationContainer.innerHTML = "";
-
-  if (totalPages <= 5) {
-    // ✅ Show all pages if small number
-    for (let i = 1; i <= totalPages; i++) {
-      createPageButton(i, category, sortBy);
-    }
-  } else {
-    // ✅ Always show first page
-    createPageButton(1, category, sortBy);
-
-    if (currentPage > 3) {
-      addEllipsis();
-    }
-
-    // ✅ Show pages around currentPage
-    let start = Math.max(2, currentPage - 1);
-    let end = Math.min(totalPages - 1, currentPage + 1);
-
-    for (let i = start; i <= end; i++) {
-      createPageButton(i, category, sortBy);
-    }
-
-    if (currentPage < totalPages - 2) {
-      addEllipsis();
-    }
-
-    // ✅ Always show last page
-    createPageButton(totalPages, category, sortBy);
-  }
-}
-
-// Create individual page button with click handler
-// and active state
-function createPageButton(page, category, sortBy) {
-  const bullet = document.createElement("button");
-  bullet.classList.add("post-page-bullet");
-  if (page === currentPage) bullet.classList.add("active");
-  bullet.innerText = page;
-
-  bullet.addEventListener("click", () => {
-    currentPage = page;
-    displayArticles(category, sortBy);
-    scrollToArticlesTop();
-  });
-
-  postsPaginationContainer.appendChild(bullet);
-}
-
-// Add ellipsis element to pagination
-// to indicate skipped pages
-function addEllipsis() {
-  const span = document.createElement("span");
-  span.classList.add("ellipsis");
-  span.innerText = "...";
-  postsPaginationContainer.appendChild(span);
-}
-
 // Populate category filter dropdown with unique categories
 // plus an "All" option
-function populateCategoryFilter() {
-  if (!categoryFilter) return;
-  const categories = [...new Set(allArticles.map((a) => a.category))];
-  categoryFilter.innerHTML = `<option value="All">All</option>`;
-  categories.forEach((cat) => {
-    const option = createElement("option", [], cat);
-    option.value = cat;
-    categoryFilter.appendChild(option);
-  });
-}
+// function populateCategoryFilter() {
+//   if (!categoryFilter) return;
+//   const categories = [...new Set(allArticles.map((a) => a.category))];
+//   categoryFilter.innerHTML = `<option value="All">All</option>`;
+//   categories.forEach((cat) => {
+//     const option = createElement("option", [], cat);
+//     option.value = cat;
+//     categoryFilter.appendChild(option);
+//   });
+// }
 
 // ⭐ UPDATED: Init category page with URL sync
 // Read URL params for category, sort, and page
@@ -490,7 +422,8 @@ function initPageFeatures() {
   if (topPostsContainer) displayTopPosts();
   if (categoriesContainer) displayCategories();
   if (articlesContainer) {
-    populateCategoryFilter();
+    // Example: populate categories on load
+    populateCategoryFilter(categoryFilter, allArticles);
     initCategoryPage();
   }
 }

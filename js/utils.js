@@ -8,6 +8,7 @@
 //============= Home & Category Pages constants ============ //
 // URL to fetch articles data
 export const DATA_URL = "data/articles.json";
+let allArticles = [];
 // featured posts section Container -- Home Page
 export const topPostsContainer = document.querySelector("#top-posts-container");
 // categories section -- Home Page
@@ -125,7 +126,9 @@ function initSearchBar() {
     if (!query) return;
 
     // Save the keywork in local storage or in a query string parameter
-    window.location.href = `search.html?query=${encodeURIComponent(query)}`;
+    window.location.href = `searchPosts.html?query=${encodeURIComponent(
+      query
+    )}`;
   });
 }
 
@@ -379,6 +382,92 @@ export function removeSwiperControls() {
 export function AOSInit() {
   AOS.init({ duration: 1200, mirror: false });
 }
+
+/* =============================================
+   ################# Dynamic Number Pagination Buttons ####################
+============================================= */
+/**
+ * Render dynamic pagination buttons
+ * @param {HTMLElement} container - The container element for pagination buttons
+ * @param {number} totalPages - Total number of pages
+ * @param {number} currentPage - Current active page
+ * @param {function} onPageChange - Callback to handle page change
+ */
+export function renderPagination(
+  container,
+  totalPages,
+  currentPage,
+  onPageChange
+) {
+  container.innerHTML = "";
+
+  if (totalPages <= 5) {
+    // Show all pages if small number
+    for (let i = 1; i <= totalPages; i++) {
+      createPageButton(container, i, currentPage, onPageChange);
+    }
+  } else {
+    // Always show first page
+    createPageButton(container, 1, currentPage, onPageChange);
+
+    if (currentPage > 3) {
+      addEllipsis(container);
+    }
+
+    // Show pages around currentPage
+    let start = Math.max(2, currentPage - 1);
+    let end = Math.min(totalPages - 1, currentPage + 1);
+
+    for (let i = start; i <= end; i++) {
+      createPageButton(container, i, currentPage, onPageChange);
+    }
+
+    if (currentPage < totalPages - 2) {
+      addEllipsis(container);
+    }
+
+    // Always show last page
+    createPageButton(container, totalPages, currentPage, onPageChange);
+  }
+}
+
+// Create individual page button
+function createPageButton(container, page, currentPage, onPageChange) {
+  const bullet = document.createElement("button");
+  bullet.classList.add("post-page-bullet");
+  if (page === currentPage) bullet.classList.add("active");
+  bullet.innerText = page;
+
+  bullet.addEventListener("click", () => onPageChange(page));
+
+  container.appendChild(bullet);
+}
+
+// Add ellipsis (...)
+function addEllipsis(container) {
+  const span = document.createElement("span");
+  span.innerText = "...";
+  span.classList.add("ellipsis");
+  container.appendChild(span);
+}
+
+/**
+ * Populate category filter dropdown
+ * @param {HTMLElement} selectEl - The select element
+ * @param {Array} articles - Array of articles
+ */
+export function populateCategoryFilter(selectEl, articles) {
+  if (!selectEl) return;
+  const categories = [...new Set(articles.map((a) => a.category))];
+  selectEl.innerHTML = `<option value="All">All</option>`;
+  categories.forEach((cat) => {
+    const option = document.createElement("option");
+    option.value = cat;
+    option.innerText = cat;
+    selectEl.appendChild(option);
+  });
+}
+
 /* =============================================
    ############# End of Utils JS ################
 ============================================= */
