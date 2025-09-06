@@ -177,6 +177,30 @@ export function initNavbar() {
     })
   );
 
+  document.addEventListener("click", function (e) {
+    // ====== Close Search form
+    if (
+      searchForm.classList.contains("active") &&
+      !searchForm.contains(e.target) &&
+      searchToggle.classList.contains("active") &&
+      !searchToggle.contains(e.target)
+    ) {
+      searchForm.classList.toggle("active");
+      searchToggle.classList.toggle("active");
+    }
+
+    // ======= Close Nav List and Hamburger
+    if (
+      navLinks.classList.contains("active") &&
+      !navLinks.contains(e.target) &&
+      hamburger.classList.contains("active") &&
+      !hamburger.contains(e.target)
+    ) {
+      navLinks.classList.remove("active");
+      hamburger.classList.remove("active");
+    }
+  });
+
   const savedNav = localStorage.getItem("activeNav");
   if (savedNav) {
     navLinkItems.forEach((link) => {
