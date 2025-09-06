@@ -145,6 +145,13 @@ export function initNavbar() {
       searchToggle.classList.toggle("active");
     }
     navLinks.classList.toggle("active");
+    hamburger.classList.toggle("active");
+
+    // update aria-expanded for accessibility
+    const expanded = hamburger.classList.contains("active");
+    hamburger.setAttribute("aria-expanded", expanded);
+    navLinks.setAttribute("aria-expanded", expanded);
+    //======= ToggleNav Scroll
     toggleNavScroll();
   });
 

@@ -12205,6 +12205,7 @@ a:hover {
 }
 .navbar .container .hamburger {
   display: none;
+  outline: none;
   flex-direction: column;
   gap: 6px;
   background: none;
@@ -12217,6 +12218,23 @@ a:hover {
   background-color: #15b5e6;
   border-radius: 3px;
   transition: transform 0.3s ease;
+}
+.navbar .container .hamburger.active span:nth-child(1) {
+  transform: rotate(45deg) translate(6px, 6px);
+  -webkit-transform: rotate(45deg) translate(6px, 6px);
+  -moz-transform: rotate(45deg) translate(6px, 6px);
+  -ms-transform: rotate(45deg) translate(6px, 6px);
+  -o-transform: rotate(45deg) translate(6px, 6px);
+}
+.navbar .container .hamburger.active span:nth-child(2) {
+  opacity: 0;
+}
+.navbar .container .hamburger.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(6px, -6px);
+  -webkit-transform: rotate(-45deg) translate(6px, -6px);
+  -moz-transform: rotate(-45deg) translate(6px, -6px);
+  -ms-transform: rotate(-45deg) translate(6px, -6px);
+  -o-transform: rotate(-45deg) translate(6px, -6px);
 }
 
 @media (max-width: 768px) {
