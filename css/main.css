@@ -12062,27 +12062,38 @@ a:hover {
   right: 1rem;
   top: 50%;
   transform: translateY(-50%);
+  -webkit-transform: translateY(-50%);
+  -moz-transform: translateY(-50%);
+  -ms-transform: translateY(-50%);
+  -o-transform: translateY(-50%);
   z-index: 9999;
   width: 44px;
   height: 44px;
-  border-radius: 50%;
   border: none;
   display: flex;
   align-items: center;
   justify-content: center;
   background-color: var(--color-primary);
+  opacity: 0.4;
   color: var(--color-surface);
   box-shadow: 0 6px 18px var(--color-shadow);
   cursor: pointer;
   outline: none;
-  transition: background-color 0.2s ease, color 0.2s ease, transform 0.15s ease;
+  transition: background-color, transform, opacity 0.3s ease;
+  -webkit-transition: background-color, transform, opacity 0.3s ease;
+  -moz-transition: background-color, transform, opacity 0.3s ease;
+  -ms-transition: background-color, transform, opacity 0.3s ease;
+  -o-transition: background-color, transform, opacity 0.3s ease;
+  border-radius: 50%;
 }
 .theme-toggle:hover {
   transform: translateY(-50%) scale(1.03);
   box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+  opacity: 1;
 }
 .theme-toggle:focus {
   box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+  opacity: 1;
 }
 .theme-toggle[aria-pressed=true] {
   color: var(--color-surface);

@@ -7,53 +7,75 @@
 
 // Style the theme toggle button (fixed at middle-right)
 .theme-toggle {
-    // make it fixed to viewport
+    //makeitfixedtoviewport
     position: fixed;
-    // align to the right edge (gap from edge)
+    //aligntotherightedge(gapfromedge)
     right: 1rem;
-    // vertically center
+    //verticallycenter
     top: 50%;
-    // shift back by 50% of its height
+    //shiftbackby50%ofitsheight
     transform: translateY(-50%);
-    // ensure above other elements
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    -ms-transform: translateY(-50%);
+    -o-transform: translateY(-50%);
+    //ensureaboveotherelements
     z-index: 9999;
-    // visual size
+    //visualsize
     width: 44px;
     height: 44px;
-    // rounded circle
-    border-radius: 50%;
-    // remove default border
+    //removedefaultborder
     border: none;
-    // center icon inside
+    //centericoninside
     display: flex;
     align-items: center;
     justify-content: center;
-    // background uses surface variable
+    //backgroundusesprimaryvariable
     background-color: var(--color-primary);
-    // icon color uses primary
+    opacity: 0.4;
+    //iconcolorusessurface
     color: var(--color-surface);
-    // subtle shadow
+    //subtleshadow
     box-shadow: 0 6px 18px var(--color-shadow);
-    // pointer
+    //pointer
     cursor: pointer;
-    // accessible focus ring
+    //accessiblefocusring
     outline: none;
-    // smooth transitions for bg & color
+    //smoothtransitionsforbg&color
     transition:
-        background-color 0.2s ease,
-        color 0.2s ease,
-        transform 0.15s ease;
-
-    // hover effect
+        background-color,
+        transform,
+        opacity 0.3s ease;
+    -webkit-transition:
+        background-color,
+        transform,
+        opacity 0.3s ease;
+    -moz-transition:
+        background-color,
+        transform,
+        opacity 0.3s ease;
+    -ms-transition:
+        background-color,
+        transform,
+        opacity 0.3s ease;
+    -o-transition:
+        background-color,
+        transform,
+        opacity 0.3s ease;
+    //roundedcircle
+    border-radius: 50%;
+    //hovereffect
     &:hover {
         transform: translateY(-50%) scale(1.03);
         // box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.08);
         box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+        opacity: 1;
     }
 
     // focus visible (keyboard)
     &:focus {
         box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+        opacity: 1;
         // box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.08);
     }
 
