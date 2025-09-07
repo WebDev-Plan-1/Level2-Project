@@ -2,7 +2,7 @@
 
 @use "../abstracts/variables" as v;
 @use "../abstracts/mixins" as m;
-@use "components" as com; // Import components for mixins
+@use "components" as c; // Import components for mixins
 
 .hero {
   // center the hero content
@@ -10,12 +10,12 @@
   flex-direction: column;
   gap: v.$spacing-lg;
   height: 95vh;
-  background-color: v.$primary-color;
-  color: #fff;
+  background-color: var(--color-primary);
+  color: #e6e6e6;
   text-align: center;
   padding: 0 v.$spacing-xl;
-  box-shadow: 0 4px 8px v.$box-shadow-dark;
-  background: v.$primary-color url("../../assets/images/hero-bg.jpeg") no-repeat center center;
+  box-shadow: 0 2px 4px var(--color-shadow);
+  background: var(--color-primary) url("../../assets/images/hero-bg.jpeg") no-repeat center center;
   background-size: cover;
   position: relative; // For absolute positioning of overlay
 
@@ -55,7 +55,7 @@
     z-index: 1; // Above the overlay
 
     span:nth-of-type(1) {
-      color: v.$primary-color;
+      color: var(--color-primary);
     }
 
     // Responsive adjustments
@@ -72,7 +72,6 @@
       font-size: 1.4rem;
       font-weight: normal;
       letter-spacing: normal;
-      // @include m.box-shadow(0, 2px, 4px, v.$primary-color);
       // padding: v.$spacing-sm v.$spacing-md;
       display: inline-block;
       margin-top: v.$spacing-md;
@@ -123,7 +122,7 @@
 
   .hero-button {
     // Use button-primary mixin to apply button styles
-    @include com.button-primary;
+    @include c.button-primary;
     font-family: v.$font-second;
     padding: v.$spacing-md v.$spacing-lg;
     z-index: 1; // Above the overlay

@@ -9,11 +9,13 @@ import {
   lazyLoading,
   AOSInit,
 } from "./utils.js";
+//==== Import theme
+import { initTheme } from "./theme.js";
 // =========== Import Constants =======================
 import {
   articleId,
   titleEl,
-  heroImg,
+  heroImgContainer,
   dateEl,
   categoryEl,
   viewsEl,
@@ -53,9 +55,25 @@ fetch("data/articles.json")
       return;
     }
 
+    const imgWrapHtml = `
+    <!-- Put a low-cost background placeholder via CSS and keep real image in data-src -->
+    <div>
+        <img
+        loading="lazy"
+        class="lazy-img lazy-blur post-image"
+        data-src="${article.image}"
+        src="data:image/svg+xml;charset=utf-8,${encodeURIComponent(
+          "<svg xmlns='http://www.w3.org/2000/svg' width='10' height='7'></svg>"
+        )}"
+        alt="${article.title}"
+        onerror="this.dataset.src='assets/images/logo.png'; this.onerror=null;"
+        />
+    </div>
+    `;
     // Fill content
     titleEl.textContent = article.title;
-    heroImg.src = article.image;
+    // heroImg.innerHTML = imgWrapHtml;
+    heroImgContainer.innerHTML = imgWrapHtml;
     dateEl.innerHTML = `<i class="fa-solid fa-calendar"></i> ${new Date(
       article.date
     ).toDateString()}`;
@@ -172,6 +190,7 @@ fetch("data/articles.json")
 // Ensures all DOM elements are ready before manipulation
 document.addEventListener("DOMContentLoaded", () => {
   initNavbar();
+  initTheme();
 });
 /* =============================================
    ############# End of SinglePage JS ################

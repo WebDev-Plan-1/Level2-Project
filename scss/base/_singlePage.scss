@@ -11,7 +11,7 @@
 
     .article-title {
         @include m.responsive-font(1.2rem, 2rem);
-        color: darken(v.$primary-color, 15%);
+        color: var(--color-darken-primary);
         font-weight: bold;
         font-family: v.$font-second;
         margin-bottom: 1rem;
@@ -30,14 +30,14 @@
         align-items: center;
         gap: 1rem;
         font-size: 0.9rem;
-        color: #666;
+        // color: #666;
         margin-bottom: 1.5rem;
         font-family: v.$font-main;
 
         .meta-left {
             display: flex;
             gap: 1rem;
-            color: darken($color: v.$primary-color, $amount: 15%);
+            color: var(--color-darken-primary);
 
             .article-views {
                 font-family: v.$font-main;
@@ -55,7 +55,7 @@
         }
 
         .meta-right {
-            color: darken($color: v.$primary-color, $amount: 15%);
+            color: var(--color-darken-primary);
             .article-date {
                 font-family: v.$font-second;
             }
@@ -66,29 +66,33 @@
         margin-bottom: 2rem;
 
         .article-text {
-            color: v.$secondary-color;
+            color: var(--color-text);
             line-height: 1.2;
         }
 
         .read-more-btn {
             margin-top: 1rem;
-            background: darken($color: v.$primary-color, $amount: 15%);
+            background: var(--color-darken-primary);
             color: #fff;
             padding: v.$spacing-sm v.$spacing-md;
             border: none;
             border-radius: 6px;
             cursor: pointer;
             font-family: v.$font-second;
+            @include m.transition(0.3s);
+            &:hover {
+                background: var(--color-primary);
+            }
         }
     }
 
     .related-articles {
-        margin-top: 3rem;
+        margin-top: 5rem;
 
         .check-more-art {
             display: none;
             padding: 0.4rem 1rem;
-            background: darken($color: v.$primary-color, $amount: 15%);
+            background: var(--color-darken-primary);
             color: #fff;
             border-radius: 5px;
             font-size: 0.9rem;
@@ -102,8 +106,8 @@
         }
 
         h2 {
-            margin-bottom: 1rem;
-            color: v.$secondary-color;
+            margin-bottom: 2rem;
+            color: var(--color-muted);
             font-family: v.$font-second;
         }
         /* Swiper Container */
@@ -122,20 +126,33 @@
                     height: auto; // makes cards equal height
 
                     .article-card {
-                        background: #f9f9f9;
+                        background: var(--color-surface);
                         padding: v.$spacing-md;
                         @include m.border-radius(10px);
-                        @include m.box-shadow(0px, 6px, 18px, rgba(0, 0, 0, 0.08));
+                        @include m.box-shadow(0px, 4px, 8px, var(--color-shadow));
                         overflow: hidden;
-                        transition:
-                            transform 0.3s ease,
-                            box-shadow 0.3s ease;
                         display: flex;
                         flex-direction: column;
                         height: 100%;
                         max-width: 350px;
 
-                        // img {
+                        transition:
+                            transform 0.3s ease,
+                            box-shadow 0.3s ease;
+                        -webkit-transition:
+                            transform 0.3s ease,
+                            box-shadow 0.3s ease;
+                        -moz-transition:
+                            transform 0.3s ease,
+                            box-shadow 0.3s ease;
+                        -ms-transition:
+                            transform 0.3s ease,
+                            box-shadow 0.3s ease;
+                        -o-transition:
+                            transform 0.3s ease,
+                            box-shadow 0.3s ease;
+                        //img
+                        //                                              {
                         //     width: 100%;
                         //     height: 150px;
                         //     object-fit: cover;
@@ -147,13 +164,13 @@
                             font-weight: 600;
                             font-family: v.$font-second;
                             padding: 1rem 0;
-                            color: darken($color: v.$primary-color, $amount: 15%);
+                            color: var(--color-darken-primary);
                             flex-grow: 0;
                         }
 
                         p {
                             font-size: 0.95rem;
-                            color: v.$secondary-color;
+                            color: var(--color-text);
                             padding: v.$spacing-sm v.$spacing-xs;
                             flex-grow: 1;
                         }
@@ -162,11 +179,16 @@
                             display: inline-block;
                             margin-top: 0.5rem;
                             padding: 0.4rem 1rem;
-                            background: darken($color: v.$primary-color, $amount: 15%);
+                            background: var(--color-darken-primary);
                             color: #fff;
                             border-radius: 5px;
                             font-size: 0.9rem;
                             align-self: center;
+                            @include m.transition(0.3s);
+
+                            &:hover {
+                                background: var(--color-primary);
+                            }
                         }
                     }
                 }
@@ -178,32 +200,35 @@
      ================================ */
     .swiper-button-prev,
     .swiper-button-next {
-        color: v.$primary-color;
-        background: #fff;
-        border-radius: 50%;
+        color: var(--color-primary);
+        background: var(--color-surface);
         width: 45px;
         height: 45px;
-        @include m.box-shadow(0, 4px, 10px, rgba(0, 0, 0, 0.1));
+        @include m.box-shadow(0, 2px, 6px, var(--color-shadow));
         @include m.transition(0.3s);
-
+        border-radius: 50%;
+        -webkit-border-radius: 50%;
+        -moz-border-radius: 50%;
+        -ms-border-radius: 50%;
+        -o-border-radius: 50%;
         &:after {
             font-size: 1.2rem;
             font-weight: bold;
         }
 
         &:hover {
-            background: darken(v.$primary-color, 10%);
+            background: var(--color-darken-primary);
             color: #fff;
         }
     }
 
     .swiper-pagination {
         .swiper-pagination-bullet {
-            background: v.$primary-color;
+            background: var(--color-primary);
             opacity: 1;
 
             &-active {
-                background: darken(v.$primary-color, 30%);
+                background: var(--color-darken-primary);
             }
         }
     }

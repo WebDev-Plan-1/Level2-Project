@@ -8,8 +8,8 @@
   position: sticky;
   top: 0;
   width: 100%;
-  background-color: v.$light-bg;
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  background-color: var(--color-surface);
+  box-shadow: 0 2px 4px var(--color-shadow);
   z-index: 1000;
 
   .container {
@@ -27,11 +27,11 @@
         font-family: v.$font-second;
         font-size: 1.8rem;
         font-weight: bold;
-        color: v.$secondary-color;
+        color: var(--color-text);
         text-decoration: none;
 
         .logoSpan {
-          color: v.$primary-color;
+          color: var(--color-primary);
         }
       }
 
@@ -39,8 +39,8 @@
         width: 50px;
         height: 50px;
         border-radius: 50%;
-        @include m.box-shadow(0, 4px, 8px, v.$box-shadow-light);
-        background-color: v.$primary-color;
+        @include m.box-shadow(0, 4px, 8px, var(--color-shadow));
+        background-color: var(--color-primary);
 
         img {
           width: 100%;
@@ -62,22 +62,21 @@
     // Navbar Search Styles
     // ==========================
     .search-toggle {
-      background: #fff;
-      @include m.box-shadow(8px, 10px, 24px, v.$light-bg);
+      background: var(--color-surface);
+      @include m.box-shadow(0px, 2px, 4px, var(--color-shadow));
       padding: v.$spacing-xs v.$spacing-sm;
       border: none;
-      border-radius: 5px;
+      @include m.border-radius(5px);
       font-size: 1.2rem;
-      color: v.$primary-color;
+      color: var(--color-primary);
       cursor: pointer;
       transition:
         background 0.3s ease,
         color 0.3s ease;
-
       &:hover,
       &.active {
-        background: v.$primary-color;
-        color: #fff;
+        background: var(--color-primary);
+        color: var(--color-surface);
       }
     }
 
@@ -88,14 +87,14 @@
       transform: translateX(-50%) translateY(-120%);
       width: 90%;
       max-width: 750px;
-      background: v.$light-bg;
+      background: var(--color-surface);
       padding: v.$spacing-md v.$spacing-xs;
       display: flex;
       flex-direction: column;
       // align-items: center;
       gap: 15px;
       border-radius: 8px;
-      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 4px 12px var(--color-shadow);
       opacity: 0;
       pointer-events: none;
       transition: all 0.3s ease;
@@ -120,17 +119,19 @@
           width: 85%;
           padding: 8px 12px;
           padding-right: 35px;
-          border: 1px solid v.$secondary-color;
+          background: var(--color-surface);
+          box-shadow: 0 4px 12px var(--color-shadow);
+          border: 1px solid var(--color-border);
           border-radius: 5px;
           font-size: 1rem;
-          color: darken(v.$primary-color, 15%);
+          color: var(--color-darken-primary);
 
           &:focus {
             outline: none;
-            border: 1px solid v.$primary-color;
+            border: 1px solid var(--color-primary);
 
             &::placeholder {
-              color: v.$primary-color;
+              color: var(--color-primary);
               opacity: 0.8;
             }
           }
@@ -141,7 +142,7 @@
           border: none;
           background: transparent;
           font-size: 1rem;
-          color: v.$secondary-color;
+          color: var(--color-muted);
           cursor: pointer;
           display: none;
           transition: color 0.3s ease;
@@ -158,16 +159,16 @@
           width: 10%;
           display: block;
           font-size: 0.75rem;
-          color: v.$secondary-color;
+          color: var(--color-muted);
           padding-right: 10px;
           // text-align: center;
         }
       }
 
       .search-submit {
-        background: v.$primary-color;
+        background: var(--color-primary);
         border: none;
-        color: #fff;
+        color: #e6e6e6;
         padding: 8px 12px;
         border-radius: 5px;
         cursor: pointer;
@@ -178,7 +179,7 @@
         -o-transition: background 0.3s ease;
         align-self: center;
         &:hover {
-          background: darken(v.$primary-color, 10%);
+          background: var(--color-darken-primary);
         }
       }
     }
@@ -192,14 +193,14 @@
       font-family: v.$font-second;
 
       .nav-link-item {
-        color: v.$secondary-color;
+        color: var(--color-text);
         text-decoration: none;
         font-size: 1rem;
         transition: color 0.3s ease;
 
         &:hover,
         &.active {
-          color: v.$primary-color;
+          color: var(--color-primary);
         }
       }
     }
@@ -219,7 +220,7 @@
       span {
         height: 3px;
         width: 25px;
-        background-color: v.$primary-color;
+        background-color: var(--color-primary);
         border-radius: 3px;
         transition: transform 0.3s ease;
       }
@@ -256,7 +257,7 @@
     .container {
       .nav-links {
         flex-direction: column;
-        background-color: v.$light-bg;
+        background-color: var(--color-surface);
         position: absolute;
         top: 61px;
         right: 0;

@@ -1,0 +1,41 @@
+// file: scss/abstracts/_themes.scss
+
+// Import variables so we can reuse Sass values
+@use "variables" as *;
+
+// Define root (light theme) CSS variables based on Sass variables
+:root {
+    --color-bg: #ffffff;
+    --color-surface: #{$light-bg};
+    --color-text: #{$secondary-color};
+    --color-muted: #6b6b6b;
+    --color-primary: #{$primary-color};
+    --color-darken-primary: #{$darken-primary-light-color};
+    --color-border: #e6e6e6;
+    --color-shadow: #{$box-shadow-light};
+    // --color-shadow-oppos: #{$box-shadow-dark};
+}
+
+// Dark theme override variables
+html[data-theme="dark"] {
+    --color-bg: #0f1113;
+    --color-surface: #{$dark-bg};
+    --color-text: #e6e6e6;
+    --color-muted: #a8a8a8;
+    --color-primary: #{$lighten-primary-color};
+    --color-darken-primary: #{$darken-primary-dark-color};
+    --color-border: #202225;
+    --color-shadow: #{$box-shadow-dark};
+    // --color-shadow-oppos: #{$box-shadow-light};
+}
+
+// Smooth transition on key components
+body,
+.navbar,
+.section-title,
+.post-card {
+    transition:
+        background-color 0.28s ease,
+        color 0.28s ease,
+        border-color 0.28s ease;
+}

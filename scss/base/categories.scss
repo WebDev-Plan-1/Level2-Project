@@ -6,7 +6,7 @@
 .categories-overview {
     padding: v.$spacing-lg;
     // background-color: v.$dark-bg;
-    color: white;
+    // color: white;
     max-width: 1200px;
     margin: v.$spacing-md auto 0;
     // background-color: v.$primary-color;
@@ -15,7 +15,7 @@
     -moz-border-radius: v.$border-radius;
     -ms-border-radius: v.$border-radius;
     -o-border-radius: v.$border-radius;
-    @include m.box-shadow(0, 2px, 4px, v.$box-shadow-light);
+    @include m.box-shadow(0, 4px, 10px, var(--color-shadow));
 
     @media (max-width: v.$breakpoint-watch) {
         padding: v.$spacing-sm v.$spacing-xs;
@@ -51,14 +51,14 @@
                 -moz-border-radius: v.$border-radius;
                 -ms-border-radius: v.$border-radius;
                 -o-border-radius: v.$border-radius;
-                color: v.$primary-color;
-                background-color: #fff;
-                @include m.box-shadow(0, 2px, 4px, v.$box-shadow-light);
+                color: var(--color-primary);
+                background-color: var(--color-surface);
+                @include m.box-shadow(0, 2px, 4px, var(--color-shadow));
 
                 &:hover {
-                    background-color: darken(v.$primary-color, 15%);
+                    background-color: var(--color-darken-primary);
                     color: #fff;
-                    @include m.box-shadow(0, 4px, 8px, v.$box-shadow-dark);
+                    @include m.box-shadow(0, 4px, 8px, var(--color-shadow));
                 }
 
                 @media (max-width: v.$breakpoint-watch) {
@@ -78,22 +78,29 @@
     gap: 0.5rem;
 
     .pagination-btn {
-        background: #f0f0f0;
-        color: v.$primary-color;
+        background: var(--color-surface);
+        color: var(--color-primary);
         border: none;
         padding: 0.5rem 1rem;
-        border-radius: 6px;
         cursor: pointer;
         transition: 0.3s ease;
-
+        -webkit-transition: 0.3s ease;
+        -moz-transition: 0.3s ease;
+        -ms-transition: 0.3s ease;
+        -o-transition: 0.3s ease;
+        border-radius: 6px;
+        -webkit-border-radius: 6px;
+        -moz-border-radius: 6px;
+        -ms-border-radius: 6px;
+        -o-border-radius: 6px;
         &.active {
-            background: v.$primary-color;
+            background: var(--color-primary);
             color: #fff;
             font-weight: bold;
         }
 
         &:hover {
-            background: darken(v.$primary-color, 20%);
+            background: var(--color-darken-primary);
             color: #fff;
         }
     }

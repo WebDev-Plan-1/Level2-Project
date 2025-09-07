@@ -4,10 +4,14 @@
 body {
   font-family: v.$font-main;
   font-size: v.$font-size-base;
-  background-color: v.$light-bg;
-  color: v.$secondary-color;
+  background-color: var(--color-bg);
+  color: var(--color-text);
   margin: 0;
   padding: 0;
+  // smooth transition (optional extra safety)
+  transition:
+    background-color 0.28s ease,
+    color 0.28s ease;
 }
 
 @media (max-width: v.$breakpoint-mobile) {
@@ -17,7 +21,7 @@ body {
 }
 
 a {
-  color: v.$primary-color;
+  // color: v.$primary-color;
   @include m.transition(0.3s);
 
   &:hover {

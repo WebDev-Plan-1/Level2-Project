@@ -1,0 +1,73 @@
+// file: scss/base/_theme-toggle.scss
+
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+@use "../base/components.scss" as c;
+// =============================================
+
+// Style the theme toggle button (fixed at middle-right)
+.theme-toggle {
+    // make it fixed to viewport
+    position: fixed;
+    // align to the right edge (gap from edge)
+    right: 1rem;
+    // vertically center
+    top: 50%;
+    // shift back by 50% of its height
+    transform: translateY(-50%);
+    // ensure above other elements
+    z-index: 9999;
+    // visual size
+    width: 44px;
+    height: 44px;
+    // rounded circle
+    border-radius: 50%;
+    // remove default border
+    border: none;
+    // center icon inside
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    // background uses surface variable
+    background-color: var(--color-primary);
+    // icon color uses primary
+    color: var(--color-surface);
+    // subtle shadow
+    box-shadow: 0 6px 18px var(--color-shadow);
+    // pointer
+    cursor: pointer;
+    // accessible focus ring
+    outline: none;
+    // smooth transitions for bg & color
+    transition:
+        background-color 0.2s ease,
+        color 0.2s ease,
+        transform 0.15s ease;
+
+    // hover effect
+    &:hover {
+        transform: translateY(-50%) scale(1.03);
+        // box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.08);
+        box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+    }
+
+    // focus visible (keyboard)
+    &:focus {
+        box-shadow: 0 0 8px rgba(0, 123, 255, 0.5);
+        // box-shadow: 0 0 0 4px rgba(0, 0, 0, 0.08);
+    }
+
+    // when in dark mode, optionally change icon color/background
+    // This allows visible contrast automatic via CSS variables
+    &[aria-pressed="true"] {
+        color: var(--color-surface);
+        background-color: var(--color-primary);
+    }
+
+    // small-screen tweak: move slightly left so it doesn't overlap UI
+    @media (max-width: 560px) {
+        right: 0.6rem;
+        width: 40px;
+        height: 40px;
+    }
+}

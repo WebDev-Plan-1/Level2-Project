@@ -17,12 +17,12 @@
             font-size: 2rem;
             font-family: v.$font-second;
             margin-bottom: 0.5rem;
-            color: v.$primary-color;
+            color: var(--color-primary);
         }
 
         .search-summary {
             margin-bottom: 1.5rem;
-            color: v.$secondary-color;
+            color: var(--color-muted);
             font-size: 1rem;
         }
 
@@ -36,15 +36,27 @@
                 width: 100%;
                 max-width: 350px;
                 padding: v.$spacing-md;
-                background: #fff;
+                background: var(--color-surface);
                 border-radius: 1rem;
                 overflow: hidden;
-                box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+                @include m.box-shadow(0, 4px, 10px, var(--color-shadow));
+                display: flex;
+                flex-direction: column;
                 transition:
                     transform 0.3s ease,
                     box-shadow 0.3s ease;
-                display: flex;
-                flex-direction: column;
+                -webkit-transition:
+                    transform 0.3s ease,
+                    box-shadow 0.3s ease;
+                -moz-transition:
+                    transform 0.3s ease,
+                    box-shadow 0.3s ease;
+                -ms-transition:
+                    transform 0.3s ease,
+                    box-shadow 0.3s ease;
+                -o-transition:
+                    transform 0.3s ease,
+                    box-shadow 0.3s ease;
 
                 @media (max-width: v.$breakpoint-tablet) {
                     & {
@@ -78,7 +90,7 @@
 
                 h2 {
                     flex-grow: 1;
-                    color: v.$primary-color;
+                    color: var(--color-primary);
                     font-family: v.$font-second;
                     margin: 10px 0 15px 0;
                     @include m.responsive-font(0.8rem, 1.3rem);
@@ -87,11 +99,11 @@
                     flex-grow: 1;
                     font-family: v.$font-second;
                     font-size: 0.8rem;
-                    color: darken($color: v.$primary-color, $amount: 15%);
+                    color: var(--color-darken-primary);
                 }
                 p.post-content {
                     flex-grow: 1;
-                    color: v.$secondary-color;
+                    color: var(--color-text);
                     font-family: v.$font-main;
                     // margin-top: 10px;
                     @include m.responsive-font(0.5rem, 1rem);
@@ -120,16 +132,16 @@
             button {
                 margin: 0 5px;
                 padding: 8px 12px;
-                border: 1px solid v.$primary-color;
+                border: 1px solid var(--color-primary);
                 background: none;
-                color: v.$primary-color;
+                color: var(--color-primary);
                 border-radius: 4px;
                 cursor: pointer;
                 transition: all 0.3s;
 
                 &:hover,
                 &.active {
-                    background: v.$primary-color;
+                    background: var(--color-primary);
                     color: #fff;
                 }
             }

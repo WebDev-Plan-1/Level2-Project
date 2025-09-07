@@ -17,6 +17,8 @@ import {
   renderPagination,
   populateCategoryFilter,
 } from "./utils.js";
+//==== Import theme
+import { initTheme } from "./theme.js";
 // =========== Import Utils Constants =======================
 import {
   DATA_URL,
@@ -450,6 +452,7 @@ async function fetchArticles() {
 // Ensures all DOM elements are ready before manipulation
 document.addEventListener("DOMContentLoaded", () => {
   initNavbar();
+  initTheme();
   fetchArticles();
 });
 /* =============================================

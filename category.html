@@ -31,11 +31,36 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Asimovian&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <!-- ============= PREVENT FART (Flash of Incorrect Theme) =============== -->
+    <script>
+        (function () {
+            try {
+                const saved = localStorage.getItem("site-theme");
+                if (saved === "dark" || saved === "light") {
+                    document.documentElement.setAttribute("data-theme", saved);
+                } else {
+                    // ✅ Default = dark
+                    document.documentElement.setAttribute("data-theme", "dark");
+                    localStorage.setItem("site-theme", "dark");
+                }
+            } catch (e) {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
+        })();
+    </script>
     <!-- Main style -->
     <link rel="stylesheet" href="css/main.css" />
 </head>
 
 <body>
+
+    <!-- THEME TOGGLE BUTTON: place this near end of body -->
+    <!-- This button is fixed to the middle-right of the viewport -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false"
+        title="Toggle theme">
+        <!-- Icon inside the button (will be updated by JS) -->
+        <span class="theme-icon"></span>
+    </button>
 
     <!-- Header >> Nav -->
     <header class="navbar sticky">

@@ -37,7 +37,8 @@ export const articleId = parseInt(urlParams.get("id"));
 
 // Containers
 export const titleEl = document.querySelector(".article-title");
-export const heroImg = document.querySelector("#article-hero-img");
+// export const heroImg = document.querySelector("#article-hero-img");
+export const heroImgContainer = document.querySelector(".article-hero");
 export const dateEl = document.querySelector(".article-date");
 export const categoryEl = document.querySelector(".article-category");
 export const viewsEl = document.querySelector(".article-views");

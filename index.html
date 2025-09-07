@@ -31,11 +31,37 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- ============= PREVENT FART (Flash of Incorrect Theme) =============== -->
+    <script>
+        (function () {
+            try {
+                const saved = localStorage.getItem("site-theme");
+                if (saved === "dark" || saved === "light") {
+                    document.documentElement.setAttribute("data-theme", saved);
+                } else {
+                    // ✅ Default = dark
+                    document.documentElement.setAttribute("data-theme", "dark");
+                    localStorage.setItem("site-theme", "dark");
+                }
+            } catch (e) {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
+        })();
+    </script>
     <!-- Main style -->
     <link rel="stylesheet" href="css/main.css" />
 </head>
 
 <body>
+
+    <!-- THEME TOGGLE BUTTON: place this near end of body -->
+    <!-- This button is fixed to the middle-right of the viewport -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false"
+        title="Toggle theme">
+        <!-- Icon inside the button (will be updated by JS) -->
+        <span class="theme-icon"></span>
+    </button>
 
     <!-- Header >> Nav -->
     <header class="navbar sticky">

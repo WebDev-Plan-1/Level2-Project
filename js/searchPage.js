@@ -9,6 +9,8 @@ import {
   renderPagination,
   sortFilter,
 } from "./utils.js";
+// ===== Import Theme
+import { initTheme } from "./theme.js";
 
 /* =============================================
    ############### Initialize Lazy Loading Images ##############
@@ -25,6 +27,7 @@ AOSInit();
 // Ensures all DOM elements are ready before manipulation
 document.addEventListener("DOMContentLoaded", () => {
   initNavbar();
+  initTheme();
 });
 
 /* =============================================

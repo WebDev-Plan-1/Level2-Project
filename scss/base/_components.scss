@@ -6,9 +6,9 @@
 // ==========================
 @mixin button-primary {
   //Set backgroundcolor to primarycolor variable
-  background-color: v.$primary-color;
+  background-color: var(--color-primary);
   text-align: center;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+  box-shadow: 0 2px 4px var(--color-shadow);
   text-decoration: none;
   font-weight: bold;
   border-radius: v.$border-radius;
@@ -20,9 +20,8 @@
   padding: v.$spacing-sm v.$spacing-md;
   &:hover {
     // Darken background color by 10%
-    background-color: darken(v.$primary-color, 10%);
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-    color: #fff;
+    background-color: var(--color-darken-primary);
+    box-shadow: 0 4px 8px var(--color-shadow);
   }
   // Responsive Styles
   @media (max-width: v.$breakpoint-mobile) {
@@ -49,7 +48,7 @@
   // font-size: 2.5rem;
   font-family: v.$font-second;
   margin: v.$spacing-lg 0;
-  color: v.$primary-color;
+  color: var(--color-primary);
   @include m.responsive-font(1.3rem, 2.5rem);
   @include m.transition(0.3s);
   font-weight: bold;
@@ -79,7 +78,7 @@
 
 @mixin not-found {
   text-align: center;
-  color: v.$secondary-color;
+  // color: var(--color-text);
   margin: 2rem 0;
   color: rgb(151, 28, 28);
   font-family: v.$font-second;
@@ -105,7 +104,7 @@
   /*createarelativecontextforoverlayandimage*/
   position: relative;
   /*placeholderbackgroundcolorbeforeimageloads*/
-  background: #f0f0f0;
+  background: var(--color-bg);
   /*keepoverflowhiddenforroundedcorners*/
   overflow: hidden;
   width: 100%;

@@ -19,14 +19,15 @@
 
 // Import variables & mixins
 @use "abstracts/variables";
+@use "abstracts/themes";
 @use "abstracts/mixins";
-
 // The @use rule loads mixins, variables, and other stylesheets.
 // Use base styles
 @use "base/layout";
 @use "base/components";
 
 // Import base styles for different sections
+@use "base/theme-toggle"; // for theme-toggle (used site-wide)
 @use "base/navbar"; // for navbar (used site-wide)
 @use "base/hero"; // for index.html hero section
 @use "base/posts"; // for index.html posts section

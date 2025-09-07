@@ -41,10 +41,10 @@
      Post Card inside slider
      ================================ */
   .post-card {
-    background: #fff;
+    background: var(--color-surface);
     border-radius: 1rem;
     overflow: hidden;
-    box-shadow: 0 6px 18px rgba(0, 0, 0, 0.08);
+    box-shadow: 0 6px 18px var(--color-shadow);
     transition:
       transform 0.3s ease,
       box-shadow 0.3s ease;
@@ -55,28 +55,21 @@
 
     &:hover {
       transform: translateY(-6px);
-      box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+      // box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
     }
-
-    // .post-image {
-    //   width: 100%;
-    //   height: 200px;
-    //   object-fit: cover;
-    //   border-bottom: 1px solid #eee;
-    // }
 
     .post-title {
       font-size: 1.25rem;
       font-weight: 600;
       font-family: v.$font-second;
       padding: 1rem;
-      color: v.$primary-color;
+      color: var(--color-primary);
       flex-grow: 0;
     }
 
     .post-excerpt {
       font-size: 0.95rem;
-      color: v.$secondary-color;
+      color: var(--color-text);
       padding: 0 1rem;
       flex-grow: 1;
     }
@@ -90,9 +83,9 @@
       margin-bottom: 0.5rem;
 
       .top-post-category {
-        background: #fff;
+        background: var(--color-surface);
         color: v.$primary-color;
-        @include m.box-shadow(0, 2px, 6px, rgba(0, 0, 0, 0.1));
+        @include m.box-shadow(0, 2px, 6px, var(--color-shadow));
         padding: 0.1rem 0.5rem;
         border-radius: 0.25rem;
         font-size: 0.75rem;
@@ -103,16 +96,16 @@
       }
 
       .top-post-views {
-        color: v.$secondary-color;
+        color: var(--color-muted);
         @include m.transition(0.3s);
       }
     }
     &:hover {
       .top-post-views {
-        color: v.$primary-color;
+        color: var(--color-primary);
       }
       .top-post-category {
-        background: darken(v.$primary-color, 20%);
+        background: var(--color-darken-primary);
         color: #fff;
       }
     }
@@ -129,32 +122,35 @@
      ================================ */
   .swiper-button-prev,
   .swiper-button-next {
-    color: v.$primary-color;
-    background: #fff;
-    border-radius: 50%;
+    color: var(--color-primary);
+    background: var(--color-surface);
     width: 45px;
     height: 45px;
-    @include m.box-shadow(0, 4px, 10px, rgba(0, 0, 0, 0.1));
+    @include m.box-shadow(0, 2px, 6px, var(--color-shadow));
     @include m.transition(0.3s);
-
+    border-radius: 50%;
+    -webkit-border-radius: 50%;
+    -moz-border-radius: 50%;
+    -ms-border-radius: 50%;
+    -o-border-radius: 50%;
     &:after {
       font-size: 1.2rem;
       font-weight: bold;
     }
 
     &:hover {
-      background: darken(v.$primary-color, 10%);
+      background: var(--color-darken-primary);
       color: #fff;
     }
   }
 
   .swiper-pagination {
     .swiper-pagination-bullet {
-      background: v.$primary-color;
+      background: var(--color-primary);
       opacity: 1;
 
       &-active {
-        background: darken(v.$primary-color, 30%);
+        background: var(--color-darken-primary);
       }
     }
   }
