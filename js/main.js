@@ -302,16 +302,15 @@ function displayArticles(category, sortBy) {
     );
     postsPaginationContainer.innerHTML = "";
     return;
-  }
+  } else {
+    const totalPages = Math.ceil(filtered.length / perPage);
+    const start = (currentPage - 1) * perPage;
+    const end = start + perPage;
+    const paginatedArticles = filtered.slice(start, end);
 
-  const totalPages = Math.ceil(filtered.length / perPage);
-  const start = (currentPage - 1) * perPage;
-  const end = start + perPage;
-  const paginatedArticles = filtered.slice(start, end);
-
-  articlesContainer.innerHTML = "";
-  paginatedArticles.forEach((article) => {
-    const imgWrapHtml = `
+    articlesContainer.innerHTML = "";
+    paginatedArticles.forEach((article) => {
+      const imgWrapHtml = `
     <!-- Put a low-cost background placeholder via CSS and keep real image in data-src -->
     <div class="img-wrap">
         <img
@@ -326,10 +325,10 @@ function displayArticles(category, sortBy) {
         />
     </div>
     `;
-    const card = createElement(
-      "article",
-      ["post__card", "post-card"],
-      `
+      const card = createElement(
+        "article",
+        ["post__card", "post-card"],
+        `
             ${imgWrapHtml}
             <h3 class="post-title post__title">${article.title}</h3>
             <p class="post-category">#${article.category}</p>
@@ -344,21 +343,22 @@ function displayArticles(category, sortBy) {
               article.id
             }" class="read-more post__btn btn">Read More</a>
         `
-    );
-    articlesContainer.appendChild(card);
-  });
+      );
+      articlesContainer.appendChild(card);
+    });
 
-  // =========== Rendering dynamic Pagination
-  renderPagination(
-    postsPaginationContainer,
-    totalPages,
-    currentPage,
-    (page) => {
-      currentPage = page;
-      displayArticles(category, sortBy);
-      scrollToArticlesTop();
-    }
-  );
+    // =========== Rendering dynamic Pagination
+    renderPagination(
+      postsPaginationContainer,
+      totalPages,
+      currentPage,
+      (page) => {
+        currentPage = page;
+        displayArticles(category, sortBy);
+        scrollToArticlesTop();
+      }
+    );
+  }
 
   // Ensure lazy images are observed after render
   if (window.observeLazyImages) window.observeLazyImages();

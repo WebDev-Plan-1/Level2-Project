@@ -81,15 +81,14 @@ function renderResults(sortBy) {
     searchSummary.textContent = "";
     searchPagination.innerHTML = "";
     return;
-  }
+  } else {
+    const totalPages = Math.ceil(filteredResults.length / postsPerPage);
+    const start = (currentPage - 1) * postsPerPage;
+    const end = start + postsPerPage;
+    const pageResults = filteredResults.slice(start, end);
 
-  const totalPages = Math.ceil(filteredResults.length / postsPerPage);
-  const start = (currentPage - 1) * postsPerPage;
-  const end = start + postsPerPage;
-  const pageResults = filteredResults.slice(start, end);
-
-  pageResults.forEach((article) => {
-    const resImgWrapHtml = `
+    pageResults.forEach((article) => {
+      const resImgWrapHtml = `
   <!-- Put a low-cost background placeholder via CSS and keep real image in data-src -->
   <div class="img-wrap">
     <img
@@ -104,24 +103,25 @@ function renderResults(sortBy) {
     />
   </div>
 `;
-    const card = document.createElement("div");
-    card.classList.add("article-card");
-    card.innerHTML = `
+      const card = document.createElement("div");
+      card.classList.add("article-card");
+      card.innerHTML = `
       ${resImgWrapHtml}
       <h2>${article.title}</h2>
       <p class="post-category">#${article.category}</p>
       <p class="post-content">${article.content.substring(0, 100)}...</p>
       <a href="single.html?id=${article.id}" class="read-more btn">Read More</a>
     `;
-    resultsContainer.appendChild(card);
-  });
+      resultsContainer.appendChild(card);
+    });
 
-  // =========== Rendering dynamic Pagination
-  renderPagination(searchPagination, totalPages, currentPage, (page) => {
-    currentPage = page;
-    renderResults(sortBy);
-    scrollToArticlesTop();
-  });
+    // =========== Rendering dynamic Pagination
+    renderPagination(searchPagination, totalPages, currentPage, (page) => {
+      currentPage = page;
+      renderResults(sortBy);
+      scrollToArticlesTop();
+    });
+  }
   // After rendering articles into articlesContainer
   if (window.observeLazyImages) window.observeLazyImages();
 }
