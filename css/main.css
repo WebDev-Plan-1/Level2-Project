@@ -13874,6 +13874,8 @@ a:hover {
   -ms-box-shadow: 0 10px 30px var(--color-shadow);
   -o-box-shadow: 0 10px 30px var(--color-shadow);
   /* labels + inputs */
+  /* Target the calendar picker icon */
+  /* Target the calendar picker icon */
   /* helpers */
   /* image preview */
   /* buttons */
@@ -13902,7 +13904,16 @@ a:hover {
   width: 100%;
   padding: 0.6rem 0.9rem;
   border: 1px solid var(--color-border);
-  border-radius: 8px;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  box-shadow: 0 4px 8px var(--color-shadow);
+  -webkit-box-shadow: 0 4px 8px var(--color-shadow);
+  -moz-box-shadow: 0 4px 8px var(--color-shadow);
+  -ms-box-shadow: 0 4px 8px var(--color-shadow);
+  -o-box-shadow: 0 4px 8px var(--color-shadow);
   font-size: 0.95rem;
   background: transparent;
   color: var(--color-darken-primary);
@@ -13919,6 +13930,10 @@ a:hover {
   -moz-box-shadow: 0 4px 12px rgba(21, 181, 230, 0.08);
   -ms-box-shadow: 0 4px 12px rgba(21, 181, 230, 0.08);
   -o-box-shadow: 0 4px 12px rgba(21, 181, 230, 0.08);
+}
+.submit-container input[type=date]::-webkit-calendar-picker-indicator {
+  filter: invert(62%) sepia(79%) saturate(4292%) hue-rotate(160deg) brightness(94%) contrast(92%);
+  cursor: pointer;
 }
 .submit-container textarea {
   min-height: 180px;
