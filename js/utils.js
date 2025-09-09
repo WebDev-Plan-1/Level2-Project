@@ -9,6 +9,13 @@
 // URL to fetch articles data
 export const DATA_URL = "data/articles.json";
 let allArticles = [];
+
+// Function to fetch JSON data from the server (articles.json)
+export async function fetchArticlesData() {
+  const res = await fetch(DATA_URL);
+  if (!res.ok) return [];
+  return await res.json();
+}
 // featured posts section Container -- Home Page
 export const topPostsContainer = document.querySelector("#top-posts-container");
 // categories section -- Home Page
@@ -237,6 +244,8 @@ export function lazyLoading() {
             /* If data-src exists, set it to src to start loading */
             if (img.dataset && img.dataset.src) {
               img.src = img.dataset.src;
+            } else {
+              img.src = "../assets/images/fallback.jpg";
             }
 
             /* When image loaded, remove blur class and add loaded class */

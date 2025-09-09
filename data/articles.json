@@ -1,677 +1,704 @@
 [
-  {
-    "id": 1,
-    "title": "The Rise of AI",
-    "category": "Technology",
-    "content": "Technology in 2025 is set to be defined by rapid advancements in artificial intelligence, sustainable innovations, and immersive digital experiences. Discover how emerging trends like quantum computing, smart automation, and next-gen connectivity will reshape industries and everyday life.",
-    "image": "/assets/images/tech_trends.jpeg",
-    "date": "2025-08-01",
-    "views": 11234
-  },
-  {
-    "id": 2,
-    "title": "Healthy Living Tips",
-    "category": "Health",
-    "content": "Living a healthy lifestyle is essential for overall well-being. From diets to regular exercise, discover practical tips and expert advice on how to maintain a balanced life. Learn about mental health, wellness practices, and the importance of self-care.",
-    "image": "/assets/images/healthy_life.jpeg",
-    "date": "2025-07-15",
-    "views": 85342
-  },
-  {
-    "id": 3,
-    "title": "Traveling Smart",
-    "category": "Travel",
-    "content": "Travel opens up a world of adventure and discovery. From vibrant cities to tranquil retreats, explore our curated list of top travel destinations. Get inspired by cultural experiences, culinary delights, and breathtaking sights that await you around the globe.",
-    "image": "assets/images/travel_adventure.jpeg",
-    "date": "2025-06-20",
-    "views": 7240998
-  },
-  {
-    "id": 4,
-    "title": "Exploring the Wonders of Nature",
-    "category": "Environment",
-    "content": "Nature's beauty is unparalleled, from majestic mountains to beaches. Join us as we explore breathtaking landscapes, discover hidden gems, and learn how to protect our planet for future generations.",
-    "image": "assets/images/nature_exploring.jpeg",
-    "date": "2025-05-30",
-    "views": 612360
-  },
-  {
-    "id": 5,
-    "title": "The Future of Education",
-    "category": "Education",
-    "content": "Education is evolving rapidly with technology. Discover how online learning, virtual classrooms, and AI-driven tools are transforming the educational landscape. Explore innovative teaching methods, lifelong learning opportunities, and the future skills needed for success.",
-    "image": "assets/images/education_future.jpeg",
-    "date": "2025-04-10",
-    "views": 95420
-  },
-  {
-    "id": 6,
-    "title": "Culinary Delights from Around the World",
-    "category": "Food",
-    "content": "Food is a universal language that brings people together. Explore diverse cuisines, cooking techniques, and recipes from around the world. From street food to gourmet dining, embark on a culinary journey that tantalizes your taste buds.",
-    "image": "assets/images/Culinary Delights from Around the World.webp",
-    "date": "2025-03-25",
-    "views": 117203
-  },
-  {
-    "id": 7,
-    "title": "The Art of Mindfulness",
-    "category": "Wellness",
-    "content": "Mindfulness is the practice of being present in the moment. Learn techniques to cultivate mindfulness in your daily life, reduce stress, and enhance your overall well-being. Discover the benefits of meditation, deep breathing, and mindful living.",
-    "image": "assets/images/The Art of Mindfulness.jpeg",
-    "date": "2025-02-14",
-    "views": 7367
-  },
-  {
-    "id": 8,
-    "title": "Innovations in Renewable Energy",
-    "category": "Science",
-    "content": "Renewable energy is crucial for a sustainable future. Explore the latest innovations in solar, wind, and hydroelectric power. Learn about cutting-edge technologies, government initiatives, and how individuals can contribute to a greener planet.",
-    "image": "assets/images/Innovations in Renewable Energy.jpg",
-    "date": "2025-01-05",
-    "views": 1420
-  },
-  {
-    "id": 9,
-    "title": "Mastering Personal Finance",
-    "category": "Finance",
-    "content": "Personal finance is key to achieving financial freedom. Discover strategies for budgeting, saving, investing, and managing debt. Learn how to set financial goals, plan for retirement, and make informed decisions about your money.",
-    "image": "assets/images/Mastering Personal Finance.jpg",
-    "date": "2024-12-20",
-    "views": 860000
-  },
-  {
-    "id": 10,
-    "title": "The Evolution of Social Media",
-    "category": "Social Media",
-    "content": "Social media has transformed how we connect and communicate. Explore the evolution of social platforms, emerging trends, and the impact on society. Learn about digital marketing strategies, influencer culture, and the future of online interaction.",
-    "image": "assets/images/The Evolution of Social Media.png",
-    "date": "2024-11-10",
-    "views": 2400000
-  },
-  {
-    "id": 11,
-    "title": "Advancements in Space Exploration",
-    "category": "Space",
-    "content": "Space exploration is entering a new era with missions to Mars, lunar bases, and private space travel. Discover the latest advancements in space technology, international collaborations, and the quest to understand our universe.",
-    "image": "assets/images/Advancements in Space Exploration.jpeg",
-    "date": "2024-09-01",
-    "views": 3200
-  },
-  {
-    "id": 12,
-    "title": "The Power of Positive Thinking",
-    "category": "Self-Help",
-    "content": "Positive thinking can transform your life. Learn how to cultivate a positive mindset, overcome challenges, and achieve your goals. Discover techniques for building resilience, practicing gratitude, and fostering optimism.",
-    "image": "assets/images/The Power of Positive Thinking.webp",
-    "date": "2024-10-15",
-    "views": 115000000
-  },
-  {
-    "id": 13,
-    "title": "Urban Gardening: Growing Green in Small Spaces",
-    "category": "Lifestyle",
-    "content": "Urban gardening is a growing trend that allows city dwellers to cultivate their own green spaces. Learn how to start a garden in small spaces, from balconies to rooftops. Discover tips for selecting plants, soil preparation, and sustainable gardening practices.",
-    "image": "assets/images/Urban Gardening.jpg",
-    "date": "2024-08-22",
-    "views": 45000
-  },
-  {
-    "id": 14,
-    "title": "The Impact of Climate Change",
-    "category": "Environment",
-    "content": "Climate change is one of the most pressing issues of our time. Explore the causes and effects of climate change, as well as strategies for mitigation and adaptation. Learn about global initiatives, renewable energy solutions, and how individuals can make a difference.",
-    "image": "assets/images/The Impact of Climate Change.jpg",
-    "date": "2024-07-30",
-    "views": 670000
-  },
-  {
-    "id": 15,
-    "title": "The Art of Photography",
-    "category": "Art",
-    "content": "Photography is a powerful medium for storytelling and self-expression. Discover techniques for capturing stunning images, from composition to lighting. Explore different styles of photography, post-processing tips, and how to build a successful photography career.",
-    "image": "assets/images/The Art of Photography.jpg",
-    "date": "2024-06-18",
-    "views": 9800
-  },
-  {
-    "id": 16,
-    "title": "Quantum Computing Breakthroughs",
-    "category": "Technology",
-    "content": "Quantum computing is revolutionizing data processing and security. Explore the latest breakthroughs and their impact on industries.",
-    "image": "https://images.unsplash.com/photo-1519389950473-47ba0277781c",
-    "date": "2025-09-01",
-    "views": 12000
-  },
-  {
-    "id": 17,
-    "title": "AI in Everyday Life",
-    "category": "Technology",
-    "content": "Artificial intelligence is now part of our daily routines. Discover how AI is transforming homes, workplaces, and cities.",
-    "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-    "date": "2025-08-15",
-    "views": 9500
-  },
-  {
-    "id": 18,
-    "title": "The Rise of Smart Cities",
-    "category": "Technology",
-    "content": "Smart cities use technology to improve urban living. Learn about IoT, data analytics, and sustainable infrastructure.",
-    "image": "assets/images/The Rise of Smart Cities.jpg",
-    "date": "2025-07-30",
-    "views": 8700
-  },
-  {
-    "id": 19,
-    "title": "Cybersecurity Trends",
-    "category": "Technology",
-    "content": "Stay ahead of cyber threats with the latest trends in cybersecurity, including AI-driven protection and blockchain security.",
-    "image": "https://images.unsplash.com/photo-1510511459019-5dda7724fd87",
-    "date": "2025-07-10",
-    "views": 11000
-  },
-  {
-    "id": 20,
-    "title": "Wearable Tech Innovations",
-    "category": "Technology",
-    "content": "Wearable technology is enhancing health and productivity. Explore new devices and their applications.",
-    "image": "assets/images/Wearable Tech Innovations.jpeg",
-    "date": "2025-06-25",
-    "views": 7800
-  },
-  {
-    "id": 21,
-    "title": "5G and Beyond",
-    "category": "Technology",
-    "content": "5G networks are changing connectivity. Discover what’s next for mobile technology and internet speeds.",
-    "image": "assets/images/5G and Beyond.webp",
-    "date": "2025-06-10",
-    "views": 9900
-  },
-  {
-    "id": 22,
-    "title": "Virtual Reality in Education",
-    "category": "Technology",
-    "content": "VR is transforming how we learn. See how immersive experiences are used in classrooms and training.",
-    "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97",
-    "date": "2025-05-28",
-    "views": 6500
-  },
-  {
-    "id": 23,
-    "title": "Blockchain Beyond Crypto",
-    "category": "Technology",
-    "content": "Blockchain technology is finding new uses beyond cryptocurrencies. Explore its impact on supply chains and security.",
-    "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
-    "date": "2025-05-10",
-    "views": 7200
-  },
-  {
-    "id": 24,
-    "title": "Robotics in Industry",
-    "category": "Technology",
-    "content": "Robots are revolutionizing manufacturing and logistics. Learn about the latest advancements in industrial robotics.",
-    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475",
-    "date": "2025-04-22",
-    "views": 8100
-  },
-  {
-    "id": 25,
-    "title": "Cloud Computing Evolution",
-    "category": "Technology",
-    "content": "Cloud computing is powering modern businesses. Discover new trends in cloud services and data management.",
-    "image": "https://www.gyansetu.in/wp-content/uploads/2024/02/2022_04_Add-a-heading-1-1200x675.jpg",
-    "date": "2025-04-05",
-    "views": 7300
-  },
-  {
-    "id": 26,
-    "title": "Smart Home Automation",
-    "category": "Technology",
-    "content": "Smart home devices are making life easier. Explore the latest in home automation and security.",
-    "image": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308",
-    "date": "2025-03-20",
-    "views": 6700
-  },
-  {
-    "id": 27,
-    "title": "Tech for Sustainability",
-    "category": "Technology",
-    "content": "Technology is helping create a sustainable future. Learn about green tech innovations and eco-friendly solutions.",
-    "image": "assets/images/Tech for Sustainability.jpg",
-    "date": "2025-03-05",
-    "views": 8000
-  },
-  {
-    "id": 28,
-    "title": "Augmented Reality in Retail",
-    "category": "Technology",
-    "content": "AR is changing the shopping experience. Discover how retailers use AR for customer engagement.",
-    "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97",
-    "date": "2025-02-18",
-    "views": 6200
-  },
-  {
-    "id": 29,
-    "title": "Tech Startups to Watch",
-    "category": "Technology",
-    "content": "Meet the tech startups that are shaping the future. Explore their innovations and growth stories.",
-    "image": "assets/images/Tech Startups to Watch.png",
-    "date": "2025-02-01",
-    "views": 9100
-  },
-  {
-    "id": 30,
-    "title": "Journey to Mars",
-    "category": "Space",
-    "content": "Mars missions are closer than ever. Learn about the technology and challenges of reaching the Red Planet.",
-    "image": "assets/images/Journey to Mars.jpg",
-    "date": "2025-01-15",
-    "views": 10500
-  },
-  {
-    "id": 31,
-    "title": "The Mystery of Black Holes",
-    "category": "Space",
-    "content": "Black holes are among the universe’s greatest mysteries. Discover recent discoveries and theories.",
-    "image": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564",
-    "date": "2025-01-01",
-    "views": 9800
-  },
-  {
-    "id": 32,
-    "title": "International Space Station Life",
-    "category": "Space",
-    "content": "Life aboard the ISS is unique. Explore daily routines, experiments, and international cooperation.",
-    "image": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca",
-    "date": "2024-12-15",
-    "views": 8700
-  },
-  {
-    "id": 33,
-    "title": "Space Telescopes Revolution",
-    "category": "Space",
-    "content": "Space telescopes are revealing new worlds. Learn about the latest missions and discoveries.",
-    "image": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564",
-    "date": "2024-12-01",
-    "views": 9400
-  },
-  {
-    "id": 34,
-    "title": "Women in Space",
-    "category": "Space",
-    "content": "Women are making history in space exploration. Discover their achievements and future missions.",
-    "image": "assets/images/Women in Space.jpg",
-    "date": "2024-11-15",
-    "views": 7600
-  },
-  {
-    "id": 35,
-    "title": "The Search for Exoplanets",
-    "category": "Space",
-    "content": "Scientists are searching for planets beyond our solar system. Explore the methods and discoveries.",
-    "image": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564",
-    "date": "2024-11-01",
-    "views": 8200
-  },
-  {
-    "id": 36,
-    "title": "Space Tourism: The Next Frontier",
-    "category": "Space",
-    "content": "Space tourism is becoming a reality. Learn about companies and technology making it possible.",
-    "image": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca",
-    "date": "2024-10-15",
-    "views": 9900
-  },
-  {
-    "id": 37,
-    "title": "Street Food Around the World",
-    "category": "Food",
-    "content": "Street food offers a taste of local culture. Explore popular street foods from different countries.",
-    "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
-    "date": "2024-10-01",
-    "views": 12000
-  },
-  {
-    "id": 38,
-    "title": "The Art of Baking",
-    "category": "Food",
-    "content": "Baking is both science and art. Discover tips, recipes, and trends in the world of baking.",
-    "image": "assets/images/The Art of Baking.webp",
-    "date": "2024-09-15",
-    "views": 9500
-  },
-  {
-    "id": 39,
-    "title": "Healthy Breakfast Ideas",
-    "category": "Food",
-    "content": "Start your day right with healthy breakfast recipes and nutrition tips.",
-    "image": "https://images.unsplash.com/photo-1504674900247-0877df9cc836",
-    "date": "2024-09-01",
-    "views": 8700
-  },
-  {
-    "id": 40,
-    "title": "Global Cuisine Trends",
-    "category": "Food",
-    "content": "Explore the latest trends in global cuisine and how chefs are innovating traditional dishes.",
-    "image": "https://images.unsplash.com/photo-1517841905240-472988babdf9",
-    "date": "2024-08-15",
-    "views": 11000
-  },
-  {
-    "id": 41,
-    "title": "Vegetarian Delights",
-    "category": "Food",
-    "content": "Vegetarian cuisine is delicious and healthy. Discover recipes and tips for plant-based eating.",
-    "image": "https://www.golcondachimney.com/wp-content/uploads/2024/03/vegetarian-delights-1200x900.png",
-    "date": "2024-08-01",
-    "views": 7800
-  },
-  {
-    "id": 42,
-    "title": "Desserts from Egypt",
-    "category": "Food",
-    "content": "Egyptian desserts are rich in flavor and tradition. Explore recipes and stories behind classic sweets.",
-    "image": "https://images.unsplash.com/photo-1502082553048-f009c37129b9",
-    "date": "2024-07-15",
-    "views": 9900
-  },
-  {
-    "id": 43,
-    "title": "Coffee Culture Worldwide",
-    "category": "Food",
-    "content": "Coffee brings people together. Discover coffee traditions and brewing methods from around the world.",
-    "image": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
-    "date": "2024-07-01",
-    "views": 6500
-  },
-  {
-    "id": 44,
-    "title": "Modern Egyptian Cuisine",
-    "category": "Food",
-    "content": "Modern Egyptian chefs are reinventing classic dishes. Learn about new flavors and culinary techniques.",
-    "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-    "date": "2024-06-15",
-    "views": 7200
-  },
-  {
-    "id": 45,
-    "title": "Food Photography Tips",
-    "category": "Food",
-    "content": "Capture stunning food photos with these tips on lighting, composition, and styling.",
-    "image": "assets/images/Food Photography Tips.webp",
-    "date": "2024-06-01",
-    "views": 8100
-  },
-  {
-    "id": 46,
-    "title": "The Power of Viral Content",
-    "category": "Social Media",
-    "content": "Explore how viral content spreads across platforms and the strategies behind creating shareable posts.",
-    "image": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
-    "date": "2025-05-01",
-    "views": 12000
-  },
-  {
-    "id": 47,
-    "title": "Influencer Marketing Trends",
-    "category": "Social Media",
-    "content": "Discover the latest trends in influencer marketing and how brands collaborate with creators.",
-    "image": "https://images.unsplash.com/photo-1517841905240-472988babdf9",
-    "date": "2025-05-02",
-    "views": 9800
-  },
-  {
-    "id": 48,
-    "title": "Building Your Personal Brand Online",
-    "category": "Social Media",
-    "content": "Learn how to build a strong personal brand and grow your audience on social platforms.",
-    "image": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca",
-    "date": "2025-05-03",
-    "views": 8700
-  },
-  {
-    "id": 49,
-    "title": "Social Media Algorithms Explained",
-    "category": "Social Media",
-    "content": "Understand how algorithms work on major platforms and how to optimize your content for reach.",
-    "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
-    "date": "2025-05-04",
-    "views": 11000
-  },
-  {
-    "id": 50,
-    "title": "The Rise of Short-Form Video",
-    "category": "Social Media",
-    "content": "Short-form video is dominating feeds. Explore the impact of TikTok, Reels, and Shorts.",
-    "image": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308",
-    "date": "2025-05-05",
-    "views": 7800
-  },
-  {
-    "id": 51,
-    "title": "Social Media for Business Growth",
-    "category": "Social Media",
-    "content": "Learn how businesses use social media to reach customers, build loyalty, and drive sales.",
-    "image": "https://media.licdn.com/dms/image/v2/D4D12AQEDD5S_kDTf3Q/article-cover_image-shrink_600_2000/article-cover_image-shrink_600_2000/0/1698838121119?e=2147483647&v=beta&t=E9_Z9FsE8uyLGmqYFv-YCV23VqpPh91fklT6DaWaNlc",
-    "date": "2025-05-06",
-    "views": 9900
-  },
-  {
-    "id": 52,
-    "title": "Managing Online Communities",
-    "category": "Social Media",
-    "content": "Tips for building and managing engaged online communities on Facebook, Discord, and more.",
-    "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97",
-    "date": "2025-05-07",
-    "views": 6500
-  },
-  {
-    "id": 53,
-    "title": "Social Media Analytics Tools",
-    "category": "Social Media",
-    "content": "Discover the best tools for tracking engagement, reach, and growth on social platforms.",
-    "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-    "date": "2025-05-08",
-    "views": 7200
-  },
-  {
-    "id": 54,
-    "title": "The Impact of Memes",
-    "category": "Social Media",
-    "content": "Memes shape online culture. Learn how they influence trends and communication.",
-    "image": "https://images.unsplash.com/photo-1502082553048-f009c37129b9",
-    "date": "2025-05-09",
-    "views": 8100
-  },
-  {
-    "id": 55,
-    "title": "Privacy in the Age of Social Media",
-    "category": "Social Media",
-    "content": "Protect your privacy online with tips for managing settings and understanding data policies.",
-    "image": "https://images.unsplash.com/photo-1510511459019-5dda7724fd87",
-    "date": "2025-05-10",
-    "views": 7300
-  },
-  {
-    "id": 56,
-    "title": "Social Media and Mental Health",
-    "category": "Social Media",
-    "content": "Explore the effects of social media on mental health and strategies for healthy usage.",
-    "image": "https://electroiq.com/wp-content/uploads/2025/01/Social-Media-Mental-Health-Statistics.jpg",
-    "date": "2025-05-11",
-    "views": 6700
-  },
-  {
-    "id": 57,
-    "title": "Live Streaming Success Stories",
-    "category": "Social Media",
-    "content": "Live streaming is changing content creation. Discover success stories and tips for going live.",
-    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475",
-    "date": "2025-05-12",
-    "views": 8000
-  },
-  {
-    "id": 58,
-    "title": "Social Media for Activism",
-    "category": "Social Media",
-    "content": "See how social platforms are used for activism, awareness, and social change.",
-    "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
-    "date": "2025-05-13",
-    "views": 6200
-  },
-  {
-    "id": 59,
-    "title": "The Evolution of Hashtags",
-    "category": "Social Media",
-    "content": "Hashtags help organize and discover content. Learn about their history and best practices.",
-    "image": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308",
-    "date": "2025-05-14",
-    "views": 9100
-  },
-  {
-    "id": 60,
-    "title": "Social Media Etiquette",
-    "category": "Social Media",
-    "content": "Master the dos and don’ts of online interaction for positive and respectful engagement.",
-    "image": "https://images.unsplash.com/photo-1465101046530-73398c7f28ca",
-    "date": "2025-05-15",
-    "views": 10500
-  },
-  {
-    "id": 61,
-    "title": "The Growth of Instagram Stories",
-    "category": "Social Media",
-    "content": "Instagram Stories have changed how we share moments. Explore creative uses and marketing tips.",
-    "image": "https://www.thereelstars.com/wp-content/uploads/2025/08/ArticleCover_TRS_-41-1000x600.jpg",
-    "date": "2025-05-16",
-    "views": 9800
-  },
-  {
-    "id": 62,
-    "title": "Twitter Threads for Storytelling",
-    "category": "Social Media",
-    "content": "Twitter threads allow for deeper storytelling. Learn how to craft engaging threads.",
-    "image": "https://images.unsplash.com/photo-1462331940025-496dfbfc7564",
-    "date": "2025-05-17",
-    "views": 8700
-  },
-  {
-    "id": 63,
-    "title": "Facebook Groups for Community",
-    "category": "Social Media",
-    "content": "Facebook Groups foster community and discussion. Discover tips for growing and moderating groups.",
-    "image": "https://images.unsplash.com/photo-1517841905240-472988babdf9",
-    "date": "2025-05-18",
-    "views": 9400
-  },
-  {
-    "id": 64,
-    "title": "LinkedIn for Professional Networking",
-    "category": "Social Media",
-    "content": "LinkedIn is the go-to platform for professionals. Learn how to network and build your career.",
-    "image": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
-    "date": "2025-05-19",
-    "views": 7600
-  },
-  {
-    "id": 65,
-    "title": "Snapchat's Unique Features",
-    "category": "Social Media",
-    "content": "Snapchat offers unique ways to connect. Explore its features and creative uses.",
-    "image": "https://scx2.b-cdn.net/gfx/news/2017/1-snapchat.jpg",
-    "date": "2025-05-20",
-    "views": 8200
-  },
-  {
-    "id": 66,
-    "title": "Pinterest for Inspiration",
-    "category": "Social Media",
-    "content": "Pinterest is a hub for inspiration and ideas. Learn how to use boards for creativity and marketing.",
-    "image": "https://images.unsplash.com/photo-1506744038136-46273834b3fb",
-    "date": "2025-05-21",
-    "views": 9900
-  },
-  {
-    "id": 67,
-    "title": "YouTube Channel Growth",
-    "category": "Social Media",
-    "content": "Grow your YouTube channel with tips on content, engagement, and analytics.",
-    "image": "https://images.unsplash.com/photo-1519125323398-675f0ddb6308",
-    "date": "2025-05-22",
-    "views": 12000
-  },
-  {
-    "id": 68,
-    "title": "Social Media Scheduling Tools",
-    "category": "Social Media",
-    "content": "Scheduling tools help manage posts and campaigns. Discover the best options for creators and brands.",
-    "image": "https://images.unsplash.com/photo-1518770660439-4636190af475",
-    "date": "2025-05-23",
-    "views": 9500
-  },
-  {
-    "id": 69,
-    "title": "Social Media for Customer Service",
-    "category": "Social Media",
-    "content": "Brands use social media for customer service. Learn best practices for fast and helpful responses.",
-    "image": "https://images.unsplash.com/photo-1504384308090-c894fdcc538d",
-    "date": "2025-05-24",
-    "views": 8700
-  },
-  {
-    "id": 70,
-    "title": "The Role of Emojis in Communication",
-    "category": "Social Media",
-    "content": "Emojis add emotion and clarity to messages. Explore their role in digital communication.",
-    "image": "https://images.unsplash.com/photo-1510511459019-5dda7724fd87",
-    "date": "2025-05-25",
-    "views": 11000
-  },
-  {
-    "id": 71,
-    "title": "Social Media Trends in Egypt",
-    "category": "Social Media",
-    "content": "Explore the latest social media trends and platforms popular in Egypt.",
-    "image": "https://images.unsplash.com/photo-1502082553048-f009c37129b9",
-    "date": "2025-05-26",
-    "views": 7800
-  },
-  {
-    "id": 72,
-    "title": "Social Media and News",
-    "category": "Social Media",
-    "content": "Social platforms are changing how we consume news. Learn about their impact on journalism.",
-    "image": "https://pressgazette.co.uk/wp-content/uploads/sites/7/2023/10/shutterstock_435654307.jpg",
-    "date": "2025-05-27",
-    "views": 9900
-  },
-  {
-    "id": 73,
-    "title": "Social Media Challenges",
-    "category": "Social Media",
-    "content": "Challenges and trends keep users engaged. Discover the most popular social media challenges.",
-    "image": "https://images.unsplash.com/photo-1517694712202-14dd9538aa97",
-    "date": "2025-05-28",
-    "views": 6500
-  },
-  {
-    "id": 74,
-    "title": "Social Media for Events",
-    "category": "Social Media",
-    "content": "Promote and manage events using social media tools and strategies.",
-    "image": "https://images.unsplash.com/photo-1517841905240-472988babdf9",
-    "date": "2025-05-29",
-    "views": 7200
-  },
-  {
-    "id": 75,
-    "title": "Social Media and E-Commerce",
-    "category": "Social Media",
-    "content": "E-commerce is booming on social platforms. Learn how to sell and market products online.",
-    "image": "https://images.unsplash.com/photo-1515378791036-0648a3ef77b2",
-    "date": "2025-05-30",
-    "views": 8100
-  }
+    {
+        "id": 1,
+        "title": "The Rise of AI",
+        "category": "Technology",
+        "content": "Technology in 2025 is set to be defined by rapid advancements in artificial intelligence, sustainable innovations, and immersive digital experiences. Discover how emerging trends like quantum computing, smart automation, and next-gen connectivity will reshape industries and everyday life.",
+        "image": "assets\/images\/tech_trends.jpeg",
+        "date": "2025-08-01",
+        "views": 11234
+    },
+    {
+        "id": 2,
+        "title": "Healthy Living Tips",
+        "category": "Health",
+        "content": "Living a healthy lifestyle is essential for overall well-being. From diets to regular exercise, discover practical tips and expert advice on how to maintain a balanced life. Learn about mental health, wellness practices, and the importance of self-care.",
+        "image": "assets\/images\/healthy_life.jpeg",
+        "date": "2025-07-15",
+        "views": 85342
+    },
+    {
+        "id": 3,
+        "title": "Traveling Smart",
+        "category": "Travel",
+        "content": "Travel opens up a world of adventure and discovery. From vibrant cities to tranquil retreats, explore our curated list of top travel destinations. Get inspired by cultural experiences, culinary delights, and breathtaking sights that await you around the globe.",
+        "image": "assets\/images\/travel_adventure.jpeg",
+        "date": "2025-06-20",
+        "views": 7240998
+    },
+    {
+        "id": 4,
+        "title": "Exploring the Wonders of Nature",
+        "category": "Environment",
+        "content": "Nature's beauty is unparalleled, from majestic mountains to beaches. Join us as we explore breathtaking landscapes, discover hidden gems, and learn how to protect our planet for future generations.",
+        "image": "assets\/images\/nature_exploring.jpeg",
+        "date": "2025-05-30",
+        "views": 612360
+    },
+    {
+        "id": 5,
+        "title": "The Future of Education",
+        "category": "Education",
+        "content": "Education is evolving rapidly with technology. Discover how online learning, virtual classrooms, and AI-driven tools are transforming the educational landscape. Explore innovative teaching methods, lifelong learning opportunities, and the future skills needed for success.",
+        "image": "assets\/images\/education_future.jpeg",
+        "date": "2025-04-10",
+        "views": 95420
+    },
+    {
+        "id": 6,
+        "title": "Culinary Delights from Around the World",
+        "category": "Food",
+        "content": "Food is a universal language that brings people together. Explore diverse cuisines, cooking techniques, and recipes from around the world. From street food to gourmet dining, embark on a culinary journey that tantalizes your taste buds.",
+        "image": "assets\/images\/Culinary Delights from Around the World.webp",
+        "date": "2025-03-25",
+        "views": 117203
+    },
+    {
+        "id": 7,
+        "title": "The Art of Mindfulness",
+        "category": "Wellness",
+        "content": "Mindfulness is the practice of being present in the moment. Learn techniques to cultivate mindfulness in your daily life, reduce stress, and enhance your overall well-being. Discover the benefits of meditation, deep breathing, and mindful living.",
+        "image": "assets\/images\/The Art of Mindfulness.jpeg",
+        "date": "2025-02-14",
+        "views": 7367
+    },
+    {
+        "id": 8,
+        "title": "Innovations in Renewable Energy",
+        "category": "Science",
+        "content": "Renewable energy is crucial for a sustainable future. Explore the latest innovations in solar, wind, and hydroelectric power. Learn about cutting-edge technologies, government initiatives, and how individuals can contribute to a greener planet.",
+        "image": "assets\/images\/Innovations in Renewable Energy.jpg",
+        "date": "2025-01-05",
+        "views": 1420
+    },
+    {
+        "id": 9,
+        "title": "Mastering Personal Finance",
+        "category": "Finance",
+        "content": "Personal finance is key to achieving financial freedom. Discover strategies for budgeting, saving, investing, and managing debt. Learn how to set financial goals, plan for retirement, and make informed decisions about your money.",
+        "image": "assets\/images\/Mastering Personal Finance.jpg",
+        "date": "2024-12-20",
+        "views": 860000
+    },
+    {
+        "id": 10,
+        "title": "The Evolution of Social Media",
+        "category": "Social Media",
+        "content": "Social media has transformed how we connect and communicate. Explore the evolution of social platforms, emerging trends, and the impact on society. Learn about digital marketing strategies, influencer culture, and the future of online interaction.",
+        "image": "assets\/images\/The Evolution of Social Media.png",
+        "date": "2024-11-10",
+        "views": 2400000
+    },
+    {
+        "id": 11,
+        "title": "Advancements in Space Exploration",
+        "category": "Space",
+        "content": "Space exploration is entering a new era with missions to Mars, lunar bases, and private space travel. Discover the latest advancements in space technology, international collaborations, and the quest to understand our universe.",
+        "image": "assets\/images\/Advancements in Space Exploration.jpeg",
+        "date": "2024-09-01",
+        "views": 3200
+    },
+    {
+        "id": 12,
+        "title": "The Power of Positive Thinking",
+        "category": "Self-Help",
+        "content": "Positive thinking can transform your life. Learn how to cultivate a positive mindset, overcome challenges, and achieve your goals. Discover techniques for building resilience, practicing gratitude, and fostering optimism.",
+        "image": "assets\/images\/The Power of Positive Thinking.webp",
+        "date": "2024-10-15",
+        "views": 115000000
+    },
+    {
+        "id": 13,
+        "title": "Urban Gardening: Growing Green in Small Spaces",
+        "category": "Lifestyle",
+        "content": "Urban gardening is a growing trend that allows city dwellers to cultivate their own green spaces. Learn how to start a garden in small spaces, from balconies to rooftops. Discover tips for selecting plants, soil preparation, and sustainable gardening practices.",
+        "image": "assets\/images\/Urban Gardening.jpg",
+        "date": "2024-08-22",
+        "views": 45000
+    },
+    {
+        "id": 14,
+        "title": "The Impact of Climate Change",
+        "category": "Environment",
+        "content": "Climate change is one of the most pressing issues of our time. Explore the causes and effects of climate change, as well as strategies for mitigation and adaptation. Learn about global initiatives, renewable energy solutions, and how individuals can make a difference.",
+        "image": "assets\/images\/The Impact of Climate Change.jpg",
+        "date": "2024-07-30",
+        "views": 670000
+    },
+    {
+        "id": 15,
+        "title": "The Art of Photography",
+        "category": "Art",
+        "content": "Photography is a powerful medium for storytelling and self-expression. Discover techniques for capturing stunning images, from composition to lighting. Explore different styles of photography, post-processing tips, and how to build a successful photography career.",
+        "image": "assets\/images\/The Art of Photography.jpg",
+        "date": "2024-06-18",
+        "views": 9800
+    },
+    {
+        "id": 16,
+        "title": "Quantum Computing Breakthroughs",
+        "category": "Technology",
+        "content": "Quantum computing is revolutionizing data processing and security. Explore the latest breakthroughs and their impact on industries.",
+        "image": "https:\/\/images.unsplash.com\/photo-1519389950473-47ba0277781c",
+        "date": "2025-09-01",
+        "views": 12000
+    },
+    {
+        "id": 17,
+        "title": "AI in Everyday Life",
+        "category": "Technology",
+        "content": "Artificial intelligence is now part of our daily routines. Discover how AI is transforming homes, workplaces, and cities.",
+        "image": "https:\/\/images.unsplash.com\/photo-1506744038136-46273834b3fb",
+        "date": "2025-08-15",
+        "views": 9500
+    },
+    {
+        "id": 18,
+        "title": "The Rise of Smart Cities",
+        "category": "Technology",
+        "content": "Smart cities use technology to improve urban living. Learn about IoT, data analytics, and sustainable infrastructure.",
+        "image": "assets\/images\/The Rise of Smart Cities.jpg",
+        "date": "2025-07-30",
+        "views": 8700
+    },
+    {
+        "id": 19,
+        "title": "Cybersecurity Trends",
+        "category": "Technology",
+        "content": "Stay ahead of cyber threats with the latest trends in cybersecurity, including AI-driven protection and blockchain security.",
+        "image": "https:\/\/images.unsplash.com\/photo-1510511459019-5dda7724fd87",
+        "date": "2025-07-10",
+        "views": 11000
+    },
+    {
+        "id": 20,
+        "title": "Wearable Tech Innovations",
+        "category": "Technology",
+        "content": "Wearable technology is enhancing health and productivity. Explore new devices and their applications.",
+        "image": "assets\/images\/Wearable Tech Innovations.jpeg",
+        "date": "2025-06-25",
+        "views": 7800
+    },
+    {
+        "id": 21,
+        "title": "5G and Beyond",
+        "category": "Technology",
+        "content": "5G networks are changing connectivity. Discover what\u2019s next for mobile technology and internet speeds.",
+        "image": "assets\/images\/5G and Beyond.webp",
+        "date": "2025-06-10",
+        "views": 9900
+    },
+    {
+        "id": 22,
+        "title": "Virtual Reality in Education",
+        "category": "Technology",
+        "content": "VR is transforming how we learn. See how immersive experiences are used in classrooms and training.",
+        "image": "https:\/\/images.unsplash.com\/photo-1517694712202-14dd9538aa97",
+        "date": "2025-05-28",
+        "views": 6500
+    },
+    {
+        "id": 23,
+        "title": "Blockchain Beyond Crypto",
+        "category": "Technology",
+        "content": "Blockchain technology is finding new uses beyond cryptocurrencies. Explore its impact on supply chains and security.",
+        "image": "https:\/\/images.unsplash.com\/photo-1504384308090-c894fdcc538d",
+        "date": "2025-05-10",
+        "views": 7200
+    },
+    {
+        "id": 24,
+        "title": "Robotics in Industry",
+        "category": "Technology",
+        "content": "Robots are revolutionizing manufacturing and logistics. Learn about the latest advancements in industrial robotics.",
+        "image": "https:\/\/images.unsplash.com\/photo-1518770660439-4636190af475",
+        "date": "2025-04-22",
+        "views": 8100
+    },
+    {
+        "id": 25,
+        "title": "Cloud Computing Evolution",
+        "category": "Technology",
+        "content": "Cloud computing is powering modern businesses. Discover new trends in cloud services and data management.",
+        "image": "https:\/\/www.gyansetu.in\/wp-content\/uploads\/2024\/02\/2022_04_Add-a-heading-1-1200x675.jpg",
+        "date": "2025-04-05",
+        "views": 7300
+    },
+    {
+        "id": 26,
+        "title": "Smart Home Automation",
+        "category": "Technology",
+        "content": "Smart home devices are making life easier. Explore the latest in home automation and security.",
+        "image": "https:\/\/images.unsplash.com\/photo-1519125323398-675f0ddb6308",
+        "date": "2025-03-20",
+        "views": 6700
+    },
+    {
+        "id": 27,
+        "title": "Tech for Sustainability",
+        "category": "Technology",
+        "content": "Technology is helping create a sustainable future. Learn about green tech innovations and eco-friendly solutions.",
+        "image": "assets\/images\/Tech for Sustainability.jpg",
+        "date": "2025-03-05",
+        "views": 8000
+    },
+    {
+        "id": 28,
+        "title": "Augmented Reality in Retail",
+        "category": "Technology",
+        "content": "AR is changing the shopping experience. Discover how retailers use AR for customer engagement.",
+        "image": "https:\/\/images.unsplash.com\/photo-1517694712202-14dd9538aa97",
+        "date": "2025-02-18",
+        "views": 6200
+    },
+    {
+        "id": 29,
+        "title": "Tech Startups to Watch",
+        "category": "Technology",
+        "content": "Meet the tech startups that are shaping the future. Explore their innovations and growth stories.",
+        "image": "assets\/images\/Tech Startups to Watch.png",
+        "date": "2025-02-01",
+        "views": 9100
+    },
+    {
+        "id": 30,
+        "title": "Journey to Mars",
+        "category": "Space",
+        "content": "Mars missions are closer than ever. Learn about the technology and challenges of reaching the Red Planet.",
+        "image": "assets\/images\/Journey to Mars.jpg",
+        "date": "2025-01-15",
+        "views": 10500
+    },
+    {
+        "id": 31,
+        "title": "The Mystery of Black Holes",
+        "category": "Space",
+        "content": "Black holes are among the universe\u2019s greatest mysteries. Discover recent discoveries and theories.",
+        "image": "https:\/\/images.unsplash.com\/photo-1462331940025-496dfbfc7564",
+        "date": "2025-01-01",
+        "views": 9800
+    },
+    {
+        "id": 32,
+        "title": "International Space Station Life",
+        "category": "Space",
+        "content": "Life aboard the ISS is unique. Explore daily routines, experiments, and international cooperation.",
+        "image": "https:\/\/images.unsplash.com\/photo-1465101046530-73398c7f28ca",
+        "date": "2024-12-15",
+        "views": 8700
+    },
+    {
+        "id": 33,
+        "title": "Space Telescopes Revolution",
+        "category": "Space",
+        "content": "Space telescopes are revealing new worlds. Learn about the latest missions and discoveries.",
+        "image": "https:\/\/images.unsplash.com\/photo-1462331940025-496dfbfc7564",
+        "date": "2024-12-01",
+        "views": 9400
+    },
+    {
+        "id": 34,
+        "title": "Women in Space",
+        "category": "Space",
+        "content": "Women are making history in space exploration. Discover their achievements and future missions.",
+        "image": "assets\/images\/Women in Space.jpg",
+        "date": "2024-11-15",
+        "views": 7600
+    },
+    {
+        "id": 35,
+        "title": "The Search for Exoplanets",
+        "category": "Space",
+        "content": "Scientists are searching for planets beyond our solar system. Explore the methods and discoveries.",
+        "image": "https:\/\/images.unsplash.com\/photo-1462331940025-496dfbfc7564",
+        "date": "2024-11-01",
+        "views": 8200
+    },
+    {
+        "id": 36,
+        "title": "Space Tourism: The Next Frontier",
+        "category": "Space",
+        "content": "Space tourism is becoming a reality. Learn about companies and technology making it possible.",
+        "image": "https:\/\/images.unsplash.com\/photo-1465101046530-73398c7f28ca",
+        "date": "2024-10-15",
+        "views": 9900
+    },
+    {
+        "id": 37,
+        "title": "Street Food Around the World",
+        "category": "Food",
+        "content": "Street food offers a taste of local culture. Explore popular street foods from different countries.",
+        "image": "https:\/\/images.unsplash.com\/photo-1504674900247-0877df9cc836",
+        "date": "2024-10-01",
+        "views": 12000
+    },
+    {
+        "id": 38,
+        "title": "The Art of Baking",
+        "category": "Food",
+        "content": "Baking is both science and art. Discover tips, recipes, and trends in the world of baking.",
+        "image": "assets\/images\/The Art of Baking.webp",
+        "date": "2024-09-15",
+        "views": 9500
+    },
+    {
+        "id": 39,
+        "title": "Healthy Breakfast Ideas",
+        "category": "Food",
+        "content": "Start your day right with healthy breakfast recipes and nutrition tips.",
+        "image": "https:\/\/images.unsplash.com\/photo-1504674900247-0877df9cc836",
+        "date": "2024-09-01",
+        "views": 8700
+    },
+    {
+        "id": 40,
+        "title": "Global Cuisine Trends",
+        "category": "Food",
+        "content": "Explore the latest trends in global cuisine and how chefs are innovating traditional dishes.",
+        "image": "https:\/\/images.unsplash.com\/photo-1517841905240-472988babdf9",
+        "date": "2024-08-15",
+        "views": 11000
+    },
+    {
+        "id": 41,
+        "title": "Vegetarian Delights",
+        "category": "Food",
+        "content": "Vegetarian cuisine is delicious and healthy. Discover recipes and tips for plant-based eating.",
+        "image": "https:\/\/www.golcondachimney.com\/wp-content\/uploads\/2024\/03\/vegetarian-delights-1200x900.png",
+        "date": "2024-08-01",
+        "views": 7800
+    },
+    {
+        "id": 42,
+        "title": "Desserts from Egypt",
+        "category": "Food",
+        "content": "Egyptian desserts are rich in flavor and tradition. Explore recipes and stories behind classic sweets.",
+        "image": "https:\/\/images.unsplash.com\/photo-1502082553048-f009c37129b9",
+        "date": "2024-07-15",
+        "views": 9900
+    },
+    {
+        "id": 43,
+        "title": "Coffee Culture Worldwide",
+        "category": "Food",
+        "content": "Coffee brings people together. Discover coffee traditions and brewing methods from around the world.",
+        "image": "https:\/\/images.unsplash.com\/photo-1515378791036-0648a3ef77b2",
+        "date": "2024-07-01",
+        "views": 6500
+    },
+    {
+        "id": 44,
+        "title": "Modern Egyptian Cuisine",
+        "category": "Food",
+        "content": "Modern Egyptian chefs are reinventing classic dishes. Learn about new flavors and culinary techniques.",
+        "image": "https:\/\/images.unsplash.com\/photo-1506744038136-46273834b3fb",
+        "date": "2024-06-15",
+        "views": 7200
+    },
+    {
+        "id": 45,
+        "title": "Food Photography Tips",
+        "category": "Food",
+        "content": "Capture stunning food photos with these tips on lighting, composition, and styling.",
+        "image": "assets\/images\/Food Photography Tips.webp",
+        "date": "2024-06-01",
+        "views": 8100
+    },
+    {
+        "id": 46,
+        "title": "The Power of Viral Content",
+        "category": "Social Media",
+        "content": "Explore how viral content spreads across platforms and the strategies behind creating shareable posts.",
+        "image": "https:\/\/images.unsplash.com\/photo-1515378791036-0648a3ef77b2",
+        "date": "2025-05-01",
+        "views": 12000
+    },
+    {
+        "id": 47,
+        "title": "Influencer Marketing Trends",
+        "category": "Social Media",
+        "content": "Discover the latest trends in influencer marketing and how brands collaborate with creators.",
+        "image": "https:\/\/images.unsplash.com\/photo-1517841905240-472988babdf9",
+        "date": "2025-05-02",
+        "views": 9800
+    },
+    {
+        "id": 48,
+        "title": "Building Your Personal Brand Online",
+        "category": "Social Media",
+        "content": "Learn how to build a strong personal brand and grow your audience on social platforms.",
+        "image": "https:\/\/images.unsplash.com\/photo-1465101046530-73398c7f28ca",
+        "date": "2025-05-03",
+        "views": 8700
+    },
+    {
+        "id": 49,
+        "title": "Social Media Algorithms Explained",
+        "category": "Social Media",
+        "content": "Understand how algorithms work on major platforms and how to optimize your content for reach.",
+        "image": "https:\/\/images.unsplash.com\/photo-1504384308090-c894fdcc538d",
+        "date": "2025-05-04",
+        "views": 11000
+    },
+    {
+        "id": 50,
+        "title": "The Rise of Short-Form Video",
+        "category": "Social Media",
+        "content": "Short-form video is dominating feeds. Explore the impact of TikTok, Reels, and Shorts.",
+        "image": "https:\/\/images.unsplash.com\/photo-1519125323398-675f0ddb6308",
+        "date": "2025-05-05",
+        "views": 7800
+    },
+    {
+        "id": 51,
+        "title": "Social Media for Business Growth",
+        "category": "Social Media",
+        "content": "Learn how businesses use social media to reach customers, build loyalty, and drive sales.",
+        "image": "https:\/\/media.licdn.com\/dms\/image\/v2\/D4D12AQEDD5S_kDTf3Q\/article-cover_image-shrink_600_2000\/article-cover_image-shrink_600_2000\/0\/1698838121119?e=2147483647&v=beta&t=E9_Z9FsE8uyLGmqYFv-YCV23VqpPh91fklT6DaWaNlc",
+        "date": "2025-05-06",
+        "views": 9900
+    },
+    {
+        "id": 52,
+        "title": "Managing Online Communities",
+        "category": "Social Media",
+        "content": "Tips for building and managing engaged online communities on Facebook, Discord, and more.",
+        "image": "https:\/\/images.unsplash.com\/photo-1517694712202-14dd9538aa97",
+        "date": "2025-05-07",
+        "views": 6500
+    },
+    {
+        "id": 53,
+        "title": "Social Media Analytics Tools",
+        "category": "Social Media",
+        "content": "Discover the best tools for tracking engagement, reach, and growth on social platforms.",
+        "image": "https:\/\/images.unsplash.com\/photo-1506744038136-46273834b3fb",
+        "date": "2025-05-08",
+        "views": 7200
+    },
+    {
+        "id": 54,
+        "title": "The Impact of Memes",
+        "category": "Social Media",
+        "content": "Memes shape online culture. Learn how they influence trends and communication.",
+        "image": "https:\/\/images.unsplash.com\/photo-1502082553048-f009c37129b9",
+        "date": "2025-05-09",
+        "views": 8100
+    },
+    {
+        "id": 55,
+        "title": "Privacy in the Age of Social Media",
+        "category": "Social Media",
+        "content": "Protect your privacy online with tips for managing settings and understanding data policies.",
+        "image": "https:\/\/images.unsplash.com\/photo-1510511459019-5dda7724fd87",
+        "date": "2025-05-10",
+        "views": 7300
+    },
+    {
+        "id": 56,
+        "title": "Social Media and Mental Health",
+        "category": "Social Media",
+        "content": "Explore the effects of social media on mental health and strategies for healthy usage.",
+        "image": "https:\/\/electroiq.com\/wp-content\/uploads\/2025\/01\/Social-Media-Mental-Health-Statistics.jpg",
+        "date": "2025-05-11",
+        "views": 6700
+    },
+    {
+        "id": 57,
+        "title": "Live Streaming Success Stories",
+        "category": "Social Media",
+        "content": "Live streaming is changing content creation. Discover success stories and tips for going live.",
+        "image": "https:\/\/images.unsplash.com\/photo-1518770660439-4636190af475",
+        "date": "2025-05-12",
+        "views": 8000
+    },
+    {
+        "id": 58,
+        "title": "Social Media for Activism",
+        "category": "Social Media",
+        "content": "See how social platforms are used for activism, awareness, and social change.",
+        "image": "https:\/\/images.unsplash.com\/photo-1504384308090-c894fdcc538d",
+        "date": "2025-05-13",
+        "views": 6200
+    },
+    {
+        "id": 59,
+        "title": "The Evolution of Hashtags",
+        "category": "Social Media",
+        "content": "Hashtags help organize and discover content. Learn about their history and best practices.",
+        "image": "https:\/\/images.unsplash.com\/photo-1519125323398-675f0ddb6308",
+        "date": "2025-05-14",
+        "views": 9100
+    },
+    {
+        "id": 60,
+        "title": "Social Media Etiquette",
+        "category": "Social Media",
+        "content": "Master the dos and don\u2019ts of online interaction for positive and respectful engagement.",
+        "image": "https:\/\/images.unsplash.com\/photo-1465101046530-73398c7f28ca",
+        "date": "2025-05-15",
+        "views": 10500
+    },
+    {
+        "id": 61,
+        "title": "The Growth of Instagram Stories",
+        "category": "Social Media",
+        "content": "Instagram Stories have changed how we share moments. Explore creative uses and marketing tips.",
+        "image": "https:\/\/www.thereelstars.com\/wp-content\/uploads\/2025\/08\/ArticleCover_TRS_-41-1000x600.jpg",
+        "date": "2025-05-16",
+        "views": 9800
+    },
+    {
+        "id": 62,
+        "title": "Twitter Threads for Storytelling",
+        "category": "Social Media",
+        "content": "Twitter threads allow for deeper storytelling. Learn how to craft engaging threads.",
+        "image": "https:\/\/images.unsplash.com\/photo-1462331940025-496dfbfc7564",
+        "date": "2025-05-17",
+        "views": 8700
+    },
+    {
+        "id": 63,
+        "title": "Facebook Groups for Community",
+        "category": "Social Media",
+        "content": "Facebook Groups foster community and discussion. Discover tips for growing and moderating groups.",
+        "image": "https:\/\/images.unsplash.com\/photo-1517841905240-472988babdf9",
+        "date": "2025-05-18",
+        "views": 9400
+    },
+    {
+        "id": 64,
+        "title": "LinkedIn for Professional Networking",
+        "category": "Social Media",
+        "content": "LinkedIn is the go-to platform for professionals. Learn how to network and build your career.",
+        "image": "https:\/\/images.unsplash.com\/photo-1515378791036-0648a3ef77b2",
+        "date": "2025-05-19",
+        "views": 7600
+    },
+    {
+        "id": 65,
+        "title": "Snapchat's Unique Features",
+        "category": "Social Media",
+        "content": "Snapchat offers unique ways to connect. Explore its features and creative uses.",
+        "image": "https:\/\/scx2.b-cdn.net\/gfx\/news\/2017\/1-snapchat.jpg",
+        "date": "2025-05-20",
+        "views": 8200
+    },
+    {
+        "id": 66,
+        "title": "Pinterest for Inspiration",
+        "category": "Social Media",
+        "content": "Pinterest is a hub for inspiration and ideas. Learn how to use boards for creativity and marketing.",
+        "image": "https:\/\/images.unsplash.com\/photo-1506744038136-46273834b3fb",
+        "date": "2025-05-21",
+        "views": 9900
+    },
+    {
+        "id": 67,
+        "title": "YouTube Channel Growth",
+        "category": "Social Media",
+        "content": "Grow your YouTube channel with tips on content, engagement, and analytics.",
+        "image": "https:\/\/images.unsplash.com\/photo-1519125323398-675f0ddb6308",
+        "date": "2025-05-22",
+        "views": 12000
+    },
+    {
+        "id": 68,
+        "title": "Social Media Scheduling Tools",
+        "category": "Social Media",
+        "content": "Scheduling tools help manage posts and campaigns. Discover the best options for creators and brands.",
+        "image": "https:\/\/images.unsplash.com\/photo-1518770660439-4636190af475",
+        "date": "2025-05-23",
+        "views": 9500
+    },
+    {
+        "id": 69,
+        "title": "Social Media for Customer Service",
+        "category": "Social Media",
+        "content": "Brands use social media for customer service. Learn best practices for fast and helpful responses.",
+        "image": "https:\/\/images.unsplash.com\/photo-1504384308090-c894fdcc538d",
+        "date": "2025-05-24",
+        "views": 8700
+    },
+    {
+        "id": 70,
+        "title": "The Role of Emojis in Communication",
+        "category": "Social Media",
+        "content": "Emojis add emotion and clarity to messages. Explore their role in digital communication.",
+        "image": "https:\/\/images.unsplash.com\/photo-1510511459019-5dda7724fd87",
+        "date": "2025-05-25",
+        "views": 11000
+    },
+    {
+        "id": 71,
+        "title": "Social Media Trends in Egypt",
+        "category": "Social Media",
+        "content": "Explore the latest social media trends and platforms popular in Egypt.",
+        "image": "https:\/\/images.unsplash.com\/photo-1502082553048-f009c37129b9",
+        "date": "2025-05-26",
+        "views": 7800
+    },
+    {
+        "id": 72,
+        "title": "Social Media and News",
+        "category": "Social Media",
+        "content": "Social platforms are changing how we consume news. Learn about their impact on journalism.",
+        "image": "https:\/\/pressgazette.co.uk\/wp-content\/uploads\/sites\/7\/2023\/10\/shutterstock_435654307.jpg",
+        "date": "2025-05-27",
+        "views": 9900
+    },
+    {
+        "id": 73,
+        "title": "Social Media Challenges",
+        "category": "Social Media",
+        "content": "Challenges and trends keep users engaged. Discover the most popular social media challenges.",
+        "image": "https:\/\/images.unsplash.com\/photo-1517694712202-14dd9538aa97",
+        "date": "2025-05-28",
+        "views": 6500
+    },
+    {
+        "id": 74,
+        "title": "Social Media for Events",
+        "category": "Social Media",
+        "content": "Promote and manage events using social media tools and strategies.",
+        "image": "https:\/\/images.unsplash.com\/photo-1517841905240-472988babdf9",
+        "date": "2025-05-29",
+        "views": 7200
+    },
+    {
+        "id": 75,
+        "title": "Social Media and E-Commerce",
+        "category": "Social Media",
+        "content": "E-commerce is booming on social platforms. Learn how to sell and market products online.",
+        "image": "https:\/\/images.unsplash.com\/photo-1515378791036-0648a3ef77b2",
+        "date": "2025-05-30",
+        "views": 8100
+    },
+    {
+        "id": 76,
+        "title": "Hello World From Mansoura",
+        "category": "Technology",
+        "content": "Hello, and welcome to my blog! This is my very first post, and I\u2019m excited to start sharing my thoughts and ideas with you all. And if you don\u2019t find my jokes funny, don\u2019t worry, I\u2019m a software developer, not a comedian.\r\n\r\nFirst things first: let me introduce myself. My name is Franklin Osei, and I\u2019m a Software Developer. I\u2019m passionate about Software Engineering, and I\u2019m always looking for new ways to learn and grow in my field.\r\n\r\nI\u2019m writing these blogs as a way to share my experiences and insights with others. I believe that blogging is a great way to connect with like-minded people, share ideas, and inspire others. Plus, it\u2019s a great way to improve my writing skills and express my creativity.\r\n\r\nNow, I have to admit that I\u2019m a bit nervous about starting this blog. It\u2019s a big step for me, and I\u2019m still learning the ropes. But I\u2019m also excited about the possibilities. I can\u2019t wait to start sharing my knowledge, experiences, and insights with you all.\r\n\r\nWhat to expect?\r\nSo, what can you expect from this blog? Well, I plan to write about a wide range of topics related to Software Engineering. I\u2019ll share my thoughts on industry trends, discuss the latest tools and technologies, and share tips and advice based on my own experiences.\r\n\r\nI\u2019ll also share my personal journey and the challenges I\u2019ve faced along the way. I hope that by sharing my experiences, I can inspire others to pursue their passions and achieve their goals.\r\n\r\nIn short, I\u2019m here to share my story, my ideas, and my passion with you all. I hope that you\u2019ll join me on this journey, and I promise to make it worth your while. So, keep an eye out for exciting content from me in the coming weeks and months!\r\n\r\nThank you for reading, and I look forward to connecting with you all soon.",
+        "image": "assets\/images\/img_68c07761e07471.14014584.png",
+        "date": "2025-07-24",
+        "views": 3181
+    },
+    {
+        "id": 77,
+        "title": "How to tell someone you love them",
+        "category": "Life-Coaching",
+        "content": "Watching a programme on television recently about a day in the life of a busy Accident and Emergency department, I am moved to tears by the heartfelt and earnest opening remarks of an A and E consultant:\r\n\r\n\u2026tell your loved ones how much they mean to you because you never know what is going to happen to you that means you never get the chance again.\u201d\r\n\r\nThese are stark, emotionally charged words from someone who has witnessed the loss and grief of sudden tragic life-changing events all too often. \r\n\r\nTell them you love them.\r\nOur family has lived experience of this, with the sudden shocking death of a close family member only a few years ago. \r\n\r\nNo chance to say goodbye, no final words. No chance to receive their final wisdom or how-to-live-without-me thoughts. \r\n\r\nI have been musing here recently on death bed regrets. You can read more on that here.\r\n\r\nAnd this is another common one:\r\n\r\nWishing we had told others more often that we love them. \r\nWe all like to be appreciated, and if we are honest, sometimes our focus in a relationship can be receiving love and not on as much on giving it. \r\n\r\nEqually, with busy and full lives, we don\u2019t always take the time to communicate directly and specifically to those closest to us that we love them. We know in our heads that we are loved by those around us, and that we love and value them. \r\n\r\nHere\u2019s the thing though:\r\n\r\nHow often do we actually say it out loud?\r\nTo them. To their face. \r\n\r\nI know, I know, this is not a very Scottish thing to do at all. But like all things, it gets easier with practice.\r\n\r\nTaking those we love for granted erodes the joy in those relationships. And we risk running out of chances. I know that sounds morbid and doom-filled, but that is the reality of life. And we are not very good at talking about death. I have been to more funerals in the last few years than in all my combined years before that. Parents of friends, friends, and the heartbreaking funeral of the child of a friend. \r\n\r\nLife happens.",
+        "image": "",
+        "date": "2025-09-09",
+        "views": 790
+    },
+    {
+        "id": 78,
+        "title": "Hello Egypt from England",
+        "category": "Tourism",
+        "content": "After New York, Los Angeles and Chicago, the fight is on: locals make the case for the city that should be number four.\r\n\r\nThe United States is renowned for its iconic cities. New York City undoubtedly tops the list as the nation's largest city (8.5 million residents) and one of the world's great fashion, culture and finance capitals. Los Angeles comes in just behind, the US's second-most populous city and the centre of the film industry, gateway to beaches and laid-back lifestyles. The third-largest city, Chicago, was home to the world's first skyscraper and has long vied with New York in a race to build the world's tallest, most impressive buildings.\r\n\r\nWith the top three seemingly fixed, one question recently set social media aflame: what city deserves the US's fourth spot? Residents from across the country made their case, but a few consistently rose to the top \u2013 whether by population, tourism or historical importance. We asked locals what makes their city worthy of the title and why tourists should add it to their itineraries.\r\n\r\nThis centre of federal power was purposefully built to be separate from the states and serve as the nation's capital. Named after the first president, the city sits alongside the Potomac River and still reflects its early design by Peter Charles L'Enfant, anchored by The National Mall \u2013 the central stretch of federal buildings that includes Congress, Smithsonian museums and many of the US's most famous national memorials.",
+        "image": "assets\/images\/img_68c08ae95a6339.29828647.webp",
+        "date": "2025-05-20",
+        "views": 39
+    }
 ]

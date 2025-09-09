@@ -12417,7 +12417,7 @@ a:hover {
   text-align: center;
   padding: 0 48px;
   box-shadow: 0 2px 4px var(--color-shadow);
-  background: var(--color-primary) url("../../assets/images/hero-bg.jpeg") no-repeat center center;
+  background: var(--color-primary) url("../assets/images/hero-bg.jpeg") no-repeat center center;
   background-size: cover;
   position: relative;
 }
@@ -13850,6 +13850,203 @@ a:hover {
 .search-results .container .search-pagination button:hover, .search-results .container .search-pagination button.active {
   background: var(--color-primary);
   color: #fff;
+}
+
+/* Utility hidden class */
+.hidden {
+  display: none !important;
+}
+
+/* Page container */
+.submit-container {
+  max-width: 920px;
+  margin: 3rem auto;
+  padding: 1rem 1.5rem 2rem;
+  background: var(color-bg);
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  box-shadow: 0 10px 30px var(--color-shadow);
+  -webkit-box-shadow: 0 10px 30px var(--color-shadow);
+  -moz-box-shadow: 0 10px 30px var(--color-shadow);
+  -ms-box-shadow: 0 10px 30px var(--color-shadow);
+  -o-box-shadow: 0 10px 30px var(--color-shadow);
+  /* labels + inputs */
+  /* helpers */
+  /* image preview */
+  /* buttons */
+  /* actions */
+}
+.submit-container .section-title {
+  margin-bottom: 0.5rem;
+  text-align: left;
+}
+.submit-container .lead {
+  margin-bottom: 2rem;
+  color: var(--color-muted);
+}
+.submit-container label {
+  display: block;
+  margin-bottom: 0.5rem;
+  font-weight: 600;
+  color: var(--color-text);
+}
+.submit-container input[type=text],
+.submit-container select,
+.submit-container textarea,
+.submit-container input[type=date],
+.submit-container input[type=file] {
+  display: block;
+  width: 100%;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid var(--color-border);
+  border-radius: 8px;
+  font-size: 0.95rem;
+  background: transparent;
+  color: var(--color-darken-primary);
+}
+.submit-container input[type=text]:focus,
+.submit-container select:focus,
+.submit-container textarea:focus,
+.submit-container input[type=date]:focus,
+.submit-container input[type=file]:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 4px 12px rgba(21, 181, 230, 0.08);
+  -webkit-box-shadow: 0 4px 12px rgba(21, 181, 230, 0.08);
+  -moz-box-shadow: 0 4px 12px rgba(21, 181, 230, 0.08);
+  -ms-box-shadow: 0 4px 12px rgba(21, 181, 230, 0.08);
+  -o-box-shadow: 0 4px 12px rgba(21, 181, 230, 0.08);
+}
+.submit-container textarea {
+  min-height: 180px;
+  resize: vertical;
+}
+.submit-container .small {
+  font-size: 0.85rem;
+  color: var(--color-muted);
+  margin-top: 0.35rem;
+}
+.submit-container .error {
+  color: #b00020;
+  font-size: 0.9rem;
+  margin-top: 0.35rem;
+}
+.submit-container .success {
+  color: green;
+  font-size: 0.95rem;
+  margin-top: 0.5rem;
+}
+.submit-container .preview-img {
+  max-width: 220px;
+  max-height: 140px;
+  object-fit: cover;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  margin-top: 0.6rem;
+  display: block;
+}
+.submit-container .btn {
+  background-color: var(--color-primary);
+  text-align: center;
+  box-shadow: 0 2px 4px var(--color-shadow);
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 4px;
+  -webkit-border-radius: 4px;
+  -moz-border-radius: 4px;
+  -ms-border-radius: 4px;
+  -o-border-radius: 4px;
+  color: #fff;
+  padding: 8px 16px;
+  font-family: "Asimovian", sans-serif;
+}
+.submit-container .btn:hover {
+  background-color: var(--color-darken-primary);
+  box-shadow: 0 4px 8px var(--color-shadow);
+}
+@media (max-width: 576px) {
+  .submit-container .btn {
+    padding: 8px;
+    font-size: 0.9rem;
+  }
+}
+@media (min-width: 576px) and (max-width: 768px) {
+  .submit-container .btn {
+    padding: 8px;
+    font-size: 1rem;
+  }
+}
+@media (min-width: 768px) and (max-width: 992px) {
+  .submit-container .btn {
+    padding: 8px 16px;
+    font-size: 1.1rem;
+  }
+}
+.submit-container .btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+.submit-container .btn.secondary {
+  background: var(--color-surface);
+  color: var(--color-text);
+}
+.submit-container .form-actions {
+  display: flex;
+  gap: 0.6rem;
+  align-items: center;
+  margin-top: 2rem;
+}
+.submit-container .form-actions .form-feedback {
+  margin-left: 0.5rem;
+}
+
+/* Form layout */
+.form-row {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.75rem;
+}
+.form-row.align-end {
+  align-items: flex-end;
+}
+
+.content-row {
+  margin-bottom: 0.75rem;
+}
+
+.form-col {
+  flex: 1 1 300px;
+  min-width: 220px;
+}
+
+/* new category wrapper */
+.new-category {
+  margin-top: 0.5rem;
+}
+
+/* Responsive tweaks */
+@media (max-width: 768px) {
+  .submit-container {
+    padding: 1rem;
+    margin: 1.5rem;
+  }
+}
+@media (max-width: 420px) {
+  .form-row {
+    gap: 0.6rem;
+  }
+  .preview-img {
+    max-width: 160px;
+    max-height: 120px;
+  }
 }
 
 /*# sourceMappingURL=main.css.map */

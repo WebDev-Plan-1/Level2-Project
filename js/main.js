@@ -85,7 +85,7 @@ function displayTopPosts() {
         "<svg xmlns='http://www.w3.org/2000/svg' width='10' height='7'></svg>"
       )}"
       alt="${article.title}"
-      onerror="this.dataset.src='assets/images/logo.png'; this.onerror=null;"
+      onerror="this.dataset.src='../assets/images/fallback.jpg'; this.onerror=null;"
     />
   </div>
 `;
@@ -321,7 +321,7 @@ function displayArticles(category, sortBy) {
           "<svg xmlns='http://www.w3.org/2000/svg' width='10' height='7'></svg>"
         )}"
         alt="${article.title}"
-        onerror="this.dataset.src='assets/images/logo.png'; this.onerror=null;"
+        onerror="this.dataset.src='../assets/images/fallback.jpg'; this.onerror=null;"
         />
     </div>
     `;
