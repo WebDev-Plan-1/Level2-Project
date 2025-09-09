@@ -419,6 +419,20 @@ export function AOSInit() {
   AOS.init({ duration: 1200, mirror: false });
 }
 
+// ====================== Format Content of the Article
+// extra break line every 4 lines
+export function formatContentDisplay(text) {
+  const lines = text.split(/\r?\n/);
+  let formatted = "";
+  lines.forEach((line, index) => {
+    formatted += line + "<br>";
+    if ((index + 1) % 4 === 0) {
+      formatted += "<br>"; // extra break line every 4 lines
+    }
+  });
+  return formatted;
+}
+
 /* =============================================
    ################# Dynamic Number Pagination Buttons ####################
 ============================================= */

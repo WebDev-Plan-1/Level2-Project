@@ -8,6 +8,7 @@ import {
   initNavbar,
   lazyLoading,
   AOSInit,
+  formatContentDisplay,
 } from "./utils.js";
 //==== Import theme
 import { initTheme } from "./theme.js";
@@ -94,7 +95,9 @@ fetch("data/articles.json")
         } <i class="fa-solid fa-quote-right"></i>`;
         readMoreBtn.textContent = "Read More";
       } else {
-        contentEl.innerHTML = `<i class="fa-solid fa-quote-left"></i> ${fullContent} <i class="fa-solid fa-quote-right"></i>`;
+        contentEl.innerHTML = `<i class="fa-solid fa-quote-left"></i> ${formatContentDisplay(
+          fullContent
+        )} <i class="fa-solid fa-quote-right"></i>`;
         readMoreBtn.textContent = "Show Less";
       }
       isExpanded = !isExpanded;

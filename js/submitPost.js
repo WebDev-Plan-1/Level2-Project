@@ -178,6 +178,20 @@ async function validateNewCategory() {
   return true;
 }
 
+/* ------------------------- 
+   Helper: Insert a blank line after every 4 lines
+   ------------------------- */
+function addLineBreaksEveryFour(text) {
+  const lines = text.split(/\r?\n/);
+  let formatted = "";
+  lines.forEach((line, index) => {
+    formatted += line;
+    if (index < lines.length - 1) formatted += "\n"; // keep normal line breaks
+    if ((index + 1) % 4 === 0) formatted += "\n"; // add extra break after every 4
+  });
+  return formatted.trim();
+}
+
 /* -------------------------
    Validate content for profanity (simple client-side check)
    ------------------------- */
@@ -198,6 +212,12 @@ function validateContent() {
       return false;
     }
   }
+
+  // ✅ Normalize with line breaks every 4 lines
+  const cursorPos = contentEl.selectionStart; // remember caret
+  contentEl.value = addLineBreaksEveryFour(txt);
+  contentEl.selectionEnd = cursorPos; // restore caret
+
   hide(contentError);
   return true;
 }
