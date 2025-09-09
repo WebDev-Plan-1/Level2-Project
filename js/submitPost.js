@@ -178,45 +178,28 @@ async function validateNewCategory() {
   return true;
 }
 
-/* ------------------------- 
-   Helper: Insert a blank line after every 4 lines
-   ------------------------- */
-function addLineBreaksEveryFour(text) {
-  const lines = text.split(/\r?\n/);
-  let formatted = "";
-  lines.forEach((line, index) => {
-    formatted += line;
-    if (index < lines.length - 1) formatted += "\n"; // keep normal line breaks
-    if ((index + 1) % 4 === 0) formatted += "\n"; // add extra break after every 4
-  });
-  return formatted.trim();
-}
-
 /* -------------------------
-   Validate content for profanity (simple client-side check)
+   Validate content for profanity (client-side) and optionally format
    ------------------------- */
 function validateContent() {
-  const txt = contentEl.value.trim();
-  if (!txt) {
+  // use raw value (do not trim here — we need newlines)
+  const raw = contentEl.value;
+  if (!raw || raw.trim() === "") {
     contentError.textContent = "Content cannot be empty.";
     show(contentError);
     return false;
   }
+
   // Simple profanity check (case-insensitive)
-  const lower = txt.toLowerCase();
+  const lower = raw.toLowerCase();
   for (const bad of PROFANITY) {
-    if (lower.includes(bad)) {
+    if (lower.includes(bad.toLowerCase())) {
       contentError.textContent =
         "Your content contains forbidden language. Please remove it.";
       show(contentError);
       return false;
     }
   }
-
-  // ✅ Normalize with line breaks every 4 lines
-  const cursorPos = contentEl.selectionStart; // remember caret
-  contentEl.value = addLineBreaksEveryFour(txt);
-  contentEl.selectionEnd = cursorPos; // restore caret
 
   hide(contentError);
   return true;
@@ -390,8 +373,8 @@ titleEl.addEventListener("input", () => {
   // live title validation but don't spam alerts
   validateTitle();
 });
+// live profanity check while typing (no formatting)
 contentEl.addEventListener("input", () => {
-  // live content validation; hide error if ok
   validateContent();
 });
 
