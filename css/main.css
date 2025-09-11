@@ -12371,7 +12371,7 @@ a:hover {
   display: flex;
 }
 
-@media (max-width: 768px) {
+@media (max-width: 992px) {
   .navbar .container .nav-links {
     flex-direction: column;
     background-color: var(--color-surface);
@@ -12390,6 +12390,14 @@ a:hover {
     transform: translateY(0);
     opacity: 1;
     pointer-events: auto;
+  }
+  .navbar .container .user-dropdown .dropdown-menu {
+    right: 50%;
+    transform: translateX(50%);
+    -webkit-transform: translateX(50%);
+    -moz-transform: translateX(50%);
+    -ms-transform: translateX(50%);
+    -o-transform: translateX(50%);
   }
   .navbar .container .hamburger {
     display: flex;

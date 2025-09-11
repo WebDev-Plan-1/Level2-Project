@@ -298,7 +298,7 @@
 //=========== Responsive Styles ================//
 
 // Tablet
-@media (max-width: v.$breakpoint-tablet) {
+@media (max-width: v.$breakpoint-desktop) {
   .navbar {
     .container {
       .nav-links {
@@ -320,6 +320,16 @@
           opacity: 1;
           pointer-events: auto;
         }
+      }
+
+      .user-dropdown .dropdown-menu {
+        right: 50%;
+        transform: translateX(50%);
+        -webkit-transform: translateX(50%);
+        -moz-transform: translateX(50%);
+        -ms-transform: translateX(50%);
+        -o-transform: translateX(50%);
+        // margin-top: 4px;
       }
 
       .hamburger {

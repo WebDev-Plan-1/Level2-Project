@@ -204,7 +204,7 @@ function renderNavbar() {
         <button id="logoutBtn">Logout</button>
       </div>
     `;
-    navActions.appendChild(userMenu);
+    navLinks.appendChild(userMenu);
 
     // Logout functionality
     document.getElementById("logoutBtn").addEventListener("click", () => {
