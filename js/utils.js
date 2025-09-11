@@ -212,11 +212,34 @@ function renderNavbar() {
     });
   }
 }
+
+async function syncSessionWithLocalStorage() {
+  try {
+    const res = await fetch("php/check_session.php", {
+      method: "GET",
+      credentials: "include", // ⭐ ensures cookies (PHPSESSID) are sent
+      headers: { "Cache-Control": "no-cache" },
+    });
+    const data = await res.json();
+
+    if (data.ok && data.user) {
+      // ✅ backend session exists
+      localStorage.setItem("currentUser", JSON.stringify(data.user));
+    } else {
+      // ❌ backend session missing
+      localStorage.removeItem("currentUser");
+    }
+  } catch (err) {
+    console.error("Session check failed:", err);
+    localStorage.removeItem("currentUser");
+  }
+}
+
 // Initialize Navbar functionality
 // including hamburger toggle and active link highlighting
 // and preserving active state across reloads, and responsive scroll handling
 // and keyboard accessibility, and localStorage usage
-export function initNavbar() {
+export async function initNavbar() {
   if (!hamburger) return;
 
   hamburger.addEventListener("click", () => {
@@ -291,7 +314,10 @@ export function initNavbar() {
   window.addEventListener("resize", toggleNavScroll);
   setActiveNavLink();
   initSearchBar();
-  renderNavbar();
+  // ⭐ sync PHP session with localStorage
+  await syncSessionWithLocalStorage();
+
+  renderNavbar(); // now always correct
 }
 /* =============================================
    ################# lazy-loader.js 
