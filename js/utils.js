@@ -509,6 +509,10 @@ function addEllipsis(container) {
 export function populateCategoryFilter(selectEl, articles) {
   if (!selectEl) return;
   const categories = [...new Set(articles.map((a) => a.category))];
+  // Append categories alphabetically
+  categories.sort((a, b) =>
+    a.localeCompare(b, undefined, { sensitivity: "base" })
+  );
   selectEl.innerHTML = `<option value="All">All</option>`;
   categories.forEach((cat) => {
     const option = document.createElement("option");
