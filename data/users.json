@@ -14,5 +14,13 @@
         "email": "ahmedhafez@gmail.com",
         "password": "$2y$10$dGAzhMmPpHtQKwn8oMaCjum3CJCwPIeF\/kdLih2WlKhyD7ccNfMhu",
         "created_at": "2025-09-12 00:20:41"
+    },
+    {
+        "id": 3,
+        "fullname": "Devil hell",
+        "username": "devil",
+        "email": "abdo7afez0@gmail.com",
+        "password": "$2y$10$1P4cVqNYqaEwmKNWwvb56upT51mbWXl9x61z6JmnYoifwRuocKTUu",
+        "created_at": "2025-09-12 01:20:17"
     }
 ]
