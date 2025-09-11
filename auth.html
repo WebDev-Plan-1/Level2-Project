@@ -12,25 +12,26 @@
     <link rel="icon" href="assets/images/logo-browser.png" type="image/x-icon">
     <!-- Page Title and Meta Tags -->
     <!-- Set the page title shown on browser tab -->
-    <title>Category - NileNotes</title>
+    <title>Sign Up / Login - NileNotes</title>
     <meta name="description"
         content="NileNotes is a modern personal blog CMS inspired by Egyptian culture. Share your stories, explore diverse articles, and connect with a vibrant community. Discover technology, travel, health, education, and more on NileNotes." />
     <meta name="keywords"
         content="NileNotes, Blog, Blogs, blog, Posts, books, Nature, development, writing, reading, social" />
     <meta name="author" content="NileNotes - Personal Blog CMS" />
     <!-- Swiper CSS -->
-    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" /> -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
     <!-- AOS Scroll Animation -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Link to fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Asimovian&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
     <!-- ============= PREVENT FART (Flash of Incorrect Theme) =============== -->
     <script>
         (function () {
@@ -79,7 +80,7 @@
             <nav class="nav-links" id="navLinks" aria-expanded="false">
                 <a href="index.html" class="nav-link-item">Home</a>
                 <a href="about-us.html" class="nav-link-item">About</a>
-                <a href="category.html?cat=All" class="nav-link-item">Categories</a>
+                <a href="category.php?cat=All" class="nav-link-item">Categories</a>
                 <a href="submitPost.html" class="nav-link-item">Create a Post</a>
                 <a href="contact.html" class="nav-link-item">Contact</a>
             </nav>
@@ -116,37 +117,74 @@
         </div>
     </header>
 
-    <!-- Category Header -->
-    <section class="category-header">
-    </section>
+    <main class="auth-page container" role="main">
+        <div class="auth-card" aria-live="polite">
+            <div class="auth-switch">
+                <button id="showLogin" class="switch-btn" aria-pressed="false">Login</button>
+                <button id="showSignup" class="switch-btn active" aria-pressed="true">Sign Up</button>
+            </div>
 
-    <section class="category-controls">
-        <!-- Filter Categories -->
-        <select id="category-filter">
-            <option value="All">All</option>
-            <option value="Technology">Technology</option>
-            <option value="Health">Health</option>
-            <option value="Travel">Travel</option>
-            <option value="Environment">Environment</option>
-            <option value="Education">Education</option>
-        </select>
+            <!-- ========== SIGNUP FORM ========= -->
+            <form id="signupForm" class="auth-form" autocomplete="on" novalidate>
+                <h2 class="section-title">Create an account</h2>
 
-        <!-- Sort Options -->
-        <select id="sort-filter">
-            <option value="Latest">Latest</option>
-            <option value="Oldest">Oldest</option>
-            <option value="Most Viewed" selected>Most Viewed</option>
-        </select>
-    </section>
+                <label for="fullName">Full name (First & Last)</label>
+                <input id="fullName" name="fullname" type="text" inputmode="text" autocomplete="name"
+                    placeholder="First Last" required />
+                <div id="nameError" class="field-error" aria-live="assertive"></div>
 
-    <!-- Articles will be loaded here -->
-    <section class="articles-list">
-        <div class="posts" aria-live="polite">
-            <!-- Articles will be dynamically inserted here -->
+                <label for="signupUsername">Username</label>
+                <input id="signupUsername" name="username" type="text" inputmode="text" autocomplete="username"
+                    placeholder="lowercase letters, numbers, underscore" required />
+                <div id="usernameError" class="field-error" aria-live="assertive"></div>
+
+                <label for="signupEmail">Email</label>
+                <input id="signupEmail" name="email" type="email" inputmode="email" autocomplete="email"
+                    placeholder="you@company.com" required />
+                <div id="emailError" class="field-error" aria-live="assertive"></div>
+
+                <label for="signupPassword">Password</label>
+                <input id="signupPassword" name="password" type="password" autocomplete="new-password" minlength="8"
+                    placeholder="Min 8 chars, upper+lower+digit" required />
+                <div id="passwordHelp" class="small">Min 8 chars, include uppercase, lowercase and a number.</div>
+                <div id="passwordError" class="field-error" aria-live="assertive"></div>
+
+                <label for="signupConfirm">Confirm password</label>
+                <input id="signupConfirm" name="confirm" type="password" autocomplete="new-password" required />
+                <div id="confirmError" class="field-error" aria-live="assertive"></div>
+
+                <div class="form-actions">
+                    <button id="signupSubmit" type="submit" class="btn primary">Create account</button>
+                </div>
+
+                <div id="signupFeedback" class="form-feedback" aria-live="polite"></div>
+            </form>
+
+            <!-- ========== LOGIN FORM (hidden by default) ========= -->
+            <form id="loginForm" class="auth-form hidden" autocomplete="on" novalidate>
+                <h2 class="section-title">Welcome back</h2>
+
+                <label for="loginUser">Username or Email</label>
+                <input id="loginUser" name="loginUser" type="text" autocomplete="username"
+                    placeholder="username or email" required />
+                <div id="loginUserError" class="field-error" aria-live="assertive"></div>
+
+                <label for="loginPassword">Password</label>
+                <input id="loginPassword" name="loginPassword" type="password" autocomplete="current-password"
+                    placeholder="Your password" required />
+                <div id="loginPasswordError" class="field-error" aria-live="assertive"></div>
+
+                <div class="form-actions">
+                    <button id="loginSubmit" type="submit" class="btn primary">Login</button>
+                    <button id="forgotBtn" type="button" class="btn link">Forgot?</button>
+                </div>
+
+                <div id="loginFeedback" class="form-feedback" aria-live="polite"></div>
+            </form>
+
         </div>
-        <!-- Articles Pagination -->
-        <div class="posts-pagination"></div>
-    </section>
+    </main>
+
 
     <!-- Footer section -->
     <footer class="footer">
@@ -154,7 +192,7 @@
             <h2 class="footer-title">NileNotes - Personal Blog CMS</h2>
             <div class="footer-links">
                 <a href="index.html" class="footer-link">Home</a>
-                <a href="category.html?cat=All" class="footer-link">Categories</a>
+                <a href="category.php?cat=All" class="footer-link">Categories</a>
                 <a href="submitPost.html" class="footer-link">Create a
                     Post</a>
                 <a href="contact.html" class="footer-link">Contact</a>
@@ -188,7 +226,8 @@
         </div>
     </footer>
 
-
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <!-- AOS Scroll Animation JS -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <!-- Font Awesome JS -->
@@ -196,7 +235,7 @@
         integrity="sha512-6BTOlkauINO65nLhXhthZMtepgJSghyimIalb+crKRPhvhmsCdnIuGcVbR5/aQY2A+260iC1OPy1oCdB6pSSwQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
     <!-- Link to main JavaScript file -->
-    <script type="module" src="js/main.js"></script>
+    <script type="module" src="js/auth.js"></script>
 </body>
 
 </html>

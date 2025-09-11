@@ -188,7 +188,7 @@ function renderCategoriesPage(categories, page, perPage) {
     const li = createElement(
       "li",
       ["category-item"],
-      `<a href="category.html?cat=${cat}" class="category-link">${cat}</a>`
+      `<a href="category.php?cat=${cat}" class="category-link">${cat}</a>`
     );
     li.setAttribute("data-aos", "fade-right");
     li.setAttribute("data-aos-duration", "1000");

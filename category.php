@@ -1,3 +1,7 @@
+<?php
+require_once __DIR__ . '/../php/auth_check.php';
+?>
+
 <!DOCTYPE html>
 <!-- Define document type as HTML5 -->
 <html lang="en">
@@ -12,29 +16,28 @@
     <link rel="icon" href="assets/images/logo-browser.png" type="image/x-icon">
     <!-- Page Title and Meta Tags -->
     <!-- Set the page title shown on browser tab -->
-    <title>Home - NileNotes</title>
+    <title>Category - NileNotes</title>
     <meta name="description"
         content="NileNotes is a modern personal blog CMS inspired by Egyptian culture. Share your stories, explore diverse articles, and connect with a vibrant community. Discover technology, travel, health, education, and more on NileNotes." />
     <meta name="keywords"
         content="NileNotes, Blog, Blogs, blog, Posts, books, Nature, development, writing, reading, social" />
     <meta name="author" content="NileNotes - Personal Blog CMS" />
     <!-- Swiper CSS -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <!-- <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" /> -->
     <!-- AOS Scroll Animation -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <!-- Link to fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Asimovian&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
-    <!-- Font Awesome for icons -->
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
-        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
-        crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <!-- ============= PREVENT FART (Flash of Incorrect Theme) =============== -->
     <script>
-        (function () {
+        (function() {
             try {
                 const saved = localStorage.getItem("site-theme");
                 if (saved === "dark" || saved === "light") {
@@ -117,44 +120,37 @@
         </div>
     </header>
 
-    <!-- Main content area -->
-    <main class="main-content container">
-        <!-- Hero section with welcoming message and call-to-action -->
-        <section class="hero-section hero">
-            <h1 class="hero-title">
-                Welcome to <span>NileNotes</span><br>
-                <span class="hero-title-span">Personal Blog CMS - Your Gateway to Egyptian Stories</span>
-            </h1>
-            <p class="hero-subtitle">Discover articles on various topics, and share your own stories!</p>
-            <a href="submitPost.html" class="hero-button hero-cta">Submit Your Post</a>
-        </section>
+    <!-- Category Header -->
+    <section class="category-header">
+    </section>
 
-        <!-- Latest blog posts grid -->
-        <section class="featured-posts">
-            <h2 class="section-title">Featured Articles</h2>
-            <div class="swiper mySwiper">
-                <div class="swiper-wrapper" id="top-posts-container">
-                    <!-- Cards will be injected dynamically -->
-                </div>
-                <!-- Controls -->
-                <div class="swiper-pagination"></div>
-                <div class="swiper-button-prev"></div>
-                <div class="swiper-button-next"></div>
-            </div>
-        </section>
+    <section class="category-controls">
+        <!-- Filter Categories -->
+        <select id="category-filter">
+            <option value="All">All</option>
+            <option value="Technology">Technology</option>
+            <option value="Health">Health</option>
+            <option value="Travel">Travel</option>
+            <option value="Environment">Environment</option>
+            <option value="Education">Education</option>
+        </select>
 
-        <!-- Categories overview section -->
-        <section class="categories-overview">
-            <h2 class="section-title">Categories</h2>
-            <ul class="categories-list">
-                <!-- Categories will be injected dynamically -->
-                <!-- <li class="category-item" data-aos="fade-right" data-aos-duration="400"><a
-                        href="category.php?cat=Technology" class="category-link">Technology</a>
-                </li>-->
-            </ul>
-            <div class="categories-pagination"></div>
-        </section>
-    </main>
+        <!-- Sort Options -->
+        <select id="sort-filter">
+            <option value="Latest">Latest</option>
+            <option value="Oldest">Oldest</option>
+            <option value="Most Viewed" selected>Most Viewed</option>
+        </select>
+    </section>
+
+    <!-- Articles will be loaded here -->
+    <section class="articles-list">
+        <div class="posts" aria-live="polite">
+            <!-- Articles will be dynamically inserted here -->
+        </div>
+        <!-- Articles Pagination -->
+        <div class="posts-pagination"></div>
+    </section>
 
     <!-- Footer section -->
     <footer class="footer">
@@ -196,8 +192,7 @@
         </div>
     </footer>
 
-    <!-- Swiper JS -->
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
     <!-- AOS Scroll Animation JS -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
     <!-- Font Awesome JS -->

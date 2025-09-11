@@ -122,7 +122,7 @@ Level2-Project/
 │ ├── submit.php
 │
 ├── index.html
-├── category.html
+├── category.php
 ├── single.html
 ├── contact.html
 └── README.md
