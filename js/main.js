@@ -107,7 +107,7 @@ function displayTopPosts() {
                 )}</span>
                 <span class="top-post-category">${article.category}</span>
         </p>
-        <a href="single.html?id=${
+        <a href="single.php?id=${
           article.id
         }" class="read-more post__btn">Read More</a>
       </article>`
@@ -131,7 +131,7 @@ function displayTopPosts() {
     //             )}</span>
     //             <span class="top-post-category">${article.category}</span>
     //     </p>
-    //     <a href="single.html?id=${
+    //     <a href="single.php?id=${
     //       article.id
     //     }" class="read-more post__btn">Read More</a>
     //   </article>`
@@ -339,7 +339,7 @@ function displayArticles(category, sortBy) {
                 )}</span>
                 <span class="post-date">${formatDate(article.date)}</span>
             </p>
-            <a href="single.html?id=${
+            <a href="single.php?id=${
               article.id
             }" class="read-more post__btn btn">Read More</a>
         `

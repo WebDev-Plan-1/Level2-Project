@@ -144,7 +144,7 @@ fetch("data/articles.json")
             ${relImgWrapHtml}
             <h3>${rel.title}</h3>
             <p>${rel.content.slice(0, 100)}...</p>
-            <a href="single.html?id=${rel.id}" class="btn">Read More</a>
+            <a href="single.php?id=${rel.id}" class="btn">Read More</a>
           </div>
         `;
         relatedContainer.appendChild(card);

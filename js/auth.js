@@ -190,7 +190,7 @@ import { initTheme } from "./theme.js";
   // fetch users.json and check duplicates (client-side pre-check)
   async function fetchUsers() {
     try {
-      const res = await fetch("../data/users.json", { cache: "no-store" });
+      const res = await fetch("data/users.json", { cache: "no-store" });
       if (!res.ok) return [];
       const data = await res.json();
       if (!Array.isArray(data)) return [];
@@ -275,7 +275,7 @@ import { initTheme } from "./theme.js";
 
     signupSubmit.textContent = "Submitting...";
     try {
-      const res = await fetch("../php/signup.php", {
+      const res = await fetch("php/signup.php", {
         method: "POST",
         body: payload,
       });
@@ -292,9 +292,25 @@ import { initTheme } from "./theme.js";
         return;
       }
 
+      // ✅ Save current user in localStorage from the parsed JSON response
+      if (json && json.user) {
+        localStorage.setItem(
+          "currentUser",
+          JSON.stringify({
+            id: json.user.id,
+            username: json.user.username,
+            email: json.user.email,
+            fullname: json.user.fullname || json.user.fullName || "",
+          })
+        );
+      } else {
+        console.warn("Signup: server did not return user object", json);
+      }
+
       // success — server should set session; redirect to protected area
       signupFeedback.textContent = "Account created. Redirecting...";
       signupFeedback.className = "form-feedback success";
+      // localStorage.setItem("currentUser", fullName.value.trim());
       // small delay to allow session cookie to be set
       setTimeout(() => {
         window.location.href = "index.html";
@@ -338,7 +354,7 @@ import { initTheme } from "./theme.js";
       payload.append("identifier", userVal);
       payload.append("password", passVal);
 
-      const res = await fetch("../php/login.php", {
+      const res = await fetch("php/login.php", {
         method: "POST",
         body: payload,
       });
@@ -352,6 +368,21 @@ import { initTheme } from "./theme.js";
         loginSubmit.disabled = false;
         loginSubmit.textContent = "Login";
         return;
+      }
+
+      // ✅ Save current user in localStorage from parsed JSON response
+      if (json && json.user) {
+        localStorage.setItem(
+          "currentUser",
+          JSON.stringify({
+            id: json.user.id,
+            username: json.user.username,
+            email: json.user.email,
+            fullname: json.user.fullname || json.user.fullName || "",
+          })
+        );
+      } else {
+        console.warn("Login: server did not return user object", json);
       }
 
       loginFeedback.textContent = "Logged in. Redirecting...";

@@ -1,7 +1,11 @@
 <?php
 // php/logout.php
 session_start();
+
+// Clear all session variables
 $_SESSION = [];
+
+// Destroy the session cookie
 if (ini_get("session.use_cookies")) {
     $params = session_get_cookie_params();
     setcookie(
@@ -14,6 +18,10 @@ if (ini_get("session.use_cookies")) {
         $params["httponly"]
     );
 }
+
+// Destroy the session
 session_destroy();
-header('Location: /auth.html');
-exit;
+
+// Return JSON
+header('Content-Type: application/json; charset=utf-8');
+echo json_encode(['ok' => true, 'message' => 'Logged out']);

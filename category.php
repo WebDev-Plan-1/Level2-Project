@@ -1,5 +1,5 @@
 <?php
-require_once __DIR__ . '/../php/auth_check.php';
+require_once __DIR__ . '/php/auth_check.php';
 ?>
 
 <!DOCTYPE html>
@@ -81,11 +81,11 @@ require_once __DIR__ . '/../php/auth_check.php';
 
             <!-- Navigation Links -->
             <nav class="nav-links" id="navLinks" aria-expanded="false">
-                <a href="index.html" class="nav-link-item">Home</a>
+                <!-- <a href="index.html" class="nav-link-item">Home</a>
                 <a href="about-us.html" class="nav-link-item">About</a>
                 <a href="category.php?cat=All" class="nav-link-item">Categories</a>
-                <a href="submitPost.html" class="nav-link-item">Create a Post</a>
-                <a href="contact.html" class="nav-link-item">Contact</a>
+                <a href="submitPost.php" class="nav-link-item">Create a Post</a>
+                <a href="contact.php" class="nav-link-item">Contact</a> -->
             </nav>
 
             <!-- Right-side controls -->
@@ -159,9 +159,9 @@ require_once __DIR__ . '/../php/auth_check.php';
             <div class="footer-links">
                 <a href="index.html" class="footer-link">Home</a>
                 <a href="category.php?cat=All" class="footer-link">Categories</a>
-                <a href="submitPost.html" class="footer-link">Create a
+                <a href="submitPost.php" class="footer-link">Create a
                     Post</a>
-                <a href="contact.html" class="footer-link">Contact</a>
+                <a href="contact.php" class="footer-link">Contact</a>
             </div>
             <p class="footer-text">NileNotes is a personal blog CMS
                 designed to share stories and articles on various

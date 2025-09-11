@@ -1,31 +1,42 @@
+<?php
+require_once __DIR__ . '/php/auth_check.php';
+?>
 <!DOCTYPE html>
+<!-- Define document type as HTML5 -->
 <html lang="en">
 
 <head>
+    <!-- Set character encoding to UTF-8 -->
     <meta charset="UTF-8" />
+    <!-- Set viewport for responsive design on all devices -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
     <link rel="icon" href="assets/images/logo-browser.png" type="image/x-icon">
-
-    <title>Create Your Post - NileNotes</title>
+    <!-- Page Title and Meta Tags -->
+    <!-- Set the page title shown on browser tab -->
+    <title>NileNotes</title>
     <meta name="description"
-        content="NileNotes is a modern personal blog CMS inspired by Egyptian culture. Share your stories, explore diverse articles, and connect with a vibrant community." />
-    <meta name="keywords" content="NileNotes, Blog, Posts, Technology, Travel, Health, Education" />
+        content="NileNotes is a modern personal blog CMS inspired by Egyptian culture. Share your stories, explore diverse articles, and connect with a vibrant community. Discover technology, travel, health, education, and more on NileNotes." />
+    <meta name="keywords"
+        content="NileNotes, Blog, Blogs, blog, Posts, books, Nature, development, writing, reading, social" />
     <meta name="author" content="NileNotes - Personal Blog CMS" />
-
-    <!-- Swiper / AOS / Fonts / Icons -->
+    <!-- Swiper CSS -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <!-- AOS Scroll Animation -->
     <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- Link to fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Asimovian&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <!-- Font Awesome for icons -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
         integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
-
     <!-- ============= PREVENT FART (Flash of Incorrect Theme) =============== -->
     <script>
-        (function () {
+        (function() {
             try {
                 const saved = localStorage.getItem("site-theme");
                 if (saved === "dark" || saved === "light") {
@@ -40,52 +51,66 @@
             }
         })();
     </script>
-
-    <!-- Main stylesheet (site-wide) -->
+    <!-- Main style -->
     <link rel="stylesheet" href="css/main.css" />
 </head>
 
 <body>
 
-    <!-- THEME TOGGLE BUTTON (kept in html, styling in scss, behaviour in theme.js) -->
+    <!-- THEME TOGGLE BUTTON: place this near end of body -->
+    <!-- This button is fixed to the middle-right of the viewport -->
     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false"
         title="Toggle theme">
+        <!-- Icon inside the button (will be updated by JS) -->
         <span class="theme-icon"></span>
     </button>
 
-    <!-- Header / Nav (kept same markup, no inline styles) -->
+    <!-- Header >> Nav -->
     <header class="navbar sticky">
         <div class="container navbar-container">
+            <!-- Logo -->
             <div class="logo-box">
                 <a href="index.html" class="logo-img navbar-logo">
                     <img src="assets/images/logo-browser.png" alt="Logo" loading="lazy" />
                 </a>
-                <a href="index.html" class="logo-text navbar-logo"><span class="logoSpan">Nile</span>Notes</a>
+                <a href="index.html" class="logo-text navbar-logo">
+                    <span class="logoSpan">Nile</span>Notes
+                </a>
             </div>
 
+            <!-- Navigation Links -->
             <nav class="nav-links" id="navLinks" aria-expanded="false">
-                <a href="index.html" class="nav-link-item">Home</a>
+                <!-- <a href="index.html" class="nav-link-item">Home</a>
                 <a href="about-us.html" class="nav-link-item">About</a>
                 <a href="category.php?cat=All" class="nav-link-item">Categories</a>
-                <a href="submitPost.html" class="nav-link-item">Create a Post</a>
-                <a href="contact.html" class="nav-link-item">Contact</a>
+                <a href="submitPost.php" class="nav-link-item">Create a Post</a>
+                <a href="contact.php" class="nav-link-item">Contact</a> -->
             </nav>
 
+            <!-- Right-side controls -->
             <div class="nav-actions">
-                <button class="search-toggle" aria-label="Open search"><i
-                        class="fa-solid fa-magnifying-glass"></i></button>
+                <!-- Search Toggle -->
+                <button class="search-toggle" aria-label="Open search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
 
+                <!-- Hidden Search Form -->
                 <form class="search-form" id="navbarSearchForm" role="search">
                     <div class="search-wrapper">
                         <input type="text" id="navbarSearchInput" class="search-input" placeholder="Search articles..."
                             aria-label="Search articles" />
-                        <button type="button" class="clear-btn" aria-label="Clear search"><i
-                                class="fa-solid fa-xmark"></i></button>
+                        <button type="button" class="clear-btn" aria-label="Clear search">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
                         <small class="char-counter">0 / 50</small>
                     </div>
-                    <button type="submit" class="search-submit">Search</button>
+                    <button type="submit" class="search-submit">
+                        <!-- <i class="fa-solid fa-arrow-right"></i> -->
+                        Search
+                    </button>
                 </form>
 
+                <!-- Hamburger -->
                 <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-controls="navLinks"
                     aria-expanded="false">
                     <span></span><span></span><span></span>
@@ -94,89 +119,74 @@
         </div>
     </header>
 
-    <!-- Main container -->
-    <main class="submit-container" role="main">
-        <h1 class="section-title">Submit a New Article</h1>
-        <p class="lead">Fill the form below to add a new article. Required fields must be filled before submit.</p>
+    <!-- Main content area -->
+    <main class="single-article">
+        <!-- Heading Title -->
+        <h1 class="article-title"></h1>
 
-        <form id="postForm" action="php/submitPost.php" method="POST" enctype="multipart/form-data" novalidate>
-            <!-- Title + Category -->
-            <div class="form-row">
-                <div class="form-col">
-                    <label for="title">Title</label>
-                    <input id="title" name="title" type="text" placeholder="Article title" required />
-                    <div id="titleHelp" class="small">Max 5 words recommended.</div>
-                    <div id="titleError" class="error hidden"></div>
-                </div>
+        <!-- Hero Image -->
+        <div class="article-hero">
+            <!-- <img id="article-hero-img" alt="Article Image" /> -->
+        </div>
 
-                <div class="form-col">
-                    <label for="category">Category</label>
-                    <select id="category" name="category" required>
-                        <option value="">-- Select category --</option>
-                        <option value="Add New Category">Add New Category</option>
-                    </select>
-                    <div id="categoryError" class="error hidden"></div>
-
-                    <div id="newCategoryWrap" class="new-category hidden">
-                        <input id="newCategory" name="newCategory" type="text" placeholder="Enter new category name" />
-                        <div id="newCategoryError" class="error hidden"></div>
-                    </div>
-                </div>
+        <!-- Meta Info -->
+        <div class="article-meta">
+            <div class="meta-left">
+                <span class="article-category"></span>
+                <span class="article-views"></span>
             </div>
-
-            <!-- Content -->
-            <div class="content-row mt-16">
-                <label for="content">Content</label>
-                <textarea id="content" name="content" placeholder="Write your article..." required></textarea>
-                <div id="contentError" class="error hidden"></div>
+            <div class="meta-right">
+                <span class="article-date"></span>
             </div>
+        </div>
 
-            <!-- Image + Date -->
-            <div class="form-row mt-12">
-                <div class="form-col">
-                    <label for="image">Feature Image</label>
-                    <input id="image" name="image" type="file" accept="image/*" />
-                    <div id="imageHelp" class="small">Allowed: JPG, JPEG, PNG, WEBP, GIF • Max 3 MB</div>
-                    <div id="imageError" class="error hidden"></div>
-                    <img id="imagePreview" class="preview-img hidden" alt="Image preview" />
+        <!-- Full Content -->
+        <div class="article-content">
+            <p id="article-text"></p>
+            <button id="read-more-btn" class="read-more-btn">Read More</button>
+        </div>
+
+        <!-- Related Articles -->
+        <section class="related-articles">
+            <h2>Related Articles</h2>
+            <div class="swiper related-swiper">
+                <div class="swiper-wrapper" id="related-articles-container">
+                    <!-- Related article cards will be injected dynamically -->
                 </div>
-
-                <div class="form-col">
-                    <label for="date">Publication Date</label>
-                    <input id="date" name="date" type="date" required />
-                    <div id="dateError" class="error hidden"></div>
-                </div>
+                <!-- Controls -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-prev"></div>
+                <div class="swiper-button-next"></div>
             </div>
-
-            <!-- Actions -->
-            <div class="form-actions">
-                <button type="submit" id="submitBtn" class="btn">Post</button>
-                <button type="button" id="resetBtn" class="btn secondary">Reset</button>
-                <div id="formFeedback" class="form-feedback small"></div>
-            </div>
-        </form>
+            <a href="category.php?cat=All" class="check-more-art">Check More Articles</a>
+        </section>
     </main>
 
-    <!-- Footer (unchanged) -->
+    <!-- Footer section -->
     <footer class="footer">
         <div class="container footer-container">
             <h2 class="footer-title">NileNotes - Personal Blog CMS</h2>
             <div class="footer-links">
                 <a href="index.html" class="footer-link">Home</a>
                 <a href="category.php?cat=All" class="footer-link">Categories</a>
-                <a href="submitPost.html" class="footer-link">Create a Post</a>
-                <a href="contact.html" class="footer-link">Contact</a>
+                <a href="submitPost.php" class="footer-link">Create a
+                    Post</a>
+                <a href="contact.php" class="footer-link">Contact</a>
             </div>
-            <p class="footer-text">NileNotes is a personal blog CMS designed to share stories and articles on various
-                topics. Join our community and start sharing your thoughts today!</p>
+            <p class="footer-text">NileNotes is a personal blog CMS
+                designed to share stories and articles on various
+                topics. <br>Join our community and start sharing your thoughts today!</p>
             <p class="footer-text">For inquiries, please contact us at <a
-                    href="mailto:ahmed.hafez101112131415@gmail.com" class="footer-link">NileNotes@GMAIL</a></p>
+                    href="mailto:ahmed.hafez101112131415@gmail.com" class="footer-link">NileNotes@GMAIL</a>
+
+            </p>
             <div class="footer-bottom">
                 <div class="footer-left">
                     <p class="footer-credit">Designed by <a href="https://ahmedhafezoffic.netlify.app/" target="_blank"
-                            class="footer-link">Ahmed Hafez</a></p>
+                            class="footer-link">Ahmed
+                            Hafez</a></p>
                     <p class="footer-social">Follow us on:
-                        <a href="#" class="footer-link">Github</a> |
+                        <a href="" class="footer-link">Github</a> |
                         <a href="https://www.linkedin.com/in/ahmedhafez247/" class="footer-link">LinkedIn</a> |
                         <a href="https://www.facebook.com/profile.php?id=100005116839262"
                             class="footer-link">Facebook</a> |
@@ -192,15 +202,17 @@
         </div>
     </footer>
 
-    <!-- vendor scripts -->
+    <!-- Swiper JS -->
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- AOS Scroll Animation JS -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <!-- Font Awesome JS -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js"
         integrity="sha512-6BTOlkauINO65nLhXhthZMtepgJSghyimIalb+crKRPhvhmsCdnIuGcVbR5/aQY2A+260iC1OPy1oCdB6pSSwQ=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-
-    <!-- Page scripts (module) -->
-    <script type="module" src="js/submitPost.js"></script>
+    <!-- Link to JavaScript file -->
+    <script type="module" src="js/singlePage.js"></script>
+    <!-- <script src="js/main.js"></script> -->
 </body>
 
 </html>

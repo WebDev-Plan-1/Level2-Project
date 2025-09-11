@@ -38,7 +38,7 @@ export const sortFilter = document.querySelector("#sort-filter");
 
 //============= Single Page constants ============ //
 
-// Extract article ID from URL (ex: single.html?id=3)
+// Extract article ID from URL (ex: single.php?id=3)
 export const urlParams = new URLSearchParams(window.location.search);
 export const articleId = parseInt(urlParams.get("id"));
 
@@ -135,12 +135,83 @@ function initSearchBar() {
     if (!query) return;
 
     // Save the keywork in local storage or in a query string parameter
-    window.location.href = `searchPosts.html?query=${encodeURIComponent(
-      query
-    )}`;
+    window.location.href = `searchPosts.php?query=${encodeURIComponent(query)}`;
   });
 }
 
+function isAuthenticated() {
+  return !!localStorage.getItem("currentUser");
+}
+
+function getCurrentUser() {
+  const user = localStorage.getItem("currentUser");
+  return user ? JSON.parse(user) : null;
+}
+
+function logoutUser() {
+  // Call server to clear PHP session
+  fetch("php/logout.php", {
+    method: "POST",
+    credentials: "same-origin",
+  }).finally(() => {
+    // Always clear client-side data
+    localStorage.removeItem("currentUser");
+    window.location.href = "auth.html";
+  });
+}
+
+function renderNavbar() {
+  const navLinks = document.getElementById("navLinks");
+  const navActions = document.querySelector(".nav-actions");
+
+  navLinks.innerHTML = ""; // Delete Old
+  navActions.querySelectorAll(".auth-control")?.forEach((el) => el.remove()); // Delete Old Buttons
+
+  if (!isAuthenticated()) {
+    // ------- Before Login -------
+    navLinks.innerHTML = `
+      <a href="index.html" class="nav-link-item">Home</a>
+      <a href="about.html" class="nav-link-item">About</a>
+    `;
+
+    // SignUp/Login link
+    const loginLink = document.createElement("a");
+    loginLink.href = "auth.html";
+    loginLink.className = "nav-link-item auth-control";
+    loginLink.textContent = "Sign Up / Login";
+    navLinks.appendChild(loginLink);
+  } else {
+    // ------- After Login -------
+    const user = getCurrentUser();
+
+    navLinks.innerHTML = `
+      <a href="index.html" class="nav-link-item">Home</a>
+      <a href="about.html" class="nav-link-item">About</a>
+      <a href="category.php?cat=All" class="nav-link-item">Categories</a>
+      <a href="submitPost.php" class="nav-link-item">Create a Post</a>
+      <a href="contact.php" class="nav-link-item">Contact Us</a>
+    `;
+
+    // Dropdown with logout
+    const userMenu = document.createElement("div");
+    userMenu.className = "auth-control user-dropdown";
+    // Use fullname if present, fall back to fullName or username
+    const displayName =
+      (user && (user.fullname || user.fullName || user.username)) || "User";
+    userMenu.innerHTML = `
+      <button class="user-btn">${displayName} ▾</button>
+      <div class="dropdown-menu">
+        <button id="logoutBtn">Logout</button>
+      </div>
+    `;
+    navActions.appendChild(userMenu);
+
+    // Logout functionality
+    document.getElementById("logoutBtn").addEventListener("click", () => {
+      logoutUser();
+    });
+  }
+}
 // Initialize Navbar functionality
 // including hamburger toggle and active link highlighting
 // and preserving active state across reloads, and responsive scroll handling
@@ -220,8 +291,8 @@ export function initNavbar() {
   window.addEventListener("resize", toggleNavScroll);
   setActiveNavLink();
   initSearchBar();
+  renderNavbar();
 }
-
 /* =============================================
    ################# lazy-loader.js 
    (or inside main.js) ####################

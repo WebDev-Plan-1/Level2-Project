@@ -3,6 +3,6 @@
 session_start();
 if (empty($_SESSION['user'])) {
     // redirect to auth (signup/login) page
-    header('Location: /auth.html');
+    header('Location: auth.html');
     exit;
 }

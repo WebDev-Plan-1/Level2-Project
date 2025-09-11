@@ -345,7 +345,7 @@ form.addEventListener("submit", async (e) => {
       feedback.textContent = "Article submitted successfully!";
       feedback.className = "success";
       // Optionally redirect to the new article page:
-      // window.location.href = `single.html?id=${json.id}`;
+      // window.location.href = `single.php?id=${json.id}`;
       form.reset();
       hide(imagePreview);
       setTodayDate();

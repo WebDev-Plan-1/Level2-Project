@@ -34,7 +34,7 @@
 @use "base/categories"; // for index.html categories overview section
 @use "base/footer"; // for footer section (used site-wide)
 @use "base/_categoryPage"; // for category.php page
-@use "base/singlePage"; // for single.html page
-@use "base/searchPosts"; // for searchPosts.html page
-@use "base/submitPost"; // for submitPost.html Page
+@use "base/singlePage"; // for single.php page
+@use "base/searchPosts"; // for searchPosts.php page
+@use "base/submitPost"; // for submitPost.php Page
 @use "base/auth"; // for auth.html Page

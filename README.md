@@ -123,8 +123,8 @@ Level2-Project/
 │
 ├── index.html
 ├── category.php
-├── single.html
-├── contact.html
+├── single.php
+├── contact.php
 └── README.md
 
 ---
