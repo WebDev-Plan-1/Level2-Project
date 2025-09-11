@@ -12075,7 +12075,7 @@ a:hover {
   justify-content: center;
   background-color: var(--color-primary);
   opacity: 0.4;
-  color: var(--color-surface);
+  color: var(--color-text);
   box-shadow: 0 6px 18px var(--color-shadow);
   cursor: pointer;
   outline: none;
@@ -12096,7 +12096,7 @@ a:hover {
   opacity: 1;
 }
 .theme-toggle[aria-pressed=true] {
-  color: var(--color-surface);
+  color: var(--color-text);
   background-color: var(--color-primary);
 }
 @media (max-width: 560px) {

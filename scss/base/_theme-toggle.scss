@@ -34,7 +34,7 @@
     background-color: var(--color-primary);
     opacity: 0.4;
     //iconcolorusessurface
-    color: var(--color-surface);
+    color: var(--color-text);
     //subtleshadow
     box-shadow: 0 6px 18px var(--color-shadow);
     //pointer
@@ -82,7 +82,7 @@
     // when in dark mode, optionally change icon color/background
     // This allows visible contrast automatic via CSS variables
     &[aria-pressed="true"] {
-        color: var(--color-surface);
+        color: var(--color-text);
         background-color: var(--color-primary);
     }
 
