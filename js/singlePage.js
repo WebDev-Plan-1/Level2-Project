@@ -183,9 +183,18 @@ fetch("data/articles.json")
 
 // ================== //
 // Initialize navbar and fetch articles on DOMContentLoaded
-document.addEventListener("DOMContentLoaded", () => {
-  initNavbar();
-  initTheme();
+document.addEventListener("DOMContentLoaded", async () => {
+  // --- Safe init of optional functions (in case exports don't exist) ---
+  try {
+    if (typeof initNavbar === "function") await initNavbar();
+  } catch (e) {
+    /* ignore */
+  }
+  try {
+    if (typeof initTheme === "function") initTheme();
+  } catch (e) {
+    /* ignore */
+  }
 });
 
 /* =============================================

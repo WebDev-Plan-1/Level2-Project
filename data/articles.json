@@ -6,7 +6,10 @@
         "content": "Technology in 2025 is set to be defined by rapid advancements in artificial intelligence, sustainable innovations, and immersive digital experiences. Discover how emerging trends like quantum computing, smart automation, and next-gen connectivity will reshape industries and everyday life.",
         "image": "assets\/images\/tech_trends.jpeg",
         "date": "2025-08-01",
-        "views": 11234
+        "views": 11234,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 2,
@@ -15,7 +18,10 @@
         "content": "Living a healthy lifestyle is essential for overall well-being. From diets to regular exercise, discover practical tips and expert advice on how to maintain a balanced life. Learn about mental health, wellness practices, and the importance of self-care.",
         "image": "assets\/images\/healthy_life.jpeg",
         "date": "2025-07-15",
-        "views": 85342
+        "views": 85342,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 3,
@@ -24,7 +30,10 @@
         "content": "Travel opens up a world of adventure and discovery. From vibrant cities to tranquil retreats, explore our curated list of top travel destinations. Get inspired by cultural experiences, culinary delights, and breathtaking sights that await you around the globe.",
         "image": "assets\/images\/travel_adventure.jpeg",
         "date": "2025-06-20",
-        "views": 7240998
+        "views": 7240998,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 4,
@@ -33,7 +42,10 @@
         "content": "Nature's beauty is unparalleled, from majestic mountains to beaches. Join us as we explore breathtaking landscapes, discover hidden gems, and learn how to protect our planet for future generations.",
         "image": "assets\/images\/nature_exploring.jpeg",
         "date": "2025-05-30",
-        "views": 612360
+        "views": 612360,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 5,
@@ -42,7 +54,10 @@
         "content": "Education is evolving rapidly with technology. Discover how online learning, virtual classrooms, and AI-driven tools are transforming the educational landscape. Explore innovative teaching methods, lifelong learning opportunities, and the future skills needed for success.",
         "image": "assets\/images\/education_future.jpeg",
         "date": "2025-04-10",
-        "views": 95420
+        "views": 95420,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 6,
@@ -51,7 +66,10 @@
         "content": "Food is a universal language that brings people together. Explore diverse cuisines, cooking techniques, and recipes from around the world. From street food to gourmet dining, embark on a culinary journey that tantalizes your taste buds.",
         "image": "assets\/images\/Culinary Delights from Around the World.webp",
         "date": "2025-03-25",
-        "views": 117203
+        "views": 117203,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 7,
@@ -60,7 +78,10 @@
         "content": "Mindfulness is the practice of being present in the moment. Learn techniques to cultivate mindfulness in your daily life, reduce stress, and enhance your overall well-being. Discover the benefits of meditation, deep breathing, and mindful living.",
         "image": "assets\/images\/The Art of Mindfulness.jpeg",
         "date": "2025-02-14",
-        "views": 7367
+        "views": 7367,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 8,
@@ -69,7 +90,10 @@
         "content": "Renewable energy is crucial for a sustainable future. Explore the latest innovations in solar, wind, and hydroelectric power. Learn about cutting-edge technologies, government initiatives, and how individuals can contribute to a greener planet.",
         "image": "assets\/images\/Innovations in Renewable Energy.jpg",
         "date": "2025-01-05",
-        "views": 1420
+        "views": 1420,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 9,
@@ -78,7 +102,10 @@
         "content": "Personal finance is key to achieving financial freedom. Discover strategies for budgeting, saving, investing, and managing debt. Learn how to set financial goals, plan for retirement, and make informed decisions about your money.",
         "image": "assets\/images\/Mastering Personal Finance.jpg",
         "date": "2024-12-20",
-        "views": 860000
+        "views": 860000,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 10,
@@ -87,7 +114,10 @@
         "content": "Social media has transformed how we connect and communicate. Explore the evolution of social platforms, emerging trends, and the impact on society. Learn about digital marketing strategies, influencer culture, and the future of online interaction.",
         "image": "assets\/images\/The Evolution of Social Media.png",
         "date": "2024-11-10",
-        "views": 2400000
+        "views": 2400000,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 11,
@@ -96,7 +126,10 @@
         "content": "Space exploration is entering a new era with missions to Mars, lunar bases, and private space travel. Discover the latest advancements in space technology, international collaborations, and the quest to understand our universe.",
         "image": "assets\/images\/Advancements in Space Exploration.jpeg",
         "date": "2024-09-01",
-        "views": 3200
+        "views": 3200,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 12,
@@ -105,7 +138,10 @@
         "content": "Positive thinking can transform your life. Learn how to cultivate a positive mindset, overcome challenges, and achieve your goals. Discover techniques for building resilience, practicing gratitude, and fostering optimism.",
         "image": "assets\/images\/The Power of Positive Thinking.webp",
         "date": "2024-10-15",
-        "views": 115000000
+        "views": 115000000,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 13,
@@ -114,7 +150,10 @@
         "content": "Urban gardening is a growing trend that allows city dwellers to cultivate their own green spaces. Learn how to start a garden in small spaces, from balconies to rooftops. Discover tips for selecting plants, soil preparation, and sustainable gardening practices.",
         "image": "assets\/images\/Urban Gardening.jpg",
         "date": "2024-08-22",
-        "views": 45000
+        "views": 45000,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 14,
@@ -123,7 +162,10 @@
         "content": "Climate change is one of the most pressing issues of our time. Explore the causes and effects of climate change, as well as strategies for mitigation and adaptation. Learn about global initiatives, renewable energy solutions, and how individuals can make a difference.",
         "image": "assets\/images\/The Impact of Climate Change.jpg",
         "date": "2024-07-30",
-        "views": 670000
+        "views": 670000,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 15,
@@ -132,7 +174,10 @@
         "content": "Photography is a powerful medium for storytelling and self-expression. Discover techniques for capturing stunning images, from composition to lighting. Explore different styles of photography, post-processing tips, and how to build a successful photography career.",
         "image": "assets\/images\/The Art of Photography.jpg",
         "date": "2024-06-18",
-        "views": 9800
+        "views": 9800,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 16,
@@ -141,7 +186,10 @@
         "content": "Quantum computing is revolutionizing data processing and security. Explore the latest breakthroughs and their impact on industries.",
         "image": "https:\/\/images.unsplash.com\/photo-1519389950473-47ba0277781c",
         "date": "2025-09-01",
-        "views": 12000
+        "views": 12000,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 17,
@@ -150,7 +198,10 @@
         "content": "Artificial intelligence is now part of our daily routines. Discover how AI is transforming homes, workplaces, and cities.",
         "image": "https:\/\/images.unsplash.com\/photo-1506744038136-46273834b3fb",
         "date": "2025-08-15",
-        "views": 9500
+        "views": 9500,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 18,
@@ -159,7 +210,10 @@
         "content": "Smart cities use technology to improve urban living. Learn about IoT, data analytics, and sustainable infrastructure.",
         "image": "assets\/images\/The Rise of Smart Cities.jpg",
         "date": "2025-07-30",
-        "views": 8700
+        "views": 8700,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 19,
@@ -168,7 +222,10 @@
         "content": "Stay ahead of cyber threats with the latest trends in cybersecurity, including AI-driven protection and blockchain security.",
         "image": "https:\/\/images.unsplash.com\/photo-1510511459019-5dda7724fd87",
         "date": "2025-07-10",
-        "views": 11000
+        "views": 11000,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 20,
@@ -177,7 +234,10 @@
         "content": "Wearable technology is enhancing health and productivity. Explore new devices and their applications.",
         "image": "assets\/images\/Wearable Tech Innovations.jpeg",
         "date": "2025-06-25",
-        "views": 7800
+        "views": 7800,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 21,
@@ -186,7 +246,10 @@
         "content": "5G networks are changing connectivity. Discover what\u2019s next for mobile technology and internet speeds.",
         "image": "assets\/images\/5G and Beyond.webp",
         "date": "2025-06-10",
-        "views": 9900
+        "views": 9900,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 22,
@@ -195,7 +258,10 @@
         "content": "VR is transforming how we learn. See how immersive experiences are used in classrooms and training.",
         "image": "https:\/\/images.unsplash.com\/photo-1517694712202-14dd9538aa97",
         "date": "2025-05-28",
-        "views": 6500
+        "views": 6500,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 23,
@@ -204,7 +270,10 @@
         "content": "Blockchain technology is finding new uses beyond cryptocurrencies. Explore its impact on supply chains and security.",
         "image": "https:\/\/images.unsplash.com\/photo-1504384308090-c894fdcc538d",
         "date": "2025-05-10",
-        "views": 7200
+        "views": 7200,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 24,
@@ -213,7 +282,10 @@
         "content": "Robots are revolutionizing manufacturing and logistics. Learn about the latest advancements in industrial robotics.",
         "image": "https:\/\/images.unsplash.com\/photo-1518770660439-4636190af475",
         "date": "2025-04-22",
-        "views": 8100
+        "views": 8100,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 25,
@@ -222,7 +294,10 @@
         "content": "Cloud computing is powering modern businesses. Discover new trends in cloud services and data management.",
         "image": "https:\/\/www.gyansetu.in\/wp-content\/uploads\/2024\/02\/2022_04_Add-a-heading-1-1200x675.jpg",
         "date": "2025-04-05",
-        "views": 7300
+        "views": 7300,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 26,
@@ -231,7 +306,10 @@
         "content": "Smart home devices are making life easier. Explore the latest in home automation and security.",
         "image": "https:\/\/images.unsplash.com\/photo-1519125323398-675f0ddb6308",
         "date": "2025-03-20",
-        "views": 6700
+        "views": 6700,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 27,
@@ -240,7 +318,10 @@
         "content": "Technology is helping create a sustainable future. Learn about green tech innovations and eco-friendly solutions.",
         "image": "assets\/images\/Tech for Sustainability.jpg",
         "date": "2025-03-05",
-        "views": 8000
+        "views": 8000,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 28,
@@ -249,7 +330,10 @@
         "content": "AR is changing the shopping experience. Discover how retailers use AR for customer engagement.",
         "image": "https:\/\/images.unsplash.com\/photo-1517694712202-14dd9538aa97",
         "date": "2025-02-18",
-        "views": 6200
+        "views": 6200,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 29,
@@ -258,7 +342,10 @@
         "content": "Meet the tech startups that are shaping the future. Explore their innovations and growth stories.",
         "image": "assets\/images\/Tech Startups to Watch.png",
         "date": "2025-02-01",
-        "views": 9100
+        "views": 9100,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 30,
@@ -267,7 +354,10 @@
         "content": "Mars missions are closer than ever. Learn about the technology and challenges of reaching the Red Planet.",
         "image": "assets\/images\/Journey to Mars.jpg",
         "date": "2025-01-15",
-        "views": 10500
+        "views": 10500,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 31,
@@ -276,7 +366,10 @@
         "content": "Black holes are among the universe\u2019s greatest mysteries. Discover recent discoveries and theories.",
         "image": "https:\/\/images.unsplash.com\/photo-1462331940025-496dfbfc7564",
         "date": "2025-01-01",
-        "views": 9800
+        "views": 9800,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 32,
@@ -285,7 +378,10 @@
         "content": "Life aboard the ISS is unique. Explore daily routines, experiments, and international cooperation.",
         "image": "https:\/\/images.unsplash.com\/photo-1465101046530-73398c7f28ca",
         "date": "2024-12-15",
-        "views": 8700
+        "views": 8700,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 33,
@@ -294,7 +390,10 @@
         "content": "Space telescopes are revealing new worlds. Learn about the latest missions and discoveries.",
         "image": "https:\/\/images.unsplash.com\/photo-1462331940025-496dfbfc7564",
         "date": "2024-12-01",
-        "views": 9400
+        "views": 9400,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 34,
@@ -303,7 +402,10 @@
         "content": "Women are making history in space exploration. Discover their achievements and future missions.",
         "image": "assets\/images\/Women in Space.jpg",
         "date": "2024-11-15",
-        "views": 7600
+        "views": 7600,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 35,
@@ -312,7 +414,10 @@
         "content": "Scientists are searching for planets beyond our solar system. Explore the methods and discoveries.",
         "image": "https:\/\/images.unsplash.com\/photo-1462331940025-496dfbfc7564",
         "date": "2024-11-01",
-        "views": 8200
+        "views": 8200,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 36,
@@ -321,7 +426,10 @@
         "content": "Space tourism is becoming a reality. Learn about companies and technology making it possible.",
         "image": "https:\/\/images.unsplash.com\/photo-1465101046530-73398c7f28ca",
         "date": "2024-10-15",
-        "views": 9900
+        "views": 9900,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 37,
@@ -330,7 +438,10 @@
         "content": "Street food offers a taste of local culture. Explore popular street foods from different countries.",
         "image": "https:\/\/images.unsplash.com\/photo-1504674900247-0877df9cc836",
         "date": "2024-10-01",
-        "views": 12000
+        "views": 12000,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 38,
@@ -339,7 +450,10 @@
         "content": "Baking is both science and art. Discover tips, recipes, and trends in the world of baking.",
         "image": "assets\/images\/The Art of Baking.webp",
         "date": "2024-09-15",
-        "views": 9500
+        "views": 9500,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 39,
@@ -348,7 +462,10 @@
         "content": "Start your day right with healthy breakfast recipes and nutrition tips.",
         "image": "https:\/\/images.unsplash.com\/photo-1504674900247-0877df9cc836",
         "date": "2024-09-01",
-        "views": 8700
+        "views": 8700,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 40,
@@ -357,7 +474,10 @@
         "content": "Explore the latest trends in global cuisine and how chefs are innovating traditional dishes.",
         "image": "https:\/\/images.unsplash.com\/photo-1517841905240-472988babdf9",
         "date": "2024-08-15",
-        "views": 11000
+        "views": 11000,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 41,
@@ -366,7 +486,10 @@
         "content": "Vegetarian cuisine is delicious and healthy. Discover recipes and tips for plant-based eating.",
         "image": "https:\/\/www.golcondachimney.com\/wp-content\/uploads\/2024\/03\/vegetarian-delights-1200x900.png",
         "date": "2024-08-01",
-        "views": 7800
+        "views": 7800,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 42,
@@ -375,7 +498,10 @@
         "content": "Egyptian desserts are rich in flavor and tradition. Explore recipes and stories behind classic sweets.",
         "image": "https:\/\/images.unsplash.com\/photo-1502082553048-f009c37129b9",
         "date": "2024-07-15",
-        "views": 9900
+        "views": 9900,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 43,
@@ -384,7 +510,10 @@
         "content": "Coffee brings people together. Discover coffee traditions and brewing methods from around the world.",
         "image": "https:\/\/images.unsplash.com\/photo-1515378791036-0648a3ef77b2",
         "date": "2024-07-01",
-        "views": 6500
+        "views": 6500,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 44,
@@ -393,7 +522,10 @@
         "content": "Modern Egyptian chefs are reinventing classic dishes. Learn about new flavors and culinary techniques.",
         "image": "https:\/\/images.unsplash.com\/photo-1506744038136-46273834b3fb",
         "date": "2024-06-15",
-        "views": 7200
+        "views": 7200,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 45,
@@ -402,7 +534,10 @@
         "content": "Capture stunning food photos with these tips on lighting, composition, and styling.",
         "image": "assets\/images\/Food Photography Tips.webp",
         "date": "2024-06-01",
-        "views": 8100
+        "views": 8100,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 46,
@@ -411,7 +546,10 @@
         "content": "Explore how viral content spreads across platforms and the strategies behind creating shareable posts.",
         "image": "https:\/\/images.unsplash.com\/photo-1515378791036-0648a3ef77b2",
         "date": "2025-05-01",
-        "views": 12000
+        "views": 12000,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 47,
@@ -420,7 +558,10 @@
         "content": "Discover the latest trends in influencer marketing and how brands collaborate with creators.",
         "image": "https:\/\/images.unsplash.com\/photo-1517841905240-472988babdf9",
         "date": "2025-05-02",
-        "views": 9800
+        "views": 9800,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 48,
@@ -429,7 +570,10 @@
         "content": "Learn how to build a strong personal brand and grow your audience on social platforms.",
         "image": "https:\/\/images.unsplash.com\/photo-1465101046530-73398c7f28ca",
         "date": "2025-05-03",
-        "views": 8700
+        "views": 8700,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 49,
@@ -438,7 +582,10 @@
         "content": "Understand how algorithms work on major platforms and how to optimize your content for reach.",
         "image": "https:\/\/images.unsplash.com\/photo-1504384308090-c894fdcc538d",
         "date": "2025-05-04",
-        "views": 11000
+        "views": 11000,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 50,
@@ -447,7 +594,10 @@
         "content": "Short-form video is dominating feeds. Explore the impact of TikTok, Reels, and Shorts.",
         "image": "https:\/\/images.unsplash.com\/photo-1519125323398-675f0ddb6308",
         "date": "2025-05-05",
-        "views": 7800
+        "views": 7800,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 51,
@@ -456,7 +606,10 @@
         "content": "Learn how businesses use social media to reach customers, build loyalty, and drive sales.",
         "image": "https:\/\/media.licdn.com\/dms\/image\/v2\/D4D12AQEDD5S_kDTf3Q\/article-cover_image-shrink_600_2000\/article-cover_image-shrink_600_2000\/0\/1698838121119?e=2147483647&v=beta&t=E9_Z9FsE8uyLGmqYFv-YCV23VqpPh91fklT6DaWaNlc",
         "date": "2025-05-06",
-        "views": 9900
+        "views": 9900,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 52,
@@ -465,7 +618,10 @@
         "content": "Tips for building and managing engaged online communities on Facebook, Discord, and more.",
         "image": "https:\/\/images.unsplash.com\/photo-1517694712202-14dd9538aa97",
         "date": "2025-05-07",
-        "views": 6500
+        "views": 6500,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 53,
@@ -474,7 +630,10 @@
         "content": "Discover the best tools for tracking engagement, reach, and growth on social platforms.",
         "image": "https:\/\/images.unsplash.com\/photo-1506744038136-46273834b3fb",
         "date": "2025-05-08",
-        "views": 7200
+        "views": 7200,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 54,
@@ -483,7 +642,10 @@
         "content": "Memes shape online culture. Learn how they influence trends and communication.",
         "image": "https:\/\/images.unsplash.com\/photo-1502082553048-f009c37129b9",
         "date": "2025-05-09",
-        "views": 8100
+        "views": 8100,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 55,
@@ -492,7 +654,10 @@
         "content": "Protect your privacy online with tips for managing settings and understanding data policies.",
         "image": "https:\/\/images.unsplash.com\/photo-1510511459019-5dda7724fd87",
         "date": "2025-05-10",
-        "views": 7300
+        "views": 7300,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 56,
@@ -501,7 +666,10 @@
         "content": "Explore the effects of social media on mental health and strategies for healthy usage.",
         "image": "https:\/\/electroiq.com\/wp-content\/uploads\/2025\/01\/Social-Media-Mental-Health-Statistics.jpg",
         "date": "2025-05-11",
-        "views": 6700
+        "views": 6700,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 57,
@@ -510,7 +678,10 @@
         "content": "Live streaming is changing content creation. Discover success stories and tips for going live.",
         "image": "https:\/\/images.unsplash.com\/photo-1518770660439-4636190af475",
         "date": "2025-05-12",
-        "views": 8000
+        "views": 8000,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 58,
@@ -519,7 +690,10 @@
         "content": "See how social platforms are used for activism, awareness, and social change.",
         "image": "https:\/\/images.unsplash.com\/photo-1504384308090-c894fdcc538d",
         "date": "2025-05-13",
-        "views": 6200
+        "views": 6200,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 59,
@@ -528,7 +702,10 @@
         "content": "Hashtags help organize and discover content. Learn about their history and best practices.",
         "image": "https:\/\/images.unsplash.com\/photo-1519125323398-675f0ddb6308",
         "date": "2025-05-14",
-        "views": 9100
+        "views": 9100,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 60,
@@ -537,7 +714,10 @@
         "content": "Master the dos and don\u2019ts of online interaction for positive and respectful engagement.",
         "image": "https:\/\/images.unsplash.com\/photo-1465101046530-73398c7f28ca",
         "date": "2025-05-15",
-        "views": 10500
+        "views": 10500,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 61,
@@ -546,7 +726,10 @@
         "content": "Instagram Stories have changed how we share moments. Explore creative uses and marketing tips.",
         "image": "https:\/\/www.thereelstars.com\/wp-content\/uploads\/2025\/08\/ArticleCover_TRS_-41-1000x600.jpg",
         "date": "2025-05-16",
-        "views": 9800
+        "views": 9800,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 62,
@@ -555,7 +738,10 @@
         "content": "Twitter threads allow for deeper storytelling. Learn how to craft engaging threads.",
         "image": "https:\/\/images.unsplash.com\/photo-1462331940025-496dfbfc7564",
         "date": "2025-05-17",
-        "views": 8700
+        "views": 8700,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 63,
@@ -564,7 +750,10 @@
         "content": "Facebook Groups foster community and discussion. Discover tips for growing and moderating groups.",
         "image": "https:\/\/images.unsplash.com\/photo-1517841905240-472988babdf9",
         "date": "2025-05-18",
-        "views": 9400
+        "views": 9400,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 64,
@@ -573,7 +762,10 @@
         "content": "LinkedIn is the go-to platform for professionals. Learn how to network and build your career.",
         "image": "https:\/\/images.unsplash.com\/photo-1515378791036-0648a3ef77b2",
         "date": "2025-05-19",
-        "views": 7600
+        "views": 7600,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 65,
@@ -582,7 +774,10 @@
         "content": "Snapchat offers unique ways to connect. Explore its features and creative uses.",
         "image": "https:\/\/scx2.b-cdn.net\/gfx\/news\/2017\/1-snapchat.jpg",
         "date": "2025-05-20",
-        "views": 8200
+        "views": 8200,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 66,
@@ -591,7 +786,10 @@
         "content": "Pinterest is a hub for inspiration and ideas. Learn how to use boards for creativity and marketing.",
         "image": "https:\/\/images.unsplash.com\/photo-1506744038136-46273834b3fb",
         "date": "2025-05-21",
-        "views": 9900
+        "views": 9900,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 67,
@@ -600,7 +798,10 @@
         "content": "Grow your YouTube channel with tips on content, engagement, and analytics.",
         "image": "https:\/\/images.unsplash.com\/photo-1519125323398-675f0ddb6308",
         "date": "2025-05-22",
-        "views": 12000
+        "views": 12000,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 68,
@@ -609,7 +810,10 @@
         "content": "Scheduling tools help manage posts and campaigns. Discover the best options for creators and brands.",
         "image": "https:\/\/images.unsplash.com\/photo-1518770660439-4636190af475",
         "date": "2025-05-23",
-        "views": 9500
+        "views": 9500,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 69,
@@ -618,7 +822,10 @@
         "content": "Brands use social media for customer service. Learn best practices for fast and helpful responses.",
         "image": "https:\/\/images.unsplash.com\/photo-1504384308090-c894fdcc538d",
         "date": "2025-05-24",
-        "views": 8700
+        "views": 8700,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 70,
@@ -627,7 +834,10 @@
         "content": "Emojis add emotion and clarity to messages. Explore their role in digital communication.",
         "image": "https:\/\/images.unsplash.com\/photo-1510511459019-5dda7724fd87",
         "date": "2025-05-25",
-        "views": 11000
+        "views": 11000,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 71,
@@ -636,7 +846,10 @@
         "content": "Explore the latest social media trends and platforms popular in Egypt.",
         "image": "https:\/\/images.unsplash.com\/photo-1502082553048-f009c37129b9",
         "date": "2025-05-26",
-        "views": 7800
+        "views": 7800,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 72,
@@ -645,7 +858,10 @@
         "content": "Social platforms are changing how we consume news. Learn about their impact on journalism.",
         "image": "https:\/\/pressgazette.co.uk\/wp-content\/uploads\/sites\/7\/2023\/10\/shutterstock_435654307.jpg",
         "date": "2025-05-27",
-        "views": 9900
+        "views": 9900,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 73,
@@ -654,7 +870,10 @@
         "content": "Challenges and trends keep users engaged. Discover the most popular social media challenges.",
         "image": "https:\/\/images.unsplash.com\/photo-1517694712202-14dd9538aa97",
         "date": "2025-05-28",
-        "views": 6500
+        "views": 6500,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 74,
@@ -663,7 +882,10 @@
         "content": "Promote and manage events using social media tools and strategies.",
         "image": "https:\/\/images.unsplash.com\/photo-1517841905240-472988babdf9",
         "date": "2025-05-29",
-        "views": 7200
+        "views": 7200,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 75,
@@ -672,7 +894,10 @@
         "content": "E-commerce is booming on social platforms. Learn how to sell and market products online.",
         "image": "https:\/\/images.unsplash.com\/photo-1515378791036-0648a3ef77b2",
         "date": "2025-05-30",
-        "views": 8100
+        "views": 8100,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 76,
@@ -681,7 +906,10 @@
         "content": "Hello, and welcome to my blog! This is my very first post, and I\u2019m excited to start sharing my thoughts and ideas with you all. And if you don\u2019t find my jokes funny, don\u2019t worry, I\u2019m a software developer, not a comedian.\r\n\r\nFirst things first: let me introduce myself. My name is Franklin Osei, and I\u2019m a Software Developer. I\u2019m passionate about Software Engineering, and I\u2019m always looking for new ways to learn and grow in my field.\r\n\r\nI\u2019m writing these blogs as a way to share my experiences and insights with others. I believe that blogging is a great way to connect with like-minded people, share ideas, and inspire others. Plus, it\u2019s a great way to improve my writing skills and express my creativity.\r\n\r\nNow, I have to admit that I\u2019m a bit nervous about starting this blog. It\u2019s a big step for me, and I\u2019m still learning the ropes. But I\u2019m also excited about the possibilities. I can\u2019t wait to start sharing my knowledge, experiences, and insights with you all.\r\n\r\nWhat to expect?\r\nSo, what can you expect from this blog? Well, I plan to write about a wide range of topics related to Software Engineering. I\u2019ll share my thoughts on industry trends, discuss the latest tools and technologies, and share tips and advice based on my own experiences.\r\n\r\nI\u2019ll also share my personal journey and the challenges I\u2019ve faced along the way. I hope that by sharing my experiences, I can inspire others to pursue their passions and achieve their goals.\r\n\r\nIn short, I\u2019m here to share my story, my ideas, and my passion with you all. I hope that you\u2019ll join me on this journey, and I promise to make it worth your while. So, keep an eye out for exciting content from me in the coming weeks and months!\r\n\r\nThank you for reading, and I look forward to connecting with you all soon.",
         "image": "assets\/images\/img_68c07761e07471.14014584.png",
         "date": "2025-07-24",
-        "views": 3181
+        "views": 3181,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 77,
@@ -690,7 +918,10 @@
         "content": "Watching a programme on television recently about a day in the life of a busy Accident and Emergency department, I am moved to tears by the heartfelt and earnest opening remarks of an A and E consultant:\r\n\r\n\u2026tell your loved ones how much they mean to you because you never know what is going to happen to you that means you never get the chance again.\u201d\r\n\r\nThese are stark, emotionally charged words from someone who has witnessed the loss and grief of sudden tragic life-changing events all too often. \r\n\r\nTell them you love them.\r\nOur family has lived experience of this, with the sudden shocking death of a close family member only a few years ago. \r\n\r\nNo chance to say goodbye, no final words. No chance to receive their final wisdom or how-to-live-without-me thoughts. \r\n\r\nI have been musing here recently on death bed regrets. You can read more on that here.\r\n\r\nAnd this is another common one:\r\n\r\nWishing we had told others more often that we love them. \r\nWe all like to be appreciated, and if we are honest, sometimes our focus in a relationship can be receiving love and not on as much on giving it. \r\n\r\nEqually, with busy and full lives, we don\u2019t always take the time to communicate directly and specifically to those closest to us that we love them. We know in our heads that we are loved by those around us, and that we love and value them. \r\n\r\nHere\u2019s the thing though:\r\n\r\nHow often do we actually say it out loud?\r\nTo them. To their face. \r\n\r\nI know, I know, this is not a very Scottish thing to do at all. But like all things, it gets easier with practice.\r\n\r\nTaking those we love for granted erodes the joy in those relationships. And we risk running out of chances. I know that sounds morbid and doom-filled, but that is the reality of life. And we are not very good at talking about death. I have been to more funerals in the last few years than in all my combined years before that. Parents of friends, friends, and the heartbreaking funeral of the child of a friend. \r\n\r\nLife happens.",
         "image": "",
         "date": "2025-09-09",
-        "views": 790
+        "views": 790,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 78,
@@ -699,7 +930,10 @@
         "content": "After New York, Los Angeles and Chicago, the fight is on: locals make the case for the city that should be number four.\r\n\r\nThe United States is renowned for its iconic cities. New York City undoubtedly tops the list as the nation's largest city (8.5 million residents) and one of the world's great fashion, culture and finance capitals. Los Angeles comes in just behind, the US's second-most populous city and the centre of the film industry, gateway to beaches and laid-back lifestyles. The third-largest city, Chicago, was home to the world's first skyscraper and has long vied with New York in a race to build the world's tallest, most impressive buildings.\r\n\r\nWith the top three seemingly fixed, one question recently set social media aflame: what city deserves the US's fourth spot? Residents from across the country made their case, but a few consistently rose to the top \u2013 whether by population, tourism or historical importance. We asked locals what makes their city worthy of the title and why tourists should add it to their itineraries.\r\n\r\nThis centre of federal power was purposefully built to be separate from the states and serve as the nation's capital. Named after the first president, the city sits alongside the Potomac River and still reflects its early design by Peter Charles L'Enfant, anchored by The National Mall \u2013 the central stretch of federal buildings that includes Congress, Smithsonian museums and many of the US's most famous national memorials.",
         "image": "assets\/images\/img_68c08ae95a6339.29828647.webp",
         "date": "2025-05-20",
-        "views": 39
+        "views": 39,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 79,
@@ -708,7 +942,10 @@
         "content": "Articles about a \"Silent Life of the Sea\" can refer to the impact of noise pollution on marine ecosystems and the importance of sound to marine organisms, as seen in Smithsonian Ocean's \"The Ocean's Hidden Language\" and NIH's \"Noise in the Sea and Its Impacts on Marine Organisms\". It could also refer to The Oceanography Society's \"The Silent Deep\" about the deep sea's ecology and conservation, or even the Netflix series The Silent Sea. Additionally, other articles discuss the less obvious or \"silent\" threats, like plastic and ghost gear, and \"silent filters\" like sea sponges. \r\nNoise Pollution & Ocean Sound\r\n\"The Ocean's Hidden Language\"\r\nby Smithsonian Ocean highlights how anthropogenic (human-made) noise disrupts marine life, affecting communication, mating, and navigation, as well as influencing the settlement of larval fish onto coral reefs. \r\n\"Noise in the Sea and Its Impacts on Marine Organisms\"\r\nby the National Institutes of Health (NIH) details the effects of noise, such as auditory masking and damage to marine life, and calls for more research on less-studied species and juvenile individuals. \r\nMOTION Magazine's https:\/\/www.motion-mag.com\/articles\/how-the-sea \"How The Sea Went Silent\"\r\nis a recent article from July 2025 about the effect of noise pollution in the sea. \r\nDeep Sea Exploration \r\n\"The Silent Deep\": by The Oceanography Society describes the deep ocean as a new frontier, exploring its ecosystems and the impact of human activities on this previously \"silent\" world.\r\nSilent Threats\r\nIFAW's https:\/\/www.ifaw.org\/journal\/ghost-gear-the-silent-killer-of-whales-seals-and-sea-turtles \"Ghost gear: the silent killer\"\r\nfocuses on the less visible but deadly threat of discarded fishing gear and other debris that entangles and kills marine animals. \r\nVocal's https:\/\/vocal.media\/earth\/the-silent-filter-of-the-ocean-how-sea-sponges-sustain-marine-life \"The Silent Filter of the Ocean\"\r\ndiscusses sea sponges, emphasizing their crucial role in filtering water and sustaining marine life, despite their quiet and often unnoticed presence. \r\nEntertainment \r\nThe Silent Sea: is the title of a Netflix K-drama series known for its visually pleasing backdrop of the moon and future Earth, which reviewers consider to be an okay series with a consistent storyline.",
         "image": "assets\/images\/img_68c09ebaeddc62.62254953.jpeg",
         "date": "2025-02-12",
-        "views": 219
+        "views": 219,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
     },
     {
         "id": 80,
@@ -717,6 +954,21 @@
         "content": "Parents have an important job. Raising kids is both rewarding and challenging. You\u2019re likely to get a lot of advice along the way, from doctors, family, friends, and even strangers. But every parent and child is unique. Being sensitive and responsive to your kids can help you build positive, healthy relationships together.\r\n\u201cBeing a sensitive parent and responding to your kids cuts across all areas of parenting,\u201d says Arizona State University\u2019s Dr. Keith Crnic, a parent-child relationship expert. \u201cWhat it means is recognizing what your child needs in the moment and providing that in an effective way.\u201d\r\nThis can be especially critical for infants and toddlers, he adds. Strong emotional bonds often develop through sensitive, responsive, and consistent parenting in the first years of life. For instance, holding your baby lovingly and responding to their cries helps build strong bonds.\r\nBuilding Bonds\r\nStrong emotional bonds help children learn how to manage their own feelings and behaviors and develop self-confidence. They help create a safe base from which they can explore, learn, and relate to others.\r\n\r\nExperts call this type of strong connection between children and their caregivers \u201csecure attachment.\u201d Securely attached children are more likely to be able to cope with challenges like poverty, family instability, parental stress, and depression.\r\n\r\nA recent analysis shows that about 6 out of 10 children in the U.S. develop secure attachments to their parents. The 4 out of 10 kids who lack such bonds may avoid their parents when they are upset or resist their parents if they cause them more distress. Studies suggest that this can make kids more prone to serious behavior problems. Researchers have been testing programs to help parents develop behaviors that encourage secure attachment.\r\n\r\nBeing Available\r\nModern life is full of things that can influence your ability to be sensitive and responsive to your child. These include competing priorities, extra work, lack of sleep, and things like mobile devices. Some experts are concerned about the effects that distracted parenting may have on emotional bonding and children\u2019s language development, social interaction, and safety.\r\n\r\nIf parents are inconsistently available, kids can get distressed and feel hurt, rejected, or ignored. They may have more emotional outbursts and feel alone. They may even stop trying to compete for their parent\u2019s attention and start to lose emotional connections to their parents.\r\n\r\n\u201cThere are times when kids really do need your attention and want your recognition,\u201d Crnic explains. Parents need to communicate that their kids are valuable and important, and children need to know that parents care what they\u2019re doing, he says.\r\n\r\nIt can be tough to respond with sensitivity during tantrums, arguments, or other challenging times with your kids. \u201cIf parents respond by being irritable or aggressive themselves, children can mimic that behavior, and a negative cycle then continues to escalate,\u201d explains Dr. Carol Metzler, who studies parenting at the Oregon Research Institute.\r\n\r\nAccording to Crnic, kids start to regulate their own emotions and behavior around age three. Up until then, they depend more on you to help them regulate their emotions, whether to calm them or help get them excited. \u201cThey\u2019re watching you to see how you do it and listening to how you talk to them about it,\u201d he explains. \u201cParents need to be good self-regulators. You\u2019re not only trying to regulate your own emotions in the moment, but helping your child learn to manage their emotions and behavior.\u201d\r\n\r\nAs kids become better at managing their feelings and behavior, it\u2019s important to help them develop coping skills, like active problem solving. Such skills can help them feel confident in handling what comes their way.\r\n\r\n\u201cWhen parents engage positively with their children, teaching them the behaviors and skills that they need to cope with the world, children learn to follow rules and regulate their own feelings,\u201d Metzler says.\r\n\r\n\u201cAs parents, we try really hard to protect our kids from the experience of bad things,\u201d Crnic explains. \u201cBut if you protect them all the time and they are not in situations where they deal with difficult or adverse circumstances, they aren\u2019t able to develop healthy coping skills.\u201d\r\n\r\nHe encourages you to allow your kids to have more of those experiences and then help them learn how to solve the problems that emerge. Talk through the situation and their feelings. Then work with them to find solutions to put into practice. \r\n\r\nMeeting Needs\r\nAs children grow up, it\u2019s important to remember that giving them what they need doesn\u2019t mean giving them everything they want. \u201cThese two things are very different,\u201d Crnic explains. \u201cReally hone in on exactly what\u2019s going on with your kid in the moment. This is an incredibly important parenting skill and it\u2019s linked to so many great outcomes for kids.\u201d\r\n\r\nThink about where a child is in life and what skills they need to learn at that time. Perhaps they need help managing emotions, learning how to behave in a certain situation, thinking through a new task, or relating to friends.\r\n\r\n\u201cYou want to help kids become confident,\u201d Crnic says. \u201cYou don\u2019t want to aim too high where they can\u2019t get there or too low where they have already mastered the skill.\u201d Another way to boost confidence while strengthening your relationship is to let your kid take the lead.\r\n\r\n\u201cMake some time to spend with your child that isn\u2019t highly directive, where your child leads the play,\u201d advises Dr. John Bates, who studies children\u2019s behavior problems at Indiana University Bloomington. \u201cKids come to expect it and they love it, and it really improves the relationship.\u201d\r\n\r\nBates also encourages parents to focus on their child\u2019s actual needs instead of sticking to any specific parenting principles.\r\n\r\nIt\u2019s never too late to start building a healthier, more positive relationship with your child, even if things have gotten strained and stressful. \u201cMost importantly, make sure that your child knows that you love them and are on their side,\u201d Metzler says. \u201cFor older children, let them know that you are genuinely committed to building a stronger relationship with them and helping them be successful.\u201d\r\n\r\nBy being a sensitive and responsive parent, you can help set your kids on a positive path, teach them self-control, reduce the likelihood of troublesome behaviors, and build a warm, caring parent-child relationship.",
         "image": "assets\/images\/img_68c0a5f8a95867.42282269.gif",
         "date": "2024-07-24",
-        "views": 917
+        "views": 917,
+        "authorId": 0,
+        "authorUsername": "system",
+        "authorFullname": "System"
+    },
+    {
+        "id": 81,
+        "title": "19 blog examples to inspire blogging journey",
+        "category": "Inspiration",
+        "content": "A blog is your creative space. It\u2019s where you can share your brand\u2019s story or impart your wisdom using  your own words, with your own visual language to match. Fortunately, you don\u2019t need to be a professional writer to create a successful blog either. All you need is a genuine passion for your field, lots to say and a stylish canvas on which to say it. \r\nTo learn how to create a blog of your own, check out this list of 19 of the best blog examples below. Further down, we\u2019ve included tips for how to start a blog that your audience will love.\r\nStarting a blog should feel exciting, not overwhelming, right? With the Wix Blog Maker, you get everything you need to create, design and grow your blog from scratch\u2013without needing a tech degree. Use Wix\u2019s intuitive tools to share your ideas with the world. \r\nLooking to start or revamp your blog, but not sure what works? This post features standout blog examples across different industries\u2014from personal brands and creative portfolios to small business blogs and online magazines. These examples offer inspiration and takeaways you can apply to your own site.\r\nEach featured blog shows how smart design, clear branding and a strong point of view come together to create content that resonates. You\u2019ll also get practical tips on how to use your blog to strengthen your online presence and connect with readers.",
+        "image": "assets\/images\/img_68c4840de96951.55689568.png",
+        "date": "2025-08-17",
+        "views": 650133839,
+        "authorId": 2,
+        "authorUsername": "ahmedhafez7",
+        "authorFullname": "Ahmed Hafez"
     }
 ]

@@ -450,9 +450,18 @@ async function fetchArticles() {
 
 // Initialize navbar and fetch articles on DOMContentLoaded
 // Ensures all DOM elements are ready before manipulation
-document.addEventListener("DOMContentLoaded", () => {
-  initNavbar();
-  initTheme();
+document.addEventListener("DOMContentLoaded", async () => {
+  // --- Safe init of optional functions (in case exports don't exist) ---
+  try {
+    if (typeof initNavbar === "function") await initNavbar();
+  } catch (e) {
+    /* ignore */
+  }
+  try {
+    if (typeof initTheme === "function") initTheme();
+  } catch (e) {
+    /* ignore */
+  }
   fetchArticles();
 });
 /* =============================================

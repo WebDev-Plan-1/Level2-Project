@@ -19,9 +19,26 @@ AOSInit();
 //   if (!res.ok) return [];
 //   return await res.json();
 // }
-/* -------------------------
-   DOM references
-   ------------------------- */
+/* =============================================
+   ############### Ensure server session 
+   (returns user object or null) ##############
+============================================= */
+async function ensureServerSession() {
+  try {
+    const res = await fetch("php/check_session.php", {
+      cache: "no-store",
+      credentials: "same-origin",
+    });
+    if (!res.ok) return null;
+    const json = await res.json();
+    return json.ok ? json.user : null;
+  } catch (err) {
+    return null;
+  }
+}
+/* =============================================
+   ############### DOM references ##############
+============================================= */
 const form = document.getElementById("postForm");
 const titleEl = document.getElementById("title");
 const titleError = document.getElementById("titleError");
@@ -49,7 +66,7 @@ const ALLOWED_EXT = ["jpg", "jpeg", "png", "webp", "gif"];
 // Max image size in bytes (3 MB)
 const MAX_IMAGE_SIZE = 3 * 1024 * 1024;
 // Title words limit
-const TITLE_WORD_LIMIT = 5;
+const TITLE_WORD_LIMIT = 7;
 // Word Characters limit
 const WORD_CHAR_LIMIT = 20; // per word
 // Title words limit
@@ -327,11 +344,21 @@ form.addEventListener("submit", async (e) => {
   submitBtn.disabled = true;
   submitBtn.textContent = "Submitting...";
 
+  //================ Make sure user is logged-in on server
+  const serverUser = await ensureServerSession();
+  if (!serverUser) {
+    // not logged-in on server: redirect to auth/login page
+    window.location.href = "auth.html";
+    return;
+  }
+
+  //================= Post to server endpoint
+  // (include credentials to send session cookie)
   try {
-    // Post to server endpoint
     const res = await fetch(form.action, {
       method: "POST",
       body: fd,
+      credentials: "same-origin",
     });
 
     const json = await res.json();
@@ -382,15 +409,28 @@ contentEl.addEventListener("input", () => {
    Initialize on load
    ------------------------- */
 document.addEventListener("DOMContentLoaded", async () => {
-  await initCategories();
+  // --- Safe init of optional functions (in case exports don't exist) ---
+  try {
+    if (typeof initNavbar === "function") await initNavbar();
+  } catch (e) {
+    /* ignore */
+  }
+  try {
+    if (typeof initTheme === "function") initTheme();
+  } catch (e) {
+    /* ignore */
+  }
+  try {
+    if (typeof initCategories === "function") await initCategories();
+  } catch (e) {
+    /* ignore */
+  }
   setTodayDate();
-  initNavbar();
-  initTheme();
 });
 
 // ================== //
 // Initialize navbar and fetch articles on DOMContentLoaded
 // document.addEventListener("DOMContentLoaded", () => {
-//   initNavbar();
+//   await initNavbar();
 //   initTheme();
 // });

@@ -1,0 +1,164 @@
+@use "../abstracts/variables" as v;
+@use "../abstracts/mixins" as m;
+@use "./components" as c;
+
+// ===========================================//
+.mainContainer {
+    display: flex;
+    flex-direction: column;
+    // justify-content: flex-start;
+    min-height: 300px;
+    padding: 2rem;
+
+    .section-title {
+        margin-bottom: 18px;
+        letter-spacing: 2px;
+        text-align: left;
+        padding: 0 15px;
+    }
+    .small {
+        text-align: left;
+        font-family: v.$font-second;
+        color: var(--color-muted);
+        margin-bottom: 2rem;
+        padding: 0 17px;
+    }
+
+    #noPosts {
+        color: #c72424;
+        padding: 30px 20px;
+        text-align: center;
+
+        &.hidden {
+            display: none;
+        }
+    }
+
+    .posts-list {
+        /* Swiper Container */
+        .swiper {
+            width: 100%;
+            padding-bottom: 3rem; // leave space for pagination
+
+            .swiper-wrapper {
+                display: flex;
+                align-items: stretch;
+
+                .swiper-slide {
+                    display: flex;
+                    justify-content: center;
+                    align-items: stretch;
+                    height: auto; // makes cards equal height
+                }
+                // .not-found {
+                //     @include c.not-found;
+                //     flex-grow: 1;
+                // }
+            }
+            /* ================================
+     Swiper Controls
+     ================================ */
+            .swiper-button-prev,
+            .swiper-button-next {
+                color: var(--color-primary);
+                background: var(--color-surface);
+                width: 45px;
+                height: 45px;
+                @include m.box-shadow(0, 2px, 6px, var(--color-shadow));
+                @include m.transition(0.3s);
+                border-radius: 50%;
+                -webkit-border-radius: 50%;
+                -moz-border-radius: 50%;
+                -ms-border-radius: 50%;
+                -o-border-radius: 50%;
+                &:after {
+                    font-size: 1.2rem;
+                    font-weight: bold;
+                }
+
+                &:hover {
+                    background: var(--color-darken-primary);
+                    color: #fff;
+                }
+            }
+
+            .swiper-pagination {
+                .swiper-pagination-bullet {
+                    background: var(--color-primary);
+                    opacity: 1;
+
+                    &-active {
+                        background: var(--color-darken-primary);
+                    }
+                }
+            }
+        }
+        .post-card {
+            background: var(--color-surface);
+            border-radius: 1rem;
+            overflow: hidden;
+            box-shadow: 0 6px 18px var(--color-shadow);
+            transition:
+                transform 0.3s ease,
+                box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+            max-width: 350px;
+            &:hover {
+                transform: translateY(-6px);
+                // box-shadow: 0 12px 24px rgba(0, 0, 0, 0.12);
+            }
+            .post__title {
+                padding: 15px 10px;
+                color: var(--color-darken-primary);
+                font-family: v.$font-second;
+            }
+            .meta {
+                display: flex;
+                flex-wrap: wrap;
+                align-items: center;
+                gap: 20px;
+                font-size: 0.8rem;
+                color: var(--color-muted);
+                padding: 0 10px;
+
+                .post_category {
+                    font-family: v.$font-second;
+                }
+
+                & > * {
+                    @include m.transition(0.3s);
+                }
+            }
+            &:hover {
+                .meta > * {
+                    // @include m.transition(0.3s);
+                    color: var(--color-darken-primary);
+                }
+            }
+            .post__description {
+                padding: 0 10px;
+            }
+            .post-actions {
+                padding: 20px;
+                display: flex;
+                // justify-content: center;
+                gap: 15px;
+
+                & > * {
+                    @include c.button-primary;
+                    opacity: 0.7;
+                    @include m.transition(0.3s);
+
+                    &:last-child {
+                        background: #c72424;
+                    }
+                    &:hover {
+                        opacity: 1;
+                    }
+                }
+            }
+        }
+    }
+}

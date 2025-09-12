@@ -188,6 +188,7 @@ function renderNavbar() {
       <a href="index.html" class="nav-link-item">Home</a>
       <a href="about.html" class="nav-link-item">About</a>
       <a href="category.php?cat=All" class="nav-link-item">Categories</a>
+      <a href="myBlogs.php" class="nav-link-item">My Blogs</a>
       <a href="submitPost.php" class="nav-link-item">Create a Post</a>
       <a href="contact.php" class="nav-link-item">Contact Us</a>
     `;
@@ -213,25 +214,59 @@ function renderNavbar() {
   }
 }
 
-async function syncSessionWithLocalStorage() {
+// async function syncSessionWithLocalStorage() {
+//   try {
+//     const res = await fetch("php/check_session.php", {
+//       method: "GET",
+//       credentials: "include", // ⭐ ensures cookies (PHPSESSID) are sent
+//       headers: { "Cache-Control": "no-cache" },
+//     });
+//     const data = await res.json();
+
+//     if (data.ok && data.user) {
+//       // ✅ backend session exists
+//       localStorage.setItem("currentUser", JSON.stringify(data.user));
+//     } else {
+//       // ❌ backend session missing
+//       localStorage.removeItem("currentUser");
+//     }
+//   } catch (err) {
+//     console.error("Session check failed:", err);
+//     localStorage.removeItem("currentUser");
+//   }
+// }
+
+// =====================================================
+
+// Sync server session to localStorage (call at init)
+async function syncServerSessionToLocal() {
   try {
     const res = await fetch("php/check_session.php", {
-      method: "GET",
-      credentials: "include", // ⭐ ensures cookies (PHPSESSID) are sent
-      headers: { "Cache-Control": "no-cache" },
+      cache: "no-store",
+      credentials: "same-origin",
     });
-    const data = await res.json();
-
-    if (data.ok && data.user) {
-      // ✅ backend session exists
-      localStorage.setItem("currentUser", JSON.stringify(data.user));
-    } else {
-      // ❌ backend session missing
+    if (!res.ok) {
       localStorage.removeItem("currentUser");
+      return null;
+    }
+    const j = await res.json();
+    if (j.ok && j.user) {
+      // Normalize keys: id, username, email, fullname
+      const user = {
+        id: j.user.id,
+        username: j.user.username,
+        email: j.user.email,
+        fullname: j.user.fullname ?? j.user.fullName ?? "",
+      };
+      localStorage.setItem("currentUser", JSON.stringify(user));
+      return user;
+    } else {
+      localStorage.removeItem("currentUser");
+      return null;
     }
   } catch (err) {
-    console.error("Session check failed:", err);
-    localStorage.removeItem("currentUser");
+    // network error: keep any existing local storage (do not overwrite)
+    return null;
   }
 }
 
@@ -314,10 +349,15 @@ export async function initNavbar() {
   window.addEventListener("resize", toggleNavScroll);
   setActiveNavLink();
   initSearchBar();
-  // ⭐ sync PHP session with localStorage
-  await syncSessionWithLocalStorage();
 
-  renderNavbar(); // now always correct
+  // ⭐ sync PHP session with localStorage
+  // await syncSessionWithLocalStorage();
+  // renderNavbar(); // now always correct
+
+  // NEW: sync server session and then render navbar
+  await syncServerSessionToLocal().finally(() => {
+    renderNavbar();
+  });
 }
 /* =============================================
    ################# lazy-loader.js 
@@ -441,7 +481,11 @@ export function formatViews(num) {
 // Format date strings into a more readable format
 // e.g., "2023-08-15" -> "August 15, 2023"
 export function formatDate(dateString) {
-  const options = { year: "numeric", month: "long", day: "numeric" };
+  const options = {
+    year: "numeric",
+    month: "long",
+    day: "numeric",
+  };
   return new Date(dateString).toLocaleDateString("en-US", options);
 }
 

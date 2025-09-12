@@ -1,7 +1,8 @@
 <?php
-header("Content-Type: application/json");
+// php/submitPost.php
+header('Content-Type: application/json; charset=utf-8');
+session_start();
 
-// Helpers
 function json_response($code, $data)
 {
     http_response_code($code);
@@ -9,20 +10,30 @@ function json_response($code, $data)
     exit;
 }
 
-$DATA_FILE = __DIR__ . "/../data/articles.json";
-$UPLOAD_DIR = __DIR__ . "/../assets/images/";
+// Only POST allowed
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') json_response(405, ['message' => 'Method not allowed']);
 
-$title = trim($_POST["title"] ?? "");
-$category = trim($_POST["category"] ?? "");
-$content = trim($_POST["content"] ?? "");
-$date = trim($_POST["date"] ?? "");
+// Must be logged in (server authoritative)
+if (empty($_SESSION['user'])) json_response(401, ['message' => 'Authentication required. Please login.']);
+
+// Config
+$DATA_FILE = __DIR__ . '/../data/articles.json';
+$UPLOAD_DIR = __DIR__ . '/../assets/images/';
+$ALLOWED_EXT = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
+$MAX_SIZE = 3 * 1024 * 1024; // 3MB
+
+// Collect input
+$title = isset($_POST['title']) ? trim($_POST['title']) : '';
+$category = isset($_POST['category']) ? trim($_POST['category']) : '';
 $newCategory = trim($_POST["newCategory"] ?? "");
+$content = isset($_POST['content']) ? trim($_POST['content']) : '';
+$date = isset($_POST['date']) ? trim($_POST['date']) : date('Y-m-d');
 
 // === VALIDATION ===
 // Title
 $words = preg_split('/\s+/', $title);
 if (!$title) json_response(422, ["message" => "Title is required."]);
-if (count($words) > 5) json_response(422, ["message" => "Title must be at most 5 words."]);
+if (count($words) > 7) json_response(422, ["message" => "Title must be at most 7 words."]);
 foreach ($words as $word) {
     if (mb_strlen($word, 'UTF-8') > 20) {
         json_response(422, ["message" => "Each word in title must be at most 20 characters. Problem with: $word"]);
@@ -93,11 +104,36 @@ if (file_exists($DATA_FILE)) {
     $articles = json_decode($json, true) ?: [];
 }
 
+// Ensure articles JSON exists
+if (!file_exists($DATA_FILE)) {
+    file_put_contents($DATA_FILE, json_encode([], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+}
+
+// Lock and read
+$fp = fopen($DATA_FILE, 'c+');
+if (!$fp) json_response(500, ['message' => 'Cannot open data file.']);
+if (!flock($fp, LOCK_EX)) {
+    fclose($fp);
+    json_response(500, ['message' => 'Could not lock data file. Try again.']);
+}
+$raw = stream_get_contents($fp);
+$items = [];
+if ($raw !== false && trim($raw) !== '') {
+    $items = json_decode($raw, true);
+    if (!is_array($items)) $items = [];
+}
+
 // Generate ID
 $ids = array_column($articles, "id");
 $newId = $ids ? max($ids) + 1 : 1;
 
-// Add article
+// Author fields from session (server authoritative)
+$author = $_SESSION['user'];
+$authorId = isset($author['id']) ? $author['id'] : null;
+$authorUsername = isset($author['username']) ? $author['username'] : null;
+$authorFullname = isset($author['fullname']) ? $author['fullname'] : null;
+
+// Create item
 $newArticle = [
     "id" => $newId,
     "title" => $title,
@@ -105,13 +141,26 @@ $newArticle = [
     "content" => $content,
     "image" => "assets/images/" . $imgName,
     "date" => $date,
-    "views" => rand(10, 1000)
+    "views" => rand(10, 999999999),
+    'authorId' => $authorId,
+    'authorUsername' => $authorUsername,
+    'authorFullname' => $authorFullname
 ];
+
 $articles[] = $newArticle;
+
+// write back
+ftruncate($fp, 0);
+rewind($fp);
+fwrite($fp, json_encode($items, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+fflush($fp);
+flock($fp, LOCK_UN);
+fclose($fp);
 
 // Save
 if (file_put_contents($DATA_FILE, json_encode($articles, JSON_PRETTY_PRINT)) === false) {
     json_response(500, ["message" => "Failed to save article."]);
 }
 
-json_response(200, ["message" => "Article submitted successfully.", "article" => $newArticle]);
+// respond with created article
+json_response(200, ["message" => "Article created successfully.", "article" => $newArticle]);
