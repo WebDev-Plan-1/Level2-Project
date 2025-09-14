@@ -28,20 +28,20 @@ require_once __DIR__ . '/php/auth_check.php';
 
     <!-- ============= PREVENT FART (Flash of Incorrect Theme) =============== -->
     <script>
-        (function() {
-            try {
-                const saved = localStorage.getItem("site-theme");
-                if (saved === "dark" || saved === "light") {
-                    document.documentElement.setAttribute("data-theme", saved);
-                } else {
-                    // ✅ Default = dark
-                    document.documentElement.setAttribute("data-theme", "dark");
-                    localStorage.setItem("site-theme", "dark");
-                }
-            } catch (e) {
+    (function() {
+        try {
+            const saved = localStorage.getItem("site-theme");
+            if (saved === "dark" || saved === "light") {
+                document.documentElement.setAttribute("data-theme", saved);
+            } else {
+                // ✅ Default = dark
                 document.documentElement.setAttribute("data-theme", "dark");
+                localStorage.setItem("site-theme", "dark");
             }
-        })();
+        } catch (e) {
+            document.documentElement.setAttribute("data-theme", "dark");
+        }
+    })();
     </script>
 
     <!-- Main stylesheet (site-wide) -->
@@ -173,26 +173,29 @@ require_once __DIR__ . '/php/auth_check.php';
         </form>
     </main>
 
-    <!-- Footer (unchanged) -->
+    <!-- Footer section -->
     <footer class="footer">
         <div class="container footer-container">
             <h2 class="footer-title">NileNotes - Personal Blog CMS</h2>
             <div class="footer-links">
                 <a href="index.html" class="footer-link">Home</a>
-                <a href="category.php?cat=All" class="footer-link">Categories</a>
-                <a href="submitPost.php" class="footer-link">Create a Post</a>
-                <a href="contact.php" class="footer-link">Contact</a>
+                <a href="about.html" class="footer-link">About</a>
+                <a href="contact.php" class="footer-link">Contact Us</a>
             </div>
-            <p class="footer-text">NileNotes is a personal blog CMS designed to share stories and articles on various
-                topics. Join our community and start sharing your thoughts today!</p>
+            <p class="footer-text">NileNotes is a personal blog CMS
+                designed to share stories and articles on various
+                topics. <br>Join our community and start sharing your thoughts today!</p>
             <p class="footer-text">For inquiries, please contact us at <a
-                    href="mailto:ahmed.hafez101112131415@gmail.com" class="footer-link">NileNotes@GMAIL</a></p>
+                    href="mailto:ahmed.hafez101112131415@gmail.com" class="footer-link">NileNotes@GMAIL</a>
+
+            </p>
             <div class="footer-bottom">
                 <div class="footer-left">
                     <p class="footer-credit">Designed by <a href="https://ahmedhafezoffic.netlify.app/" target="_blank"
-                            class="footer-link">Ahmed Hafez</a></p>
+                            class="footer-link">Ahmed
+                            Hafez</a></p>
                     <p class="footer-social">Follow us on:
-                        <a href="#" class="footer-link">Github</a> |
+                        <a href="https://github.com/AhmedHafez7-Eng" class="footer-link">Github</a> |
                         <a href="https://www.linkedin.com/in/ahmedhafez247/" class="footer-link">LinkedIn</a> |
                         <a href="https://www.facebook.com/profile.php?id=100005116839262"
                             class="footer-link">Facebook</a> |
