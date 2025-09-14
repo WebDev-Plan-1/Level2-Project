@@ -72,7 +72,8 @@ const clearBtn = document.querySelector(".clear-btn");
 // ================= ⭐ UPDATED: Set active nav link based on current URL (ignoring query string)
 function setActiveNavLink() {
   const currentPath = window.location.pathname.split("/").pop() || "index.html";
-  navLinkItems.forEach((link) => {
+  const links = document.querySelectorAll(".nav-links .nav-link-item"); // ⬅️ fetch fresh
+  links.forEach((link) => {
     const linkPath = link.getAttribute("href").split("?")[0]; // ⭐ strip query string
     link.classList.toggle("active", linkPath === currentPath);
   });
@@ -348,10 +349,6 @@ export async function initNavbar() {
     });
   }
 
-  window.addEventListener("resize", toggleNavScroll);
-  setActiveNavLink();
-  initSearchBar();
-
   // ⭐ sync PHP session with localStorage
   // await syncSessionWithLocalStorage();
   // renderNavbar(); // now always correct
@@ -359,7 +356,11 @@ export async function initNavbar() {
   // NEW: sync server session and then render navbar
   await syncServerSessionToLocal().finally(() => {
     renderNavbar();
+    setActiveNavLink();
   });
+
+  window.addEventListener("resize", toggleNavScroll);
+  initSearchBar();
 }
 /* =============================================
    ################# lazy-loader.js 
