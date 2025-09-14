@@ -14,7 +14,7 @@ body {
     color 0.28s ease;
 
   /* Hide page content until loader is gone */
-  body.loading {
+  &.loading {
     overflow: hidden; /* prevent scroll */
   }
 }

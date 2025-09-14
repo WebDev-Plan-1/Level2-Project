@@ -11893,7 +11893,7 @@ body {
   transition: background-color 0.28s ease, color 0.28s ease;
   /* Hide page content until loader is gone */
 }
-body body.loading {
+body.loading {
   overflow: hidden; /* prevent scroll */
 }
 
@@ -12062,33 +12062,58 @@ a:hover {
 }
 
 /* Loader full screen */
+/* Loader full screen */
 #loader {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: #fff; /* or dark if using dark mode */
+  background: var(--color-bg);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999; /* stay above everything */
-  /* Spinner animation */
+  z-index: 9999;
+  inset: 0;
+  /* Loader content */
 }
-#loader .spinner {
-  border: 6px solid #f3f3f3;
-  border-top: 6px solid #3498db; /* brand color */
-  border-radius: 50%;
-  width: 60px;
-  height: 60px;
-  animation: spin 1s linear infinite;
+#loader .loader-content {
+  text-align: center;
+  animation: fadeIn 1s ease;
+  -webkit-animation: fadeIn 1s ease;
+  /* Animations */
 }
-@keyframes spin {
+#loader .loader-content .loader-logo {
+  width: 200px;
+  height: auto;
+  margin-bottom: 15px;
+  animation: pulse 2s infinite;
+  -webkit-animation: pulse 2s infinite;
+}
+#loader .loader-content .loader-text {
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--color-text);
+}
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+@keyframes pulse {
   0% {
-    transform: rotate(0deg);
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.1);
   }
   100% {
-    transform: rotate(360deg);
+    transform: scale(1);
   }
 }
 

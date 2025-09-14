@@ -183,6 +183,40 @@
 // ============================ //
 
 // =============App Loader=================== //
+// ===== Spinner Loader ====
+/* Loader full screen */
+// #loader {
+//   position: fixed;
+//   top: 0;
+//   left: 0;
+//   width: 100%;
+//   height: 100%;
+//   background: #fff; /* or dark if using dark mode */
+//   display: flex;
+//   justify-content: center;
+//   align-items: center;
+//   z-index: 9999; /* stay above everything */
+//   /* Spinner animation */
+//   .spinner {
+//     border: 6px solid #f3f3f3;
+//     border-top: 6px solid #3498db; /* brand color */
+//     border-radius: 50%;
+//     width: 60px;
+//     height: 60px;
+//     animation: spin 1s linear infinite;
+//   }
+
+//   @keyframes spin {
+//     0% {
+//       transform: rotate(0deg);
+//     }
+//     100% {
+//       transform: rotate(360deg);
+//     }
+//   }
+// }
+
+// ===== Logo-Branded Loader =====
 /* Loader full screen */
 #loader {
   position: fixed;
@@ -190,27 +224,57 @@
   left: 0;
   width: 100%;
   height: 100%;
-  background: #fff; /* or dark if using dark mode */
+  background: var(--color-bg);
   display: flex;
   justify-content: center;
   align-items: center;
-  z-index: 9999; /* stay above everything */
-  /* Spinner animation */
-  .spinner {
-    border: 6px solid #f3f3f3;
-    border-top: 6px solid #3498db; /* brand color */
-    border-radius: 50%;
-    width: 60px;
-    height: 60px;
-    animation: spin 1s linear infinite;
-  }
-
-  @keyframes spin {
-    0% {
-      transform: rotate(0deg);
+  z-index: 9999;
+  inset: 0; // Hash it if you'll use transition
+  // transition: opacity 0.5s ease;
+  // -webkit-transition: opacity 0.5s ease;
+  // -moz-transition: opacity 0.5s ease;
+  // -ms-transition: opacity 0.5s ease;
+  // -o-transition: opacity 0.5s ease;
+  /* Loader content */
+  .loader-content {
+    text-align: center;
+    animation: fadeIn 1s ease;
+    -webkit-animation: fadeIn 1s ease;
+    .loader-logo {
+      width: 200px;
+      height: auto;
+      margin-bottom: 15px;
+      animation: pulse 2s infinite;
+      -webkit-animation: pulse 2s infinite;
     }
-    100% {
-      transform: rotate(360deg);
+
+    .loader-text {
+      font-size: 18px;
+      font-weight: 600;
+      color: var(--color-text);
+    }
+    /* Animations */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: scale(0.95);
+      }
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      50% {
+        transform: scale(1.1);
+      }
+      100% {
+        transform: scale(1);
+      }
     }
   }
 }

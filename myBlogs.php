@@ -37,20 +37,20 @@ require_once __DIR__ . '/php/auth_check.php';
 
     <!-- ============= PREVENT FART (Flash of Incorrect Theme) =============== -->
     <script>
-        (function() {
-            try {
-                const saved = localStorage.getItem("site-theme");
-                if (saved === "dark" || saved === "light") {
-                    document.documentElement.setAttribute("data-theme", saved);
-                } else {
-                    // ✅ Default = dark
-                    document.documentElement.setAttribute("data-theme", "dark");
-                    localStorage.setItem("site-theme", "dark");
-                }
-            } catch (e) {
+    (function() {
+        try {
+            const saved = localStorage.getItem("site-theme");
+            if (saved === "dark" || saved === "light") {
+                document.documentElement.setAttribute("data-theme", saved);
+            } else {
+                // ✅ Default = dark
                 document.documentElement.setAttribute("data-theme", "dark");
+                localStorage.setItem("site-theme", "dark");
             }
-        })();
+        } catch (e) {
+            document.documentElement.setAttribute("data-theme", "dark");
+        }
+    })();
     </script>
     <!-- Main style -->
     <link rel="stylesheet" href="css/main.css" />
@@ -58,9 +58,17 @@ require_once __DIR__ . '/php/auth_check.php';
 
 <body>
 
-    <!-- Loader -->
-    <div id="loader">
+    <!-- Spinner Loader -->
+    <!-- <div id="loader">
         <div class="spinner"></div>
+    </div> -->
+
+    <!-- Logo-Branded Loader -->
+    <div id="loader">
+        <div class="loader-content">
+            <img src="assets/images/logo-browser.png" alt="My Blog Logo" class="loader-logo">
+            <p class="loader-text">Loading...</p>
+        </div>
     </div>
 
     <!-- THEME TOGGLE BUTTON: place this near end of body -->

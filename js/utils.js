@@ -441,19 +441,28 @@ export function lazyLoading() {
 /* =============================================
    ################# Page Loader Init ####################
 ============================================= */
+// Control variables
+const FADE_DURATION = 1500; // fade-out time (ms)
+const MIN_DISPLAY_TIME = 1200; // minimum loader visible time (ms)
+const loader = document.getElementById("loader");
+const startTime = Date.now();
 // Keep body in loading state until page is ready
 export function loaderInit() {
+  // Add loading class to body initially
   document.body.classList.add("loading");
-
   window.addEventListener("load", () => {
-    // Fade out loader
-    const loader = document.getElementById("loader");
-    loader.style.opacity = "0";
+    const elapsed = Date.now() - startTime;
+    const remaining = Math.max(0, MIN_DISPLAY_TIME - elapsed);
 
     setTimeout(() => {
-      loader.style.display = "none"; // remove from DOM
-      document.body.classList.remove("loading");
-    }, 500); // fade-out duration
+      loader.style.transition = `opacity ${FADE_DURATION}ms ease`;
+      loader.style.opacity = "0";
+
+      setTimeout(() => {
+        loader.style.display = "none";
+        document.body.classList.remove("loading");
+      }, FADE_DURATION);
+    }, remaining);
   });
 }
 

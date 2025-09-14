@@ -50,9 +50,17 @@ require_once __DIR__ . '/php/auth_check.php';
 
 <body>
 
-    <!-- Loader -->
-    <div id="loader">
+    <!-- Spinner Loader -->
+    <!-- <div id="loader">
         <div class="spinner"></div>
+    </div> -->
+
+    <!-- Logo-Branded Loader -->
+    <div id="loader">
+        <div class="loader-content">
+            <img src="assets/images/logo-browser.png" alt="My Blog Logo" class="loader-logo">
+            <p class="loader-text">Loading...</p>
+        </div>
     </div>
 
     <!-- THEME TOGGLE BUTTON (kept in html, styling in scss, behaviour in theme.js) -->
