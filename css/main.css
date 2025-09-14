@@ -14413,6 +14413,8 @@ a:hover {
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   display: flex;
   flex-direction: column;
+  justify-content: space-between;
+  gap: 10px;
   height: 100%;
   max-width: 350px;
 }
@@ -14423,6 +14425,7 @@ a:hover {
   padding: 15px 10px;
   color: var(--color-darken-primary);
   font-family: "Asimovian", sans-serif;
+  flex-grow: 1;
 }
 .mainContainer .posts-list .post-card .meta {
   display: flex;
@@ -14501,6 +14504,9 @@ a:hover {
 }
 .mainContainer .posts-list .post-card .post-actions > *:hover {
   opacity: 1;
+}
+.mainContainer .posts-list .post-card > * {
+  margin: 0;
 }
 
 /*# sourceMappingURL=main.css.map */
