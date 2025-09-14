@@ -189,8 +189,10 @@
     // ==========================
     .nav-links {
       display: flex;
+      align-items: center;
       gap: 20px;
       font-family: v.$font-second;
+      overflow-y: visible;
 
       .nav-link-item {
         color: var(--color-text);
@@ -252,6 +254,10 @@
     // ==========================
     .user-dropdown {
       position: relative;
+      box-shadow: 0 4px 8px var(--color-shadow);
+      padding: 10px;
+      border-radius: 4px;
+      background: var(--color-bg);
 
       .user-btn {
         background: none;
@@ -320,6 +326,7 @@
         pointer-events: none;
         transition: all 0.3s ease;
         justify-content: center;
+        overflow-y: scroll;
         &.active {
           transform: translateY(0);
           opacity: 1;
@@ -327,13 +334,13 @@
         }
 
         .nav-link-item {
-          font-size: 2rem;
+          font-size: 1.4rem;
         }
       }
 
       .user-dropdown {
         .user-btn {
-          font-size: 2rem;
+          font-size: 1.4rem;
         }
         .dropdown-menu {
           right: 50%;
@@ -344,7 +351,7 @@
           -o-transform: translateX(50%);
           // margin-top: 4px;
           #logoutBtn {
-            font-size: 2rem;
+            font-size: 1.4rem;
             padding: 10px 14px;
           }
         }

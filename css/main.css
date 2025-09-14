@@ -11913,6 +11913,38 @@ a:hover {
   color: rgb(16.7330677291, 144.2231075697, 183.2669322709);
 }
 
+/* Custom Scrollbar (Webkit Browsers: Chrome, Edge, Safari, Opera) */
+::-webkit-scrollbar {
+  width: 10px; /* width of vertical scrollbar */
+  height: 10px; /* height of horizontal scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  /*track (background)*/
+  background: var(--color-surface);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  /*gradient color*/
+  background: linear-gradient(180deg, var(--color-darken-primary), var(--color-primary));
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin; /* "auto" or "thin" */
+  scrollbar-color: var(--color-primary) var(--color-surface); /* thumb color | track color */
+}
+
 .button-primary {
   background-color: var(--color-primary);
   text-align: center;
@@ -12334,8 +12366,10 @@ a:hover {
 }
 .navbar .container .nav-links {
   display: flex;
+  align-items: center;
   gap: 20px;
   font-family: "Asimovian", sans-serif;
+  overflow-y: visible;
 }
 .navbar .container .nav-links .nav-link-item {
   color: var(--color-text);
@@ -12381,6 +12415,10 @@ a:hover {
 }
 .navbar .container .user-dropdown {
   position: relative;
+  box-shadow: 0 4px 8px var(--color-shadow);
+  padding: 10px;
+  border-radius: 4px;
+  background: var(--color-bg);
 }
 .navbar .container .user-dropdown .user-btn {
   background: none;
@@ -12451,6 +12489,7 @@ a:hover {
     pointer-events: none;
     transition: all 0.3s ease;
     justify-content: center;
+    overflow-y: scroll;
   }
   .navbar .container .nav-links.active {
     transform: translateY(0);
@@ -12458,10 +12497,10 @@ a:hover {
     pointer-events: auto;
   }
   .navbar .container .nav-links .nav-link-item {
-    font-size: 2rem;
+    font-size: 1.4rem;
   }
   .navbar .container .user-dropdown .user-btn {
-    font-size: 2rem;
+    font-size: 1.4rem;
   }
   .navbar .container .user-dropdown .dropdown-menu {
     right: 50%;
@@ -12472,7 +12511,7 @@ a:hover {
     -o-transform: translateX(50%);
   }
   .navbar .container .user-dropdown .dropdown-menu #logoutBtn {
-    font-size: 2rem;
+    font-size: 1.4rem;
     padding: 10px 14px;
   }
   .navbar .container .hamburger {

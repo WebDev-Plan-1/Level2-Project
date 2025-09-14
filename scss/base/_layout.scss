@@ -33,3 +33,39 @@ a {
     color: darken(v.$primary-color, 10%);
   }
 }
+
+/* Custom Scrollbar (Webkit Browsers: Chrome, Edge, Safari, Opera) */
+::-webkit-scrollbar {
+  width: 10px; /* width of vertical scrollbar */
+  height: 10px; /* height of horizontal scrollbar */
+}
+
+::-webkit-scrollbar-track {
+  /*track (background)*/
+  background: var(--color-surface);
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  /*gradient color*/
+  background: linear-gradient(180deg, var(--color-darken-primary), var(--color-primary));
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+}
+
+// ::-webkit-scrollbar-thumb:hover {
+//   background: linear-gradient(180deg, #4338ca, #7e22ce); /* darker on hover */
+// }
+
+/* Firefox scrollbar */
+* {
+  scrollbar-width: thin; /* "auto" or "thin" */
+  scrollbar-color: var(--color-primary) var(--color-surface); /* thumb color | track color */
+}
