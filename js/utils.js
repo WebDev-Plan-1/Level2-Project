@@ -249,14 +249,14 @@ async function syncServerSessionToLocal() {
       localStorage.removeItem("currentUser");
       return null;
     }
-    const j = await res.json();
-    if (j.ok && j.user) {
+    const data = await res.json();
+    if (data.ok && data.user) {
       // Normalize keys: id, username, email, fullname
       const user = {
-        id: j.user.id,
-        username: j.user.username,
-        email: j.user.email,
-        fullname: j.user.fullname ?? j.user.fullName ?? "",
+        id: data.user.id,
+        username: data.user.username,
+        email: data.user.email,
+        fullname: data.user.fullname ?? data.user.fullName ?? "",
       };
       localStorage.setItem("currentUser", JSON.stringify(user));
       return user;
@@ -266,6 +266,7 @@ async function syncServerSessionToLocal() {
     }
   } catch (err) {
     // network error: keep any existing local storage (do not overwrite)
+    console.error("Session check failed:", err);
     return null;
   }
 }
