@@ -101,77 +101,116 @@
 
 /* Image wrapper: preserve aspect, show placeholder background */
 .img-wrap {
-  /*createarelativecontextforoverlayandimage*/
+  /*create a relative context for overlay and image*/
   position: relative;
-  /*placeholderbackgroundcolorbeforeimageloads*/
+  /*placeholder background color before image loads*/
   background: var(--color-bg);
   /*keepoverflowhiddenforroundedcorners*/
   overflow: hidden;
   width: 100%;
   height: 200px;
   /*optionalradius*/
-  border-radius: 8px;
-  -webkit-border-radius: 8px;
-  -moz-border-radius: 8px;
-  -ms-border-radius: 8px;
-  -o-border-radius: 8px;
-}
+  @include m.border-radius(8px);
 
-/* Lazy images base */
-.lazy-img {
-  /* ensure image covers the wrapper */
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  /* make it a block-level element */
-  display: block;
-  /* smooth transition for opacity and filter change */
-  transition:
-    filter 0.4s ease,
-    opacity 0.4s ease;
-  /* show as blurred initially */
-  filter: blur(16px) scale(1.02);
-  opacity: 0;
-}
-
-/* When image finished loading: remove blur and show image */
-.lazy-img.lazy-loaded {
-  /* remove the blur effect */
-  filter: none;
-  /* full opacity */
-  opacity: 1;
-}
-
-/* Small devices: reduce blur scale if needed */
-@media (max-width: v.$breakpoint-mobile) {
+  /* Lazy images base */
   .lazy-img {
-    filter: blur(10px) scale(1.01);
+    /*ensure image covers the wrapper*/
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /*make it a block-level element*/
+    display: block;
+    /*show as blur redinitially*/
+    filter: blur(16px) scale(1.02);
+    -webkit-filter: blur(16px) scale(1.02);
+    opacity: 0;
+    /*smooth transition for opacity and filter change*/
+    transition:
+      filter 0.4s ease,
+      opacity 0.4s ease;
+    -webkit-transition:
+      filter 0.4s ease,
+      opacity 0.4s ease;
+    -moz-transition:
+      filter 0.4s ease,
+      opacity 0.4s ease;
+    -ms-transition:
+      filter 0.4s ease,
+      opacity 0.4s ease;
+    -o-transition:
+      filter 0.4s ease,
+      opacity 0.4s ease;
+
+    /* When image finished loading: remove blur and show image */
+    &.lazy-loaded {
+      /* remove the blur effect */
+      filter: none;
+      /* full opacity */
+      opacity: 1;
+    }
+    /* Small devices: reduce blur scale if needed */
+    @media (max-width: v.$breakpoint-mobile) {
+      & {
+        filter: blur(10px) scale(1.01);
+      }
+    }
+  }
+  /* Skeleton shimmer overlay (optional) */
+  &::after {
+    /* shimmering bar to indicate loading */
+    content: "";
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(
+      90deg,
+      rgba(255, 255, 255, 0) 0%,
+      rgba(255, 255, 255, 0.35) 50%,
+      rgba(255, 255, 255, 0) 100%
+    );
+    transform: translateX(-100%);
+    transition: transform 1.2s linear;
+    /* show shimmer while blurred (not after loaded) */
+    pointer-events: none;
+  }
+  /* Remove shimmer when image loaded */
+  .lazy-img.lazy-loaded + &::after,
+  & .lazy-img.lazy-loaded ~ &::after {
+    transform: translateX(100%);
+    opacity: 0;
   }
 }
 
-/* Skeleton shimmer overlay (optional) */
-.img-wrap::after {
-  /* shimmering bar to indicate loading */
-  content: "";
-  position: absolute;
-  inset: 0;
-  background: linear-gradient(
-    90deg,
-    rgba(255, 255, 255, 0) 0%,
-    rgba(255, 255, 255, 0.35) 50%,
-    rgba(255, 255, 255, 0) 100%
-  );
-  transform: translateX(-100%);
-  transition: transform 1.2s linear;
-  /* show shimmer while blurred (not after loaded) */
-  pointer-events: none;
-}
-
-/* Remove shimmer when image loaded */
-.lazy-img.lazy-loaded + .img-wrap::after,
-.img-wrap .lazy-img.lazy-loaded ~ .img-wrap::after {
-  transform: translateX(100%);
-  opacity: 0;
-}
-
 // ============================ //
+
+// =============App Loader=================== //
+/* Loader full screen */
+#loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: #fff; /* or dark if using dark mode */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 9999; /* stay above everything */
+  /* Spinner animation */
+  .spinner {
+    border: 6px solid #f3f3f3;
+    border-top: 6px solid #3498db; /* brand color */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 1s linear infinite;
+  }
+
+  @keyframes spin {
+    0% {
+      transform: rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg);
+    }
+  }
+}

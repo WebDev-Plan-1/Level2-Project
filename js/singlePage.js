@@ -9,6 +9,7 @@ import {
   lazyLoading,
   AOSInit,
   formatContentDisplay,
+  loaderInit,
 } from "./utils.js";
 //==== Import theme
 import { initTheme } from "./theme.js";
@@ -40,6 +41,11 @@ lazyLoading();
    ############### Initialize AOS ##############
 ============================================= */
 AOSInit();
+
+/* =============================================
+   ################# Page Loader Init ####################
+============================================= */
+loaderInit();
 
 /* =============================================
    ############### Fetching & Show Articles ##############

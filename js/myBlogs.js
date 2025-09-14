@@ -6,6 +6,7 @@ import {
   removeSwiperControls,
   formatViews,
   formatDate,
+  loaderInit,
 } from "./utils.js"; // adjust to your exports
 import { initTheme } from "./theme.js";
 
@@ -13,6 +14,11 @@ import { initTheme } from "./theme.js";
    ############### Initialize Lazy Loading Images ##############
 ============================================= */
 lazyLoading();
+
+/* =============================================
+   ################# Page Loader Init ####################
+============================================= */
+loaderInit();
 
 /* =============================================
    ############### Load My Blogs for current logged user ##############

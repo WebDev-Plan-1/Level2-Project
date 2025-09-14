@@ -16,6 +16,7 @@ import {
   AOSInit,
   renderPagination,
   populateCategoryFilter,
+  loaderInit,
 } from "./utils.js";
 //==== Import theme
 import { initTheme } from "./theme.js";
@@ -46,6 +47,10 @@ AOSInit();
 ============================================= */
 lazyLoading();
 
+/* =============================================
+   ################# Page Loader Init ####################
+============================================= */
+loaderInit();
 /* =============================================
    ########## Home Page: Top Posts Section #############
 ============================================= */

@@ -12,6 +12,11 @@ body {
   transition:
     background-color 0.28s ease,
     color 0.28s ease;
+
+  /* Hide page content until loader is gone */
+  body.loading {
+    overflow: hidden; /* prevent scroll */
+  }
 }
 
 @media (max-width: v.$breakpoint-mobile) {

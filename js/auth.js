@@ -5,8 +5,13 @@
    - submits to server endpoints php/signup.php and php/login.php
 */
 
-import { initNavbar } from "./utils.js"; // if present (ok if not exported; will throw if not available)
+import { initNavbar, loaderInit } from "./utils.js"; // if present (ok if not exported; will throw if not available)
 import { initTheme } from "./theme.js";
+
+/* =============================================
+   ################# Page Loader Init ####################
+============================================= */
+loaderInit();
 
 (async function () {
   // --- Safe init of optional functions (in case exports don't exist) ---

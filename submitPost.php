@@ -50,6 +50,11 @@ require_once __DIR__ . '/php/auth_check.php';
 
 <body>
 
+    <!-- Loader -->
+    <div id="loader">
+        <div class="spinner"></div>
+    </div>
+
     <!-- THEME TOGGLE BUTTON (kept in html, styling in scss, behaviour in theme.js) -->
     <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false"
         title="Toggle theme">

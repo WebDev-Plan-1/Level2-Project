@@ -8,6 +8,7 @@ import {
   scrollToArticlesTop,
   renderPagination,
   sortFilter,
+  loaderInit,
 } from "./utils.js";
 // ===== Import Theme
 import { initTheme } from "./theme.js";
@@ -21,6 +22,11 @@ lazyLoading();
    ############### Initialize AOS ##############
 ============================================= */
 AOSInit();
+
+/* =============================================
+   ################# Page Loader Init ####################
+============================================= */
+loaderInit();
 
 // ================== //
 // Initialize navbar and fetch articles on DOMContentLoaded

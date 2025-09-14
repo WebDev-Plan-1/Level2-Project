@@ -439,6 +439,25 @@ export function lazyLoading() {
 }
 
 /* =============================================
+   ################# Page Loader Init ####################
+============================================= */
+// Keep body in loading state until page is ready
+export function loaderInit() {
+  document.body.classList.add("loading");
+
+  window.addEventListener("load", () => {
+    // Fade out loader
+    const loader = document.getElementById("loader");
+    loader.style.opacity = "0";
+
+    setTimeout(() => {
+      loader.style.display = "none"; // remove from DOM
+      document.body.classList.remove("loading");
+    }, 500); // fade-out duration
+  });
+}
+
+/* =============================================
    ################# Utils Shared Functions ####################
 ============================================= */
 
