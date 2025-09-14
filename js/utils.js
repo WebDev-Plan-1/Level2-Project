@@ -445,7 +445,7 @@ export function lazyLoading() {
 ============================================= */
 // Control variables
 const FADE_DURATION = 1500; // fade-out time (ms)
-const MIN_DISPLAY_TIME = 1200; // minimum loader visible time (ms)
+const MIN_DISPLAY_TIME = 800; // minimum loader visible time (ms)
 const loader = document.getElementById("loader");
 const startTime = Date.now();
 // Keep body in loading state until page is ready
