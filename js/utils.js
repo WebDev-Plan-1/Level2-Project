@@ -78,11 +78,12 @@ function setActiveNavLink() {
   });
 }
 // ================= Handle scroll behavior for nav links on small screens
+// ===== navLinks.classList.contains("active") && window.innerWidth <= 240 === on small screens
 function toggleNavScroll() {
-  if (navLinks.classList.contains("active") && window.innerWidth <= 240) {
+  if (navLinks.classList.contains("active")) {
     document.body.style.overflow = "hidden";
     navLinks.style.overflowY = "scroll";
-    navLinks.style.maxHeight = "80vh";
+    navLinks.style.maxHeight = "100vh";
   } else {
     document.body.style.overflow = "";
     navLinks.style.overflowY = "";
