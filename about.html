@@ -1,0 +1,439 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+    <!-- Set character encoding to UTF-8 -->
+    <meta charset="UTF-8" />
+    <!-- Set viewport for responsive design on all devices -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <!-- Favicon -->
+    <link rel="icon" href="assets/images/logo-browser.png" type="image/x-icon">
+    <!-- Page Title and Meta Tags -->
+    <!-- Set the page title shown on browser tab -->
+    <title>About Me - Ahmed Hafez</title>
+    <meta name="description"
+        content="NileNotes is a modern personal blog CMS inspired by Egyptian culture. Share your stories, explore diverse articles, and connect with a vibrant community. Discover technology, travel, health, education, and more on NileNotes." />
+    <meta name="keywords"
+        content="NileNotes, Blog, Blogs, blog, Posts, books, Nature, development, writing, reading, social" />
+    <meta name="author" content="NileNotes - Personal Blog CMS" />
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@10/swiper-bundle.min.css" />
+    <!-- AOS Scroll Animation -->
+    <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+    <!-- Link to fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Asimovian&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet" />
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+        integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- ============= PREVENT FART (Flash of Incorrect Theme) =============== -->
+    <script>
+        (function () {
+            try {
+                const saved = localStorage.getItem("site-theme");
+                if (saved === "dark" || saved === "light") {
+                    document.documentElement.setAttribute("data-theme", saved);
+                } else {
+                    // ✅ Default = dark
+                    document.documentElement.setAttribute("data-theme", "dark");
+                    localStorage.setItem("site-theme", "dark");
+                }
+            } catch (e) {
+                document.documentElement.setAttribute("data-theme", "dark");
+            }
+        })();
+    </script>
+    <!-- Main style -->
+    <link rel="stylesheet" href="css/main.css" />
+</head>
+
+<body>
+
+    <!-- Spinner Loader -->
+    <!-- <div id="loader">
+        <div class="spinner"></div>
+    </div> -->
+
+    <!-- Logo-Branded Loader -->
+    <div id="loader">
+        <div class="loader-content">
+            <img src="assets/images/logo-browser.png" alt="My Blog Logo" class="loader-logo">
+            <p class="loader-text">Loading...</p>
+        </div>
+    </div>
+
+    <!-- THEME TOGGLE BUTTON: place this near end of body -->
+    <!-- This button is fixed to the middle-right of the viewport -->
+    <button id="theme-toggle" class="theme-toggle" aria-label="Toggle dark mode" aria-pressed="false"
+        title="Toggle theme">
+        <!-- Icon inside the button (will be updated by JS) -->
+        <span class="theme-icon"></span>
+    </button>
+
+    <!-- Header >> Nav -->
+    <header class="navbar sticky">
+        <div class="container navbar-container">
+            <!-- Logo -->
+            <div class="logo-box">
+                <a href="index.html" class="logo-img navbar-logo">
+                    <img src="assets/images/logo-browser.png" alt="Logo" loading="lazy" />
+                </a>
+                <a href="index.html" class="logo-text navbar-logo">
+                    <span class="logoSpan">Nile</span>Notes
+                </a>
+            </div>
+
+            <!-- Navigation Links -->
+            <nav class="nav-links" id="navLinks" aria-expanded="false">
+                <!-- <a href="index.html" class="nav-link-item">Home</a>
+                <a href="about-us.html" class="nav-link-item">About</a>
+                <a href="category.php?cat=All" class="nav-link-item">Categories</a>
+                <a href="submitPost.php" class="nav-link-item">Create a Post</a>
+                <a href="contact.php" class="nav-link-item">Contact</a> -->
+            </nav>
+
+            <!-- Right-side controls -->
+            <div class="nav-actions">
+                <!-- Search Toggle -->
+                <button class="search-toggle" aria-label="Open search">
+                    <i class="fa-solid fa-magnifying-glass"></i>
+                </button>
+
+                <!-- Hidden Search Form -->
+                <form class="search-form" id="navbarSearchForm" role="search">
+                    <div class="search-wrapper">
+                        <input type="text" id="navbarSearchInput" class="search-input" placeholder="Search articles..."
+                            aria-label="Search articles" />
+                        <button type="button" class="clear-btn" aria-label="Clear search">
+                            <i class="fa-solid fa-xmark"></i>
+                        </button>
+                        <small class="char-counter">0 / 50</small>
+                    </div>
+                    <button type="submit" class="search-submit">
+                        <!-- <i class="fa-solid fa-arrow-right"></i> -->
+                        Search
+                    </button>
+                </form>
+
+                <!-- Hamburger -->
+                <button class="hamburger" id="hamburger" aria-label="Toggle menu" aria-controls="navLinks"
+                    aria-expanded="false">
+                    <span></span><span></span><span></span>
+                </button>
+            </div>
+        </div>
+    </header>
+
+    <main class="main-content container">
+        <!-- Hero Section -->
+        <!-- <h2 class="section-title">About Us</h2> -->
+        <section class="about-hero">
+            <div class="info">
+                <h1>Ahmed Hafez</h1>
+                <p>
+                    Hello, I'm Ahmed Hafez, a Service-Level Management Engineer for WE Data, and a competent Full-Stack
+                    Web
+                    Developer, highly focused with a comprehensive knowledge of designing layouts, developing back-end
+                    processes, visual appearance, and usability of web apps.
+                </p>
+            </div>
+            <div class="img">
+                <img src="assets/images/AhmedHafez.jpg" alt="Ahmed Hafez">
+            </div>
+        </section>
+
+        <!-- Mission & Vision -->
+        <section class="mission-vision">
+            <div class="mv-card">
+                <h2>My Mission</h2>
+                <p>
+                    My mission is to share knowledge, experiences, and practical solutions in IT, Networking, and Web
+                    Development, to help others grow and achieve their goals. I aim to deliver valuable technical
+                    content
+                    with simplicity and clarity, making technology accessible to everyone.
+                </p>
+            </div>
+            <div class="mv-card">
+                <h2>My Vision</h2>
+                <p>
+                    My vision is to become a trusted reference in the tech community, building impactful projects and
+                    inspiring the next generation of IT and Web Development professionals. I aspire to contribute to
+                    open-source projects and create meaningful digital solutions that solve real-world problems.
+                </p>
+            </div>
+        </section>
+
+        <!-- Skills Section -->
+        <section class="skills">
+            <h2 class="section-title">My Skills</h2>
+            <div class="swiper mySwiper">
+                <div class="swiper-wrapper">
+                    <!-- Example skill cards -->
+                    <div class="swiper-slide">
+                        <div class="skill-card">
+                            <i class="fab fa-html5"></i>
+                            <h3>HTML5</h3>
+                            <p>Building structured, semantic, and responsive web content.</p>
+                            <p class="category">#Front-End</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="skill-card">
+                            <i class="fab fa-css3-alt"></i>
+                            <h3>CSS3 / SCSS</h3>
+                            <p>Styling modern, responsive, and visually appealing interfaces.</p>
+                            <p class="category">#Front-End</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="skill-card">
+                            <i class="fab fa-js"></i>
+                            <h3>JavaScript</h3>
+                            <p>Creating dynamic and interactive user experiences.</p>
+                            <p class="category">#Front-End</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="skill-card">
+                            <i class="fab fa-php"></i>
+                            <h3>PHP</h3>
+                            <p>Developing robust back-end applications and APIs.</p>
+                            <p class="category">#Back-End</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="skill-card">
+                            <i class="fas fa-database"></i>
+                            <h3>Databases</h3>
+                            <p>Designing and managing SQL, Oracle, and DB2 databases.</p>
+                            <p class="category">#Back-End</p>
+                        </div>
+                    </div>
+                    <div class="swiper-slide">
+                        <div class="skill-card">
+                            <i class="fab fa-linux"></i>
+                            <h3>Linux</h3>
+                            <p>System administration and server management skills.</p>
+                            <p class="category">#Back-End</p>
+                        </div>
+                    </div>
+                    <!-- ES6 -->
+                    <div class="swiper-slide">
+                        <div class="skill-card">
+                            <i class="fab fa-js"></i>
+                            <h3>ES6</h3>
+                            <p>Modern JavaScript features for cleaner, scalable, and efficient code.</p>
+                            <p class="category">#Front-End</p>
+                        </div>
+                    </div>
+
+                    <!-- Bootstrap -->
+                    <div class="swiper-slide">
+                        <div class="skill-card">
+                            <i class="fab fa-bootstrap"></i>
+                            <h3>Bootstrap</h3>
+                            <p>Rapidly building responsive and mobile-first web pages with prebuilt components.</p>
+                            <p class="category">#Front-End</p>
+                        </div>
+                    </div>
+
+                    <!-- NPM -->
+                    <div class="swiper-slide">
+                        <div class="skill-card">
+                            <i class="fab fa-npm"></i>
+                            <h3>NPM</h3>
+                            <p>Managing JavaScript libraries, dependencies, and project workflows.</p>
+                            <p class="category">#Front-End</p>
+                        </div>
+                    </div>
+
+                    <!-- jQuery -->
+                    <div class="swiper-slide">
+                        <div class="skill-card">
+                            <i class="fas fa-code"></i>
+                            <h3>jQuery</h3>
+                            <p>Simplifying DOM manipulation, events, and animations for interactive sites.</p>
+                            <p class="category">#Front-End</p>
+                        </div>
+                    </div>
+
+                    <!-- Laravel -->
+                    <div class="swiper-slide">
+                        <div class="skill-card">
+                            <i class="fab fa-laravel"></i>
+                            <h3>Laravel</h3>
+                            <p>Powerful PHP framework for building secure and maintainable web applications.</p>
+                            <p class="category">#Back-End</p>
+                        </div>
+                    </div>
+
+                    <!-- SQL -->
+                    <div class="swiper-slide">
+                        <div class="skill-card">
+                            <i class="fas fa-database"></i>
+                            <h3>SQL</h3>
+                            <p>Querying, managing, and analyzing data in relational databases.</p>
+                            <p class="category">#Back-End</p>
+                        </div>
+                    </div>
+
+                    <!-- Oracle -->
+                    <div class="swiper-slide">
+                        <div class="skill-card">
+                            <i class="fas fa-database"></i>
+                            <h3>Oracle</h3>
+                            <p>Enterprise-grade database management and optimization for large-scale systems.</p>
+                            <p class="category">#Back-End</p>
+                        </div>
+                    </div>
+
+                    <!-- DB2 -->
+                    <div class="swiper-slide">
+                        <div class="skill-card">
+                            <i class="fas fa-database"></i>
+                            <h3>IBM DB2</h3>
+                            <p>Advanced relational database for high-performance enterprise environments.</p>
+                            <p class="category">#Back-End</p>
+                        </div>
+                    </div>
+
+                    <!-- APIs -->
+                    <div class="swiper-slide">
+                        <div class="skill-card">
+                            <i class="fas fa-plug"></i>
+                            <h3>APIs</h3>
+                            <p>Designing and integrating RESTful APIs for seamless app communication.</p>
+                            <p class="category">#Back-End</p>
+                        </div>
+                    </div>
+
+                    <!-- Apache -->
+                    <div class="swiper-slide">
+                        <div class="skill-card">
+                            <i class="fas fa-server"></i>
+                            <h3>Apache</h3>
+                            <p>Configuring and maintaining secure and efficient web server environments.</p>
+                            <p class="category">#Back-End</p>
+                        </div>
+                    </div>
+
+                    <!-- IPL -->
+                    <div class="swiper-slide">
+                        <div class="skill-card">
+                            <i class="fas fa-cogs"></i>
+                            <h3>IPL</h3>
+                            <p>Automation and integration of IBM Policy Language for service management.</p>
+                            <p class="category">#OSS Engineering</p>
+                        </div>
+                    </div>
+
+                    <!-- IBM / Tivoli -->
+                    <div class="swiper-slide">
+                        <div class="skill-card">
+                            <i class="fas fa-cogs"></i>
+                            <h3>IBM Tivoli</h3>
+                            <p>Enterprise monitoring and automation solutions for IT infrastructure.</p>
+                            <p class="category">#OSS Engineering</p>
+                        </div>
+                    </div>
+
+                    <!-- Netcool / Omnibus -->
+                    <div class="swiper-slide">
+                        <div class="skill-card">
+                            <i class="fas fa-network-wired"></i>
+                            <h3>Netcool/Omnibus</h3>
+                            <p>Event management and real-time monitoring for telecom and IT networks.</p>
+                            <p class="category">#OSS Engineering</p>
+                        </div>
+                    </div>
+
+                    <!-- NNMi -->
+                    <div class="swiper-slide">
+                        <div class="skill-card">
+                            <i class="fas fa-project-diagram"></i>
+                            <h3>NNMi</h3>
+                            <p>HP Network Node Manager i: Fault, performance, and topology monitoring.</p>
+                            <p class="category">#OSS Engineering</p>
+                        </div>
+                    </div>
+
+                    <!-- Networking -->
+                    <div class="swiper-slide">
+                        <div class="skill-card">
+                            <i class="fas fa-network-wired"></i>
+                            <h3>Networking</h3>
+                            <p>Understanding of protocols, routing, and network troubleshooting.</p>
+                            <p class="category">#OSS Engineering</p>
+                        </div>
+                    </div>
+                </div>
+                <!-- Swiper navigation -->
+                <div class="swiper-pagination"></div>
+                <div class="swiper-button-next"></div>
+                <div class="swiper-button-prev"></div>
+            </div>
+        </section>
+
+        <!-- CTA -->
+        <section class="cta">
+            <a href="contact.php" id="contactBtn">Contact Me</a>
+            <a href="category.php" id="blogsBtn">Read My Blogs</a>
+        </section>
+    </main>
+
+    <!-- Footer section -->
+    <footer class="footer">
+        <div class="container footer-container">
+            <h2 class="footer-title">NileNotes - Personal Blog CMS</h2>
+            <div class="footer-links">
+                <a href="index.html" class="footer-link">Home</a>
+                <a href="about.html" class="footer-link">About</a>
+                <a href="contact.php" class="footer-link">Contact Us</a>
+            </div>
+            <p class="footer-text">NileNotes is a personal blog CMS
+                designed to share stories and articles on various
+                topics. <br>Join our community and start sharing your thoughts today!</p>
+            <p class="footer-text">For inquiries, please contact us at <a
+                    href="mailto:ahmed.hafez101112131415@gmail.com" class="footer-link">NileNotes@GMAIL</a>
+
+            </p>
+            <div class="footer-bottom">
+                <div class="footer-left">
+                    <p class="footer-credit">Designed by <a href="https://ahmedhafezoffic.netlify.app/" target="_blank"
+                            class="footer-link">Ahmed
+                            Hafez</a></p>
+                    <p class="footer-social">Follow us on:
+                        <a href="https://github.com/AhmedHafez7-Eng" class="footer-link">Github</a> |
+                        <a href="https://www.linkedin.com/in/ahmedhafez247/" class="footer-link">LinkedIn</a> |
+                        <a href="https://www.facebook.com/profile.php?id=100005116839262"
+                            class="footer-link">Facebook</a> |
+                        <a href="https://www.instagram.com/ahmedhafez247/" class="footer-link">Instagram</a>
+                    </p>
+                </div>
+
+                <div class="footer-right">
+                    <p class="footer-text">Powered by <a href="index.html" class="footer-link">NileNotes</a></p>
+                    <p class="footer-text">© 2025 Personal Blog CMS. All rights reserved.</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Swiper JS -->
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <!-- AOS Scroll Animation JS -->
+    <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <!-- Font Awesome JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/js/all.min.js"
+        integrity="sha512-6BTOlkauINO65nLhXhthZMtepgJSghyimIalb+crKRPhvhmsCdnIuGcVbR5/aQY2A+260iC1OPy1oCdB6pSSwQ=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <!-- Link to main JavaScript file -->
+    <script type="module" src="js/about.js"></script>
+</body>
+
+</html>
