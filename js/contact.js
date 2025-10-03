@@ -14,9 +14,9 @@ loaderInit();
 /* =============================================
    ################# EmailJS Configuration ####################
 ============================================= */
-const EMAILJS_USER = "YOUR_EMAILJS_USER_ID"; // replace
-const EMAILJS_SERVICE = "YOUR_EMAILJS_SERVICE_ID"; // replace
-const EMAILJS_TEMPLATE = "YOUR_EMAILJS_TEMPLATE_ID"; // replace
+const EMAILJS_USER = "awhYjpKpKthMmDUfL"; // replace
+const EMAILJS_SERVICE = "service_wm93f0d"; // replace
+const EMAILJS_TEMPLATE = "template_u3f5hop"; // replace
 const TARGET_EMAIL = "ahmedhafezgames@gmail.com"; // where messages should go
 
 /* =============================================

@@ -237,6 +237,9 @@
                 font-size: 0.95rem;
                 min-height: 1rem;
             }
+            .form-feedback.success {
+                color: #4bb543;
+            }
 
             @media (max-width: 860px) {
                 .row {

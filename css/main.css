@@ -15173,6 +15173,9 @@ main .cta a:hover {
   font-size: 0.95rem;
   min-height: 1rem;
 }
+.contact-page .contact-form-section .contact-form .form-feedback.success {
+  color: #4bb543;
+}
 @media (max-width: 860px) {
   .contact-page .contact-form-section .contact-form .row {
     flex-direction: column;
