@@ -12281,7 +12281,7 @@ a:hover {
   width: 90%;
   max-width: 750px;
   background: var(--color-surface);
-  padding: 16px 4px;
+  padding: 16px;
   display: flex;
   flex-direction: column;
   gap: 15px;
