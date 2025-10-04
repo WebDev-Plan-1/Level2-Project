@@ -64,7 +64,7 @@ function createCard(post) {
           "<svg xmlns='http://www.w3.org/2000/svg' width='10' height='7'></svg>"
         )}"
         alt="${post.title}"
-        onerror="this.dataset.src='../assets/images/fallback.jpg'; this.onerror=null;"
+        onerror="this.dataset.src='assets/images/fallback.jpg'; this.onerror=null;"
         />
     </div>
     `;

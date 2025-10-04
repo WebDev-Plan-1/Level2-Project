@@ -18,9 +18,10 @@ if ($_SERVER['REQUEST_METHOD'] !== 'POST') json_response(405, ['message' => 'Met
 // Must be logged in (server authoritative)
 if (empty($_SESSION['user'])) json_response(401, ['message' => 'Authentication required. Please login.']);
 
-// Config
+// ================== CONFIG ==================
 $DATA_FILE = __DIR__ . '/../data/articles.json';
-$UPLOAD_DIR = __DIR__ . '/../assets/images/';
+$UPLOAD_DIR = __DIR__ . '/../assets/images/'; // server path
+$UPLOAD_WEB = 'assets/images/'; // relative to project root
 $ALLOWED_EXT = ['jpg', 'jpeg', 'png', 'webp', 'gif'];
 $MAX_SIZE = 3 * 1024 * 1024; // 3MB
 
@@ -31,8 +32,8 @@ $newCategory = trim($_POST["newCategory"] ?? "");
 $content = isset($_POST['content']) ? trim($_POST['content']) : '';
 $date = isset($_POST['date']) ? trim($_POST['date']) : date('Y-m-d');
 
-// === VALIDATION ===
-// Title
+// ==================  VALIDATION ================== 
+// ================== Title Validation ==================
 $words = preg_split('/\s+/', $title);
 if (!$title) json_response(422, ["message" => "Title is required."]);
 if (count($words) > 7) json_response(422, ["message" => "Title must be at most 7 words."]);
@@ -42,7 +43,7 @@ foreach ($words as $word) {
     }
 }
 
-// Category / New Category
+// ================== Category / New Category Validation ==================
 if (!$category) {
     json_response(422, ["message" => "Category is required."]);
 }
@@ -70,7 +71,7 @@ if ($category === "Add New Category") {
     $category = $newCategory;
 }
 
-// Content
+// ================== Content Validation ==================
 if (!$content) json_response(422, ["message" => "Content is required."]);
 $badWords = ["badword1", "badword2", "offensive"];
 foreach ($badWords as $bad) {
@@ -79,45 +80,69 @@ foreach ($badWords as $bad) {
     }
 }
 
-// Date
+// ================== Date Validation ==================
 if (!$date) {
     $date = date("Y-m-d");
 }
 
 // Image Upload
-if (!isset($_FILES["image"]) || $_FILES["image"]["error"] !== UPLOAD_ERR_OK) {
-    json_response(422, ["message" => "Image upload failed."]);
-}
-$ext = strtolower(pathinfo($_FILES["image"]["name"], PATHINFO_EXTENSION));
-$allowed = ["jpg", "jpeg", "png", "webp", "gif"];
-if (!in_array($ext, $allowed)) {
-    json_response(422, ["message" => "Invalid image type."]);
-}
-$imgName = uniqid("img_", true) . "." . $ext;
-$imgPath = $UPLOAD_DIR . $imgName;
-if (!move_uploaded_file($_FILES["image"]["tmp_name"], $imgPath)) {
-    json_response(500, ["message" => "Failed to save image."]);
+// if (!isset($_FILES["image"]) || $_FILES["image"]["error"] !== UPLOAD_ERR_OK) {
+//     json_response(422, ["message" => "Image upload failed."]);
+// }
+
+// $ext = strtolower(pathinfo($_FILES["image"]["name"], PATHINFO_EXTENSION));
+// $allowed = ["jpg", "jpeg", "png", "webp", "gif"];
+// if (!in_array($ext, $allowed)) {
+//     json_response(422, ["message" => "Invalid image type."]);
+// }
+// $imgName = uniqid("img_", true) . "." . $ext;
+// $imgPath = $UPLOAD_DIR . $imgName;
+// if (!move_uploaded_file($_FILES["image"]["tmp_name"], $imgPath)) {
+//     json_response(500, ["message" => "Failed to save image."]);
+// }
+
+// ================== Image Upload ==================
+$defaultImage = $UPLOAD_WEB . "fallback.jpg"; // Default image path
+
+if (isset($_FILES["image"]) && $_FILES["image"]["error"] === UPLOAD_ERR_OK) {
+    // عند وجود صورة مرفوعة: تحقق واحفظ
+    $ext = strtolower(pathinfo($_FILES["image"]["name"], PATHINFO_EXTENSION));
+    if (!in_array($ext, $ALLOWED_EXT)) {
+        json_response(422, ["message" => "Invalid image type."]);
+    }
+    $imgName = uniqid("img_", true) . "." . $ext;
+    $imgPath = $UPLOAD_DIR . $imgName;
+    if (!move_uploaded_file($_FILES["image"]["tmp_name"], $imgPath)) {
+        json_response(500, ["message" => "Failed to save image."]);
+    }
+    $imagePath = $UPLOAD_WEB . $imgName;
+} else {
+    // Use default image if none uploaded or error occurred
+    $imagePath = $defaultImage;
 }
 
-// === SAVE TO JSON ===
+// ================== SAVE TO JSON ==================
 $articles = [];
 if (file_exists($DATA_FILE)) {
     $json = file_get_contents($DATA_FILE);
     $articles = json_decode($json, true) ?: [];
 }
 
-// Ensure articles JSON exists
+// Ensure JSON file exists
 if (!file_exists($DATA_FILE)) {
     file_put_contents($DATA_FILE, json_encode([], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 }
 
-// Lock and read
+// Lock and open for writing
 $fp = fopen($DATA_FILE, 'c+');
 if (!$fp) json_response(500, ['message' => 'Cannot open data file.']);
+
 if (!flock($fp, LOCK_EX)) {
     fclose($fp);
     json_response(500, ['message' => 'Could not lock data file. Try again.']);
 }
+
+// Read existing content (if any)
 $raw = stream_get_contents($fp);
 $items = [];
 if ($raw !== false && trim($raw) !== '') {
@@ -125,44 +150,127 @@ if ($raw !== false && trim($raw) !== '') {
     if (!is_array($items)) $items = [];
 }
 
-// Generate ID
+// Generate next ID
 $ids = array_column($articles, "id");
 $newId = $ids ? max($ids) + 1 : 1;
 
-// Author fields from session (server authoritative)
+// Author info from session
 $author = $_SESSION['user'];
-$authorId = isset($author['id']) ? $author['id'] : null;
-$authorUsername = isset($author['username']) ? $author['username'] : null;
-$authorFullname = isset($author['fullname']) ? $author['fullname'] : null;
+$authorId = $author['id'] ?? null;
+$authorUsername = $author['username'] ?? null;
+$authorFullname = $author['fullname'] ?? null;
 
-// Create item
+// Create new article entry
 $newArticle = [
     "id" => $newId,
     "title" => $title,
     "category" => $category,
     "content" => $content,
-    "image" => "assets/images/" . $imgName,
+    "image" => $imagePath,
     "date" => $date,
     "views" => rand(10, 999999999),
-    'authorId' => $authorId,
-    'authorUsername' => $authorUsername,
-    'authorFullname' => $authorFullname
+    "authorId" => $authorId,
+    "authorUsername" => $authorUsername,
+    "authorFullname" => $authorFullname
 ];
 
 $articles[] = $newArticle;
 
-// write back
+// Safely write back
 ftruncate($fp, 0);
 rewind($fp);
-fwrite($fp, json_encode($items, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+
+$writeSuccess = fwrite(
+    $fp,
+    json_encode($articles, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)
+);
+
+if ($writeSuccess === false) {
+    // Handle write error gracefully
+    flock($fp, LOCK_UN);
+    fclose($fp);
+    json_response(500, ["message" => "Failed to write article data."]);
+}
+
 fflush($fp);
 flock($fp, LOCK_UN);
 fclose($fp);
 
-// Save
-if (file_put_contents($DATA_FILE, json_encode($articles, JSON_PRETTY_PRINT)) === false) {
-    json_response(500, ["message" => "Failed to save article."]);
-}
+// Respond with success
+json_response(200, [
+    "message" => "Article created successfully.",
+    "article" => $newArticle
+]);
 
-// respond with created article
-json_response(200, ["message" => "Article created successfully.", "article" => $newArticle]);
+
+
+// ================== Previous Code Before Refactor ==================
+// === SAVE TO JSON ===
+// $articles = [];
+// if (file_exists($DATA_FILE)) {
+//     $json = file_get_contents($DATA_FILE);
+//     $articles = json_decode($json, true) ?: [];
+// }
+
+// // Ensure articles JSON exists
+// if (!file_exists($DATA_FILE)) {
+//     file_put_contents($DATA_FILE, json_encode([], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+// }
+
+// // Lock and read
+// $fp = fopen($DATA_FILE, 'c+');
+// if (!$fp) json_response(500, ['message' => 'Cannot open data file.']);
+// if (!flock($fp, LOCK_EX)) {
+//     fclose($fp);
+//     json_response(500, ['message' => 'Could not lock data file. Try again.']);
+// }
+// $raw = stream_get_contents($fp);
+// $items = [];
+// if ($raw !== false && trim($raw) !== '') {
+//     $items = json_decode($raw, true);
+//     if (!is_array($items)) $items = [];
+// }
+
+// // Generate ID
+// $ids = array_column($articles, "id");
+// $newId = $ids ? max($ids) + 1 : 1;
+
+// // Author fields from session (server authoritative)
+// $author = $_SESSION['user'];
+// $authorId = isset($author['id']) ? $author['id'] : null;
+// $authorUsername = isset($author['username']) ? $author['username'] : null;
+// $authorFullname = isset($author['fullname']) ? $author['fullname'] : null;
+
+// // Create item
+// $newArticle = [
+//     "id" => $newId,
+//     "title" => $title,
+//     "category" => $category,
+//     "content" => $content,
+//     // "image" => "assets/images/" . $imgName,
+//     "image" => $imagePath,
+//     "date" => $date,
+//     "views" => rand(10, 999999999),
+//     'authorId' => $authorId,
+//     'authorUsername' => $authorUsername,
+//     'authorFullname' => $authorFullname
+// ];
+
+// $articles[] = $newArticle;
+
+// // write back
+// ftruncate($fp, 0);
+// rewind($fp);
+// fwrite($fp, json_encode($articles, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
+// fflush($fp);
+// flock($fp, LOCK_UN);
+// fclose($fp);
+
+// // ======== Commented because we now use file locking above ========
+// // Save
+// // if (file_put_contents($DATA_FILE, json_encode($articles, JSON_PRETTY_PRINT)) === false) {
+// //     json_response(500, ["message" => "Failed to save article."]);
+// // }
+
+// // respond with created article
+// json_response(200, ["message" => "Article created successfully.", "article" => $newArticle]);
