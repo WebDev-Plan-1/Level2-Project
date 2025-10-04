@@ -442,7 +442,10 @@ function initPageFeatures() {
 // Handle fetch errors gracefully
 async function fetchArticles() {
   try {
-    const res = await fetch(DATA_URL);
+    // const res = await fetch(DATA_URL);
+    const res = await fetch(DATA_URL + "?ts=" + Date.now(), {
+      cache: "no-store",
+    });
     allArticles = await res.json();
 
     initPageFeatures();

@@ -12,7 +12,10 @@ let allArticles = [];
 
 // Function to fetch JSON data from the server (articles.json)
 export async function fetchArticlesData() {
-  const res = await fetch(DATA_URL);
+  // const res = await fetch(DATA_URL);
+  const res = await fetch(DATA_URL + "?ts=" + Date.now(), {
+    cache: "no-store",
+  });
   if (!res.ok) return [];
   return await res.json();
 }
