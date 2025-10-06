@@ -994,41 +994,5 @@
         "authorId": 2,
         "authorUsername": "ahmedhafez7",
         "authorFullname": "Ahmed Hafez"
-    },
-    {
-        "id": 86,
-        "title": "sdjd dlksjfl sjflj jldjm lfdf lsfl ldfmjkfl",
-        "category": "Test",
-        "content": "FDsmfkjlksdjgvlkdflkgojdopgjroegk4nrk \r\n\r\nre,gtkero;kghrtkgk",
-        "image": "assets\/images\/fallback.jpg",
-        "date": "2025-10-06",
-        "views": 415,
-        "authorId": 2,
-        "authorUsername": "ahmedhafez7",
-        "authorFullname": "Ahmed Hafez"
-    },
-    {
-        "id": 87,
-        "title": "fgjhnfgnjhgfjn",
-        "category": "Test2",
-        "content": "gfyhtujhytjuytuytuytu",
-        "image": "assets\/images\/fallback.jpg",
-        "date": "2025-10-06",
-        "views": 423,
-        "authorId": 2,
-        "authorUsername": "ahmedhafez7",
-        "authorFullname": "Ahmed Hafez"
-    },
-    {
-        "id": 88,
-        "title": "gikghkyuk",
-        "category": "Test2",
-        "content": "ghkyhkjhk",
-        "image": "assets\/images\/img_68e3e197e8fc44.90587127.png",
-        "date": "2025-10-02",
-        "views": 57,
-        "authorId": 2,
-        "authorUsername": "ahmedhafez7",
-        "authorFullname": "Ahmed Hafez"
     }
 ]
