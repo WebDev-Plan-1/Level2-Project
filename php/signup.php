@@ -1,30 +1,16 @@
 <?php
-// php/signup.php
-header('Content-Type: application/json; charset=utf-8');
-session_start();
+require_once __DIR__ . '/utils.php';
+ensure_session_started();
 
-function json_response($code, $data)
-{
-    http_response_code($code);
-    echo json_encode($data);
-    exit;
-}
-
-// config
 $DATA_FILE = __DIR__ . '/../data/users.json';
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') json_response(405, ['message' => 'Method not allowed']);
 
-// method
-if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
-    json_response(405, ['message' => 'Method not allowed']);
-}
-
-// fetch input
 $fullname = trim($_POST['fullname'] ?? '');
 $username = trim($_POST['username'] ?? '');
 $email = trim(strtolower($_POST['email'] ?? ''));
 $password = $_POST['password'] ?? '';
 
-// Basic validations
+// === Validations (same as before, unchanged logic) ===
 if ($fullname === '') json_response(422, ['message' => 'Full name required.']);
 $parts = preg_split('/\s+/', $fullname);
 if (count($parts) !== 2) json_response(422, ['message' => 'Enter First and Last name only.']);
@@ -32,18 +18,15 @@ foreach ($parts as $p) {
     if (mb_strlen($p, 'UTF-8') > 20) json_response(422, ['message' => 'Each name part must be ≤ 20 chars.']);
     if (!preg_match("/^[A-Za-zÀ-ÖØ-öø-ÿ'-]+$/", $p)) json_response(422, ['message' => 'Name contains invalid characters.']);
 }
-
 if ($username === '') json_response(422, ['message' => 'Username required.']);
 if (!preg_match('/^[a-z0-9_]{3,30}$/', $username)) json_response(422, ['message' => 'Username allowed: lowercase letters, digits, underscore (3-30).']);
-
 if ($email === '' || !filter_var($email, FILTER_VALIDATE_EMAIL)) json_response(422, ['message' => 'Valid email required.']);
-
 if ($password === '' || strlen($password) < 8) json_response(422, ['message' => 'Password must be at least 8 characters.']);
 if (!preg_match('/[A-Z]/', $password) || !preg_match('/[a-z]/', $password) || !preg_match('/\d/', $password)) {
     json_response(422, ['message' => 'Password must include uppercase, lowercase and a number.']);
 }
 
-// read existing users (create file if missing)
+// === Read or create file ===
 if (!file_exists($DATA_FILE)) {
     file_put_contents($DATA_FILE, json_encode([], JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 }
@@ -55,13 +38,10 @@ if (!flock($fp, LOCK_EX)) {
     json_response(500, ['message' => 'Could not lock users file.']);
 }
 $raw = stream_get_contents($fp);
-$users = [];
-if ($raw !== false && trim($raw) !== '') {
-    $users = json_decode($raw, true);
-    if (!is_array($users)) $users = [];
-}
+$users = $raw && trim($raw) !== '' ? json_decode($raw, true) : [];
+if (!is_array($users)) $users = [];
 
-// duplicates check
+// === Duplicate checks ===
 foreach ($users as $u) {
     if (isset($u['username']) && strtolower($u['username']) === strtolower($username)) {
         flock($fp, LOCK_UN);
@@ -75,17 +55,11 @@ foreach ($users as $u) {
     }
 }
 
-// create unique ID
-$maxId = 0;
-foreach ($users as $u) {
-    if (isset($u['id']) && is_numeric($u['id'])) $maxId = max($maxId, intval($u['id']));
-}
-$newId = $maxId + 1;
-
-// hash password
+// === Generate ID and hash password ===
+$newId = count($users) ? max(array_column($users, 'id')) + 1 : 1;
 $pwHash = password_hash($password, PASSWORD_DEFAULT);
 
-// append new user
+// === Create new user ===
 $newUser = [
     'id' => $newId,
     'fullname' => $fullname,
@@ -94,22 +68,20 @@ $newUser = [
     'password' => $pwHash,
     'created_at' => date('Y-m-d H:i:s')
 ];
-
 $users[] = $newUser;
 
-// write back
+// === Write file ===
 ftruncate($fp, 0);
 rewind($fp);
-if (fwrite($fp, json_encode($users, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE)) === false) {
-    flock($fp, LOCK_UN);
-    fclose($fp);
-    json_response(500, ['message' => 'Could not save user.']);
-}
+fwrite($fp, json_encode($users, JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE));
 fflush($fp);
 flock($fp, LOCK_UN);
 fclose($fp);
 
-// set session
+// Regenerate session ID for security
+session_regenerate_id(true);
+
+// === Set session ===
 $_SESSION['user'] = [
     'id' => $newUser['id'],
     'username' => $newUser['username'],

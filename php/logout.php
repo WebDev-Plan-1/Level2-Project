@@ -1,27 +1,18 @@
 <?php
-// php/logout.php
-session_start();
+require_once __DIR__ . '/utils.php';
+ensure_session_started();
 
-// Clear all session variables
+// Clear all session data
 $_SESSION = [];
 
-// Destroy the session cookie
-if (ini_get("session.use_cookies")) {
+// Remove session cookie if it exists
+if (ini_get('session.use_cookies')) {
     $params = session_get_cookie_params();
-    setcookie(
-        session_name(),
-        '',
-        time() - 42000,
-        $params["path"],
-        $params["domain"],
-        $params["secure"],
-        $params["httponly"]
-    );
+    setcookie(session_name(), '', time() - 42000, $params['path'], $params['domain'], $params['secure'], $params['httponly']);
 }
 
-// Destroy the session
+// Destroy session
 session_destroy();
 
-// Return JSON
-header('Content-Type: application/json; charset=utf-8');
-echo json_encode(['ok' => true, 'message' => 'Logged out']);
+// Return success JSON
+json_response(200, ['ok' => true, 'message' => 'Logged out successfully']);

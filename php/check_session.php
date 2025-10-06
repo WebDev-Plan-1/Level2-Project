@@ -1,9 +1,10 @@
 <?php
-// php/check_session.php
-header('Content-Type: application/json; charset=utf-8');
-session_start();
+require_once __DIR__ . '/utils.php';
+ensure_session_started();
+
+// Return session state as JSON
 if (!empty($_SESSION['user'])) {
-    echo json_encode(['ok' => true, 'user' => $_SESSION['user']]);
+    json_response(200, ['ok' => true, 'user' => $_SESSION['user'], 'timestamp' => time()]);
 } else {
-    echo json_encode(['ok' => false]);
+    json_response(200, ['ok' => false]);
 }
