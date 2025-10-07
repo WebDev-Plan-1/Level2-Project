@@ -104,11 +104,13 @@ Level2-Project/
 ├── css/
 │ ├── main.css
 │ └── main.css.map
+├── data/
+│ ├── articles.json
+│ ├── users.json
 ├── js/
 │ ├── main.js
-│ ├── data.json
-│ ├── modules/
-│ | ├── utils.js
+│ ├── theme.js
+│ |── utils.js
 ├── scss/
 │ |── abstracts/
 │ | ├── _variables.scss
